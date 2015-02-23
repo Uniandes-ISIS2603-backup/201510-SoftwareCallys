@@ -11,7 +11,7 @@
                                         pop=0;
                                         var pais;
                                         var arreglo;
-                                        pais ="";
+                                        pais ="no hay paises en la tabla";
 					arreglo = $scope.records;
                                         var i;
                                         for( i = 0; i< arreglo.length; i++)
