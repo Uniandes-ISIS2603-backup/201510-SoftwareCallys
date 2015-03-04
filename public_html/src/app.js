@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule', 'stampModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -9,18 +9,31 @@
                     {
 			templateUrl: 'src/modules/home/home.tpl.html'
                     }).otherwise('/');
+                    $routeProvider.when('/stamp', 
+                    {
+			templateUrl: 'src/modules/stamp/stamp.tpl.html'
+                    }).otherwise('/');
             }]);
 
 	//Configuración módulo home
-	var sportModule = angular.module('homeModule', ['CrudModule', 'MockModule']);
+	var homeModule = angular.module('homeModule', ['CrudModule', 'MockModule']);
 
-	sportModule.constant('home.context', 'sports');
+	homeModule.constant('home.context', 'home');
 
-	sportModule.config(['home.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
+	homeModule.config(['home.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
         {
             urlsProvider.registerUrl(context);
         }]);
-            
+         
+    //Configuración módulo stamp
+	var stampModule = angular.module('stampModule', ['CrudModule', 'MockModule']);
+
+	stampModule.constant('stamp.context', 'stamp');
+
+	stampModule.config(['stamp.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
+        {
+            urlsProvider.registerUrl(context);
+        }]);
 
         
 })();

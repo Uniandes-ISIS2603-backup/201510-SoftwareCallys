@@ -71,7 +71,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script src="src/shared/mocks/mock.mod.js"></script>
 		<script src="src/shared/mocks/mock.svc.js"></script>
 
-		<script src="src/modules/home/home.ctrl.js"></script>        
+		<script src="src/modules/home/home.ctrl.js"></script>  
+                <script src="src/modules/stamp/stamp.ctrl.js"></script>  
 </head>
 <body>
  <div class="container">
@@ -112,16 +113,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="h_menu">
                         <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#/home">Home</a></li> 
-                                <li><a href="src/modules/stamp/stamps.html">stamps</a></li> 
+                                <li><a href="#/stamp">stamps</a></li> 
                                 <li><a href="src/modules/shirt/t-shirts.html">T-Shirts</a></li> 
                                 <li><a href="contact.html">Contact us</a></li>
                         </ul> 
                         
-                        <div class="clear"></div>
+                        
                 </div>
         </div>
     </div>
+    <div class="clear"></div>
     <div ng-view></div> 
+    
 </div>	
 <!-- start footer -->
 <div class="footer_bg">

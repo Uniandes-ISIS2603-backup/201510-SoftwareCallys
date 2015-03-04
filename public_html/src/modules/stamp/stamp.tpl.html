@@ -1,0 +1,90 @@
+
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<div ng-controller="stampCtrl as stampCtrl">
+<div class="main_bg">
+<div class="wrap">	
+	<div class="main">
+		<h2 class="style top">featured Stamps</h2>
+		<!-- start grids_of_3 -->
+		<div class="grids_of_3">
+			<div class="grid1_of_3">
+				<a href="details.html">
+					<img src="images/w_pic1.jpg" alt=""/>
+					<h3>Music Box</h3>
+					<div class="price">
+						<h4>$17 <span>buy</span></h4>
+					</div>
+					<span class="b_btm"></span>
+				</a>
+			</div>
+                    
+                    <ul>
+                        <li ng-repeat = "record in records">
+                            <img src= {{record.image}} alt=""/>
+					<h3>{{record.name}}</h3>
+					<div class="price">
+						<h4>{{record.price}}<span>buy</span></h4>
+					</div>
+					<span class="b_btm"></span>
+                        
+                        </li>
+                    </ul>
+			<div class="grid1_of_3">
+				<a href="details.html">
+					<img src="images/w_pic2.jpg" alt=""/>
+					<h3>Mario</h3>
+					<div class="price">
+						<h4>$25 <span>buy</span></h4>
+					</div>
+					<span class="b_btm"></span>
+				</a>
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+                
+               <div class="wrap">
+                   <div class="copy ">
+                       <div class="price ">
+                           <button  ng-click="stampCtrl.upload()"><span>upload new stamp</span></button>
+                </div>
+               </div>
+               </div>
+                 <div class="wrap" ng-show="stampCtrl.editMode">
+                   <div class="copy ">
+                       <div class="price ">
+                          <div class="contact">				
+                                 <h2>upload new stamp</h2>
+                                 <form name="imageForm" role="form">
+                                        <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
+                                </div>
+                                <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
+                                </div>
+
+                                </form>
+
+                                <form name="uploadForm" action="mailto:youremail@email.com" method="post">
+                                <input type="file" name="uploadField" ng-model="currentRecord.image" />
+                                </form>
+                        <button class="btn btn-default navbar-btn" ng-show="countryCtrl.editMode" ng-click="countryCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                </div>
+		
+		<!-- end grids_of_3 -->
+	</div>
+</div>
+</div>	
+
+</div>	
+</div>
+</div>
+</div>
