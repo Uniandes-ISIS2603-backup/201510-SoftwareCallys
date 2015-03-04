@@ -1,26 +1,26 @@
-(function () {
+(function () 
+{
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','shirtModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule']);
 
-	mainApp.config(['$routeProvider', function ($routeProvider) {
-			$routeProvider.when('/stamp', {templateUrl: 'src/modules/stamp/stamp.html'
-                                
-			}).when('/shirt', {templateUrl: 'src/modules/shirt/shirt.html'
-                                
-			}).otherwise('/');
-		}]);
+	mainApp.config(['$routeProvider', function ($routeProvider) 
+            {
+                    $routeProvider.when('/home', 
+                    {
+			templateUrl: 'src/modules/home/home.tpl.html'
+                    }).otherwise('/');
+            }]);
 
-	//ConfiguraciÃ³n mÃ³dulo stamp
-	var stampModule = angular.module('stampModule', ['CrudModule', 'MockModule']);
-        var shirtModule = angular.module('shirtModule', ['CrudModule', 'MockModule']);
+	//Configuración módulo home
+	var sportModule = angular.module('homeModule', ['CrudModule', 'MockModule']);
 
-	stampModule.constant('sptamp.context', 'stamp');
-	stampModule.config(['stamp.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-			urlsProvider.registerUrl(context);
-                }]);
+	sportModule.constant('home.context', 'sports');
+
+	sportModule.config(['home.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
+        {
+            urlsProvider.registerUrl(context);
+        }]);
             
-        shirtModule.constant('shirt.context', 'shirt');
-        shirtModule.config(['shirt.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-			urlsProvider.registerUrl(context);
-		}]);
+
+        
 })();
