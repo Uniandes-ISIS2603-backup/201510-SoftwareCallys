@@ -1,7 +1,7 @@
 (function () {
-	var app = angular.module('countryModule');
+	var shirt = angular.module('shirtModule');
 
-	app.controller('countryCtrl', ['$scope', 'CRUDUtils', 'country.context', function ($scope, CRUDUtils, context) {
+	shirt.controller('shirtCtrl', ['$scope', 'CRUDUtils', 'shirt.context', function ($scope, CRUDUtils, context) {
 			this.url = context;
 			CRUDUtils.extendCtrl(this, $scope);
 			this.fetchRecords();
