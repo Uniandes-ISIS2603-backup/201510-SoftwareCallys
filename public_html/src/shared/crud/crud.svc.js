@@ -32,6 +32,9 @@
 						});
 					}
 				};
+                                this.upload= function(){
+                editMode=true;
+            };
                                 
 				this.deleteRecord = function (record) {
 					var self = this;
