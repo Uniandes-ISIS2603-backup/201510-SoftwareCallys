@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule', 'stampModule','shirtModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule', 'stampModule','shirtModule','detailsModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -16,6 +16,10 @@
                     $routeProvider.when('/shirt', 
                     {
 			templateUrl: 'src/modules/shirt/shirt.tpl.html'
+                    }).otherwise('/');
+                    $routeProvider.when('/details', 
+                    {
+			templateUrl: 'src/modules/details/details.tpl.html'
                     }).otherwise('/');
             }]);
 
@@ -44,6 +48,16 @@
 	shirtModule.constant('shirt.context', 'shirt');
 
 	shirtModule.config(['shirt.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
+        {
+            urlsProvider.registerUrl(context);
+        }]);
+    
+    //Configuración módulo shirt
+	var shirtModule = angular.module('detailsModule', ['CrudModule', 'MockModule']);
+
+	shirtModule.constant('details.context', 'details');
+
+	shirtModule.config(['details.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
         {
             urlsProvider.registerUrl(context);
         }]);
