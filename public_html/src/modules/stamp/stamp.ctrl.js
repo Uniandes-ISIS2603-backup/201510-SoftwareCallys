@@ -6,11 +6,32 @@
 			CRUDUtils.extendCtrl(this, $scope);
                          this.fetchRecords();
                          this.editMode=false;
-            this.upload= function(){
-                this.editMode= !this.editMode;
-            };
+                                this.uploadStamp= function(){
+                                    this.editMode= !this.editMode;
+                                };
+                                this.rateStamp = function(){
+                                    this.saveRecords();
+                                };
+            
+                                 this.deleteStamp = function () {
+					var self = this;
+					this.api.getList().then(function (data) {
+						$scope.records = data;
+						$scope.currentRecord = {};
+						self.editMode = false;
+					});
+				};
+                                
+                                 this.getStamp = function () {
+					var self = this;
+					this.api.getList().then(function (data) {
+						$scope.records = data;
+						$scope.currentRecord = {};
+						self.editMode = false;
+					});
+				};
             }]);
-        app.directive('stampsRating', function(){
+        app.directive('ratingStamps', function(){
            return{
                restrict: 'A',
                template: '<ul class="rating">'+
@@ -31,9 +52,12 @@
                    };
                    scope.toggle = function(index){
                        scope.ratingValue = index+1;
+                       scope.onRatingSelected({
+                          rating:index +1 
+                       });
                    };
                    scope.$watch('ratingValue', function(oldVal, newVal) {
-                       if(newVal){updateStars();};
+                       if(newVal){updateStars();}
                    });
                }
            } 
