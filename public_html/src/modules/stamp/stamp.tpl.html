@@ -15,20 +15,6 @@
 					<span class="b_btm"></span>
 				</a>
 			</div>
-                    <ul>
-                        <li ng-repeat = "record in records">
-                            <img src= {{record.image}} alt=""/>
-					<h3>{{record.name}}</h3>
-                                        <div ng-init="rating = {{record.rating}}">
-                                            <div stamps-rating rating-value="rating" max="5"></div>
-                                        </div>
-					<div class="price">
-						<h4>{{record.price}}<span>buy</span></h4>
-					</div>
-					<span class="b_btm"></span>
-                        
-                        </li>
-                    </ul>
 			<div class="grid1_of_3">
 				<a href="details.html">
 					<img src="images/w_pic2.jpg" alt=""/>
@@ -39,13 +25,26 @@
 					<span class="b_btm"></span>
 				</a>
 			</div>
+                    
+                      <div class="grid1_of_3" ng-repeat = "record in records">
+                            <img src= '{{record.image}}' alt=""/>
+					<h3>{{record.name}}</h3>
+                                        <div ng-init="rating = {{record.rating}}">
+                                            <div stamps-rating rating-value="rating" max="5"></div>
+                                        </div>
+					<div class="price">
+						<h4>${{record.price}}<span>buy</span></h4>
+					</div>
+					<span class="b_btm"></span>
+                        
+                        </div>
 			
 			<div class="clear"></div>
 		</div>
                <div class="wrap">
                    <div class="copy ">
                        <div class="price ">
-                           <button  ng-click="stampCtrl.upload()"><span>upload new stamp</span></button>
+                           <a  ng-click="stampCtrl.upload()"><h4><span>upload new stamp</span></h4></a>
                         </div>
                     </div>
                </div>
@@ -53,8 +52,8 @@
                    <div class="copy ">
                        <div class="price ">
                           <div class="contact">				
-                                 <h2>upload new stamp</h2>
-                                 <form name="imageForm" role="form">
+                                 <h2>Upload new stamp</h2>
+                                 
                                         <div class="form-group">
                                         <label for="name">Name</label>
                                         <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
@@ -63,13 +62,9 @@
                                         <label for="price">Price</label>
                                         <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
                                 </div>
-
-                                </form>
-
-                                <form name="uploadForm" action="mailto:youremail@email.com" method="post">
-                                <input type="file" name="uploadField" ng-model="currentRecord.image" />
-                                </form>
-                        <button class="btn btn-default navbar-btn" ng-show="countryCtrl.editMode" ng-click="countryCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                <input type="file" name="uploadField" ng-model="currentRecord.image=uploadField" />
+                                <br>
+                        <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
                 </div>
 		
 		<!-- end grids_of_3 -->
