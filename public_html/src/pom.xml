@@ -10,7 +10,7 @@
     <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
     <!-- TODO: MNG-3731 maven-plugin-tools-api < 2.4.4 expect this to be relative... -->
-    <scriptSourceDirectory>src/modules/administrador</scriptSourceDirectory>
+    <scriptSourceDirectory>src/modules/</scriptSourceDirectory>
     <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
     <resources>
       <resource>
