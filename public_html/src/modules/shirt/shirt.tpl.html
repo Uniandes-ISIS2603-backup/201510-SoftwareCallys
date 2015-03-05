@@ -1,4 +1,62 @@
 <!-- start main -->
+
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});				
+			
+			},
+			
+			hoverEffect: function () {
+			
+				// Simple parallax effect
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+					}		
+				);				
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		
+		
+	});	
+	</script>
+<!-- start top_js_button -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
 <div class="main_bg">
 <div class="wrap">	
 	<div class="main">
@@ -6,30 +64,88 @@
 			<div class="gallery1">
 					<div class="container">
 					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="app card icon logo web">All</span></li>
-						<li><span class="filter" data-filter="app card web">Cartoon</span></li>
-						<li><span class="filter" data-filter="icon web card">Music</span></li>
-						<li><span class="filter" data-filter="web app icon card">Phrase</span></li>
-						<li><span class="filter" data-filter="icon app web logo">Sports</span></li>
+						<li><span class="filter active" data-filter="app card icon logo web">All T-Shirt</span></li>
+						
 					</ul>
-			<div class="portfolio card" data-cat="card">
-				<div class="portfolio-wrapper">			
-					<a  href="#/details">
-                                            <img src="images/0001-1.jpg" alt="image"   />
-					</a>
-					<div class="label">
-						<div class="label-text">
-							<a class="text-title">T-Shirt</a>
-							<span class="text-category">description</span>
-						</div>
-						<div class="label-bg"></div>
-					</div>
-				</div>
-			</div>	
                          <div class="portfolio card" data-cat="card">
 				<div class="portfolio-wrapper">			
-					<a  href="#/details">
-                                            <img src="images/slider1.png" alt="Image 2"   />
+					
+                                        <a  href="#/details">
+                                            <img src="images/slider2.png" alt="Image 3" height="300" width="270" ng-class="pic12" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                        <a  href="#/details">
+                                            <img src="images/slider3.png" alt="Image 4" height="300" width="270"  ng-class="pic11" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                        <a  href=" #/details">
+                                            <img src="images/slider5.png" alt="Image 1" height="300"  width="270"  ng-class="pic" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                        <a  href=" #/details">
+                                            <img src="images/CAMISETAAZUL.jpg" alt="Image 1" height="300" width="270"  ng-class="pic1" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                   </div>
+                             <div class="portfolio card" data-cat="card">
+				<div class="portfolio-wrapper">	
+                                    <a  href=" #/details">
+                                            <img src="images/CAMISETAAMARILLA.jpg" alt="Image 1" height="300"  width="270" ng-class="pic2" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                        <a  href=" #/details">
+                                            <img src="images/CAMISETAROJA.jpg" alt="Image 1" height="300" width="270"  ng-class="pic3" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                   
+                                    <a  href=" #/details">
+                                            <img src="images/CAMISETAROSADA.jpg" alt="Image 1" height="300"  width="270" ng-class="pic4" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                        <a  href=" #/details">
+                                            <img src="images/CAMISETAVERDE..jpg" alt="Image 1" height="300" width="270"  ng-class="pic5" />
 					</a>
 					<div class="label">
 						<div class="label-text">
@@ -40,52 +156,43 @@
 					</div>
 				</div>
 			</div>
-                        <div class="portfolio card" data-cat="card">
-				<div class="portfolio-wrapper">			
-					<a  href="#/details">
-                                            <img src="images/slider2.png" alt="Image 3"  ng-class="pic3" />
-					</a>
-					<div class="label">
-						<div class="label-text">
-							<a class="text-title">T-Shirt</a>
-							<span class="text-category">description</span>
-						</div>
-						<div class="label-bg"></div>
-					</div>
-				</div>
-			</div>
-                        <div class="portfolio card" data-cat="card">
-				<div class="portfolio-wrapper">			
-					<a  href="#/details">
-                                            <img src="images/slider3.png" alt="Image 4"  ng-class="pic4" />
-					</a>
-					<div class="label">
-						<div class="label-text">
-							<a class="text-title">T-Shirt</a>
-							<span class="text-category">description</span>
-						</div>
-						<div class="label-bg"></div>
-					</div>
-				</div>
-			</div>	
-                        <div class="portfolio card" data-cat="card">
-				<div class="portfolio-wrapper">			
-					<a  href="#/details">
-                                            <img src="/images/slider4.png" alt="Image 1"  ng-class="pic5" />
-					</a>
-					<div class="label">
-						<div class="label-text">
-							<a class="text-title">T-Shirt</a>
-							<span class="text-category">description</span>
-						</div>
-						<div class="label-bg"></div>
-					</div>
-				</div>
-			</div>
+                    
+                        
                         <div class="portfolio card" data-cat="card">
 				<div class="portfolio-wrapper">			
 					<a  href=" #/details">
-                                            <img src="images/slider5.png" alt="Image 1"   ng-class="pic6" />
+                                            <img src="images/CAMISETAZULOSCURO.jpg" alt="Image 1" height="300" width="270"  ng-class="pic6" />
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                    
+                                    <a  href="#/details">
+                                            <img src="images/slider1.png" alt="Image 2"  height="300" width="270"  ng-class="pic8"/>
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                     <a  href="#/details">
+                                            <img src="images/CAMISETANEGRA.jpg" alt="Image 2"  height="300" width="270"  ng-class="pic8"/>
+					</a>
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">T-Shirt</a>
+							<span class="text-category">description</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+                                     <a  href="#/details">
+                                            <img src="images/CAMISETAGRIS.jpg" alt="Image 2"  height="300" width="270"  ng-class="pic8"/>
 					</a>
 					<div class="label">
 						<div class="label-text">
@@ -95,7 +202,7 @@
 						<div class="label-bg"></div>
 					</div>
 				</div>
-			</div>																																						
+			</div>	                    
 		</div>
 	</div><!-- container -->
 	<script type="text/javascript" src="js/fliplightbox.min.js"></script>
