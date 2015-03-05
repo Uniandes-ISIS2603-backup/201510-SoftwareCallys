@@ -25,13 +25,12 @@
 					<span class="b_btm"></span>
 				</a>
 			</div>
-                    
+                        
+                                <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
                       <div class="grid1_of_3" ng-repeat = "record in records">
                             <img src= '{{record.image}}' alt=""/>
 					<h3>{{record.name}}</h3>
-                                        <div ng-init="rating = {{record.rating}}">
-                                            <div stamps-rating rating-value="rating" max="5"></div>
-                                        </div>
+                                        <div rating-stamps rating-value="{{record.rating}}" max="5" on-rating-selected = "rate()"></div>
 					<div class="price">
 						<h4>${{record.price}}<span>buy</span></h4>
 					</div>

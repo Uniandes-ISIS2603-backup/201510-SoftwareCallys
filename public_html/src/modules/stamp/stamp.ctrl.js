@@ -9,8 +9,11 @@
             this.upload= function(){
                 this.editMode= !this.editMode;
             };
+            this.rate = function(){
+                this.saveRecords();
+            };
             }]);
-        app.directive('stampsRating', function(){
+        app.directive('ratingStamps', function(){
            return{
                restrict: 'A',
                template: '<ul class="rating">'+
@@ -31,9 +34,12 @@
                    };
                    scope.toggle = function(index){
                        scope.ratingValue = index+1;
+                       scope.onRatingSelected({
+                          rating:index +1 
+                       });
                    };
                    scope.$watch('ratingValue', function(oldVal, newVal) {
-                       if(newVal){updateStars();};
+                       if(newVal){updateStars();}
                    });
                }
            } 
