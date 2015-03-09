@@ -6,10 +6,10 @@
 			CRUDUtils.extendCtrl(this, $scope);
                          this.fetchRecords();
                          this.editMode=false;
-                                this.uploadStamp= function(){
+                                this.upload= function(){
                                     this.editMode= !this.editMode;
                                 };
-                                this.rateStamp = function(){
+                                this.rate = function(){
                                     this.saveRecords();
                                 };
             
@@ -34,10 +34,10 @@
         app.directive('ratingStamps', function(){
            return{
                restrict: 'A',
-               template: '<ul class="rating">'+
-                           '<li ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">'+
+               template: '<ul class="rating line1">'+
+                           '<line1 ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">'+
                              '\u2605' +
-                           '</li>' +
+                           '</line1>' +
                          '</ul>',
                scope: {
                    ratingValue: '=',

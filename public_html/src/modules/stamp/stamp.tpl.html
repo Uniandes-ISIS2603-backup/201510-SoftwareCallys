@@ -16,17 +16,27 @@
 				</a>
 			</div>
 			<div class="grid1_of_3">
-				<a href="details.html">
+				
 					<img src="images/w_pic2.jpg" alt=""/>
 					<h3>Mario</h3>
+                                        
 					<div class="price">
-						<h4>$25 <span>buy</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
+					<a href="#/details">	<h4>$25 <span>buy</span></h4> </a>
+                                                <br>
+                                       <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()">
+                                                
+                                      </div>
+                                        </div>
+                                        <span class="b_btm"></span>
+                                       
+                            
+					
+                                        
+				
+                        </div>
+                      
                         
-                                <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
+                                
                       <div class="grid1_of_3" ng-repeat = "record in records">
                             <img src= '{{record.image}}' alt=""/>
 					<h3>{{record.name}}</h3>
