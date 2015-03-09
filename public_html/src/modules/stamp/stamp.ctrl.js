@@ -9,11 +9,16 @@
                                 this.upload= function(){
                                     this.editMode= !this.editMode;
                                 };
+<<<<<<< HEAD
                                 this.rate = function(){
                                     this.saveRecords();
+=======
+                                this.rateStamp = function(rating){
+                                        $scope.currentRecord.rating = rating;
+                                        this.saveRecords();
+>>>>>>> origin/master
                                 };
-            
-                                 this.deleteStamp = function () {
+                                this.deleteStamp = function () {
 					var self = this;
 					this.api.getList().then(function (data) {
 						$scope.records = data;

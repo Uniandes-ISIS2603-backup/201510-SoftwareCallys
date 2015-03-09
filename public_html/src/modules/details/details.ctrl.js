@@ -20,7 +20,7 @@
                     display(nombre);
                 };
                 this.display= function (nombre){
-                  var lista = document.getElementById("sub-icon1 list");
+                  var lista = "active-icon c1";
                   var cantidad = sessionStorage.getItem(nombre);
                   var precio = sessionStorage.getItem(cantidad);
                   var talla = sessionStorage.getItem(precio);

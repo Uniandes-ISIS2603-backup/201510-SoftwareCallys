@@ -5,7 +5,39 @@
 			this.url = context;
 			CRUDUtils.extendCtrl(this, $scope);
 			this.fetchRecords();
+                        this.rojo= true;
+                        this.verde = true;
+                        this.azul= true;
+                        this.all=true;
                         
+                        this.mostrarRojo = function (){
+                          
+                            this.rojo = true;
+                            this.verde = false;
+                            this.azul= false;
+                            this.all= false;
+                        };
+                        this.mostrarVerde = function (){
+                          
+                            this.rojo = false;
+                            this.verde = true;
+                            this.azul= false;
+                            this.all=false;
+                        };
+                        this.mostrarAzul = function (){
+                          
+                            this.rojo = false;
+                            this.verde = false;
+                            this.azul= true;
+                            this.all=false;
+                        };
+                        this.mostrarTodo = function (){
+                          
+                            this.rojo = true;
+                            this.verde = true;
+                            this.verde= true;
+                            this.all= true;
+                        };
                         this.mostPopulated = function () {
 					var pop;
                                         pop=0;
