@@ -180,5 +180,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 </div>
 
+
+<script>
+    
+    var carrito = [];
+    
+    function displayCarrito(){
+        var carritoDiv = $('#cartDiv');
+        carritoDiv.html("");
+        var total = 0;
+        for (var item in carrito)
+        {
+             var qty = carrito(item).qty;
+             var price = carrito(item).price;
+             var subtotal = carrito(item).price * qty;
+            total+= subtotal; 
+            cartDiv.append('<p>'+qty+': '+ cart[item].nombre + ''+ 
+                     price.toFixed(3)+'== '+ subtotal.toFixed(3)+ '</p>');
+        
+        }
+        cartDiv.append('<p>Total: $'+ total.toFixed(3)+ '</p>')
+    }
+    
+    $(document).ready(function(){
+    $('div[data-product]').each(function(){
+      $(this).append('<button class = "btnCarrito"> Agregar a carrito de compras </button>')  
+     
+    })
+    
+    $('.btnCarrito').on("click", function(event){
+        var id=$(this).parent().data("nombre");
+        console.log(id);
+        if(carrito[id]){
+            carrito[id].qty += 1;
+        } else {
+            carrito[id]= new Object();
+            carrito[id].qty = 1;
+            carrito[id].nombre=$(this).parent().siblings("span").data("nombre");
+            carrito[id].price = $(this).parent().siblings("span").next().data("price");
+            
+        }
+        displayCarrito();
+    })
+    
+    $('#comprar').on("click", funtion(event){
+        var comprarUrl = "";
+        for (var item in cart){
+     
+           comprarUrl +=  "&id-" + item + "&qty=" + carrito[item].qty;
+               
+       }
+       console.log(comprarUrl);
+    })
+})
+</script>
 </body>
 </html>
