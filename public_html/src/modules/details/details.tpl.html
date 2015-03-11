@@ -119,7 +119,7 @@
 									<option>M</option>
 								</select>
 							</li>
-							<li>Quality:
+							<li>Quantity:
 								<select>
 									<option>1</option>
 									<option>2</option>
@@ -150,8 +150,8 @@
         var total = 0;
         for (var item in carrito)
         {
-             var qty = carrito(item).qty;
-             var price = carrito(item).price;
+             var Quantity = carrito(item).Quantity;
+             var price = 300;
              var subtotal = carrito(item).price * qty;
             total+= subtotal; 
             cartDiv.append('<p>'+qty+': '+ cart[item].nombre + ''+ 
