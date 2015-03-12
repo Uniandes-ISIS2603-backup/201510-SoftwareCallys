@@ -1,55 +1,77 @@
 (function () {
-	var crud = angular.module('CrudModule');
+    var crud = angular.module('CrudModule');
 
-	crud.factory('CRUDUtils', ['Restangular', function (RestAngular) {
-			function CRUD($scope) {
-				this.api = RestAngular.all(this.url);
-				$scope.currentRecord = {};
-				$scope.records = [];
-				this.editMode = false;
+    crud.factory('CRUDBase', ['Restangular', function (RestAngular) {
+            function crudConstructor() {
+                this.api = RestAngular.all(this.url);
 
-				this.fetchRecords = function () {
-					var self = this;
-					this.api.getList().then(function (data) {
-						$scope.records = data;
-						$scope.currentRecord = {};
-						self.editMode = false;
-					});
-				};
-                                
-				this.createRecord = function () {
-					this.editMode = true;
-					$scope.currentRecord = {};
-				};
-				this.saveRecord = function () {
-					var self = this;
-					if ($scope.currentRecord.id) {
-						$scope.currentRecord.put().then(function () {
-							self.fetchRecords();
-						});
-					} else {
-						this.api.post($scope.currentRecord).then(function () {
-							self.fetchRecords();
-						});
-					}
-				};
-                             
-         				this.deleteRecord = function (record) {
-					var self = this;
-					record.remove().then(function () {
-						self.fetchRecords();
-					});
-				};
-				this.editRecord = function (record) {
-					$scope.currentRecord = RestAngular.copy(record);
-					this.editMode = true;
-				};
-			}
-			;
-			return {
-				extendCtrl: function (obj, scope) {
-					CRUD.call(obj, scope);
-				}
-			};
-		}]);
+                this.fetchRecords = function (currentPage, itemsPerPage) {
+                    return this.api.getList(null, {page: currentPage, maxRecords: itemsPerPage});
+                };
+                this.saveRecord = function (currentRecord) {
+                    if (currentRecord.id) {
+                        return currentRecord.put();
+                    } else {
+                        return this.api.post(currentRecord);
+                    }
+                };
+                this.deleteRecord = function (record) {
+                    return record.remove();
+                };
+                this.extendCtrl = function (ctrl, scope) {
+                    //Variables para el scope
+                    scope.currentRecord = {};
+                    scope.records = [];
+
+                    //Variables de paginacion
+                    scope.maxSize = 5;
+                    scope.itemsPerPage = 5;
+                    scope.totalItems = 0;
+                    scope.currentPage = 1;
+
+                    //Variables para el controlador
+                    ctrl.editMode = false;
+
+                    //Funciones que no requieren del servicio
+                    ctrl.createRecord = function () {
+                        this.editMode = true;
+                        scope.currentRecord = {};
+                    };
+                    ctrl.editRecord = function (record) {
+                        scope.currentRecord = RestAngular.copy(record);
+                        this.editMode = true;
+                    };
+
+                    //Funciones que usan el servicio CRUD
+                    var service = this;
+
+                    ctrl.pageChanged = function () {
+                        this.fetchRecords();
+                    };
+
+                    ctrl.fetchRecords = function () {
+                        return service.fetchRecords(scope.currentPage, scope.itemsPerPage).then(function (data) {
+                            scope.records = data;
+                            scope.totalItems = data.totalRecords;
+                            scope.currentRecord = {};
+                            ctrl.editMode = false;
+                            return data;
+                        });
+                    };
+                    ctrl.saveRecord = function () {
+                        return service.saveRecord(scope.currentRecord).then(function () {
+                            ctrl.fetchRecords();
+                        });
+                    };
+                    ctrl.deleteRecord = function (record) {
+                        return service.deleteRecord(record).then(function () {
+                            ctrl.fetchRecords();
+                        });
+                    };
+                };
+            }
+            return {extendService: function (svc) {
+                    crudConstructor.call(svc);
+                }};
+        }]);
 })();

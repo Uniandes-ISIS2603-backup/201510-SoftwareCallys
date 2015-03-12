@@ -1,13 +1,13 @@
 (function () {
-	var app = angular.module('stampModule');
+	var stampModule = angular.module('stampModule');
 
-	app.controller('stampCtrl', ['$scope', 'CRUDUtils', 'stamp.context', function ($scope, CRUDUtils, context) {
+	stampModule.controller('stampCtrl', ['$scope', 'stampService', function ($scope, stampService) {
 			this.url = context;
-			CRUDUtils.extendCtrl(this, $scope);
+			stampService.extendCtrl(this, $scope);
                          this.fetchRecords();
                          this.editMode=false;
                                 this.upload= function(){
-                                    this.editMode= !this.editMode;
+                                    this.editMode = !this.editMode;
                                 };
 
                                 this.rate = function(){
@@ -19,13 +19,9 @@
                                         this.saveRecords();
 
                                 };
-                                this.deleteStamp = function () {
-					var self = this;
-					this.api.getList().then(function (data) {
-						$scope.records = data;
-						$scope.currentRecord = {};
-						self.editMode = false;
-					});
+                                this.deleteStamp = function (record) {
+					this.deleteRecord(record);
+				
 				};
                                 
                                  this.getStamp = function () {
@@ -37,7 +33,7 @@
 					});
 				};
             }]);
-        app.directive('ratingStamps', function(){
+        stampModule.directive('ratingStamps', function(){
            return{
                restrict: 'A',
                template: '<ul class="rating line1">'+

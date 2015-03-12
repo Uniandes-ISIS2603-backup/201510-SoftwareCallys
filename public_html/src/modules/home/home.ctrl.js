@@ -1,10 +1,10 @@
 (function () {
-	var app = angular.module('homeModule');
+	var homeModule = angular.module('homeModule');
 
-	app.controller('homeCtrl', ['$scope', 'CRUDUtils', 'home.context', function ($scope, CRUDUtils, context) 
+	homeModule.controller('homeCtrl', ['$scope', 'CRUDBase', 'home.context', function ($scope, CRUDBase, context) 
             {
                 this.url = context;
-                CRUDUtils.extendCtrl(this, $scope);       
+                CRUDBase.extendCtrl(this, $scope);       
             }]);
             
 })();
