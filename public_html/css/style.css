@@ -1507,4 +1507,11 @@ p.para{
 	.tabs {
 		margin: 10px auto;
 	}
+        
+        .line1
+        {
+           list-style-type: none;
+           display: inline;
+           padding-right: 5px;
+        }
 }

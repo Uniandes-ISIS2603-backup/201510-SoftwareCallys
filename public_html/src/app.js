@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule', 'stampModule','shirtModule','detailsModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'homeModule', 'stampModule','shirtModule','detailsModule','contactModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -20,6 +20,10 @@
                     $routeProvider.when('/details', 
                     {
 			templateUrl: 'src/modules/details/details.tpl.html'
+                    }).otherwise('/');
+                    $routeProvider.when('/contact', 
+                    {
+			templateUrl: 'src/modules/contact/contact.tpl.html'
                     }).otherwise('/');
             }]);
 
@@ -58,6 +62,16 @@
 	shirtModule.constant('details.context', 'details');
 
 	shirtModule.config(['details.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
+        {
+            urlsProvider.registerUrl(context);
+        }]);
+    //Configuración módulo contact
+    
+	var contactModule = angular.module('contactModule', ['CrudModule', 'MockModule']);
+
+	contactModule.constant('contact.context', 'contact');
+
+	contactModule.config(['contact.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
         {
             urlsProvider.registerUrl(context);
         }]);

@@ -16,6 +16,7 @@
 						self.editMode = false;
 					});
 				};
+                                
 				this.createRecord = function () {
 					this.editMode = true;
 					$scope.currentRecord = {};
@@ -32,11 +33,8 @@
 						});
 					}
 				};
-                                this.upload= function(){
-                editMode=true;
-            };
-                                
-				this.deleteRecord = function (record) {
+                             
+         				this.deleteRecord = function (record) {
 					var self = this;
 					record.remove().then(function () {
 						self.fetchRecords();
