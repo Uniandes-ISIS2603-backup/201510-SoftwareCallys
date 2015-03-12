@@ -1,86 +1,86 @@
 <div ng-controller="stampCtrl as stampCtrl">
-<div class="main_bg">
-<div class="wrap">	
-	<div class="main">
-		<h2 class="style top">featured Stamps</h2>
-		<!-- start grids_of_3 -->
-		<div class="grids_of_3">
-			<div class="grid1_of_3">
-				
-					<img src="images/w_pic1.jpg" alt=""/>
-					<h3>Music Box</h3>
-					<div class="price">
-					<a href="#/details">	<h4>$17 <span>buy</span></h4> </a>
-                                        <br>
-                                        <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
-					</div>
-					<span class="b_btm"></span>
-				
-			</div>
-			<div class="grid1_of_3">
-					<img src="images/w_pic2.jpg" alt=""/>
-					<h3>Mario</h3>
-                                        
-					<div class="price">
+    <div class="main_bg">
+        <div class="wrap">	
+            <div class="main">
+                <h2 class="style top">featured Stamps</h2>
+                <!-- start grids_of_3 -->
+                <div class="grids_of_3">
+                    <div class="grid1_of_3">
 
-					<a href="#/details">	<h4>$25 <span>buy</span></h4> </a>
-                                                <br>
-                                       <div rating-stamps rating-value="3" max="5" on-rating-selected = "rateStamp()">
-                                                
-                                      </div>
-                                        </div>
-                                        <span class="b_btm"></span>
+                        <img src="images/w_pic1.jpg" alt=""/>
+                        <h3>Music Box</h3>
+                        <div class="price">
+                            <a href="#/details">	<h4>$17 <span>buy</span></h4> </a>
+                            <br>
+                            <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
                         </div>
+                        <span class="b_btm"></span>
 
-                      <div class="grid1_of_3" ng-repeat = "record in records">
-                            <img src= '{{record.image}}' alt=""/>
-					<h3>{{record.name}}</h3>
-                                        <div rating-stamps rating-value="{{record.rating}}" max="5" on-rating-selected = "rateStamp()"></div>
-					<div class="price">
-                                            <a ng-click = "stampCtrl.deleteStamp(record)" ><h4>${{record.price}}<span>Delete</span></h4></a>
-                                             <button ng-click= "stampCtrl.editRecord(record)"><span>Edit</span></button>
-					</div> 
-					<span class="b_btm"></span>
-                        
+                    </div>
+                    <div class="grid1_of_3">
+                        <img src="images/w_pic2.jpg" alt=""/>
+                        <h3>Mario</h3>
+
+                        <div class="price">
+
+                            <a href="#/details">	<h4>$25 <span>buy</span></h4> </a>
+                            <br>
+                            <div rating-stamps rating-value="3" max="5" on-rating-selected = "rateStamp()">
+
+                            </div>
                         </div>
-			
-			<div class="clear"></div>
-		</div>
-                
-               <div class="wrap">
-                   <div class="copy ">
-                       <div class="price ">
-                           <a  ng-click="stampCtrl.upload()"><h4><span>upload new stamp</span></h4></a>
+                        <span class="b_btm"></span>
+                    </div>
+
+                    <div class="grid1_of_3" ng-repeat = "record in records">
+                        <img src= '{{record.image}}' alt=""/>
+                        <h3>{{record.name}}</h3>
+                        <div rating-stamps rating-value="{{record.rating}}" max="5" on-rating-selected = "rateStamp()"></div>
+                        <div class="price">
+                            <a ng-click = "stampCtrl.deleteStamp(record)" ><h4>${{record.price}}<span>Delete</span></h4></a>
+                            <button ng-click= "stampCtrl.editRecord(record)"><span>Edit</span></button>
+                        </div> 
+                        <span class="b_btm"></span>
+
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="wrap">
+                    <div class="copy ">
+                        <div class="price ">
+                            <a  ng-click="stampCtrl.upload()"><h4><span>upload new stamp</span></h4></a>
                         </div>
                     </div>
-               </div>
-                 <div class="wrap" ng-show="stampCtrl.editMode">
-                   <div class="copy ">
-                       <div class="price ">
-                          <div class="contact">				
-                                 <h2>Upload new stamp</h2>
-                                 
-                                        <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
+                </div>
+                <div class="wrap" ng-show="stampCtrl.editMode">
+                    <div class="copy ">
+                        <div class="price ">
+                            <div class="contact">				
+                                <h2>Upload new stamp</h2>
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
                                 </div>
                                 <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
+                                    <label for="price">Price</label>
+                                    <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
                                 </div>
-                                <input type="file" name="uploadField" ng-model="currentRecord.image=uploadField" />                              
+                                <input type="file" name="uploadField" ng-model="currentRecord.image = uploadField" />                              
                                 <br>
-                        <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
-                </div>
-                           
-                           
-		
-		<!-- end grids_of_3 -->
-                </div>
-             </div>
-        </div>	
+                                <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                            </div>
 
-</div>	
-</div>
-</div>
+
+
+                            <!-- end grids_of_3 -->
+                        </div>
+                    </div>
+                </div>	
+
+            </div>	
+        </div>
     </div>
+</div>

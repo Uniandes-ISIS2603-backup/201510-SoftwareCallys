@@ -6,192 +6,167 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html ng-app="mainApp">
-<head>
-<title>Diseña Tu Camiseta-Callys</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
- <script src="src/assets/libs/jquery-1.11.2.min.js"></script>
- <script src="src/assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
- 
-      <script type="text/javascript" src="js/jquery.cslider.js"></script>
-		<script src="src/assets/libs/underscore-min.js"></script>
-		<script src="src/assets/libs/angular.min.js"></script>
-		<script src="src/assets/libs/angular-mocks.js"></script>
-		<script src="src/assets/libs/angular-route.min.js"></script>
-		<script src="src/assets/libs/restangular.min.js"></script>
-                        
-                <script src="src/app.js"></script>
+    <head>
+        <title>Diseña Tu Camiseta-Callys</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="src/assets/libs/jquery-1.11.2.min.js"></script>
+        <script src="src/assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
 
-		<script src="src/shared/crud/crud.mod.js"></script>
-		<script src="src/shared/crud/crud.svc.js"></script>
-		<script src="src/shared/mocks/mock.mod.js"></script>
-		<script src="src/shared/mocks/mock.svc.js"></script>
+        <script type="text/javascript" src="js/jquery.cslider.js"></script>
+        <script src="src/assets/libs/underscore-min.js"></script>
+        <script src="src/assets/libs/angular.min.js"></script>
+        <script src="src/assets/libs/angular-mocks.js"></script>
+        <script src="src/assets/libs/angular-route.min.js"></script>
+        <script src="src/assets/libs/restangular.min.js"></script>
 
-		<script src="src/modules/home/home.ctrl.js"></script>  
-                <script src="src/modules/home/home.mod.js"></script> 
-                <script src="src/modules/stamp/stamp.ctrl.js"></script>
-                <script src="src/modules/stamp/stamp.svc.js"></script>
-                <script src="src/modules/stamp/stamp.mod.js"></script>
-                
-                <script src="src/modules/catalog/catalog.ctrl.js"></script>
-                <script src="src/modules/catalog/catalog.svc.js"></script>
-                <script src="src/modules/catalog/catalog.mock.js"></script>
-                <script src="src/modules/catalog/catalog.mod.js"></script>
- 
+        <script src="src/app.js"></script>
 
-<!-- start slider -->		
-	<link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
-	<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-	
-	<script type="text/javascript">
-		$(function() {
-			$('#da-slider').cslider();
-		});
-	</script>
-		<!-- Owl Carousel Assets -->
-		<link href="css/owl.carousel.css" rel="stylesheet">
-		     <!-- Owl Carousel Assets -->
-		    <!-- Prettify -->
-		    <script src="js/owl.carousel.js"></script>
-		        <script>
-		    $(document).ready(function() {
-		
-		      $("#owl-demo").owlCarousel({
-		        items : 4,
-		        lazyLoad : true,
-		        autoPlay : true,
-		        navigation : true,
-			    navigationText : ["",""],
-			    rewindNav : false,
-			    scrollPerPage : false,
-			    pagination : false,
-    			paginationNumbers: false,
-		      });
-		
-		    });
-		    </script>
-		   <!-- //Owl Carousel Assets -->
-		<!-- start top_js_button -->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
-		   <script type="text/javascript">
-				jQuery(document).ready(function($) {
-					$(".scroll").click(function(event){		
-						event.preventDefault();
-						$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-					});
-				});
-			</script>
-                         <script src="js/responsive.menu.js"></script>
-                        
-          
-</head>
-<body>
-<!-- start header -->
-<div class="header_bg">
-<div class="wrap">
-	<div class="header">
-		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" alt=""/> </a>
-		</div>
-		<div class="h_icon">
-		<ul class="icon1 sub-icon1">
-			<li><a class="active-icon c1" href="#/details.ctrl"><i>$0</i></a>
-				<ul class="sub-icon1 list">
-					<li><h3>shopping cart empty</h3><a href=""></a></li>
-					<li><p>if items in your wishlist are missing, <a href="contact.html">contact us</a> to view them</p></li>
-				</ul>
-			</li>
-		</ul>
-		</div>
-		<div class="h_search">
-    		<form>
-    			<input type="text" value="">
-    			<input type="submit" value="">
-    		</form>
-		</div>
-		<div class="clear"></div>
-	</div>
-</div>
-</div>
-<div class="header_btm">
-<div class="wrap">
-	<div class="header_sub">
-		<div class="h_menu">
-			 <ul>
-                                <li><a href="#/home">Home</a></li> 
-                                <li><a href="#/stamp">stamps</a></li> 
-                                <li><a href="#/shirt">T-Shirts</a></li> 
-                                <li><a href="#/contact">Contact us</a></li>
-                         </ul>
-		</div>
-		<div class="top-nav">
-	          <nav class="nav">	        	
-	    	    <a href="#" id="w3-menu-trigger"> </a>
-	                  <ul class="nav-list" style="">
-	            	        <li class="nav-item"><a class="active" href="#/home">Home</a></li> 
-							<li class="nav-item"><a href="#/stamp">Stamps</a></li> 
-							<li class="nav-item"><a href="#/shirt">T-Shirts</a></li> 
-							<li class="nav-item"><a href="#/contact">Contact us</a></li>
-	                 </ul>
-                    
-	           </nav>
-	             <div class="search_box">
-				<form>
-				   <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-			    </form>
-			</div>
-	          <div class="clear"> </div>
-	         
-         </div>		  
-	<div class="clear"></div>
-</div>
-</div>
-</div>
+        <script src="src/shared/crud/crud.mod.js"></script>
+        <script src="src/shared/crud/crud.svc.js"></script>
+        <script src="src/shared/mocks/mock.mod.js"></script>
+        <script src="src/shared/mocks/mock.svc.js"></script>
 
-<div class="clear"> </div>
+        <script src="src/modules/home/home.mod.js"></script> 
+        <script src="src/modules/home/home.ctrl.js"></script>  
+        <script src="src/modules/home/home.svc.js"></script> 
+        <script src="src/modules/stamp/stamp.mod.js"></script>
+        <script src="src/modules/stamp/stamp.ctrl.js"></script>
+        <script src="src/modules/stamp/stamp.svc.js"></script>
 
-                    <div ng-view></div>             
-<!-- start footer -->
-<div class="footer_bg1">
-<div class="wrap">
-	<div class="footer">
-		<!-- scroll_top_btn -->
-	    <script type="text/javascript">
-			$(document).ready(function() {
-			
-				var defaults = {
-		  			containerID: 'toTop', // fading element id
-					containerHoverID: 'toTopHover', // fading element hover id
-					scrollSpeed: 1200,
-					easingType: 'linear' 
-		 		};
-				
-				
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				
-			});
-		</script>
-		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-		<!--end scroll_top_btn -->
-		<div class="copy">
-			<p class="link">&copy;  All rights reserved | Template by&nbsp;&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
-		</div>
-		<div class="clear"></div>
-	</div>
-</div>
-</div>
+        <script src="src/modules/catalog/catalog.mod.js"></script>
+        <script src="src/modules/catalog/catalog.ctrl.js"></script>
+        <script src="src/modules/catalog/catalog.svc.js"></script>
+        <script src="src/modules/catalog/catalog.mock.js"></script>
+
+
+        <!-- start slider -->		
+        <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+        <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+
+        <script type="text/javascript" src="js/slider.js"> </script>
+        <!-- Owl Carousel Assets -->
+        <link href="css/owl.carousel.css" rel="stylesheet">
+        <!-- Owl Carousel Assets -->
+        <!-- Prettify -->
+        <script src="js/owl.carousel.js"></script>
+        
+        <!-- //Owl Carousel Assets -->
+        <!-- start top_js_button -->
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script src="js/responsive.menu.js"></script>
+
+
+    </head>
+    <body>
+        <!-- start header -->
+        <div class="header_bg">
+            <div class="wrap">
+                <div class="header">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/logo.png" alt=""/> </a>
+                    </div>
+                    <div class="h_icon">
+                        <ul class="icon1 sub-icon1">
+                            <li><a class="active-icon c1" href="#/details.ctrl"><i>$0</i></a>
+                                <ul class="sub-icon1 list">
+                                    <li><h3>shopping cart empty</h3><a href=""></a></li>
+                                    <li><p>if items in your wishlist are missing, <a href="contact.html">contact us</a> to view them</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="h_search">
+                        <form>
+                            <input type="text" value="">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="header_btm">
+            <div class="wrap">
+                <div class="header_sub">
+                    <div class="h_menu">
+                        <ul>
+                            <li><a href="#/home">Home</a></li> 
+                            <li><a href="#/stamp">stamps</a></li> 
+                            <li><a href="#/shirt">T-Shirts</a></li> 
+                            <li><a href="#/contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-nav">
+                        <nav class="nav">	        	
+                            <a href="#" id="w3-menu-trigger"> </a>
+                            <ul class="nav-list" style="">
+                                <li class="nav-item"><a class="active" href="#/home">Home</a></li> 
+                                <li class="nav-item"><a href="#/stamp">Stamps</a></li> 
+                                <li class="nav-item"><a href="#/shirt">T-Shirts</a></li> 
+                                <li class="nav-item"><a href="#/contact">Contact us</a></li>
+                            </ul>
+
+                        </nav>
+                        <div class="search_box">
+                            <form>
+                                <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
+                                            this.value = 'Search';
+                                        }"><input type="submit" value="">
+                            </form>
+                        </div>
+                        <div class="clear"> </div>
+
+                    </div>		  
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"> </div>
+
+        <div ng-view></div>             
+        <!-- start footer -->
+        <div class="footer_bg1">
+            <div class="wrap">
+                <div class="footer">
+                    <!-- scroll_top_btn -->
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+
+                            var defaults = {
+                                containerID: 'toTop', // fading element id
+                                containerHoverID: 'toTopHover', // fading element hover id
+                                scrollSpeed: 1200,
+                                easingType: 'linear'
+                            };
+
+
+                            $().UItoTop({easingType: 'easeOutQuart'});
+
+                        });
+                    </script>
+                    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+                    <!--end scroll_top_btn -->
+                    <div class="copy">
+                        <p class="link">&copy;  All rights reserved | Template by&nbsp;&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
 
 
 
-</body>
+    </body>
 </html>

@@ -1,7 +1,7 @@
 (function(){
-    var catalogModule = angular.module('catalogModule');
+    var detailsModule = angular.module('detailsModule');
     
-   catalogModule.service('catalogService', ['CRUDBase','catalog.context', function(CRUDBase, context){
+    detailsModule.service('detailsService', ['CRUDBase','details.context', function(CRUDBase, context){
             this.url = context;
             CRUDBase.extendService(this);
            
@@ -10,4 +10,3 @@
        
     
 })();
-

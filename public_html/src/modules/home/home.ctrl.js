@@ -1,10 +1,9 @@
 (function () {
-	var homeModule = angular.module('homeModule');
+    var homeModule = angular.module('homeModule');
 
-	homeModule.controller('homeCtrl', ['$scope', 'CRUDBase', 'home.context', function ($scope, CRUDBase, context) 
-            {
-                this.url = context;
-                CRUDBase.extendCtrl(this, $scope);       
-            }]);
-            
+    homeModule.controller('homeCtrl', ['$scope', 'homeService', function ($scope, catalogService) {
+            catalogService.extendCtrl(this, $scope);
+            this.fetchRecords();
+           
+        }]);
 })();
