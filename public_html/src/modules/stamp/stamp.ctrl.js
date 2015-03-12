@@ -14,21 +14,17 @@
                                         this.saveRecords();
                                         alert($scope.currentRecord.rating);
                                 };
-                                this.deleteStamp = function () {
-					var self = this;
-					this.api.getList().then(function (data) {
-						$scope.records = data;
-						$scope.currentRecord = {};
-						self.editMode = false;
-					});
+                                this.deleteStamp = function (record) {
+					this.deleteRecord(record);
 				};
+                               
                                 
                                  this.getStamp = function () {
-					var self = this;
+				
 					this.api.getList().then(function (data) {
 						$scope.records = data;
 						$scope.currentRecord = {};
-						self.editMode = false;
+						this.editMode = false;
 					});
 				};
             }]);

@@ -1,20 +1,6 @@
 
 <!-- start main -->
 <div ng-controller="detailsCtrl as detailsCtrl">
-    
-     <div class="grid1_of_3" ng-repeat = "record in records">
-                            <img src= '{{record.image}}' alt=""/>
-					<h3>{{record.name}}</h3>
-                                        <div ng-init="rating = {{record.rating}}">
-                                            <div stamps-rating rating-value="rating" max="5"></div>
-                                        </div>
-					<div class="price">
-						<h4>${{record.price}}<span>buy</span></h4>
-					</div>
-					<span class="b_btm"></span>
-                        
-                        </div>
-    
 <div class="main_bg">
 <div class="wrap">	
 	<div class="main">
@@ -137,7 +123,7 @@
 						</ul>
 						<div class="btn_form">
 							
-                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Add to cart</button>
+                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>
 							
 						</div>
 						<span class="span_right"><a href="#">login to save in wishlist </a></span>
@@ -153,7 +139,7 @@
                                         <h3>{{record.quantity}}</h3>
                                         <br>
                 			<div class="price">
-                                            <a ng-click = "detailsCtrl.deletePurchase(record)" ><h4>${{record.price}}<span>Remove</span></h4></a>
+                                            <a ng-click = "detailsCtrl.deletePurchase(record)" ><h4>{{record.price}}<span>Remove</span></h4></a>
 					</div> 
 					<span class="b_btm"></span>
                         

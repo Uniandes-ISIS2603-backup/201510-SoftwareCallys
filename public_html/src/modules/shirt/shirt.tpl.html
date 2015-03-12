@@ -1,52 +1,5 @@
-<!-- start main -->
 
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
-	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-	<script type="text/javascript">
-	$(function () {
-		
-		var filterList = {
-		
-			init: function () {
-			
-				// MixItUp plugin
-				// http://mixitup.io
-				$('#portfoliolist').mixitup({
-					targetSelector: '.portfolio',
-					filterSelector: '.filter',
-					effects: ['fade'],
-					easing: 'snap',
-					// call the hover effect
-					onMixEnd: filterList.hoverEffect()
-				});				
-			
-			},
-			
-			hoverEffect: function () {
-			
-				// Simple parallax effect
-				$('#portfoliolist .portfolio').hover(
-					function () {
-						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
-					},
-					function () {
-						$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
-					}		
-				);				
-			
-			}
-
-		};
-		
-		// Run the show!
-		filterList.init();
-		
-		
-	});	
-	</script>
-<!-- start top_js_button -->
+<div ng-controller="shirtCtrl as shirtCtrl">
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
    <script type="text/javascript">
@@ -59,7 +12,7 @@
 	</script>
 <div class="main_bg">
 <div class="wrap">	
-	<div class="main">
+	<div class="main" ng-show="shirtCtrl.editMode">
 	<!-- start gallery_sale  -->
 			<div class="gallery1">
 					<div class="container">
@@ -67,6 +20,7 @@
 						<li><span class="filter active" data-filter="app card icon logo web">All T-Shirt</span></li>
 						
 					</ul>
+                                             <div class="gridStyle" ng-grid="gridOptions"></div>
                          <div class="portfolio card" data-cat="card">
 				<div class="portfolio-wrapper">			
 					
@@ -212,4 +166,5 @@
 <!---End-gallery----->
 	</div>
 </div>
-
+</div>
+</div>
