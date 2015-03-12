@@ -6,14 +6,16 @@
 		<!-- start grids_of_3 -->
 		<div class="grids_of_3">
 			<div class="grid1_of_3">
-				<a href="details.html">
+				
 					<img src="images/w_pic1.jpg" alt=""/>
 					<h3>Music Box</h3>
 					<div class="price">
-						<h4>$17 <span>buy</span></h4>
+					<a href="#/details">	<h4>$17 <span>buy</span></h4> </a>
+                                        <br>
+                                        <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
 					</div>
 					<span class="b_btm"></span>
-				</a>
+				
 			</div>
 			<div class="grid1_of_3">
 				
@@ -38,9 +40,12 @@
                       <div class="grid1_of_3" ng-repeat = "record in records">
                             <img src= '{{record.image}}' alt=""/>
 					<h3>{{record.name}}</h3>
-                                        <div rating-stamps rating-value="{{record.rating}}" max="5" on-rating-selected = "rate()"></div>
+                                        
 					<div class="price">
-						<h4>${{record.price}}<span>buy</span></h4>
+                                            <a href="#/details"><h4>${{record.price}}<span>buy</span></h4></a>
+                                             <br>
+                                             <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
+                                                
 					</div>
 					<span class="b_btm"></span>
                         
@@ -69,7 +74,7 @@
                                         <label for="price">Price</label>
                                         <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
                                 </div>
-                                <input type="file" name="uploadField" ng-model="currentRecord.image=uploadField" />
+                                <input type="file" name="uploadField" ng-model="currentRecord.image=uploadField" />                              
                                 <br>
                         <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
                 </div>
