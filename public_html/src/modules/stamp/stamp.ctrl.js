@@ -35,13 +35,14 @@
            return{
                restrict: 'A',
                template: '<ul class="rating">'+
-                           '<li ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">'+
+                           '<line1 ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">'+
                              '\u2605' +
-                           '</li>' +
+                           '</line1>' +
                          '</ul>',
                scope: {
                    ratingValue: '=',
-                   max: '='
+                   max: '=',
+                   onRatingSelected: '&'
                },
                link: function (scope, elem, attrs){
                    var updateStars = function (){
@@ -56,7 +57,7 @@
                           rating:index +1 
                        });
                    };
-                   scope.$watch('ratingValue', function(oldVal, newVal) {
+                   scope.$watch('ratingValue', function(newVal, oldVal) {
                        if(newVal){updateStars();}
                    });
                }
