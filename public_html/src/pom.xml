@@ -3,6 +3,7 @@
   <groupId>201510-SoftwareCallys.app</groupId>
   <artifactId>app</artifactId>
   <version>1</version>
+  <packaging>war</packaging>
   <build>
     <directory>${project.basedir}/target</directory>
     <outputDirectory>${project.build.directory}/classes</outputDirectory>
