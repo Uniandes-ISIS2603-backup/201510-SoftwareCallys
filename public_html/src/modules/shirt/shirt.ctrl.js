@@ -1,7 +1,10 @@
 (function () {
-	var shirt = angular.module('shirtModule');
+	var app = angular.module('shirtModule');
 
-	shirt.controller('shirtCtrl', ['$scope', 'CRUDUtils', 'shirt.context', function ($scope, CRUDUtils, context) {
+	app.controller('shirtCtrl', ['$scope', 'CRUDUtils', 'shirt.context', function ($scope, CRUDUtils, context) {
+                
+                 
+                
 			this.url = context;
 			CRUDUtils.extendCtrl(this, $scope);
 			this.fetchRecords();
@@ -9,6 +12,14 @@
                         this.verde = true;
                         this.azul= true;
                         this.all=true;
+                        
+                         $scope.myData = [{name: "Moroni", age: 50},
+                     {name: "Tiancum", age: 43},
+                     {name: "Jacob", age: 27},
+                     {name: "Nephi", age: 29},
+                     {name: "Enos", age: 34}];
+    $scope.gridOptions = { data: 'myData' };
+                        
                         
                         this.mostrarRojo = function (){
                           
@@ -38,25 +49,7 @@
                             this.verde= true;
                             this.all= true;
                         };
-                        this.mostPopulated = function () {
-					var pop;
-                                        pop=0;
-                                        var pais;
-                                        var arreglo;
-                                        pais ="no hay paises en la tabla";
-					arreglo = $scope.records;
-                                        var i;
-                                        for( i = 0; i< arreglo.length; i++)
-                                        {
-                                           if(arreglo[i].population > pop)
-                                            {
-                                           pop = arreglo[i].population;
-                                           pais = arreglo[i].name;
-                                            }
-                                        }
-                                        alert(pais);
-                                        
-				};
+                       
 		}]);
             
 })();

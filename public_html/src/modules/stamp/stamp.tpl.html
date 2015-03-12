@@ -1,4 +1,5 @@
 <div ng-controller="stampCtrl as stampCtrl">
+
     <div class="main_bg">
         <div class="wrap">	
             <div class="main">
@@ -13,6 +14,7 @@
                             <a href="#/details">	<h4>$17 <span>buy</span></h4> </a>
                             <br>
                             <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
+
                         </div>
                         <span class="b_btm"></span>
 
@@ -68,7 +70,9 @@
                                     <label for="price">Price</label>
                                     <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
                                 </div>
-                                <input type="file" name="uploadField" ng-model="currentRecord.image = uploadField" />                              
+
+                                <input type="file" name="uploadField" ng-model="currentRecord.image" />   
+
                                 <br>
                                 <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
                             </div>
@@ -83,4 +87,5 @@
             </div>	
         </div>
     </div>
+</div>
 </div>

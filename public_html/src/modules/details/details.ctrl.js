@@ -1,33 +1,28 @@
-
-
 (function () {
 	var app = angular.module('detailsModule');
 
-	app.controller('detailsCtrl', ['$scope', 'CRUDUtils', 'details.context', function ($scope, CRUDUtils, context) 
-            {
-                this.url = context;
-                CRUDUtils.extendCtrl(this, $scope); 
-                
-                this.agregarCompra= function (){
-                    var nombre = "Camiseta 1";
-                    var cantidad = 1;
-                    var precio = "$300";
-                    var talla = document.getElementById("Size:");
-                    var color = document.getElementById("Color:");
-
-                    sessionStorage.setItem(nombre,cantidad,precio,talla,color);
-
-                    display(nombre);
-                };
-                this.display= function (nombre){
-                  var lista = "active-icon c1";
-                  var cantidad = sessionStorage.getItem(nombre);
-                  var precio = sessionStorage.getItem(cantidad);
-                  var talla = sessionStorage.getItem(precio);
-                  var color = sessionStorage.getItem(talla);
-                  lista.innerHTML = nombre + " Qty:" + cantidad + ". Price: " +precio + ". Size: " + talla + ". Color:" + color +"<br />";
-                };
-
+	app.controller('detailsCtrl', ['$scope', 'CRUDUtils', 'details.context', function ($scope, CRUDUtils, context) {
+			this.url = context;
+			CRUDUtils.extendCtrl(this, $scope);
+                         this.fetchRecords();
+                         this.editMode=false;
+                                 this.deletePurchase = function () {
+					var self = this;
+					this.api.getList().then(function (data) {
+						$scope.records = data;
+						$scope.currentRecord = {};
+						self.editMode = false;
+					});
+				};
+                                
+                                 this.getPurchase = function () {
+					var self = this;
+					this.api.getList().then(function (data) {
+						$scope.records = data;
+						$scope.currentRecord = {};
+						self.editMode = false;
+					});
+				};
             }]);
             
 })();

@@ -33,6 +33,7 @@ function ResponsiveMenu(settings) {
 ResponsiveMenu.prototype.createMenu = function() {
     this.mobileElem = document.createElement('div');
     this.mobileElem.className = this.mobile;
+
 };
 ResponsiveMenu.prototype.bindHandlers = function() {
     var _self = this;
