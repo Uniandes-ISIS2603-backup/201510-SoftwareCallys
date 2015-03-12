@@ -10,8 +10,9 @@
                                     this.editMode= !this.editMode;
                                 };
                                 this.rateStamp = function(rating){
-                                        $scope.currentRecord.rating = rating;
+                                        $scope.currentRecord.rating = ($scope.currentRecord.rating + rating)/2;
                                         this.saveRecords();
+                                        alert($scope.currentRecord.rating);
                                 };
                                 this.deleteStamp = function () {
 					var self = this;
