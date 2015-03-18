@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.api;
+package java.software.logic.entity;
 
 /**
  *
  * @author estudiante
  */
-public interface ICatalogoLogic {
+public class ClienteEntity {
     
 }
