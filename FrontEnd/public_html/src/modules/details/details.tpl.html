@@ -22,7 +22,7 @@
 				    </div>
 				    <div class="product-image"> 
 				        <a>
-				           	<img src="images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
+				           	<img src="images/0001-2.jpg"  />
 				        </a>
 				   </div>
 					<script type="text/javascript">
@@ -71,7 +71,7 @@
 				  <div class="desc1">
 					<h3>Buy your shirt </h3>
 					<p>Choose your shirt size, color, and quantity. <br> Sizes available: S, M, L, XL <br>Buy up to 5 shirts! </p>
-					<h5>Price. 399 <a href="#">click for offer</a></h5>
+					<h5>Price. 399</h5>
 					<div class="available">
 						<h4>Available Options :</h4>
 						<ul>
@@ -106,8 +106,7 @@
 						</ul>
 						<div class="btn_form">
 							
-                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>
-							
+                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
 						</div>
 						<span class="span_right"><a href="#">login to save in wishlist </a></span>
 						<div class="clear"></div>
@@ -142,11 +141,11 @@
                                                                 </a>
                                 <div>
                                             <div class="grid1_of_3" ng-repeat = "record in records">
-
-                                                <h3>{{record.color}}</h3>
-                                                <h3>{{record.size}}</h3>
-                                                <h3>{{record.quantity}}</h3>
-                                                <h3>{{record.price}}</h3>
+                                                <div ><h3>Sales Element</h3></div>
+                                                <h3>Color: {{record.color}}</h3>
+                                                <h3>Size: {{record.size}}</h3>
+                                                <h3>Cuantity per unit: {{record.quantity}}</h3>
+                                                <h3>Price: {{record.price}}</h3>
                                                 <br>
                                                 <div class="price">
                                                     <a ng-click = "detailsCtrl.deleteSale(record)" ><h4><span>Delete</span></h4></a>

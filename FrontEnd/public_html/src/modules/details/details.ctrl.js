@@ -11,7 +11,7 @@
                                 this.editMode = !this.editMode;
                             };
                             this.saveSale = function () {
-                                $scope.currentRecord.price=399;
+                                $scope.currentRecord.price=399*$scope.currentRecord.quantity;
                                 $scope.amount = $scope.amount+$scope.currentRecord.price;
 					this.saveRecord();
 						
