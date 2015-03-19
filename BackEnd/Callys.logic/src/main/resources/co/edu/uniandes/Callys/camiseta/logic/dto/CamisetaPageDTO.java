@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.Callys.camiseta.logic.dto;
 
-
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import java.util.List;
 
 /**

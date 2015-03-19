@@ -18,18 +18,18 @@ public class ArtistaEntity {
 
     @Id
     @GeneratedValue(generator = "Artista")
-    private String id;
+    private long id;
     private String clave;
     private Integer numeroEstampas;
     private String datosContacto;
     private double comisionPorVenta;
     private String artistaEstampas;
     
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId( String id) {
+    public void setId( long id) {
         this.id = id;
     }
     

@@ -22,6 +22,10 @@
                     {
 			templateUrl: 'src/modules/catalog/catalog.tpl.html'
                     }).otherwise('/');
+                    $routeProvider.when('/shirt', 
+                    {
+			templateUrl: 'src/modules/shirt/shirt.tpl.html'
+                    }).otherwise('/');
                            
                            
             }]);

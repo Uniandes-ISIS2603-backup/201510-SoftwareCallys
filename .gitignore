@@ -3,3 +3,5 @@ public_html/src/target/app-1.jar
 public_html/src/target/sonar/sonar-pom.xml
 *.tmp
 /FrontEnd/public_html/src/target/
+/BackEnd/Callys.logic/target/
+/BackEnd/Callys.service/target/

@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.Callys.carroCompras.logic.converter;
 
-
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.ArrayList;
@@ -20,9 +19,9 @@ public class CarroComprasConverter {
         if (entity != null) {
             CarroComprasDTO dto = new CarroComprasDTO();
             dto.setId(entity.getId());
-            dto.setTema(entity.getTema());
-            dto.setRating(entity.getRating());
-            dto.setPopularidad(entity.getPopularidad());
+            dto.setMonto(entity.getMonto());
+            dto.setFormaPago(entity.getFormaPago());
+            dto.setDatosEnvio(entity.getDatosEnvio());
             return dto;
         } else {
             return null;
@@ -34,11 +33,11 @@ public class CarroComprasConverter {
             CarroComprasEntity entity = new CarroComprasEntity();
             entity.setId(dto.getId());
 
-            entity.setTema(dto.getTema());
+            entity.setMonto(dto.getMonto());
 
-            entity.setRating(dto.getRating());
+            entity.setFormaPago(dto.getFormaPago());
 
-            entity.setPopularidad(dto.getPopularidad());
+            entity.setDatosEnvio(dto.getDatosEnvio());
 
             return entity;
         } else {

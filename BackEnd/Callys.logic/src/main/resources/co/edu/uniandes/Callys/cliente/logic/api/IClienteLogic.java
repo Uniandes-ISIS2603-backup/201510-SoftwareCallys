@@ -8,6 +8,7 @@ package co.edu.uniandes.Callys.Cliente.logic.api;
 
 
 import co.edu.uniandes.Callys.Cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.Cliente.logic.dto.ClientePageDTO;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public interface IClienteLogic {
 
     public List<ClienteDTO> getCliente();
 
-    public ClienteDTO getClientes(Integer page, Integer maxRecords);
+    public ClientePageDTO getCliente(Integer page, Integer maxRecords);
 
     public ClienteDTO getCliente(long id);
 

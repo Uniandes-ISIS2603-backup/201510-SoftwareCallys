@@ -1,12 +1,8 @@
 (function () {
-	var app = angular.module('shirtModule');
+	var shirtModule = angular.module('shirtModule');
 
-	app.controller('shirtCtrl', ['$scope', 'CRUDUtils', 'shirt.context', function ($scope, CRUDUtils, context) {
-                
-                 
-                
-			this.url = context;
-			CRUDUtils.extendCtrl(this, $scope);
+	shirtModule.controller('shirtCtrl', ['$scope', 'shirtService', function ($scope, shirtService) {
+                        shirtService.extendCtrl(this, $scope);
 			this.fetchRecords();
                         this.rojo= true;
                         this.verde = true;
