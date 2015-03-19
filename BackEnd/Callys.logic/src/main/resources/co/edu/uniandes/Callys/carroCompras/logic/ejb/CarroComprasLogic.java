@@ -5,10 +5,10 @@
  */
 package co.edu.uniandes.Callys.carroCompras.logic.ejb;
 
-import java.software.logic.converter.CarroComprasConverter;
-import java.software.logic.dto.CarroComprasDTO;
-import java.software.logic.dto.CarroComprasPageDTO;
-import java.software.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

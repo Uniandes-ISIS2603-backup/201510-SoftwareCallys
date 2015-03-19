@@ -5,23 +5,23 @@
  */
 package co.edu.uniandes.Callys.item.logic.api;
 
-import java.software.logic.dto.ItemDTO;
-import java.software.logic.dto.ItemPageDTO;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
 import java.util.List;
 /**
  *
  * @author estudiante
  */
 public interface IItemLogic {
-    public ItemDTO createStamp(ItemDTO detail);
+    public ItemDTO createItem(ItemDTO detail);
 
-    public List<ItemDTO> getStamp();
+    public List<ItemDTO> getItem();
 
-    public ItemDTO getStamp(Integer page, Integer maxRecords);
+    public ItemDTO getItem(Integer page, Integer maxRecords);
 
-    public ItemPageDTO getStamp(Long id);
+    public ItemPageDTO getItem(Long id);
 
-    public void deleteStamp(Long id);
+    public void deleteItem(Long id);
 
-    public void updateStamp(ItemDTO detail);
+    public void updateItem(ItemDTO detail);
 }

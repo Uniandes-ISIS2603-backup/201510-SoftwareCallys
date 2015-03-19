@@ -33,12 +33,12 @@ public class ItemLogic {
         return ItemConverter.entity2PersistenceDTO(entity);
     }
 
-    public List<ItemDTO> getSItems() {
+    public List<ItemDTO> getItems() {
         Query q = entityManager.createQuery("select u from SportEntity u");
         return ItemConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public ItemPageDTO getSItems(Integer page, Integer maxRecords) {
+    public ItemPageDTO getItems(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from SportEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
