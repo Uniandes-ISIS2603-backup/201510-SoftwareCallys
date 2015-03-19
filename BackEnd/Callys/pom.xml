@@ -1,6 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD:public_html/backend/soft/pom.xml
+    <groupId>backend</groupId>
+    <artifactId>soft</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>soft</name>
+    <modules>
+        <module>../soft.logic</module>
+        <module>../soft.service</module>
+=======
     <groupId>co.edu.uniandes.csw.Callys</groupId>
     <artifactId>Callys</artifactId>
     <version>1.0</version>
@@ -9,5 +19,6 @@
     <modules>
         <module>../Callys.logic</module>
         <module>../Callys.service</module>
+>>>>>>> origin/master:BackEnd/Callys/pom.xml
     </modules>
 </project>
