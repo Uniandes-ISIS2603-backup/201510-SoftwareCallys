@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="grid1_of_3" ng-repeat = "record in records">
-                        <img src= '{{record.image}}' alt=""/>
+                        <img src= "" alt=""/>
                         <h3>{{record.name}}</h3>
                         <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
                         <div class="price">
@@ -71,7 +71,7 @@
                                     <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
                                 </div>
 
-                                <input type="file" name="uploadField" ng-model="currentRecord.image = uploadField" />                              
+                                <input type="file" name="uploadField" ng-model="currentRecord.image" />                              
 
                                 <br>
                                 <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
