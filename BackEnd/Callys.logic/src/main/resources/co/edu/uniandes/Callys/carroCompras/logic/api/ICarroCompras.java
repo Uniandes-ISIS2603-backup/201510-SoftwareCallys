@@ -3,12 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.api;
+package co.edu.uniandes.Callys.carroCompras.logic.api;
 
+import java.software.logic.dto.CarroComprasDTO;
+import java.software.logic.dto.CarroComprasPageDTO;
+import java.util.List;
 /**
  *
  * @author estudiante
  */
 public interface ICarroCompras {
-    
+    public CarroComprasDTO createCarroCompras(CarroComprasDTO detail);
+
+    public List<CarroComprasDTO> getCarroCompras();
+
+    public CarroComprasDTO getCarroCompras(Integer page, Integer maxRecords);
+
+    public CarroComprasPageDTO getCarroCompras(Long id);
+
+    public void deleteCarroCompras(Long id);
+
+    public void updateCarroCompras(CarroComprasDTO detail);
 }

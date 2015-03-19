@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.api;
+package co.edu.uniandes.Callys.stamp.logic.api;
 
 import java.software.logic.dto.StampDTO;
 import java.software.logic.dto.StampPageDTO;

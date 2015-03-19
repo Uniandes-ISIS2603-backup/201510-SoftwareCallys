@@ -3,12 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.api;
+package co.edu.uniandes.Callys.camiseta.logic.api;
 
+import java.software.logic.dto.CamisetaDTO;
+import java.software.logic.dto.CamisetaPageDTO;
+import java.util.List;
 /**
  *
  * @author estudiante
  */
 public interface ICamisetaLogic {
     
+    public CamisetaDTO createCamiseta(CamisetaDTO detail);
+
+    public List<CamisetaDTO> getCamiseta();
+
+    public CamisetaDTO getCamiseta(Integer page, Integer maxRecords);
+
+    public CamisetaPageDTO getCamiseta(Long id);
+
+    public void deleteCamiseta(Long id);
+
+    public void updateCamiseta(CamisetaDTO detail);
 }

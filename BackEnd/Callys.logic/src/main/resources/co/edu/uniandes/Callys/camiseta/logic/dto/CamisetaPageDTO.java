@@ -3,12 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.dto;
+package co.edu.uniandes.Callys.camiseta.logic.dto;
+
+import java.software.logic.dto.CamisetaDTO;
+import java.util.List;
 
 /**
  *
  * @author estudiante
  */
 public class CamisetaPageDTO {
-    
+    private Long totalRecords;
+
+    private List<CamisetaDTO> records;
+
+    public Long getTotalRecords() {
+        return totalRecords;
+    }
+
+    public void setTotalRecords(Long totalRecords) {
+        this.totalRecords = totalRecords;
+    }
+
+    public List<CamisetaDTO> getRecords() {
+        return records;
+    }
+
+    public void setRecords(List<CamisetaDTO> records) {
+        this.records = records;
+    }
 }
