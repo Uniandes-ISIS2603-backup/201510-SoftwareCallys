@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.ejb;
+package co.edu.uniandes.Callys.artista.logic.ejb;
 
+import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.enterprise.inject.Default;
 
-import java.software.logic.api.IArtistaLogic;
-import java.software.logic.dto.ArtistaDTO;
-import java.software.logic.dto.ArtistaPageDTO;
-import java.software.logic.converter.ArtistaConverter;
-import java.software.logic.entity.ArtistaEntity;
+
+import java.software.llogic.entity.ArtistaEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

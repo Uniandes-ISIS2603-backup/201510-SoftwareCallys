@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.converter;
+package co.edu.uniandes.Callys.estampa.logic.converter;
 
-import java.software.logic.dto.StampDTO;
-import java.software.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import java.software.llogic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
 /**

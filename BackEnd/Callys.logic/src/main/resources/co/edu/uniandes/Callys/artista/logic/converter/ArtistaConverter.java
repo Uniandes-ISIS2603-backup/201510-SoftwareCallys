@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.converter;
+package co.edu.uniandes.Callys.artista.logic.converter;
 
-import java.software.logic.dto.ArtistaDTO;
-import java.software.logic.entity.ArtistaEntity;
+
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import java.software.llogic.entity.ArtistaEntity;
 import java.util.ArrayList;
 import java.util.List;
 /**
