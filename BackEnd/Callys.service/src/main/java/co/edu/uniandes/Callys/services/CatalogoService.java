@@ -9,9 +9,9 @@ package co.edu.uniandes.Callys.services;
  *
  * @author estudiante
  */
-import co.edu.uniandes.Callys.catalogo.logic.api.ICatalogoLogic;
-import co.edu.uniandes.Callys.catalogo.logic.dto.CatalogoDTO;
-import co.edu.uniandes.Callys.catalogo.logic.dto.CatalogoPageDTO;
+import co.edu.uniandes.Callys.catalog.logic.api.ICatalogLogic;
+import co.edu.uniandes.Callys.catalog.logic.dto.CatalogDTO;
+import co.edu.uniandes.Callys.catalog.logic.dto.CatalogPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -32,10 +32,10 @@ import javax.ws.rs.core.MediaType;
 public class CatalogoService {
 
     @Inject
-    protected ICatalogoLogic catalogoLogicService;
+    protected ICatalogLogic catalogoLogicService;
 
     @POST
-    public CatalogoDTO createCatalogo(CatalogoDTO catalogo) {
+    public CatalogDTO createCatalogo(CatalogDTO catalogo) {
         return catalogoLogicService.createCatalogo(catalogo);
     }
 
@@ -46,34 +46,34 @@ public class CatalogoService {
     }
 
     @GET
-    public CatalogoPageDTO getCatalogos(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+    public CatalogPageDTO getCatalogos(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return catalogoLogicService.getCatalogo(page, maxRecords);
     }
 
     @GET
     @Path("{id}")
-    public CatalogoDTO getCatalogo(@PathParam("id") Long id) {
+    public CatalogDTO getCatalogo(@PathParam("id") Long id) {
         return catalogoLogicService.getCatalogo(id);
     }
 
     @PUT
-    public void updateCatalogo(@PathParam("id") Long id, CatalogoDTO detail) {
+    public void updateCatalogo(@PathParam("id") Long id, CatalogDTO detail) {
         catalogoLogicService.updateCatalogo(detail);
     }
     
     @POST
     @Path("{id}")
-    public List<StampsDTO> getStamps(@PathParam("id") Long id){
+    public List<StampDTO> getStamps(@PathParam("id") Long id){
         
     };
     
     @Path("{id}")
-    public StampsPageDTO getStamps(@PathParam("id") Long id, Integer page, Integer maxRecords){
+    public StampPageDTO getStamps(@PathParam("id") Long id, Integer page, Integer maxRecords){
         
     };
     
     @Path("{id}")
-    public List<StampsDTO> updateStamps(@PathParam("id") Long id, List<Long> idStamps){
+    public List<StampDTO> updateStamps(@PathParam("id") Long id, List<Long> idStamps){
         
     };
 }
