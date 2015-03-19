@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.Callys.item.logic.converter;
-import java.software.logic.dto.ItemDTO;
-import java.software.logic.entity.ItemEntity;
+
+
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 /**

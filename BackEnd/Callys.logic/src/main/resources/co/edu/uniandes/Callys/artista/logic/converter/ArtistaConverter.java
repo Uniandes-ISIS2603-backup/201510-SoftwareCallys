@@ -7,7 +7,8 @@ package co.edu.uniandes.Callys.artista.logic.converter;
 
 
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
-import java.software.llogic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -24,6 +25,7 @@ public class ArtistaConverter {
             dto.setNumeroEstampas(entity.getNumeroEstampas());
             dto.setComisionPorVenta(entity.getComisionPorVenta());
             dto.setDatosVContacto(entity.getDAtosContacto());
+            dto.setIdArtistaEstampas(entity.getIdArtistaEstampas());
             return dto;
         } else {
             return null;
@@ -39,7 +41,7 @@ public class ArtistaConverter {
             entity.setNumeroEstampas(dto.getNumeroEstampas());
             entity.setComisionPorVenta(dto.getComisionPorVenta());
             entity.setDatosVContacto(dto.getDAtosContacto());
-
+            entity.setIdArtistaEstampas(dto.getIdArtistaEstampas());
             return entity;
         } else {
             return null;

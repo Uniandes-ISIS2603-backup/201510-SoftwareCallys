@@ -5,8 +5,9 @@
  */
 package co.edu.uniandes.Callys.carroCompras.logic.api;
 
-import java.software.logic.dto.CarroComprasDTO;
-import java.software.logic.dto.CarroComprasPageDTO;
+
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import java.util.List;
 /**
  *
