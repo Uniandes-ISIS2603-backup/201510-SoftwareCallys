@@ -1,7 +1,7 @@
 (function () {
-    var contactModule = angular.module('homeModule', ['CrudModule', 'MockModule','catalogModule']);
+    var contactModule = angular.module('contactModule', ['CrudModule', 'MockModule','catalogModule']);
 
-    contactModule.constant('home.context', 'home');
+    contactModule.constant('contact.context', 'home');
 
    contactModule.config(['contact.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
             urlsProvider.registerUrl(context);
