@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>co.edu.uniandes.Callys</groupId>
   <artifactId>Callys.logic</artifactId>
+    <name>Callys.logic</name>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
         <!-- embedded glassfish 3.1.2 --> 
@@ -58,5 +59,4 @@
     <version>1.17.1</version>
 </dependency>
     </dependencies>
-    <name>Callys.logic</name>
 </project>

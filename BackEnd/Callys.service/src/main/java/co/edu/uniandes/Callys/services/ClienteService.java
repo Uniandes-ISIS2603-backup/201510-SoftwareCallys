@@ -5,9 +5,9 @@
  */
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.Cliente.logic.api.IClienteLogic;
-import co.edu.uniandes.Callys.Cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.Callys.Cliente.logic.dto.ClientePageDTO;
+import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ejb.Stateless;
