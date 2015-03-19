@@ -5,10 +5,50 @@
  */
 package co.edu.uniandes.Callys.purchaseitem.logic.dto;
 
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+
+import java.util.List;
+
 /**
  *
  * @author estudiante
  */
 public class PurchaseItemDTO {
     
+    protected Long id;
+    protected String name;
+    protected int monto;
+    protected Long idCamiseta;
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getMonto() {
+        return monto;
+    }
+
+    public void setMonto(Integer nMonto) {
+        this.monto = nMonto;
+    }
+    
+    public Long getIdCamiseta(){
+    	return idCamiseta;
+    }
+    
+    public void setIdCamiseta(Long nIdCamiseta){
+    	this.idCamiseta = nIdCamiseta;
+    }
 }

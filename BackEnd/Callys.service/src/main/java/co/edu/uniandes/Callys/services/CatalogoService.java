@@ -12,8 +12,6 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.catalog.logic.api.ICatalogLogic;
 import co.edu.uniandes.Callys.catalog.logic.dto.CatalogDTO;
 import co.edu.uniandes.Callys.catalog.logic.dto.CatalogPageDTO;
-import co.edu.uniandes.Callys.stamp.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.stamp.logic.dto.StampPageDTO;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -63,20 +61,4 @@ public class CatalogoService {
     public void updateCatalogo(@PathParam("id") Long id, CatalogDTO detail) {
         catalogoLogicService.updateCatalogo(detail);
     }
-    
-    @POST
-    @Path("{id}")
-    public List<StampDTO> getStamps(@PathParam("id") Long id){
-        return 
-    };
-    
-    @Path("{id}")
-    public StampPageDTO getStamps(@PathParam("id") Long id, Integer page, Integer maxRecords){
-        
-    };
-    
-    @Path("{id}")
-    public List<StampDTO> updateStamps(@PathParam("id") Long id, List<Long> idStamps){
-        
-    };
 }
