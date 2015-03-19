@@ -1,7 +1,7 @@
 (function(){
-    var clientModule = angular.module('clientModule');
+    var contactModule = angular.module('contactModule');
     
-    clientModule.service('clientService', ['CRUDBase','catalog.context', function(CRUDBase, context){
+    contactModule.service('contactService', ['CRUDBase','catalog.context', function(CRUDBase, context){
             this.url = context;
             CRUDBase.extendService(this);
            
