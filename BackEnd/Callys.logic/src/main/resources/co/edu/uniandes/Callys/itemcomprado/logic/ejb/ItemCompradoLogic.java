@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.converter;
+package co.edu.uniandes.Callys.itemcomprado.logic.ejb;
 
 /**
  *
  * @author estudiante
  */
-public class CompraConverter {
+public class ItemCompradoLogic {
     
 }

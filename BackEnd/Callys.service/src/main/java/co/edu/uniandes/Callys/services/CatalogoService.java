@@ -63,22 +63,16 @@ public class CatalogoService {
     
     @POST
     @Path("{id}")
-    public List<StampsDTO> createStamps(@PathParam("id") Long id, List<StampsDTO> stamps){
-        
-    };
-    
     public List<StampsDTO> getStamps(@PathParam("id") Long id){
         
     };
     
+    @Path("{id}")
     public StampsPageDTO getStamps(@PathParam("id") Long id, Integer page, Integer maxRecords){
         
     };
     
-    public void deleteStamps(@PathParam("id") Long id, List<Long> idStamps){
-        
-    };
-    
+    @Path("{id}")
     public List<StampsDTO> updateStamps(@PathParam("id") Long id, List<Long> idStamps){
         
     };

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.ejb;
+package co.edu.uniandes.Callys.itemcomprado.logic.dto;
 
 /**
  *
  * @author estudiante
  */
-public class CompraLogic {
+public class ItemCompradoPageDTO {
     
 }

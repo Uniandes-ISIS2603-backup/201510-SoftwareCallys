@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.entity;
+package co.edu.uniandes.Callys.compra.logic.entity;
 
 /**
  *
  * @author estudiante
  */
-public class ItemCompradoEntity {
+public class CompraEntity {
     
 }
