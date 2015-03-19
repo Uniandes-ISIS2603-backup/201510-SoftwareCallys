@@ -24,6 +24,7 @@ public class PurchaseConverter {
             dto.setDate(entity.getDate());
             dto.setDatosDeEnvio(entity.getDatosDeEnvio());
             dto.setFormaDePago(entity.getFormaDePago());
+            dto.setItemsC(entity.getItemsC());
             return dto;
         } else {
             return null;
@@ -38,6 +39,7 @@ public class PurchaseConverter {
             entity.setDate(dto.getDate());
             entity.setDatosDeEnvio(dto.getDatosDeEnvio());
             entity.setFormaDePago(dto.getFormaDePago());
+            entity.setItemsC(dto.getItemsC());
             return entity;
         } else {
             return null;

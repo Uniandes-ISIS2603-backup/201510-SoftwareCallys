@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class PurchaseItemDTO {
     
-    protected Long id;
-    protected String name;
-    protected int monto;
-    protected Long idCamiseta;
+    private Long id;
+    private String name;
+    private int monto;
+    private Long idCamiseta;
     
     public Long getId() {
         return id;

@@ -21,8 +21,8 @@ public class PurchaseItemEntity {
     @GeneratedValue(generator = "Purchase")
     private Long id;
     private String name;
-    protected int monto;
-    protected Long idCamiseta;
+    private int monto;
+    private Long idCamiseta;
     
     public Long getId() {
         return id;
