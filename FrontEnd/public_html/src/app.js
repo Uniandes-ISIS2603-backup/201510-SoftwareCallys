@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','homeModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','homeModule','shirtModule','detailsModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {

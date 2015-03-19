@@ -1,8 +1,10 @@
 (function () {
+    
     var stampModule = angular.module('stampModule');
-
-    stampModule.controller('stampCtrl', ['$scope', 'stampService', function ($scope, stampService) {
+    
+    stampModule.controller('stampCtrl', ['$scope', 'stampService', function ($scope, stampService,stampResource) {
             stampService.extendCtrl(this, $scope);
+         
             this.fetchRecords();
             this.editMode = false;
             this.upload = function () {
