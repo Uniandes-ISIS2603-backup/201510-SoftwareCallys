@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.api;
+package co.edu.uniandes.Callys.artista.logic.api;
 
-import java.software.logic.dto.ArtistaDTO;
-import java.software.logic.dto.ArtistaPageDTO;
+
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import java.util.List;
 /**
  *

@@ -12,11 +12,7 @@ package  co.edu.uniandes.Callys.item.logic.dto;
 public class ItemDTO {
     private Long id;
 
-    private String tema;
-
-    private double rating;
-
-    private double popularidad;
+    private double monto;
 
     public Long getId() {
         return id;
@@ -26,27 +22,13 @@ public class ItemDTO {
         this.id = id;
     }
 
-    public String getTema() {
-        return tema;
+    public double getMonto() {
+        return monto;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setMonto(double monto) {
+        this.monto = monto;
     }
 
-    public double getRating() {
-        return rating;
-    }
-
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
-    }
-
-    public double getPopularidad() {
-        return popularidad;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
+    
 }

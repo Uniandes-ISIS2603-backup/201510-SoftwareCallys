@@ -1,9 +1,8 @@
 (function () {
-	var app = angular.module('detailsModule');
+	var detailsModule = angular.module('detailsModule');
 
-	app.controller('detailsCtrl', ['$scope', 'CRUDUtils', 'details.context', function ($scope, CRUDUtils, context) {
-			this.url = context;
-			CRUDUtils.extendCtrl(this, $scope);
+	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService', function ($scope, detailsService) {
+			detailsService.extendCtrl(this, $scope);
                          this.fetchRecords();
                          this.editMode=false;
                                  this.deletePurchase = function () {

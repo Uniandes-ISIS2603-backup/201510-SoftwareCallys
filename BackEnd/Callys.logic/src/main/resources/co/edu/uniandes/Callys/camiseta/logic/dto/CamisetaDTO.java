@@ -12,11 +12,13 @@ package co.edu.uniandes.Callys.camiseta.logic.dto;
 public class CamisetaDTO {
     private Long id;
 
-    private String tema;
+    private String color;
 
-    private double rating;
+    private int talla;
 
-    private double popularidad;
+    private String material;
+    
+    private String texto;
 
     public Long getId() {
         return id;
@@ -26,27 +28,36 @@ public class CamisetaDTO {
         this.id = id;
     }
 
-    public String getTema() {
-        return tema;
+    public String getColor() {
+        return color;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public double getRating() {
-        return rating;
+    public int getTalla() {
+        return talla;
+    }
+    public void setTalla(int talla)
+    {
+        this.talla=talla;
     }
 
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
-    public double getPopularidad() {
-        return popularidad;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public String getTexto()
+    {
+        return texto;
+    }
+    
+    public void setTexto (String texto) {
+        this.texto = texto;
     }
 }
