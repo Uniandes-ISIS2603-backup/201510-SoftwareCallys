@@ -15,15 +15,15 @@ import java.util.List;
  */
 public interface IPurchaseLogic {
     
-    public PurchaseDTO createCompra(PurchaseDTO detail);
+    public PurchaseDTO createPurchase(PurchaseDTO detail);
 
-    public List<PurchaseDTO> getCompra();
+    public List<PurchaseDTO> getPurchase();
 
-    public PurchasePageDTO getCompra(Integer page, Integer maxRecords);
+    public PurchasePageDTO getPurchase(Integer page, Integer maxRecords);
 
-    public PurchaseDTO getCompra(Long id);
+    public PurchaseDTO getPurchase(Long id);
 
-    public void deleteCompra(Long id);
+    public void deletePurchase(Long id);
 
-    public void updateCompra(PurchaseDTO detail);
+    public void updatePurchase(PurchaseDTO detail);
 }

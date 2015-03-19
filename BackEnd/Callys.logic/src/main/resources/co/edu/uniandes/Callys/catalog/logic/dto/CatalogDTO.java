@@ -21,6 +21,8 @@ public class CatalogDTO {
 
     private Integer numeroElementos;
 
+    private String stamps;
+    
     public Long getId() {
         return id;
     }
@@ -44,4 +46,13 @@ public class CatalogDTO {
     public void setNumElementos(Integer numElementos) {
         this.numeroElementos = numElementos;
     }
+    
+    public String getStamps() {
+        return stamps;
+    }
+
+    public void setStamps(String stamps) {
+        this.stamps = stamps;
+    }
+
 }

@@ -5,10 +5,10 @@
  */
 package co.edu.uniandes.Callys.services;
 
-import java.software.logic.api.IArtistaLogic;
-import java.software.logic.dto.ArtistaDTO;
-import java.software.logic.dto.ArtistaPageDTO;
 
+import co.edu.uniandes.Callys.artista.logic.api.IArtistaLogic;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -48,12 +48,12 @@ public class ArtistaService {
 
     @GET
     public ArtistaPageDTO getArtistas(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return artistaLogicService.getArtista(page, maxRecords);
+        return artistaLogicService.getArtistas(page, maxRecords);
     }
 
     @GET
     @Path("{id}")
-    public ArtistatDTO getArtista(@PathParam("id") Long id) {
+    public ArtistaDTO getArtista(@PathParam("id") Long id) {
         return artistaLogicService.getArtista(id);
     }
 

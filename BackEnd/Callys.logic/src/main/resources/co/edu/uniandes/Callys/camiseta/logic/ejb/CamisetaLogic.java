@@ -5,17 +5,11 @@
  */
 package co.edu.uniandes.Callys.camiseta.logic.ejb;
 
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.enterprise.inject.Default;
 
-import java.software.logic.api.ICamisetaLogic;
-import java.software.logic.dto.CamisetaDTO;
-import java.software.logic.dto.CamisetaPageDTO;
-import java.software.logic.converter.CamisetaConverter;
-import java.software.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
+import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -22,6 +22,7 @@ public class StampEntity {
     private String tema;
     private double rating;
     private double popularidad;
+   
 
     public Long getId() {
         return id;
@@ -31,6 +32,7 @@ public class StampEntity {
         this.id = id;
     }
 
+    
     public String getTema() {
         return tema;
     }

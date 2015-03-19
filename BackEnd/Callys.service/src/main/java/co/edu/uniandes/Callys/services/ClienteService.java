@@ -5,10 +5,63 @@
  */
 package co.edu.uniandes.Callys.services;
 
+import co.edu.uniandes.Callys.Cliente.logic.api.IClienteLogic;
+import co.edu.uniandes.Callys.Cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.Cliente.logic.dto.ClientePageDTO;
+import javax.inject.Inject;
+import javax.ws.rs.DELETE;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.Produces;
+import javax.ws.rs.Consumes;
+
+
+@Path("/clientes")
+@Stateless
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 /**
  *
  * @author estudiante
  */
 public class ClienteService {
     
+    
+     @Inject
+    protected IClienteLogic clienteLogicService;
+
+    @POST
+    public ClienteDTO createCliente(ClienteDTO cliente) {
+        return clienteLogicService.createCliente(cliente);
+    }
+
+    @DELETE
+    @Path("{id}")
+    public void deleteCliente(@PathParam("id") Long id) {
+        
+        clienteLogicService.deleteCliente(id);
+    }
+
+    @GET
+    public ClientePageDTO getCliente(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+        return clienteLogicService.getCliente(page, maxRecords);
+    }
+
+    @GET
+    @Path("{id}")
+    public ClienteDTO getCliente(@PathParam("id") Long id) {
+        return clienteLogicService.getCliente(id);
+    }
+
+    @PUT
+    public void updateCliente(@PathParam("id") Long id, ClienteDTO cliente) {
+        clienteLogicService.updateCliente(cliente);
+    }
 }

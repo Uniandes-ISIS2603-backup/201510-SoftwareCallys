@@ -21,6 +21,7 @@ public class StampConverter {
             dto.setTema(entity.getTema());
             dto.setRating(entity.getRating());
             dto.setPopularidad(entity.getPopularidad());
+          
             return dto;
         } else {
             return null;
@@ -38,6 +39,7 @@ public class StampConverter {
 
             entity.setPopularidad(dto.getPopularidad());
 
+           
             return entity;
         } else {
             return null;

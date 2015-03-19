@@ -5,8 +5,9 @@
  */
 package co.edu.uniandes.Callys.camiseta.logic.converter;
 
-import java.software.logic.dto.CamisetaDTO;
-import java.software.logic.entity.CamisetaEntity;
+
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +21,10 @@ public class CamisetaConverter {
         if (entity != null) {
             CamisetaDTO dto = new CamisetaDTO();
             dto.setId(entity.getId());
-            dto.setTema(entity.getTema());
-            dto.setRating(entity.getRating());
-            dto.setPopularidad(entity.getPopularidad());
+            dto.setColor(entity.getColor());
+            dto.setTalla(entity.getTalla());
+            dto.setMaterial(entity.getMaterial());
+            dto.setTexto(entity.getTexto());
             return dto;
         } else {
             return null;
@@ -34,12 +36,13 @@ public class CamisetaConverter {
             CamisetaEntity entity = new CamisetaEntity();
             entity.setId(dto.getId());
 
-            entity.setTema(dto.getTema());
+            entity.setColor(dto.getColor());
 
-            entity.setRating(dto.getRating());
+            entity.setTalla(dto.getTalla());
 
-            entity.setPopularidad(dto.getPopularidad());
+            entity.setMaterial(dto.getMaterial());
 
+            entity.setTexto(dto.getTexto());
             return entity;
         } else {
             return null;

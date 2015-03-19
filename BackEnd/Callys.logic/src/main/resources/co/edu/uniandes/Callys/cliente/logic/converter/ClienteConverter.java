@@ -27,7 +27,7 @@ public class ClienteConverter {
             dto.setNumeroTargeta(entity.getNumeroTargeta());
             dto.setCodigoDeSeguridad(entity.getCodigoSeguridad());
             dto.setCarroDeCompras(entity.getCarroDecompras());
-            
+            dto.setIdCompras(entity.getIdCompras());
             return dto;
         } else {
             return null;
@@ -42,7 +42,8 @@ public class ClienteConverter {
             entity.setNumeroTargeta(dto.getNumeroTargeta());
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());
             entity.setCarroDeCompras(dto.getCarroDecompras());
-
+            entity.setIdCompras(dto.getIdCompras());
+            
             return entity;
         } else {
             return null;

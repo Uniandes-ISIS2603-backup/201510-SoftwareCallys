@@ -18,9 +18,9 @@ public interface IStampLogic {
 
     public List<StampDTO> getStamp();
 
-    public StampDTO getStamp(Integer page, Integer maxRecords);
+    public StampPageDTO getStamp(Integer page, Integer maxRecords);
 
-    public StampPageDTO getStamp(Long id);
+    public StampDTO getStamp(Long id);
 
     public void deleteStamp(Long id);
 

@@ -5,6 +5,8 @@
  */
 package co.edu.uniandes.Callys.Cliente.logic.dto;
 
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+
 /**
  *
  * @author estudiante
@@ -17,8 +19,19 @@ public class ClienteDTO {
     private Integer numeroCompras;
     private Integer numeroTargeta;
     private Integer codigoDeSeguridad;
-    private CarroComprasEntity carroCompras;
+    private long carroComprasId;
     
+    private String idCompras;
+    
+    public String getIdCompras()
+    {
+        return idCompras;
+    }
+    
+    public void setIdCompras(String idCompras)
+    {
+        this.idCompras= idCompras;
+    }
     
 
     public long getId() {
@@ -62,12 +75,12 @@ public class ClienteDTO {
         this.codigoDeSeguridad= codigoDeSeguridad;
     }
     
-    public CarroComprasEntity getCarroDecompras()
+    public long getCarroDecompras()
     {
-        return carroCompras;
+        return carroComprasId;
     }
-    public void setCarroDeCompras(CarroDeComprasEntity carroCompras)
+    public void setCarroDeCompras(long carroComprasId)
     {
-        this.carroCompras = carroCompras;
+        this.carroComprasId = carroComprasId;
     }
 }

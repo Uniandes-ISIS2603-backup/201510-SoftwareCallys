@@ -18,9 +18,9 @@ public class CarroComprasEntity {
     @Id
     @GeneratedValue(generator = "CarroCompras")
     private Long id;
-    private String tema;
-    private double rating;
-    private double popularidad;
+    private double monto;
+    private String formaPago;
+    private String datosEnvio;
 
     public Long getId() {
         return id;
@@ -30,27 +30,27 @@ public class CarroComprasEntity {
         this.id = id;
     }
 
-    public String getTema() {
-        return tema;
+    public double getMonto() {
+        return monto;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setMonto(double monto) {
+        this.monto = monto;
     }
 
-    public double getRating() {
-        return rating;
+    public String getFormaPago() {
+        return formaPago;
     }
 
-    public void setRating(double rating) {
-        this.rating =rating;
+    public void setFormaPago(String formaPago) {
+        this.formaPago =formaPago;
     }
 
-    public double getPopularidad() {
-        return popularidad;
+    public String getDatosEnvio() {
+        return datosEnvio;
     }
 
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
+    public void setDatosEnvio(String datosEnvio) {
+        this.datosEnvio = datosEnvio;
     }
 }

@@ -23,6 +23,7 @@ public class CatalogConverter {
             dto.setId(entity.getId());
             dto.setName(entity.getName());
             dto.setNumElementos(entity.getNumeroElementos());
+            dto.setStamps(entity.getStamps());
             return dto;
         } else {
             return null;
@@ -35,6 +36,7 @@ public class CatalogConverter {
             entity.setId(dto.getId());
             entity.setName(dto.getName());
             entity.setNumeroElementos(dto.getNumElementos());
+            entity.setStamps(dto.getStamps());
             return entity;
         } else {
             return null;

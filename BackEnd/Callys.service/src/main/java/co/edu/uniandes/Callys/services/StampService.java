@@ -5,10 +5,10 @@
  */
 package co.edu.uniandes.Callys.services;
 
-import java.software.logic.api.IStampLogic;
-import java.software.logic.dto.StampDTO;
-import java.software.logic.dto.StampPageDTO;
 
+import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -53,7 +53,7 @@ public class StampService {
 
     @GET
     @Path("{id}")
-    public StamptDTO getStamp(@PathParam("id") Long id) {
+    public StampDTO getStamp(@PathParam("id") Long id) {
         return stampLogicService.getStamp(id);
     }
 

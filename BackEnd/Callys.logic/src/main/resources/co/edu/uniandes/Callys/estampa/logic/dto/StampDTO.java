@@ -20,7 +20,9 @@ public class StampDTO {
     private double rating;
 
     private double popularidad;
-
+    
+    
+    
     public Long getId() {
         return id;
     }
