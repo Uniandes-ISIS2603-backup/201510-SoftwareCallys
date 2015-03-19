@@ -106,7 +106,7 @@
 						</ul>
 						<div class="btn_form">
 							
-                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>
+                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>
 							
 						</div>
 						<span class="span_right"><a href="#">login to save in wishlist </a></span>
@@ -118,8 +118,9 @@
                         </div>    
                        </div>
                                         <div class="share-desc">
+                                            <br/>
 						<div class="share">
-							<h4>Share Product :</h4>
+						
 							<ul class="share_nav">
 								<li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
 								<li><a href="#"><img src="images/twitter.png" title="Twiiter"></a></li>
@@ -135,7 +136,10 @@
 			   <div class="banner-wrap bottom_banner color_link">
 								<a  ng-click="detailsCtrl.shoppingCar()" class="main_link">
 								<figure><img src="images/delivery.png" alt=""></figure>
-								<h5><span>Shopping Car </span><br> </h5></a>
+								<h5><span>Shopping Car </span><br> </h5>
+                                                                <br/>
+                                                                <h5><span>Amount: {{amount}} </span><br> </h5>
+                                                                </a>
                                 <div>
                                             <div class="grid1_of_3" ng-repeat = "record in records">
 
@@ -145,7 +149,7 @@
                                                 <h3>{{record.price}}</h3>
                                                 <br>
                                                 <div class="price">
-                                                    <a ng-click = "detailsCtrl.deleteRecord(record)" ><h4><span>Delete</span></h4></a>
+                                                    <a ng-click = "detailsCtrl.deleteSale(record)" ><h4><span>Delete</span></h4></a>
                                                 </div> 
                                             </div>
 						 </div>

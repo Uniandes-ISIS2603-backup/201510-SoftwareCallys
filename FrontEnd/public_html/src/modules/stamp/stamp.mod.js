@@ -6,7 +6,17 @@
     stampModule.config(['stamp.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
             urlsProvider.registerUrl(context);
         }]);
-    stampModule.factory('stampResource', function($resource){
-        return $resource('http://localhost:8080/resources/webservices/stamp', {},{ query: {method:'GET', params:{}, isArray:false} });
+    stampModule.factory('stampGet', function($resource){
+        return $resource('/Callys.service/services/stamps', {},{ 
+            query:  {method:'GET', params:{}, isArray:false}
+            
+        });
+    });
+    
+      stampModule.factory('stampPost', function($resource){
+        return $resource('/Callys.service/services/stamps', {},{ 
+            query:  {method:'POST', params:{}, isArray:false}
+            
+        });
     });
 })();

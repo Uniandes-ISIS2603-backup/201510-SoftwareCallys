@@ -2,9 +2,14 @@
     
     var stampModule = angular.module('stampModule');
     
-    stampModule.controller('stampCtrl', ['$scope', 'stampService', function ($scope, stampService,stampResource) {
+    stampModule.controller('stampCtrl', ['$scope', 'stampService', 'stampGet', 'stampPost', function ($scope, stampService,stampGet,stampPost) {
             stampService.extendCtrl(this, $scope);
-         
+
+  
+
+             stampGet.get({}, function (stampGet) {
+        $scope.name = stampGet.name;
+    });
             this.fetchRecords();
             this.editMode = false;
             this.upload = function () {
@@ -55,7 +60,7 @@
                 };
                 scope.toggle = function (index) {
                     scope.ratingValue = index + 1;
-                    scope.onRatingSelected({
+                    elem.onRatingSelected({
                         rating: index + 1
                     });
                 };

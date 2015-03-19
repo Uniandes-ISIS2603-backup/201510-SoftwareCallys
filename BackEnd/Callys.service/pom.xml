@@ -28,5 +28,38 @@
             <artifactId>Callys.logic</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- Arquillian -->
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <version>1.0.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- arquillian support for embedded glassfish -->
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+            <version>1.0.0.CR4</version>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.extension</groupId>
+      <artifactId>arquillian-persistence-impl</artifactId>
+      <version>1.0.0.Alpha6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.extension</groupId>
+      <artifactId>arquillian-persistence-api</artifactId>
+      <version>1.0.0.Alpha6</version>
+      <scope>test</scope>
+    </dependency>
+         <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0</version>
+      <type>jar</type>
+    </dependency>
     </dependencies>
 </project>
