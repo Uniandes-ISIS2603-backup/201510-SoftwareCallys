@@ -4,17 +4,16 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.Callys.item.logic.ejb;
+import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.enterprise.inject.Default;
 
-import java.software.logic.api.IItemLogic;
-import java.software.logic.dto.ItemDTO;
-import java.software.logic.dto.ItemPageDTO;
-import java.software.logic.converter.ItemConverter;
-import java.software.logic.entity.ItemEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

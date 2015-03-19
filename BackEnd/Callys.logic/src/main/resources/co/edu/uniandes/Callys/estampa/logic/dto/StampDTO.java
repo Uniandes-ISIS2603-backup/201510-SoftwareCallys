@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.entity;
+package co.edu.uniandes.Callys.estampa.logic.dto;
 
+
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  *
  * @author estudiante
  */
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
-public class StampEntity {
-
-    @Id
-    @GeneratedValue(generator = "Stamp")
+public class StampDTO {
+    
     private Long id;
+
     private String tema;
+
     private double rating;
+
     private double popularidad;
 
     public Long getId() {
@@ -43,16 +41,15 @@ public class StampEntity {
         return rating;
     }
 
-    public void setRating(double rating) {
-        this.rating =rating;
+    public void setPopularidad(double popularidad) {
+        this.popularidad = popularidad;
     }
 
     public double getPopularidad() {
         return popularidad;
     }
 
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }
-

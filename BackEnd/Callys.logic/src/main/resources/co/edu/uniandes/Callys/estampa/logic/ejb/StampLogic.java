@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.software.logic.dto;
+package co.edu.uniandes.Callys.estampa.logic.ejb;
 
+import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import java.software.llogic.entity.StampEntity;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.enterprise.inject.Default;
 
-import java.software.logic.api.IStampLogic;
-import java.software.logic.dto.StampDTO;
-import java.software.logic.dto.StampPageDTO;
-import java.software.logic.converter.StampConverter;
-import java.software.logic.entity.StampEntity;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

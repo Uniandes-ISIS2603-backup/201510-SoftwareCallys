@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.Callys.stamp.logic.api;
+package co.edu.uniandes.Callys.estampa.logic.api;
 
-import java.software.logic.dto.StampDTO;
-import java.software.logic.dto.StampPageDTO;
+
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import java.util.List;
 /**
  *
