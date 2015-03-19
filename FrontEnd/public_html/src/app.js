@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','homeModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','homeModule', 'shirtModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -14,7 +14,10 @@
                     {
 			templateUrl: 'src/modules/home/home.tpl.html'
                     }).otherwise('/');
-                           
+                    $routeProvider.when('/shirt', 
+                    {
+			templateUrl: 'src/modules/shirt/shirt.tpl.html'
+                    }).otherwise('/');    
             }]);
 
 

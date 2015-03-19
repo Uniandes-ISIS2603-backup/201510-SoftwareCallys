@@ -1,9 +1,9 @@
-(function () {
-	
+(function () 
+{
 		//Configuración módulo shirt
-	var shirtModule = angular.module('shirtModule', ['CrudModule', 'MockModule']);
+	var shirtModule = angular.module('shirtModule', ['CrudModule', 'MockModdule']);
 
-	shirtModule.constant('shirt.context', 'shirt');
+	shirtModule.constant('shirt.context', 'shirts');
 
 	shirtModule.config(['shirt.context', 'MockModule.urlsProvider', function (context, urlsProvider) 
         {
