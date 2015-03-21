@@ -2,41 +2,45 @@
     
     var stampModule = angular.module('stampModule');
     
-    stampModule.controller('stampCtrl', ['$scope', 'stampService', 'stampGet', 'stampPost', function ($scope, stampService,stampGet,stampPost) {
+    stampModule.controller('stampCtrl', ['$scope', 'stampService', 'stampGet','catalogService', function ($scope, stampService,stampGet,catalogService) {
             stampService.extendCtrl(this, $scope);
-
-  
-
-             stampGet.get({}, function (stampGet) {
-        $scope.name = stampGet.name;
-    });
+            stampGet.get({}, function (stampGet) {
+                    $scope.name = stampGet.name;
+                });
             this.fetchRecords();
+            catalogService.fetchRecords().then(function(data){
+                $scope.catalogRecords = data;
+            });
             this.editMode = false;
-            this.upload = function () {
+            this.upload = function () 
+            {
                 this.editMode = !this.editMode;
             };
 
-            this.rate = function () {
+            this.rate = function () 
+            {
                 this.saveRecords();
             };
 
-            this.rateStamp = function (rating) {
+            this.rateStamp = function (rating) 
+            {
                 $scope.currentRecord.rating = rating;
                 this.saveRecords();
 
             };
-            this.deleteStamp = function (record) {
+            this.deleteStamp = function (record) 
+            {
                 this.deleteRecord(record);
 
             };
-
-            this.getStamp = function () {
-                var self = this;
-                this.api.getList().then(function (data) {
-                    $scope.records = data;
-                    $scope.currentRecord = {};
-                    self.editMode = false;
-                });
+             this.saveCatalog = function(catalogRecord)
+             {
+                catalogService.saveRecord(catalogRecord); 
+                 catalogService.fetchRecords().then(function(data)
+                 {
+                    $scope.catalogRecords = data;
+                 });
+                this.editMode = false;
             };
         }]);
     stampModule.directive('ratingStamps', function () {

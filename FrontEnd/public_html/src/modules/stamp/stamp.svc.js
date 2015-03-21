@@ -6,4 +6,3 @@
             CRUDBase.extendService(this);
     }]);
 })();
-

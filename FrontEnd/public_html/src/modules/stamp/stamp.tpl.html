@@ -34,16 +34,15 @@
                         <span class="b_btm"></span>
                     </div>
 
-                    <div class="grid1_of_3" ng-repeat = "record in records">
+                    <div class="grid1_of_3" ng-repeat = "catalog in catalogRecords">
                         <img src= "" alt=""/>
-                        <h3>{{record.name}}</h3>
+                        <h3>{{catalog.name}}</h3>
                         <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
                         <div class="price">
-                            <a ng-click = "stampCtrl.deleteStamp(record)" ><h4>${{record.price}}<span>Delete</span></h4></a>
-                            <button ng-click= "stampCtrl.editRecord(record)"><span>Edit</span></button>
+                            <a ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
+                            <button ng-click= "stampCtrl.editRecord(catalog)"><span>Edit</span></button>
                         </div> 
                         <span class="b_btm"></span>
-
                     </div>
 
                     <div class="clear"></div>
@@ -61,20 +60,22 @@
                         <div class="price ">
                             <div class="contact">				
                                 <h2>Upload new stamp</h2>
+                                <form name="catalogForm" role="form">
+                                    <input id="name" class="form-control" type="hidden" ng-model="catalogRecord.id"/>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input id="name" class="form-control" type="text" ng-model="catalogRecord.name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input id="price" class="form-control" type="number" ng-model="catalogRecord.price"/>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="price">Price</label>
-                                    <input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
-                                </div>
+                                    <input type="file" name="uploadField" ng-model="catalogRecord.image" />                              
 
-                                <input type="file" name="uploadField" ng-model="currentRecord.image" />                              
-
-                                <br>
-                                <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                    <br>
+                                    <button class="btn btn-default navbar-btn" ng-click="stampCtrl.saveCatalog(catalogRecord)"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                </form>
                             </div>
 
 

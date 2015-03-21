@@ -12,7 +12,7 @@
             
         });
     });
-    
+ 
       stampModule.factory('stampPost', function($resource){
         return $resource('/Callys.service/services/stamps', {},{ 
             query:  {method:'POST', params:{}, isArray:false}
