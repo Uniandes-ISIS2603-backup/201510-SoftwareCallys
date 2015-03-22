@@ -12,6 +12,8 @@
                 $scope.catalogRecords = data;
             });
             this.editMode = false;
+            this.error= false;
+            var image;
             this.upload = function () 
             {
                 this.editMode = !this.editMode;
@@ -28,19 +30,60 @@
                 this.saveRecords();
 
             };
-            this.deleteStamp = function (record) 
+            this.editStamp = function (catalog) 
             {
-                this.deleteRecord(record);
-
+                this.editRecord(catalog);
+                this.editMode = true;
             };
-             this.saveCatalog = function(catalogRecord)
+            this.deleteStamp = function (catalogRecord) 
+            {
+                 catalogService.deleteRecord(catalogRecord);
+                  catalogService.fetchRecords().then(function(data)
+                     {
+                        $scope.catalogRecords = data;
+                     });
+            };
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+             function handleFileSelect(evt) 
              {
-                catalogService.saveRecord(catalogRecord); 
-                 catalogService.fetchRecords().then(function(data)
+                        var files = evt.target.files; // FileList object
+                        var reader = new FileReader();
+
+                          // Closure to capture the file information.
+                          reader.onload = (function() {
+                            return function(e) 
+                            {
+                                image=e.target.result;
+                            };
+                          })(files[0]);
+
+                          // Read in the image file as a data URL.
+                          reader.readAsDataURL(files[0]);
+            }
+
+  
+             this.saveStamp = function(catalogRecord,catalogForm)
+             {
+                 
+                 if(catalogForm.$valid)
                  {
-                    $scope.catalogRecords = data;
-                 });
-                this.editMode = false;
+                    catalogRecord.image= image;
+                    catalogService.saveRecord(catalogRecord); 
+                     catalogService.fetchRecords().then(function(data)
+                     {
+                        $scope.catalogRecords = data;
+                     });
+                    this.editMode = false;
+                     this.error=false;
+                     
+                    catalogForm.$setPristine();
+                    catalogForm.$setUntouched();
+                 }
+                 else
+                 {
+                    catalogForm.$setPristine();
+                    this.error=true;
+                 }
             };
         }]);
     stampModule.directive('ratingStamps', function () {
