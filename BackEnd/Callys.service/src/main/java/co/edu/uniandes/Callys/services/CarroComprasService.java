@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/artistas")
+@Path("/carroCompras")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -49,14 +49,14 @@ public class CarroComprasService {
     }
 
     @GET
-    public ArtistaPageDTO getCarroCompras(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return carroComprasLogicService.getArtistas(page, maxRecords);
+    public CarroComprasPageDTO getCarroCompras(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+        return carroComprasLogicService.getCarroCompras(page, maxRecords);
     }
 
     @GET
     @Path("{id}")
-    public ArtistaDTO getCarroCompras(@PathParam("id") Long id) {
-        return carroComprasLogicService.getArtista(id);
+    public CarroComprasDTO getCarroCompras(@PathParam("id") Long id) {
+        return carroComprasLogicService.getCarroCompras(id);
     }
 
     @PUT

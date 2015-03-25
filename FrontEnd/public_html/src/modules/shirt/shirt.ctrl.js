@@ -15,6 +15,7 @@
                      {name: "Nephi", age: 29},
                      {name: "Enos", age: 34}];
     $scope.gridOptions = { data: 'myData' };
+    $scope.currentRecord.arreglo={image:"",name:"",price:""};
                         
                         
                         this.mostrarRojo = function (){

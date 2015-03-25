@@ -22,7 +22,7 @@
 				    </div>
 				    <div class="product-image"> 
 				        <a>
-				           	<img src="images/0001-2.jpg"  />
+				           	<img alt="" src="images/0001-2.jpg"  />
 				        </a>
 				   </div>  
 				</div>
@@ -40,24 +40,23 @@
 					<div class="available">
 						<h4>Available Options :</h4>
 						<ul>
-                                                    
-                                                    
+
                                                     <li>Color:
 							<select ng-model="currentRecord.color">
 								<option>Silver</option>
 								<option>Black</option>
 								<option>Dark Black</option>
 								<option>Red</option>
-							</select></li>
-							
-                                                        <li>Size:
-								<select ng-model="currentRecord.size">
-									<option>S</option>
-									<option>M</option>
-									<option>L</option>
-									<option>XL</option>
-								</select>
-							</li>
+							</select>
+                                                    </li>
+                                                    <li>Size:
+							<select ng-model="currentRecord.size">
+                                                                <option>S</option>
+                                                                <option>M</option>
+                                                                <option>L</option>
+                                                                <option>XL</option>
+							</select>
+						    </li>
                                                         
 							<li>Quantity:
 								<select ng-model="currentRecord.quantity">
@@ -70,8 +69,7 @@
 							</li>
 						</ul>
 						<div class="btn_form">
-							
-                                                            <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
+                                                    <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
 						</div>
 						
 						<div class="clear"></div>
