@@ -18,9 +18,9 @@ public interface ICamisetaLogic {
 
     public List<CamisetaDTO> getCamiseta();
 
-    public CamisetaDTO getCamiseta(Integer page, Integer maxRecords);
+    public CamisetaPageDTO getCamiseta(Integer page, Integer maxRecords);
 
-    public CamisetaPageDTO getCamiseta(Long id);
+    public CamisetaDTO getCamiseta(Long id);
 
     public void deleteCamiseta(Long id);
 

@@ -18,9 +18,9 @@ public interface IItemLogic {
 
     public List<ItemDTO> getItem();
 
-    public ItemDTO getItem(Integer page, Integer maxRecords);
+    public ItemPageDTO getItem(Integer page, Integer maxRecords);
 
-    public ItemPageDTO getItem(Long id);
+    public ItemDTO getItem(Long id);
 
     public void deleteItem(Long id);
 

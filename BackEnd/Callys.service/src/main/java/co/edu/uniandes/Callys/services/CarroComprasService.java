@@ -5,9 +5,12 @@
  */
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.artista.logic.api.ICarroComprasLogic;
-import co.edu.uniandes.Callys.artista.logic.dto.CarroComprasDTO;
-import co.edu.uniandes.Callys.artista.logic.dto.CarroComprasPageDTO;
+
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -32,7 +35,7 @@ import javax.ws.rs.core.MediaType;
 public class CarroComprasService {
     
      @Inject
-    protected ICarroComprasLogic carroComprasLogicService;
+    protected ICarroCompras carroComprasLogicService;
 
     @POST
     public CarroComprasDTO createCarroCompras(CarroComprasDTO carroCompras) {
@@ -46,13 +49,13 @@ public class CarroComprasService {
     }
 
     @GET
-    public CarroComprasPageDTO getCarroCompras(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+    public ArtistaPageDTO getCarroCompras(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return carroComprasLogicService.getArtistas(page, maxRecords);
     }
 
     @GET
     @Path("{id}")
-    public CarroComprasDTO getCarroCompras(@PathParam("id") Long id) {
+    public ArtistaDTO getCarroCompras(@PathParam("id") Long id) {
         return carroComprasLogicService.getArtista(id);
     }
 
