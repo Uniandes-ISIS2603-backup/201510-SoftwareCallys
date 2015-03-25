@@ -3,20 +3,18 @@
 
     stampModule.constant('stamp.context', 'stamps');
 
-    stampModule.config(['stamp.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
-        }]);
-    stampModule.factory('stampGet', function($resource){
-        return $resource('/Callys.service/services/stamps', {},{ 
-            query:  {method:'GET', params:{}, isArray:false}
-            
-        });
-    });
- 
-      stampModule.factory('stampPost', function($resource){
-        return $resource('/Callys.service/services/stamps', {},{ 
-            query:  {method:'POST', params:{}, isArray:false}
-            
-        });
-    });
+    stampModule.config(['stamp.context', 'MockModule.urlsProvider', function ($http, context, urlsProvider) {
+        this.url = urlsProvider.registerUrl(context);
+        function saveStamp (stamp, callback, callbackError ){
+            $http.get({
+                url: 'WebResources/Stamp/saveStamp/',
+                data: angular.toJson(stamp),
+                contentType: 'application/json'
+            }).succes(_.bind(function(data) {
+                callback(data);
+            },this)).error(_.bind(function(data){
+                callbackError(data);
+            },this));
+        };
+    }]);
 })();
