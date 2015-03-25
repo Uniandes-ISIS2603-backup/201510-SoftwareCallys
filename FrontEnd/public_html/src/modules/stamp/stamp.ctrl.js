@@ -32,7 +32,7 @@
             };
             this.editStamp = function (catalog) 
             {
-                this.editRecord(catalog);
+                catalogService.editRecord(catalog);
                 this.editMode = true;
             };
             this.deleteStamp = function (catalogRecord) 
