@@ -5,5 +5,5 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
-    }]);     
+    }]);
 })();
