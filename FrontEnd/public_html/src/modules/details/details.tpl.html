@@ -68,14 +68,25 @@
 								</select>
 							</li>
 						</ul>
+                                                <div class="grids_of_3">
+                    <div class="grid1_of_3" ng-repeat = "record in ShirtRecords">
+                        <img src='{{record.image}}'  alt="" height="225" width="225"/>
+                        <h3>{{record.name}}</h3>
+                        <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
+                        <div class="price">
+                            <a ><h4>${{record.price}}<span>Delete</span></h4></a>
+                            <button ><span>Edit</span></button>
+                        </div> 
+                        <span class="b_btm"></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
 						<div class="btn_form">
                                                     <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
 						</div>
 						
 						<div class="clear"></div>
 					</div>
-					
-                        
                        </div>
                                         <div class="share-desc">
                                             <br/>

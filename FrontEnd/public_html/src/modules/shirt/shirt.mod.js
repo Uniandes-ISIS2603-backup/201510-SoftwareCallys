@@ -1,7 +1,7 @@
 (function () {
 	
 		//Configuración módulo shirt
-	var shirtModule = angular.module('shirtModule', ['CrudModule', 'MockModule', 'ui.grid']);
+	var shirtModule = angular.module('shirtModule', ['CrudModule', 'MockModule']);
 
 	shirtModule.constant('shirt.context', 'shirt');
 
