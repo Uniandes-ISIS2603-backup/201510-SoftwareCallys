@@ -9,13 +9,6 @@ import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.enterprise.inject.Default;
-
-
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
