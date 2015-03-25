@@ -1,6 +1,6 @@
-(function () {
+(function () 
+{
 	var detailsModule = angular.module('detailsModule');
-
 	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService','shirtService', function ($scope, detailsService,shirtService) 
         {
             detailsService.extendCtrl(this, $scope);

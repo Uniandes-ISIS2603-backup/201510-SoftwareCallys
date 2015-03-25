@@ -15,7 +15,6 @@
                         return this.api.post(currentRecord);
                     }
                 };
-              
                 this.deleteRecord = function (record) {
                     return record.remove();
                 };
