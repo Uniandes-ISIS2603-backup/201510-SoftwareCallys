@@ -29,15 +29,15 @@ public class CamisetaLogic {
     }
 
     public List<CamisetaDTO> getCamisetas() {
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from CamisetaEntity u");
         return CamisetaConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     public CamisetaPageDTO getCamisetas(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SportEntity u");
+        Query count = entityManager.createQuery("select count(u) from CamisetaEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from CamisetaEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

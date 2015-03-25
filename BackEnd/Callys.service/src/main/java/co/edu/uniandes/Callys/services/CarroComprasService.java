@@ -5,9 +5,6 @@
  */
 package co.edu.uniandes.Callys.services;
 
-
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
@@ -60,7 +57,7 @@ public class CarroComprasService {
     }
 
     @PUT
-    public void updateCarroCompras(@PathParam("id") Long id, CarroComprasDTO carroCompras) {
+    public void updateCarroCompras(CarroComprasDTO carroCompras) {
         carroComprasLogicService.updateCarroCompras(carroCompras);
     }
 }

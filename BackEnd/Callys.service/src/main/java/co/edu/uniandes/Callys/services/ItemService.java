@@ -8,6 +8,7 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
 import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -55,9 +56,15 @@ public class ItemService {
     public ItemDTO getItem(@PathParam("id") Long id) {
         return itemLogicService.getItem(id);
     }
+   
+    @GET
+    public List<ItemDTO> getItem() {
+        return itemLogicService.getItem();
+    }
+    
 
     @PUT
-    public void updateItem(@PathParam("id") Long id, ItemDTO item) {
+    public void updateItem(ItemDTO item) {
         itemLogicService.updateItem(item);
     } 
 }

@@ -14,6 +14,7 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -52,6 +53,11 @@ public class CamisetaService {
     }
 
     @GET
+    public List<CamisetaDTO> getCamiseta() {
+        return camisetaLogicService.getCamiseta();
+    }
+    
+    @GET
     public CamisetaPageDTO getCamiseta(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return camisetaLogicService.getCamiseta(page, maxRecords);
     }
@@ -63,7 +69,7 @@ public class CamisetaService {
     }
 
     @PUT
-    public void updateCamiseta(@PathParam("id") Long id, CamisetaDTO camiseta) {
+    public void updateCamiseta(CamisetaDTO camiseta) {
         camisetaLogicService.updateCamiseta(camiseta);
     }  
 }
