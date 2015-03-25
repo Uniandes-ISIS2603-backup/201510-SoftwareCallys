@@ -18,9 +18,9 @@ public interface ICarroCompras {
 
     public List<CarroComprasDTO> getCarroCompras();
 
-    public CarroComprasDTO getCarroCompras(Integer page, Integer maxRecords);
+    public CarroComprasPageDTO getCarroCompras(Integer page, Integer maxRecords);
 
-    public CarroComprasPageDTO getCarroCompras(Long id);
+    public CarroComprasDTO getCarroCompras(Long id);
 
     public void deleteCarroCompras(Long id);
 
