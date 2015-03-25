@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.camiseta.logic.entity;
 
 import javax.persistence.Entity;
@@ -42,7 +37,7 @@ public class CamisetaEntity {
         return talla;
     }
 
-    public void setTalla(int rating) {
+    public void setTalla(int talla) {
         this.talla =talla;
     }
 

@@ -5,10 +5,11 @@
  */
 package co.edu.uniandes.Callys.purchaseitem.logic.entity;
 
-import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 
 /**
  *
@@ -18,7 +19,7 @@ import javax.persistence.Id;
 public class PurchaseItemEntity {
     
     @Id
-    @GeneratedValue(generator = "Purchase")
+    @GeneratedValue(generator = "PurchaseItem")
     private Long id;
     private String name;
     private int monto;
