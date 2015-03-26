@@ -1,7 +1,7 @@
-(function () 
+(function ()
 {
 	var detailsModule = angular.module('detailsModule');
-	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService','shirtService', function ($scope, detailsService,shirtService) 
+	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService','shirtService', function ($scope, detailsService,shirtService)
         {
             detailsService.extendCtrl(this, $scope);
             this.fetchRecords();
@@ -26,5 +26,5 @@
                 $scope.amount = $scope.amount-record.price;
                 this.deleteRecord(record);
             };
-        }]);  
+        }]);
 })();
