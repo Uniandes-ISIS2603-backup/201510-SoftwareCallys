@@ -54,7 +54,7 @@
         function handleFileSelect(evt)
         {
             // FileList object
-            var files = evt.target.files; 
+            var files = evt.target.files;
             var reader = new FileReader();
             // Closure to capture the file information.
             reader.onload = (function()

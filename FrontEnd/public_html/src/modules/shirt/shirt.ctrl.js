@@ -5,5 +5,10 @@
     {
         shirtService.extendCtrl(this, $scope);
         this.fetchRecords();
+        this.saveShirt = function (pName,pImage,pPrice)
+        {
+           $scope.currentRecord={name:pName,image:pImage,price:pPrice,stamps:""};
+           this.saveRecord();
+        };
     }]);
 })();

@@ -13,18 +13,17 @@
 		<div class="gallery1">
                     <div class="container">
                         <form name="catalogForm" class="css-form" novalidate >
-                            <div>
-                                <input value="images/0001-2.jpg" type="hidden" ng-model="currentRecord.image"/>
-                                <a href="#details">
-                                    <img name="images/0001-2.jpg"  alt="" src="images/0001-2.jpg" height="400" width="321" />
+                                <a ng-click="shirtCtrl.saveShirt('Shrek','images/0001-2.jpg',25)" href="#details">
+                                    <img alt="" src="images/0001-2.jpg" height="400" width="321" />
                                 </a>
-                                <br/>
-                                <input value="Shrek" type="hidden" ng-model="currentRecord.name"/>
                                 <h4>Name: Shrek</h4>
-                                <br/>
-                                <input value="50" type="hidden" ng-model="currentRecord.price"/>
-                                <h4>Price: $50</h4>
-                            </div>	
+                                <h4>Price: $50</h4>                 	
+                            
+                                <a ng-click="shirtCtrl.saveShirt('Levis','images/slider1.png',20)" href="#details">
+                                    <img alt="" src="images/slider1.png" height="400" width="321" />
+                                </a>
+                                <h4>Name: Levis</h4>
+                                <h4>Price: $20</h4>                              
                         </form>    
                     </div>
                 </div>

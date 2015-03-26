@@ -20,9 +20,11 @@
                             </div>
                         </div>
                         <div class="product-image"> 
-                            <a>
-				<img alt="" src="images/0001-2.jpg"  />
-			    </a>
+                            <div>
+                                <a>
+                                    <img alt="" src="{{ShirtRecords[0].image}}"  />
+                                </a> 
+                            </div>
                         </div>  
                     </div>
 		</div>
@@ -33,8 +35,10 @@
 	<div class="span1_of_2">
             <div class="desc1">
                 <div class="contact"><h3>Buy your shirt </h3></div>
+                    <h5>Name: {{ShirtRecords[0].name}}</h5>
                     <p>Choose your shirt size, color, and quantity. <br> Sizes available: S, M, L, XL <br>Buy up to 5 shirts! </p>
-                        <h5>Price: 50</h5>
+                        <h5>Price: {{ShirtRecords[0].price}}</h5>      
+                        <h5>Stamps: </h5>  <pre>{{ShirtRecords[0].stamps}}</pre>
                         <div class="available">
                                 <h4>Available Options :</h4>
                                 <ul>
@@ -65,19 +69,6 @@
                                                 </select>
                                         </li>
                                 </ul>
-                                <div class="grids_of_3">
-                                    <div class="grid1_of_3" ng-repeat = "record in ShirtRecords">
-                                        <img src='{{record.image}}'  alt="" height="225" width="225"/>
-                                        <h3>{{record.name}}</h3>
-                                        <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
-                                        <div class="price">
-                                            <a ><h4>${{record.price}}<span>Delete</span></h4></a>
-                                            <button ><span>Edit</span></button>
-                                        </div> 
-                                        <span class="b_btm"></span>
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
 				<div class="btn_form">
                                     <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
                                 </div>		
@@ -88,9 +79,11 @@
                     <div class="grid1_of_bimbi" ng-repeat = "catalog in catalogRecords">
                         <img src='{{catalog.image}}'  alt="" height="90" width="90"/>
                         <h3>{{catalog.name}}</h3>
+                        <h3>${{catalog.price}}</h3>
                         <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
                         <div class="price">
-                            <button ng-click= "detailsCtrl.buyStamp()"><span>buy</span></button>
+                            <button ng-show="detailsCtrl.stampMode" ng-click= "detailsCtrl.addStamp(catalog)"><span>Add</span></button>
+                            <button ng-hide="detailsCtrl.stampMode" ng-click= "detailsCtrl.deleteStamp(catalog)"><span>Delete</span></button>
                         </div> 
                         <span class="b_btm"></span>
                     </div>
@@ -120,15 +113,17 @@
                     <h5><span>Amount: {{amount}} </span><br> </h5>
                     </a>
                     <div class="grid1_of_3" ng-repeat = "record in records">
-                        <div ><h3>Sales Element</h3></div>
-                        <h3>Color: {{record.color}}</h3>
-                        <h3>Size: {{record.size}}</h3>
-                        <h3>Cuantity per unit: {{record.quantity}}</h3>
-                        <h3>Price: {{record.price}}</h3>
-                        <br>
-                        <div class="price">
-                            <a ng-click = "detailsCtrl.deleteSale(record)" ><h4><span>Delete</span></h4></a>
-                        </div> 
+                        <div class="wrap">
+                            <h3>Sales Element</h3> 
+                            <h3>Color: {{record.color}}</h3>
+                            <h3>Size: {{record.size}}</h3>
+                            <h3>Cuantity per unit: {{record.quantity}}</h3>
+                            <h3>Price: {{record.price}}</h3>
+                            <br>
+                            <div class="price">
+                                <a ng-click = "detailsCtrl.deleteSale(record)" ><h4><span>Delete</span></h4></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="clear"></div>    
                 </div>

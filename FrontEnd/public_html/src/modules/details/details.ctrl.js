@@ -1,10 +1,11 @@
 (function ()
 {
         var detailsModule =angular.module('detailsModule');
-	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService','shirtService','catalogService', function ($scope, detailsService,shirtService,catalogService)
+        detailsModule.controller('detailsCtrl',['$scope','detailsService','shirtService','catalogService',function($scope,detailsService,shirtService,catalogService)
         {
             detailsService.extendCtrl(this, $scope);
             this.fetchRecords();
+            this.stampMode=true;
             catalogService.fetchRecords().then(function(data)
             {
                 $scope.catalogRecords = data;
@@ -21,13 +22,20 @@
             };
             this.saveSale = function ()
             {
-                $scope.currentRecord.price=50*$scope.currentRecord.quantity;
+                $scope.currentRecord.price= $scope.ShirtRecords[0].price*$scope.currentRecord.quantity;
                 $scope.amount = $scope.amount+$scope.currentRecord.price;
                 this.saveRecord();
             };
-             this.buyStamp = function ()
+            this.addStamp = function (catalog)
             {
-                this.saveRecord();
+                $scope.ShirtRecords[0].stamps=$scope.ShirtRecords[0].stamps+"\n StampName: "+catalog.name+"    StampPrice: "+catalog.price+"\n";
+                $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price+catalog.price;
+                this.stampMode=false;
+            };
+            this.deleteStamp = function (catalog)
+            {
+                $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price-catalog.price;
+                this.stampMode=true;
             };
             this.deleteSale = function (record)
             {
