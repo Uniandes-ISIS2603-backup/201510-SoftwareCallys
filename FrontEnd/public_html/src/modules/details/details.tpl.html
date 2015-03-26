@@ -84,8 +84,21 @@
 				<div class="clear"></div>
 			</div>
                     </div>
+             <div class="grids_of_bimbi">
+                    <div class="grid1_of_bimbi" ng-repeat = "catalog in catalogRecords">
+                        <img src='{{catalog.image}}'  alt="" height="90" width="90"/>
+                        <h3>{{catalog.name}}</h3>
+                        <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
+                        <div class="price">
+                            <button ng-click= "detailsCtrl.buyStamp()"><span>buy</span></button>
+                        </div> 
+                        <span class="b_btm"></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
                     <div class="share-desc">
                         <br/>
+                        <br>
                         <div class="share">
                             <ul class="share_nav">
                                 <li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>

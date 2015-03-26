@@ -21,7 +21,9 @@ public class StampDTO {
 
     private double popularidad;
     
+    private Long idCatalogo;
     
+    private Long idArtista;
     
     public Long getId() {
         return id;
@@ -53,5 +55,21 @@ public class StampDTO {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+    
+    public Long getIdCatalogo() {
+        return idCatalogo;
+    }
+
+    public void setIdCatalogo(Long idC) {
+        this.idCatalogo = idC;
+    }
+    
+    public Long getIdArtista() {
+        return idArtista;
+    }
+
+    public void setIdArtista(Long idA) {
+        this.idArtista = id;
     }
 }

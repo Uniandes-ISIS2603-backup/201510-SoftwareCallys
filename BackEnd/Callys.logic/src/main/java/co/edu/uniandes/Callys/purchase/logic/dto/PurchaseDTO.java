@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.purchase.logic.dto;
 
 import java.util.Date;
@@ -18,7 +13,6 @@ public class PurchaseDTO {
     private Date fecha;
     private String datosDeEnvio;
     private String formaDePago;
-    private String itemsComprados;
     
     public Long getId() {
         return id;
@@ -58,13 +52,5 @@ public class PurchaseDTO {
 
     public void setFormaDePago(String nFormaDePago) {
         this.formaDePago = nFormaDePago;
-    }
-    
-    public String getItemsC() {
-        return itemsComprados;
-    }
-
-    public void setItemsC(String nItc) {
-        this.itemsComprados = nItc;
     }
 }

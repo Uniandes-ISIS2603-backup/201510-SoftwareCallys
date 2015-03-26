@@ -1,28 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
 /**
  *
  * @author estudiante
  */
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class StampEntity {
 
     @Id
-    @GeneratedValue(generator = "Stamp")
+    @GeneratedValue(generator = "StampEntity")
     private Long id;
     private String tema;
     private double rating;
     private double popularidad;
-   
+    private Long idCatalogo;
+    private Long idArtista;
+    
+    @ManyToMany(mappedBy="stamps")
+    
+    private Collection<CamisetaEntity> camisetas;
+     public void addCamiseta(CamisetaEntity camiseta) {
+      if (!getCamisetas().contains(camiseta)) {
+          getCamisetas().add(camiseta);
+      }
+      if (!camiseta.getStamps().contains(this)) {
+          camiseta.getStamps().add(this);
+      }
+    }
+    public Collection<CamisetaEntity> getCamisetas() {
+      return camisetas;
+    }
+
+    public void setCamisetas(Collection<CamisetaEntity> camisetas) {
+      this.camisetas = camisetas;
+    }
 
     public Long getId() {
         return id;
@@ -55,6 +73,22 @@ public class StampEntity {
 
     public void setPopularidad(double popularidad) {
         this.popularidad = popularidad;
+    }
+    
+    public Long getIdCatalogo() {
+        return idCatalogo;
+    }
+
+    public void setIdCatalogo(Long idC) {
+        this.idCatalogo = idC;
+    }
+    
+    public Long getIdArtista() {
+        return idArtista;
+    }
+
+    public void setIdArtista(Long idA) {
+        this.idArtista = idA;
     }
 }
 

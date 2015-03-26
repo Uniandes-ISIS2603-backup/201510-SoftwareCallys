@@ -451,6 +451,40 @@ body {
 .main{
 	padding: 2%;
 }
+/* start grids_of_bimbi */
+.grids_of_bimbi{
+	text-align:center;
+	margin: 4% 0;
+}
+.grid1_of_bimbi{
+	float: left;
+	width: 16.333%;
+	margin-left: 4.3333%;
+	border: 1px solid rgb(223, 223, 223);
+	position: relative;
+}
+.grid1_of_bimbi:first-child{
+	margin-left: 0;
+}
+.grid1_of_bimbi a{
+	padding: 2%;
+	display: block;
+}
+.grid1_of_bimbi img{
+	margin-top: 6%;
+}
+.grid1_of_bimbi h3{
+	margin: 6% 0 8%;
+	font-size: 1.8em;
+	color: #999999;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.grid1_of_bimbi:hover h3,.grid1_of_3:hover h4 span{
+	color: rgb(24, 141, 118);
+}
 /* start grids_of_3 */
 .grids_of_3{
 	text-align:center;

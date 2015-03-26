@@ -21,6 +21,8 @@ public class StampConverter {
             dto.setTema(entity.getTema());
             dto.setRating(entity.getRating());
             dto.setPopularidad(entity.getPopularidad());
+            dto.setIdCatalogo(entity.getIdCatalogo());
+            dto.setIdArtista(entity.getIdArtista());
           
             return dto;
         } else {
@@ -39,7 +41,9 @@ public class StampConverter {
 
             entity.setPopularidad(dto.getPopularidad());
 
-           
+            entity.setIdCatalogo(dto.getIdCatalogo());
+            
+            entity.setIdArtista(dto.getIdArtista());
             return entity;
         } else {
             return null;

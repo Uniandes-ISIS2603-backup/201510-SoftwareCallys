@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.cliente.logic.entity;
-
-import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 

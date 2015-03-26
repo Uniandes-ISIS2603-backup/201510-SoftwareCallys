@@ -9,14 +9,6 @@ import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.enterprise.inject.Default;
-
-
-
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
