@@ -10,10 +10,16 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Default
+@Stateless
+@LocalBean
 public class ClienteLogic {
     
     @PersistenceContext(unitName = "ClienteClassPU")

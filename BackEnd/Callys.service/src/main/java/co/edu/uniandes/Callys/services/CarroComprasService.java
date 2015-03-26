@@ -31,7 +31,7 @@ import javax.ws.rs.core.MediaType;
  */
 public class CarroComprasService {
     
-     @Inject
+    @Inject
     protected ICarroCompras carroComprasLogicService;
 
     @POST

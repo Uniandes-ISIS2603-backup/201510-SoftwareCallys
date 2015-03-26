@@ -28,15 +28,15 @@ public class CatalogLogic implements ICatalogLogic {
     }
     @Override
     public List<CatalogDTO> getCatalogo() {
-        Query q = entityManager.createQuery("select u from CatalogoEntity u");
+        Query q = entityManager.createQuery("select u from CatalogEntity u");
         return CatalogConverter.entity2PersistenceDTOList(q.getResultList());
     }
     @Override
     public CatalogPageDTO getCatalogo(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from CatalogoEntity u");
+        Query count = entityManager.createQuery("select count(u) from CatalogEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from CatalogoEntity u");
+        Query q = entityManager.createQuery("select u from CatalogEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

@@ -10,17 +10,20 @@ import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-/**
- *
- * @author estudiante
- */
+
+@Default
+@Stateless
+@LocalBean
 public class CarroComprasLogic {
        
-    @PersistenceContext(unitName = "CarroComprasClassPU")
+    @PersistenceContext (unitName = "CarroComprasClassPU")
     protected EntityManager entityManager;
 
     public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {

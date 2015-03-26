@@ -1,15 +1,11 @@
 package co.edu.uniandes.Callys.cliente.logic.entity;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- *
- * @author estudiante
- */
+@Entity
 public class ClienteEntity 
 {
-
-
     @Id
     @GeneratedValue(generator = "Cliente")
     private long id;
