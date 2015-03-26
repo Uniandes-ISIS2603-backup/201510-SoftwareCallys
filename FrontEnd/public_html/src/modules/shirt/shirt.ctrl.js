@@ -7,8 +7,15 @@
         this.fetchRecords();
         this.saveShirt = function (pName,pImage,pPrice)
         {
-           $scope.currentRecord={name:pName,image:pImage,price:pPrice,stamps:""};
-           this.saveRecord();
+            if($scope.currentRecord !== null)
+            {
+                $scope.currentRecord={name:"",image:"",price:"",stamps:""};
+                $scope.currentRecord = {name:pName,image:pImage,price:pPrice,stamps:""};
+                
+                this.saveRecord();
+            }
+            $scope.currentRecord={name:pName,image:pImage,price:pPrice,stamps:""};
+            this.saveRecord();
         };
     }]);
 })();
