@@ -1,9 +1,14 @@
-package co.edu.uniandes.callys.purchase.logic.ejb;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.purchase.logic.ejb;
 
-import co.edu.uniandes.callys.purchase.logic.converter.PurchaseConverter;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
-import co.edu.uniandes.callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -12,6 +17,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+/**
+ *
+ * @author estudiante
+ */
 @Default
 @Stateless
 @LocalBean

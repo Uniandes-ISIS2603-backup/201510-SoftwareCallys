@@ -1,5 +1,6 @@
-package co.edu.uniandes.callys.camiseta.logic.entity;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+package co.edu.uniandes.Callys.camiseta.logic.entity;
+
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+/**
+ *
+ * @author estudiante
+ */
 @Entity
 public class CamisetaEntity {
     @Id

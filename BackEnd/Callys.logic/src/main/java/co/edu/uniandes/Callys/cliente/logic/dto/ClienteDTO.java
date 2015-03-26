@@ -1,7 +1,10 @@
-package co.edu.uniandes.callys.cliente.logic.dto;
-import javax.xml.bind.annotation.XmlRootElement;
+package co.edu.uniandes.Callys.cliente.logic.dto;
 
-@XmlRootElement
+
+/**
+ *
+ * @author estudiante
+ */
 public class ClienteDTO {
  
     

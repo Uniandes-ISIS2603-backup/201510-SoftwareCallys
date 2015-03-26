@@ -1,8 +1,18 @@
-package co.edu.uniandes.callys.item.logic.entity;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.item.logic.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+/**
+ *
+ * @author estudiante
+ */
 @Entity
 public class ItemEntity {
     @Id

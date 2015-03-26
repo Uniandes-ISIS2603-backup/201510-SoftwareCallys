@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.callys.services;
-import co.edu.uniandes.callys.purchaseitem.logic.api.IPurchaseItemLogic;
-import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemDTO;
-import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
+package co.edu.uniandes.Callys.services;
+import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

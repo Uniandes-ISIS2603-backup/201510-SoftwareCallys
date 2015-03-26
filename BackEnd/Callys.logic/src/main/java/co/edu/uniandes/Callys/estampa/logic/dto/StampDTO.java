@@ -1,7 +1,16 @@
-package co.edu.uniandes.callys.estampa.logic.dto;
-import javax.xml.bind.annotation.XmlRootElement;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.estampa.logic.dto;
 
-@XmlRootElement
+
+import javax.xml.bind.annotation.XmlRootElement;
+/**
+ *
+ * @author estudiante
+ */
 public class StampDTO {
     
     private Long id;

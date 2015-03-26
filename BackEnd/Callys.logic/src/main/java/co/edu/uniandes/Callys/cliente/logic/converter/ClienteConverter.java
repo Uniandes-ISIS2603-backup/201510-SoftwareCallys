@@ -1,8 +1,20 @@
-package co.edu.uniandes.callys.cliente.logic.converter;
-import co.edu.uniandes.callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.callys.cliente.logic.entity.ClienteEntity;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.cliente.logic.converter;
+
+
+import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ *
+ * @author estudiante
+ */
 public class ClienteConverter {
     
     public static ClienteDTO entity2PersistenceDTO(ClienteEntity entity) {

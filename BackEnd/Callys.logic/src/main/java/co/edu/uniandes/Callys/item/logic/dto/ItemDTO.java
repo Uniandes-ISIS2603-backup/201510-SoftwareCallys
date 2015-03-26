@@ -1,7 +1,14 @@
-package  co.edu.uniandes.callys.item.logic.dto;
-import javax.xml.bind.annotation.XmlRootElement;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package  co.edu.uniandes.Callys.item.logic.dto;
 
-@XmlRootElement
+/**
+ *
+ * @author estudiante
+ */
 public class ItemDTO {
     private Long id;
 

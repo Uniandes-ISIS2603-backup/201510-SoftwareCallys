@@ -1,9 +1,18 @@
-package co.edu.uniandes.callys.estampa.logic.converter;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.estampa.logic.converter;
 
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ *
+ * @author estudiante
+ */
 public class StampConverter {
  public static StampDTO entity2PersistenceDTO(StampEntity entity) {
         if (entity != null) {

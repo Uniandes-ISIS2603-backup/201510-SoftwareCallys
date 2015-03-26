@@ -1,20 +1,27 @@
-package co.edu.uniandes.callys.item.logic.ejb;
-import co.edu.uniandes.callys.item.logic.converter.ItemConverter;
-import co.edu.uniandes.callys.item.logic.dto.ItemDTO;
-import co.edu.uniandes.callys.item.logic.dto.ItemPageDTO;
-import co.edu.uniandes.callys.item.logic.entity.ItemEntity;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.item.logic.ejb;
+import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.enterprise.inject.Default;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-@Default
-@Stateless
-@LocalBean
+/**
+ *
+ * @author estudiante
+ */
 public class ItemLogic {
      
     @PersistenceContext(unitName = "ItemClassPU")

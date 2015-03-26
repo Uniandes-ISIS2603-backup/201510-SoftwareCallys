@@ -1,13 +1,22 @@
-package co.edu.uniandes.callys.estampa.logic.ejb;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.uniandes.Callys.estampa.logic.ejb;
 
-import co.edu.uniandes.callys.estampa.logic.converter.StampConverter;
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.dto.StampPageDTO;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+/**
+ *
+ * @author estudiante
+ */
 public class StampLogic {
     
     @PersistenceContext(unitName = "StampClassPU")

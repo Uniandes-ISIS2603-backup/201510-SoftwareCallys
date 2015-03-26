@@ -1,9 +1,11 @@
-package co.edu.uniandes.callys.purchase.logic.dto;
+package co.edu.uniandes.Callys.purchase.logic.dto;
 
 import java.util.Date;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+/**
+ *
+ * @author estudiante
+ */
 public class PurchaseDTO {
     
     private Long id;

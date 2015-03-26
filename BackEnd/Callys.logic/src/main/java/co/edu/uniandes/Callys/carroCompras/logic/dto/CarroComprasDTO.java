@@ -1,6 +1,10 @@
-package co.edu.uniandes.callys.carroCompras.logic.dto;
+package co.edu.uniandes.Callys.carroCompras.logic.dto;
+
 import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement
+/**
+ *
+ * @author estudiante
+ */
 public class CarroComprasDTO {
      private Long id;
 

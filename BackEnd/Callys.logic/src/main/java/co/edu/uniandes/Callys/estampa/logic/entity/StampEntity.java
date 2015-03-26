@@ -1,5 +1,10 @@
-package co.edu.uniandes.callys.estampa.logic.entity;
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+package co.edu.uniandes.Callys.estampa.logic.entity;
+
+/**
+ *
+ * @author estudiante
+ */
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
