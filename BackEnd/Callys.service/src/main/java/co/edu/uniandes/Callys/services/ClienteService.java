@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.Callys.services;
+package co.edu.uniandes.callys.services;
 
-import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
-import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
-import javax.inject.Inject;
+import co.edu.uniandes.callys.cliente.logic.api.IClienteLogic;
+import co.edu.uniandes.callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.callys.cliente.logic.dto.ClientePageDTO;
 import javax.ws.rs.DELETE;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -27,14 +26,10 @@ import javax.ws.rs.Consumes;
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-/**
- *
- * @author estudiante
- */
 public class ClienteService {
     
     
-     @Inject
+    @Inject
     protected IClienteLogic clienteLogicService;
 
     @POST

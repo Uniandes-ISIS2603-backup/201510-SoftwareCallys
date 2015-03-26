@@ -1,22 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package co.edu.uniandes.Callys.artista.logic.ejb;
-
-import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
-import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+package co.edu.uniandes.callys.artista.logic.ejb;
+import co.edu.uniandes.callys.artista.logic.converter.ArtistaConverter;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.callys.artista.logic.entity.ArtistaEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-/**
- *
- * @author estudiante
- */
 public class ArtistaLogic {
  
     @PersistenceContext(unitName = "ArtistaClassPU")

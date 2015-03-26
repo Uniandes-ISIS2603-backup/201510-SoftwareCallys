@@ -1,9 +1,9 @@
-package co.edu.uniandes.Callys.services;
+package co.edu.uniandes.callys.services;
 
 
-import co.edu.uniandes.Callys.artista.logic.api.IArtistaLogic;
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.callys.artista.logic.api.IArtistaLogic;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

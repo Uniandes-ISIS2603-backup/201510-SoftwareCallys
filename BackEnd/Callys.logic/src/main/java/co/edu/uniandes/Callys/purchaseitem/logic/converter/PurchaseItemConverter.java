@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package co.edu.uniandes.Callys.purchaseitem.logic.converter;
-
-import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
-import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
+package co.edu.uniandes.callys.purchaseitem.logic.converter;
+import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author estudiante
- */
 public class PurchaseItemConverter {
     
     public static PurchaseItemDTO entity2PersistenceDTO(PurchaseItemEntity entity) {

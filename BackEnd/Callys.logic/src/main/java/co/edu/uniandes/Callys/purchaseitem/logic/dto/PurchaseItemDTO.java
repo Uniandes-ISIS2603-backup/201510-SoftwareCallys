@@ -1,18 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package co.edu.uniandes.Callys.purchaseitem.logic.dto;
+package co.edu.uniandes.callys.purchaseitem.logic.dto;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
-
-import java.util.List;
-
-/**
- *
- * @author estudiante
- */
+@XmlRootElement
 public class PurchaseItemDTO {
     
     private Long id;

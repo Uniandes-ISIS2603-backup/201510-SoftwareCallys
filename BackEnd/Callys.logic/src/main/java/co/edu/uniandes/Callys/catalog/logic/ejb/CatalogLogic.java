@@ -1,17 +1,16 @@
-package co.edu.uniandes.Callys.catalog.logic.ejb;
+package co.edu.uniandes.callys.catalog.logic.ejb;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-import co.edu.uniandes.Callys.catalog.logic.api.ICatalogLogic;
-import co.edu.uniandes.Callys.catalog.logic.dto.CatalogDTO;
-import co.edu.uniandes.Callys.catalog.logic.dto.CatalogPageDTO;
-import co.edu.uniandes.Callys.catalog.logic.converter.CatalogConverter;
-import co.edu.uniandes.Callys.catalog.logic.entity.CatalogEntity;
+import co.edu.uniandes.callys.catalog.logic.api.ICatalogLogic;
+import co.edu.uniandes.callys.catalog.logic.dto.CatalogDTO;
+import co.edu.uniandes.callys.catalog.logic.dto.CatalogPageDTO;
+import co.edu.uniandes.callys.catalog.logic.converter.CatalogConverter;
+import co.edu.uniandes.callys.catalog.logic.entity.CatalogEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
 @Default
 @Stateless
 @LocalBean

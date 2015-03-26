@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.Callys.services;
+package co.edu.uniandes.callys.services;
 
 
-import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import co.edu.uniandes.callys.estampa.logic.api.IStampLogic;
+import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.callys.estampa.logic.dto.StampPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
