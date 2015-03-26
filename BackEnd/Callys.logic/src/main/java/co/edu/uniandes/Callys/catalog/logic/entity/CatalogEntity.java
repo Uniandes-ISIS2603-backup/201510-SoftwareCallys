@@ -20,7 +20,6 @@ public class CatalogEntity {
     private Long id;
     private String name;
     private Integer numElementos;
-    private String stamps;
     
     public Long getId() {
         return id;
@@ -44,13 +43,5 @@ public class CatalogEntity {
 
     public void setNumeroElementos(Integer nNum) {
         this.numElementos = nNum;
-    }
-    
-    public String getStamps() {
-        return stamps;
-    }
-
-    public void setStamps(String stamps) {
-        this.stamps = stamps;
     }
 }

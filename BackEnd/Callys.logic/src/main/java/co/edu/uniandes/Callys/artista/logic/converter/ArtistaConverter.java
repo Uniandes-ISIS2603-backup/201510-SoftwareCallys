@@ -25,7 +25,6 @@ public class ArtistaConverter {
             dto.setNumeroEstampas(entity.getNumeroEstampas());
             dto.setComisionPorVenta(entity.getComisionPorVenta());
             dto.setDatosVContacto(entity.getDAtosContacto());
-            dto.setIdArtistaEstampas(entity.getIdArtistaEstampas());
             return dto;
         } else {
             return null;
@@ -41,7 +40,6 @@ public class ArtistaConverter {
             entity.setNumeroEstampas(dto.getNumeroEstampas());
             entity.setComisionPorVenta(dto.getComisionPorVenta());
             entity.setDatosVContacto(dto.getDAtosContacto());
-            entity.setIdArtistaEstampas(dto.getIdArtistaEstampas());
             return entity;
         } else {
             return null;

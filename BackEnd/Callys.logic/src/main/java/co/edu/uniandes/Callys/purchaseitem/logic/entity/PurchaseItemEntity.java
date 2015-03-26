@@ -24,6 +24,7 @@ public class PurchaseItemEntity {
     private String name;
     private int monto;
     private Long idCamiseta;
+    private Long idPurchase;
     
     public Long getId() {
         return id;
@@ -55,5 +56,13 @@ public class PurchaseItemEntity {
 
     public void setIdCamiseta(Long nFDP ) {
         this.idCamiseta = nFDP;
+    }
+    
+    public Long getIdPurchase() {
+        return idPurchase;
+    }
+
+    public void setIdPurchase(Long nP ) {
+        this.idPurchase = nP;
     }
 }

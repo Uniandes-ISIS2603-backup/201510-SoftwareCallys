@@ -4,15 +4,9 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.Callys.services;
-
-/**
- *
- * @author estudiante
- */
 import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

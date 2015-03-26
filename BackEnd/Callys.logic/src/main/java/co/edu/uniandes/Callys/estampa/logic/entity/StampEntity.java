@@ -17,6 +17,8 @@ public class StampEntity {
     private String tema;
     private double rating;
     private double popularidad;
+    private Long idCatalogo;
+    private Long idArtista;
    
 
     public Long getId() {
@@ -50,6 +52,22 @@ public class StampEntity {
 
     public void setPopularidad(double popularidad) {
         this.popularidad = popularidad;
+    }
+    
+    public Long getIdCatalogo() {
+        return idCatalogo;
+    }
+
+    public void setIdCatalogo(Long idC) {
+        this.idCatalogo = idC;
+    }
+    
+    public Long getIdArtista() {
+        return idArtista;
+    }
+
+    public void setIdArtista(Long idA) {
+        this.idArtista = idA;
     }
 }
 

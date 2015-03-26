@@ -18,7 +18,6 @@ public class ArtistaEntity {
     private Integer numeroEstampas;
     private String datosContacto;
     private double comisionPorVenta;
-    private String artistaEstampas;
     
     public long getId() {
         return id;
@@ -26,15 +25,6 @@ public class ArtistaEntity {
 
     public void setId( long id) {
         this.id = id;
-    }
-    
-    public String getIdArtistaEstampas() {
-        return artistaEstampas;
-    }
-    
-
-    public void setIdArtistaEstampas( String artistaEstampas) {
-        this.artistaEstampas = artistaEstampas;
     }
 
     public String getClave() {

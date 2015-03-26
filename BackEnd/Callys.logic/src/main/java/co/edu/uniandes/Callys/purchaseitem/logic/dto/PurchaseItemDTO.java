@@ -19,6 +19,7 @@ public class PurchaseItemDTO {
     private String name;
     private int monto;
     private Long idCamiseta;
+    private Long idPurchase;
     
     public Long getId() {
         return id;
@@ -50,5 +51,13 @@ public class PurchaseItemDTO {
     
     public void setIdCamiseta(Long nIdCamiseta){
     	this.idCamiseta = nIdCamiseta;
+    }
+    
+    public Long getIdPurchase(){
+    	return idPurchase;
+    }
+    
+    public void setIdPurchase(Long nIdPurchase){
+    	this.idPurchase = nIdPurchase;
     }
 }

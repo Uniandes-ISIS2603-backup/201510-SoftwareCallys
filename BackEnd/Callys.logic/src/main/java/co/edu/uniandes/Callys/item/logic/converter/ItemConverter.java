@@ -18,6 +18,8 @@ public class ItemConverter {
         if (entity != null) {
             ItemDTO dto = new ItemDTO();
             dto.setId(entity.getId());
+            dto.setIdCamiseta(entity.getIdCamiseta());
+            dto.setIdCarritoC(entity.getIdCarritoC());
             dto.setMonto(entity.getMonto());
             
             return dto;
@@ -30,11 +32,9 @@ public class ItemConverter {
         if (dto != null) {
             ItemEntity entity = new ItemEntity();
             entity.setId(dto.getId());
-
+            entity.setIdCamiseta(dto.getIdCamiseta());
+            entity.setIdCarritoC(dto.getIdCarritoC());
             entity.setMonto(dto.getMonto());
-
-            
-
             return entity;
         } else {
             return null;
