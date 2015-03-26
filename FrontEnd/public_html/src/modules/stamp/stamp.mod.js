@@ -1,4 +1,4 @@
-(function () 
+(function ()
 {
     var stampModule = angular.module('stampModule', ['CrudModule', 'MockModule','catalogModule']);
     stampModule.constant('stamp.context', 'stamps');

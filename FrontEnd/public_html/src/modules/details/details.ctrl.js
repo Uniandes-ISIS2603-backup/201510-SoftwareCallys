@@ -1,6 +1,6 @@
 (function ()
 {
-	var detailsModule = angular.module('detailsModule');
+        var detailsModule =angular.module('detailsModule');
 	detailsModule.controller('detailsCtrl', ['$scope', 'detailsService','shirtService','catalogService', function ($scope, detailsService,shirtService,catalogService)
         {
             detailsService.extendCtrl(this, $scope);
@@ -27,14 +27,13 @@
             };
              this.buyStamp = function ()
             {
-                
                 this.saveRecord();
             };
             this.deleteSale = function (record)
             {
                 if($scope.amount >0)
                 {
-                $scope.amount = $scope.amount-record.price;
+                    $scope.amount = $scope.amount-record.price;
                 }
                 this.deleteRecord(record);
             };

@@ -53,7 +53,8 @@
         document.getElementById('files').addEventListener('change', handleFileSelect, false);
         function handleFileSelect(evt)
         {
-            var files = evt.target.files; // FileList object
+            // FileList object
+            var files = evt.target.files; 
             var reader = new FileReader();
             // Closure to capture the file information.
             reader.onload = (function()
@@ -101,7 +102,7 @@
                 ratingValue: '=',
                 max: '='
             },
-            link: function (scope, elem, attrs)
+            link: function (scope, elem)
             {
                 var updateStars = function ()
                 {
@@ -118,7 +119,7 @@
                         rating: index + 1
                     });
                 };
-                scope.$watch('ratingValue', function (oldVal, newVal)
+                scope.$watch('ratingValue', function (oldVal,newVal)
                 {
                     if (newVal)
                     {
