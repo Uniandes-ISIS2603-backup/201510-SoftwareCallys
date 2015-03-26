@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.catalog.logic.api;
 
-/**
- *
- * @author estudiante
- */
 import co.edu.uniandes.Callys.catalog.logic.dto.CatalogDTO;
 import co.edu.uniandes.Callys.catalog.logic.dto.CatalogPageDTO;
 import java.util.List;

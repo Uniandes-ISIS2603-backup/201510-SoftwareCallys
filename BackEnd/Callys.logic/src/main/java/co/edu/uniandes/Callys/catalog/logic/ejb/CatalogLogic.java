@@ -1,4 +1,5 @@
 package co.edu.uniandes.Callys.catalog.logic.ejb;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -17,7 +18,7 @@ import javax.persistence.Query;
 @LocalBean
 public class CatalogLogic implements ICatalogLogic {
 
-    @PersistenceContext(unitName = "CatalogoClassPU")
+    @PersistenceContext(unitName = "CatalogClassPU")
     protected EntityManager entityManager;
 
     @Override

@@ -1,4 +1,5 @@
 package co.edu.uniandes.Callys.cliente.logic.entity;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

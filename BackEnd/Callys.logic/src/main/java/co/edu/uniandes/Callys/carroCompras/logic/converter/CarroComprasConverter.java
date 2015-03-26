@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.carroCompras.logic.converter;
 
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author estudiante
- */
+
 public class CarroComprasConverter {
     
     public static CarroComprasDTO entity2PersistenceDTO(CarroComprasEntity entity) {

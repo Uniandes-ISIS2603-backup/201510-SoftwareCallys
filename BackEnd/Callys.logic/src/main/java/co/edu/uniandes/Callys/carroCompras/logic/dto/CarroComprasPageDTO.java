@@ -8,10 +8,7 @@ package co.edu.uniandes.Callys.carroCompras.logic.dto;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author estudiante
- */
+@XmlRootElement
 public class CarroComprasPageDTO {
        
     private Long totalRecords;

@@ -1,11 +1,9 @@
 package co.edu.uniandes.Callys.artista.logic.entity;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-/**
- *
- * @author estudiante
- */
+
 @Entity
 public class ArtistaEntity {
  
