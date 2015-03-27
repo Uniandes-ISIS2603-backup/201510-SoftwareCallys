@@ -11,7 +11,7 @@ import javax.persistence.Query;
 
 public class ArtistaLogic {
  
-    @PersistenceContext(unitName = "ArtistaClassPU")
+    
     protected EntityManager entityManager;
 
     public ArtistaDTO createArtista(ArtistaDTO sport) {

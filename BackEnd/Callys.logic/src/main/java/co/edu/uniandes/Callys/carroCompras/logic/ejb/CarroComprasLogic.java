@@ -19,7 +19,7 @@ import javax.persistence.Query;
 @LocalBean
 public class CarroComprasLogic implements ICarroCompras{
        
-    @PersistenceContext(unitName = "CarroComprasClassPU")
+    
     protected EntityManager entityManager;
 
     public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {

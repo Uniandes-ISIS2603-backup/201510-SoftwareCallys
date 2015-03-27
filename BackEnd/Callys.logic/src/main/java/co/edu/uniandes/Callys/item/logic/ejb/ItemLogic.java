@@ -18,7 +18,7 @@ import javax.persistence.Query;
 @LocalBean
 public class ItemLogic {
      
-    @PersistenceContext(unitName = "ItemClassPU")
+    
     protected EntityManager entityManager;
 
     public ItemDTO createItem(ItemDTO sport) {

@@ -17,7 +17,7 @@ import javax.persistence.Query;
 @LocalBean
 public class StampLogic {
     
-    @PersistenceContext(unitName = "StampClassPU")
+  
     protected EntityManager entityManager;
 
     public StampDTO createStamp(StampDTO stamp) {
