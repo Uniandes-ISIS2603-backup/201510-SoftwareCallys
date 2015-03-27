@@ -1,6 +1,8 @@
 package co.edu.uniandes.Callys.carroCompras.logic.ejb;
 
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
@@ -15,9 +17,9 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class CarroComprasLogic {
+public class CarroComprasLogic implements ICarroCompras{
        
-    @PersistenceContext (unitName = "CarroComprasClassPU")
+    @PersistenceContext(unitName = "CarroComprasClassPU")
     protected EntityManager entityManager;
 
     public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {
@@ -58,5 +60,9 @@ public class CarroComprasLogic {
     public void updateCarroCompras(CarroComprasDTO carroCompras) {
         CarroComprasEntity entity = entityManager.merge(CarroComprasConverter.persistenceDTO2Entity(carroCompras));
         CarroComprasConverter.entity2PersistenceDTO(entity);
+    }
+
+    public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

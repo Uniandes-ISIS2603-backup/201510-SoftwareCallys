@@ -26,10 +26,6 @@ import javax.ws.rs.Consumes;
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-/**
- *
- * @author estudiante
- */
 public class ClienteService {
     
     
