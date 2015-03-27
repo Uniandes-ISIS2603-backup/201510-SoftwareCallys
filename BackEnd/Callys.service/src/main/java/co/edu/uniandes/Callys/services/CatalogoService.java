@@ -47,7 +47,7 @@ public class CatalogoService {
     }
 
     @PUT
-    public void updateCatalogo(@PathParam("id") Long id, CatalogDTO detail) {
+    public void updateCatalogo(CatalogDTO detail) {
         catalogoLogicService.updateCatalogo(detail);
     }
 }

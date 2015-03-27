@@ -49,7 +49,7 @@ public class ArtistaService {
     }
 
     @PUT
-    public void updateArtista(@PathParam("id") Long id, ArtistaDTO artista) {
+    public void updateArtista(ArtistaDTO artista) {
         artistaLogicService.updateArtista(artista);
     }
 }

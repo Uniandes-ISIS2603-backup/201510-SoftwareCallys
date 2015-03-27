@@ -21,32 +21,32 @@ public class StampDTO {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long nId) {
+        this.id = nId;
     }
 
     public String getTema() {
         return tema;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setTema(String nTema) {
+        this.tema = nTema;
     }
 
     public double getRating() {
         return rating;
     }
 
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
+    public void setPopularidad(double nPopularidad) {
+        this.popularidad = nPopularidad;
     }
 
     public double getPopularidad() {
         return popularidad;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setRating(double nRating) {
+        this.rating = nRating;
     }
     
     public Long getIdCatalogo() {
@@ -62,6 +62,6 @@ public class StampDTO {
     }
 
     public void setIdArtista(Long idA) {
-        this.idArtista = id;
+        this.idArtista = idA;
     }
 }

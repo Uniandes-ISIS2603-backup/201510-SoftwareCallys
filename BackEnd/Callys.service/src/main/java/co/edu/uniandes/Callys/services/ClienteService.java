@@ -61,7 +61,7 @@ public class ClienteService {
     }
 
     @PUT
-    public void updateCliente(@PathParam("id") Long id, ClienteDTO cliente) {
+    public void updateCliente(ClienteDTO cliente) {
         clienteLogicService.updateCliente(cliente);
     }
 }

@@ -53,7 +53,7 @@ public class PurchaseService {
     }
 
     @PUT
-    public void updatePurchase(@PathParam("id") Long id, PurchaseDTO detail) {
+    public void updatePurchase(PurchaseDTO detail) {
         purchaseLogicService.updatePurchase(detail);
     }
 
