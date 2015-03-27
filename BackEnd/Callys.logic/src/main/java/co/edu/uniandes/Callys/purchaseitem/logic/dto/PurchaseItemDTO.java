@@ -4,13 +4,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class PurchaseItemDTO {
-    
+
     private Long id;
     private String name;
     private int monto;
     private Long idCamiseta;
     private Long idPurchase;
-    
+
     public Long getId() {
         return id;
     }
@@ -34,7 +34,7 @@ public class PurchaseItemDTO {
     public void setMonto(Integer nMonto) {
         this.monto = nMonto;
     }
-    
+
     public Long getIdCamiseta(){
     	return idCamiseta;
     }
@@ -42,11 +42,11 @@ public class PurchaseItemDTO {
     public void setIdCamiseta(Long nIdCamiseta){
     	this.idCamiseta = nIdCamiseta;
     }
-    
+
     public Long getIdPurchase(){
     	return idPurchase;
     }
-    
+
     public void setIdPurchase(Long nIdPurchase){
     	this.idPurchase = nIdPurchase;
     }
