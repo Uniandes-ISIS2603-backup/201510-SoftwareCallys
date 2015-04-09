@@ -7,8 +7,8 @@ import java.util.List;
 public interface IArtistaLogic {
     
     public ArtistaDTO createArtista(ArtistaDTO detail);
-
-    public List<ArtistaDTO> getArtista();
+    
+    public List<ArtistaDTO> getArtistas();
 
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords);
 

@@ -5,10 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class ArtistaEntity {
- 
-
-
+public class ArtistaEntity { 
     @Id
     @GeneratedValue(generator = "Artista")
     private long id;
@@ -21,7 +18,7 @@ public class ArtistaEntity {
         return id;
     }
 
-    public void setId( long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -38,15 +35,15 @@ public class ArtistaEntity {
     }
 
     public void setNumeroEstampas(Integer numeroEstampas) {
-        this.numeroEstampas =numeroEstampas;
+        this.numeroEstampas = numeroEstampas;
     }
 
-    public String getDAtosContacto() {
+    public String getDatosContacto() {
         return datosContacto;
     }
 
-    public void setDatosVContacto(String datosContacto) {
-        this.datosContacto= datosContacto;
+    public void setDatosContacto(String datosContacto) {
+        this.datosContacto = datosContacto;
     }
     
     public double getComisionPorVenta() {
@@ -54,8 +51,6 @@ public class ArtistaEntity {
     }
 
     public void setComisionPorVenta( double comisionPorVenta) {
-        this.comisionPorVenta= comisionPorVenta;
+        this.comisionPorVenta = comisionPorVenta;
     }
-
-
 }

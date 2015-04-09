@@ -35,23 +35,23 @@ public class PurchaseItemEntity {
         return monto;
     }
 
-    public void setMonto(int nDDE ) {
-        this.monto = nDDE;
+    public void setMonto(int monto) {
+        this.monto = monto;
     }
     
     public Long getIdCamiseta() {
         return idCamiseta;
     }
 
-    public void setIdCamiseta(Long nFDP ) {
-        this.idCamiseta = nFDP;
+    public void setIdCamiseta(Long idCamiseta) {
+        this.idCamiseta = idCamiseta;
     }
     
     public Long getIdPurchase() {
         return idPurchase;
     }
 
-    public void setIdPurchase(Long nP ) {
-        this.idPurchase = nP;
+    public void setIdPurchase(Long idPurchase) {
+        this.idPurchase = idPurchase;
     }
 }

@@ -12,37 +12,35 @@ import javax.persistence.ManyToMany;
 @Entity
 public class CamisetaEntity {
     @Id
-    @GeneratedValue(generator = "CamisetaEntity")
+    @GeneratedValue(generator = "Camiseta")
     private Long id;
     private String color;
-    private int talla;
+    private String talla;
     private String material;
     private String texto;
     
     @ManyToMany 
     @JoinTable(name="Camiseta_Stamp", 
-      joinColumns=@JoinColumn(name="Camiseta_ID"),
-      inverseJoinColumns=@JoinColumn(name="Stamp_ID"))  
+        joinColumns=@JoinColumn(name="Camiseta_ID"),
+        inverseJoinColumns=@JoinColumn(name="Stamp_ID"))  
     private Collection<StampEntity> stamps;
 
-    
     public Collection<StampEntity> getStamps() {
-    return stamps;
-  }
-
-  public void setStamps(Collection<StampEntity> stamps) {
-    this.stamps = stamps;
-  }
-  
-   public void addDepartment(StampEntity stamp) {
-    if (!getStamps().contains(stamp)) {
-        getStamps().add(stamp);
+        return stamps;
     }
-    if (!stamp.getCamisetas().contains(this)) {
-      stamp.getCamisetas().add(this);
-    }
-  }
 
+    public void setStamps(Collection<StampEntity> stamps) {
+        this.stamps = stamps;
+    }
+
+    public void addStamp(StampEntity stamp) {
+        if (!getStamps().contains(stamp)) {
+            stamps.add(stamp);
+        }
+        if (!stamp.getCamisetas().contains(this)) {
+            stamp.getCamisetas().add(this);
+        }
+    }
 
     public Long getId() {
         return id;
@@ -60,27 +58,27 @@ public class CamisetaEntity {
         this.color = color;
     }
 
-    public int getTalla() {
+    public String getTalla() {
         return talla;
     }
 
-    public void setTalla(int talla) {
-        this.talla =talla;
+    public void setTalla(String talla) {
+        this.talla = talla;
     }
 
     public String getMaterial() {
         return material;
     }
-    
+
     public void setMaterial(String material) {
-       this.material=material;
+       this.material = material;
     }
 
     public String getTexto()
     {
         return texto;
     }
-    
+
     public void setTexto(String  texto) {
         this.texto = texto;
     }

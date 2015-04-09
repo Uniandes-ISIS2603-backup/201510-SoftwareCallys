@@ -11,25 +11,24 @@ import javax.persistence.Query;
 
 public class ArtistaLogic {
  
-    
     protected EntityManager entityManager;
 
-    public ArtistaDTO createArtista(ArtistaDTO sport) {
-        ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(sport);
+    public ArtistaDTO createArtista(ArtistaDTO artista) {
+        ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(artista);
         entityManager.persist(entity);
         return ArtistaConverter.entity2PersistenceDTO(entity);
     }
 
     public List<ArtistaDTO> getArtistas() {
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ArtistaEntity u");
         return ArtistaConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SportEntity u");
+        Query count = entityManager.createQuery("select count(u) from ArtistaEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ArtistaEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

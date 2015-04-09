@@ -1,9 +1,5 @@
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
-/**
- *
- * @author estudiante
- */
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.Collection;
 import javax.persistence.Entity;
@@ -15,7 +11,7 @@ import javax.persistence.ManyToMany;
 public class StampEntity {
 
     @Id
-    @GeneratedValue(generator = "StampEntity")
+    @GeneratedValue(generator = "Stamp")
     private Long id;
     private String tema;
     private double rating;
@@ -26,20 +22,22 @@ public class StampEntity {
     @ManyToMany(mappedBy="stamps")
     
     private Collection<CamisetaEntity> camisetas;
-     public void addCamiseta(CamisetaEntity camiseta) {
-      if (!getCamisetas().contains(camiseta)) {
-          getCamisetas().add(camiseta);
-      }
-      if (!camiseta.getStamps().contains(this)) {
-          camiseta.getStamps().add(this);
-      }
+
+    public void addCamiseta(CamisetaEntity camiseta) {
+        if (!getCamisetas().contains(camiseta)) {
+            camisetas.add(camiseta);
+        }
+        if (!camiseta.getStamps().contains(this)) {
+            camiseta.getStamps().add(this);
+        }
     }
+ 
     public Collection<CamisetaEntity> getCamisetas() {
-      return camisetas;
+        return camisetas;
     }
 
     public void setCamisetas(Collection<CamisetaEntity> camisetas) {
-      this.camisetas = camisetas;
+        this.camisetas = camisetas;
     }
 
     public Long getId() {
@@ -64,7 +62,7 @@ public class StampEntity {
     }
 
     public void setRating(double rating) {
-        this.rating =rating;
+        this.rating = rating;
     }
 
     public double getPopularidad() {
@@ -79,16 +77,15 @@ public class StampEntity {
         return idCatalogo;
     }
 
-    public void setIdCatalogo(Long idC) {
-        this.idCatalogo = idC;
+    public void setIdCatalogo(Long idCatalogo) {
+        this.idCatalogo = idCatalogo;
     }
     
     public Long getIdArtista() {
         return idArtista;
     }
 
-    public void setIdArtista(Long idA) {
-        this.idArtista = idA;
+    public void setIdArtista(Long idArtista) {
+        this.idArtista = idArtista;
     }
 }
-

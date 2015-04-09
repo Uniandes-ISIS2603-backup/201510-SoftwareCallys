@@ -11,19 +11,17 @@ public class ClienteEntity
     @GeneratedValue(generator = "Cliente")
     private long id;
     private String nombre;
-    private Integer numeroCompras;
-    private Integer numeroTargeta;
-    private Integer codigoDeSeguridad;
+    private Integer numCompras;
+    private Integer numeroTarjeta;
+    private Integer codigoSeguridad;
     private long carroComprasId;
     private String idCompras;
     
-    public String getIdCompras()
-    {
+    public String getIdCompras() {
         return idCompras;
     }
     
-    public void setIdCompras(String idCompras)
-    {
+    public void setIdCompras(String idCompras) {
         this.idCompras= idCompras;
     }
 
@@ -31,7 +29,7 @@ public class ClienteEntity
         return id;
     }
 
-    public void setId( long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -43,39 +41,35 @@ public class ClienteEntity
         this.nombre = nombre;
     }
 
-    public Integer getNumeroCompras() {
-        return numeroCompras;
+    public Integer getNumCompras() {
+        return numCompras;
     }
 
-    public void setNumeroCompras(Integer numeroCompras) {
-        this.numeroCompras =numeroCompras;
+    public void setNumCompras(Integer numCompras) {
+        this.numCompras = numCompras;
     }
 
-    public Integer getNumeroTargeta() {
-        return numeroTargeta;
+    public Integer getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
-    public void setNumeroTargeta( Integer numeroTargeta) {
-        this.numeroTargeta= numeroTargeta;
+    public void setNumeroTarjeta(Integer numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
     }
     
     public  Integer getCodigoSeguridad() {
-        return codigoDeSeguridad;
+        return codigoSeguridad;
     }
 
-    public void setCodigoDeSeguridad( Integer codigoDeSeguridad) {
-        
-        this.codigoDeSeguridad= codigoDeSeguridad;
+    public void setCodigoDeSeguridad(Integer codigoSeguridad) {
+        this.codigoSeguridad = codigoSeguridad;
     }
     
-    public long getCarroDecompras()
-    {
+    public long getCarroComprasId() {
         return carroComprasId;
     }
-    public void setCarroDeCompras(long carroCompras)
-    {
-        this.carroComprasId= carroCompras;
+    
+    public void setCarroComprasId(long carroComprasId) {
+        this.carroComprasId= carroComprasId;
     }
-
-
 }

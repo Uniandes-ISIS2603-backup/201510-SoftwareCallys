@@ -35,7 +35,7 @@ public class CarroComprasEntity {
     }
 
     public void setFormaPago(String formaPago) {
-        this.formaPago =formaPago;
+        this.formaPago = formaPago;
     }
 
     public String getDatosEnvio() {

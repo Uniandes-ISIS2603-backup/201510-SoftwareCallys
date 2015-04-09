@@ -33,7 +33,7 @@ public class CatalogEntity {
         return numElementos;
     }
 
-    public void setNumeroElementos(Integer nNum) {
-        this.numElementos = nNum;
+    public void setNumeroElementos(Integer numElementos) {
+        this.numElementos = numElementos;
     }
 }
