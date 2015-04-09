@@ -4,12 +4,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class CatalogDTO {
-
     private Long id;
-
     private String name;
-
-    private Integer numeroElementos;
+    private Integer numElementos;
     
     public Long getId() {
         return id;
@@ -27,11 +24,11 @@ public class CatalogDTO {
         this.name = name;
     }
 
-    public Integer getNumElementos() {
-        return numeroElementos;
+    public Integer getNumeroElementos() {
+        return numElementos;
     }
 
-    public void setNumElementos(Integer numElementos) {
-        this.numeroElementos = numElementos;
+    public void setNumeroElementos(Integer numElementos) {
+        this.numElementos = numElementos;
     }
 }

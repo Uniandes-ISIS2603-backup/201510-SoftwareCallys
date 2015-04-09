@@ -32,12 +32,12 @@ public class PurchaseEntity {
         this.name = name;
     }
 
-    public  Date getDate() {
+    public Date getDate() {
         return fecha;
     }
 
-    public void setDate(Date nFecha ) {
-        this.fecha = nFecha;
+    public void setDate(Date fecha) {
+        this.fecha = fecha;
     }
     
     public String getDatosDeEnvio() {

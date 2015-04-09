@@ -5,7 +5,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class PurchaseDTO {
-    
     private Long id;
     private String name;
     private Date fecha;
@@ -32,23 +31,23 @@ public class PurchaseDTO {
         return fecha;
     }
 
-    public void setDate(Date nFecha) {
-        this.fecha = nFecha;
+    public void setDate(Date fecha) {
+        this.fecha = fecha;
     }
     
     public String getDatosDeEnvio() {
         return datosDeEnvio;
     }
 
-    public void setDatosDeEnvio(String nDatos) {
-        this.datosDeEnvio = nDatos;
+    public void setDatosDeEnvio(String nDDE ) {
+        this.datosDeEnvio = nDDE;
     }
     
     public String getFormaDePago() {
         return formaDePago;
     }
 
-    public void setFormaDePago(String nFormaDePago) {
-        this.formaDePago = nFormaDePago;
+    public void setFormaDePago(String nFDP ) {
+        this.formaDePago = nFDP;
     }
 }
