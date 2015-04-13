@@ -13,10 +13,10 @@ public class ClienteConverter {
             dto.setId(entity.getId());
             
             dto.setNombre(entity.getNombre());
-            dto.setNumeroCompras(entity.getNumeroCompras());
-            dto.setNumeroTargeta(entity.getNumeroTargeta());
+            dto.setNumCompras(entity.getNumCompras());
+            dto.setNumeroTarjeta(entity.getNumeroTarjeta());
             dto.setCodigoDeSeguridad(entity.getCodigoSeguridad());
-            dto.setCarroDeCompras(entity.getCarroDecompras());
+            dto.setCarroComprasId(entity.getCarroComprasId());
             dto.setIdCompras(entity.getIdCompras());
             return dto;
         } else {
@@ -28,10 +28,10 @@ public class ClienteConverter {
         if (dto != null) {
             ClienteEntity entity = new ClienteEntity();
             entity.setNombre(dto.getNombre());
-            entity.setNumeroCompras(dto.getNumeroCompras());
-            entity.setNumeroTargeta(dto.getNumeroTargeta());
+            entity.setNumCompras(dto.getNumCompras());
+            entity.setNumeroTarjeta(dto.getNumeroTarjeta());
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());
-            entity.setCarroDeCompras(dto.getCarroDecompras());
+            entity.setCarroComprasId(dto.getCarroComprasId());
             entity.setIdCompras(dto.getIdCompras());
             
             return entity;

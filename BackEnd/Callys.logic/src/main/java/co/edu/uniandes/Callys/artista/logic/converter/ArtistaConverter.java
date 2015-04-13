@@ -14,7 +14,7 @@ public class ArtistaConverter {
             dto.setClave(entity.getClave());
             dto.setNumeroEstampas(entity.getNumeroEstampas());
             dto.setComisionPorVenta(entity.getComisionPorVenta());
-            dto.setDatosVContacto(entity.getDAtosContacto());
+            dto.setDatosContacto(entity.getDatosContacto());
             return dto;
         } else {
             return null;
@@ -29,7 +29,7 @@ public class ArtistaConverter {
             entity.setClave(dto.getClave());
             entity.setNumeroEstampas(dto.getNumeroEstampas());
             entity.setComisionPorVenta(dto.getComisionPorVenta());
-            entity.setDatosVContacto(dto.getDAtosContacto());
+            entity.setDatosContacto(dto.getDatosContacto());
             return entity;
         } else {
             return null;

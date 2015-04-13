@@ -12,7 +12,7 @@ public class CatalogConverter {
             CatalogDTO dto = new CatalogDTO();
             dto.setId(entity.getId());
             dto.setName(entity.getName());
-            dto.setNumElementos(entity.getNumeroElementos());
+            dto.setNumeroElementos(entity.getNumeroElementos());
             return dto;
         } else {
             return null;
@@ -24,7 +24,7 @@ public class CatalogConverter {
             CatalogEntity entity = new CatalogEntity();
             entity.setId(dto.getId());
             entity.setName(dto.getName());
-            entity.setNumeroElementos(dto.getNumElementos());
+            entity.setNumeroElementos(dto.getNumeroElementos());
             return entity;
         } else {
             return null;
