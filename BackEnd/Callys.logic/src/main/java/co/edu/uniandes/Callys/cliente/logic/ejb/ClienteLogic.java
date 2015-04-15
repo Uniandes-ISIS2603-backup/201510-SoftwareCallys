@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
+import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
@@ -15,7 +16,7 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class ClienteLogic {
+public class ClienteLogic implements IClienteLogic{
     
     
     protected EntityManager entityManager;
@@ -58,5 +59,21 @@ public class ClienteLogic {
     public void updateCliente(ClienteDTO cliente) {
         ClienteEntity entity = entityManager.merge(ClienteConverter.persistenceDTO2Entity(cliente));
         ClienteConverter.entity2PersistenceDTO(entity);
+    }
+
+    public List<ClienteDTO> getCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ClientePageDTO getCliente(Integer page, Integer maxRecords) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ClienteDTO getCliente(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void deleteCliente(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

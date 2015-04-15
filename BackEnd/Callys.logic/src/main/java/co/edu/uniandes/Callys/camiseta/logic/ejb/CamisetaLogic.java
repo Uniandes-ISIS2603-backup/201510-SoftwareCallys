@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.camiseta.logic.ejb;
 
+import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
 import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
@@ -9,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-public class CamisetaLogic {
+public class CamisetaLogic implements ICamisetaLogic{
     
     protected EntityManager entityManager;
 
@@ -51,5 +52,13 @@ public class CamisetaLogic {
     public void updateCamiseta(CamisetaDTO camiseta) {
         CamisetaEntity entity = entityManager.merge(CamisetaConverter.persistenceDTO2Entity(camiseta));
         CamisetaConverter.entity2PersistenceDTO(entity);
+    }
+
+    public List<CamisetaDTO> getCamiseta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public CamisetaPageDTO getCamiseta(Integer page, Integer maxRecords) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

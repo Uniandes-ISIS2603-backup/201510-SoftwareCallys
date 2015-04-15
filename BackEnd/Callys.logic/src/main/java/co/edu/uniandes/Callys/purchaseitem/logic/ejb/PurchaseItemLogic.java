@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.purchaseitem.logic.ejb;
 
+import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
 import co.edu.uniandes.Callys.purchaseitem.logic.converter.PurchaseItemConverter;
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
@@ -15,7 +16,7 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class PurchaseItemLogic {
+public class PurchaseItemLogic implements IPurchaseItemLogic{
     
    
     protected EntityManager entityManager;

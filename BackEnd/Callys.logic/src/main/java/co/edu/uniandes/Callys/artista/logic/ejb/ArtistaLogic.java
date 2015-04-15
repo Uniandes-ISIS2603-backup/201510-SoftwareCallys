@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.artista.logic.ejb;
 
+import co.edu.uniandes.Callys.artista.logic.api.IArtistaLogic;
 import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
@@ -9,7 +10,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-public class ArtistaLogic {
+/**
+ *
+ * @author estudiante
+ */
+public class ArtistaLogic implements IArtistaLogic{
  
     protected EntityManager entityManager;
 
@@ -51,5 +56,13 @@ public class ArtistaLogic {
     public void updateArtista(ArtistaDTO artista) {
         ArtistaEntity entity = entityManager.merge(ArtistaConverter.persistenceDTO2Entity(artista));
         ArtistaConverter.entity2PersistenceDTO(entity);
+    }
+
+    public ArtistaDTO getArtista(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void deleteArtista(long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

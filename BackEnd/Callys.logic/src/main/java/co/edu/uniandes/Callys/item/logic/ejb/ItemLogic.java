@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.item.logic.ejb;
 
+import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
 import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
 import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
@@ -16,7 +17,7 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class ItemLogic {
+public class ItemLogic implements IItemLogic{
      
     
     protected EntityManager entityManager;
@@ -59,5 +60,13 @@ public class ItemLogic {
     public void updateItem(ItemDTO item) {
         ItemEntity entity = entityManager.merge(ItemConverter.persistenceDTO2Entity(item));
         ItemConverter.entity2PersistenceDTO(entity);
+    }
+
+    public List<ItemDTO> getItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ItemPageDTO getItem(Integer page, Integer maxRecords) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

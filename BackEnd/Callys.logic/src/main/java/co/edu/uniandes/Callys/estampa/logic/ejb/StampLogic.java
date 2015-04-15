@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.estampa.logic.ejb;
 
+import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
@@ -15,7 +16,7 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class StampLogic {
+public class StampLogic implements IStampLogic{
     
   
     protected EntityManager entityManager;
@@ -58,5 +59,13 @@ public class StampLogic {
     public void updateStamp(StampDTO stamp) {
         StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
         StampConverter.entity2PersistenceDTO(entity);
+    }
+
+    public List<StampDTO> getStamp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public StampPageDTO getStamp(Integer page, Integer maxRecords) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
