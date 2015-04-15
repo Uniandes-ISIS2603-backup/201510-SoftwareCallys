@@ -12,7 +12,8 @@ public class StampEntity {
 
     @Id
     @GeneratedValue(generator = "Stamp")
-    private Long id;
+    Long id;
+    private String name;
     private String tema;
     private double rating;
     private double popularidad;

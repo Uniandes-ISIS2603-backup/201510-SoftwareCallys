@@ -8,7 +8,8 @@ import javax.persistence.Id;
 public class ItemEntity {
     @Id
     @GeneratedValue(generator = "Item")
-    private Long id;
+    Long id;
+    private String name;
     private Long idCamiseta;
     private Long idCarritoC;
     private double monto;

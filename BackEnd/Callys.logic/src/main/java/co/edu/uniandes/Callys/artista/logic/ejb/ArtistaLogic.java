@@ -10,10 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-/**
- *
- * @author estudiante
- */
 public class ArtistaLogic implements IArtistaLogic{
  
     protected EntityManager entityManager;

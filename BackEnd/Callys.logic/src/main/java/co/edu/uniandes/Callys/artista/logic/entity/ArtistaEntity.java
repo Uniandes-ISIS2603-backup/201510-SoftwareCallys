@@ -5,10 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class ArtistaEntity { 
+public class ArtistaEntity{ 
     @Id
     @GeneratedValue(generator = "Artista")
-    private long id;
+    Long id;
+    private String name;
     private String clave;
     private Integer numeroEstampas;
     private String datosContacto;
