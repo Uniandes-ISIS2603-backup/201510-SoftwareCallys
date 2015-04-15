@@ -8,17 +8,15 @@ import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless
 @LocalBean
 public class PurchaseItemLogic implements IPurchaseItemLogic{
     
-   
+    @PersistenceContext(unitName = "PurchaseItemPU")
     protected EntityManager entityManager;
 
     public PurchaseItemDTO createPurchaseItem(PurchaseItemDTO detail) {
