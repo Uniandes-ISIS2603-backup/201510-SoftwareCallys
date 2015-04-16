@@ -24,7 +24,6 @@ public class ArtistaConverter {
     public static ArtistaEntity persistenceDTO2Entity(ArtistaDTO dto) {
         if (dto != null) {
             ArtistaEntity entity = new ArtistaEntity();
-            
             entity.setId(dto.getId());
             entity.setClave(dto.getClave());
             entity.setNumeroEstampas(dto.getNumeroEstampas());
