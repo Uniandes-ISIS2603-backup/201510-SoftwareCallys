@@ -16,7 +16,7 @@ import javax.persistence.Query;
 @LocalBean
 public class PurchaseLogic implements IPurchaseLogic{
     
-    @PersistenceContext(unitName = "PurhaseClassPU")
+    @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
 
     public PurchaseDTO createPurchase(PurchaseDTO detail) {
