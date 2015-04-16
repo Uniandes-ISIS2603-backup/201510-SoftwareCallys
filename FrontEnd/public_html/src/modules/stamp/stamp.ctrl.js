@@ -32,10 +32,22 @@
         {
             this.saveRecords();
         };
-        this.rateStamp = function (rating)
+        this.likeStamp = function ()
         {
-            $scope.currentRecord.rating = rating;
-            this.saveRecords();
+
+            $scope.currentRecord.rating = rating+1;
+            catalogService.fetchRecords().then(function(data)
+                {
+                   $scope.catalogRecords = data;
+                });
+        };
+        this.dislikeStamp = function ()
+        {
+            $scope.currentRecord.rating = rating-1;
+            catalogService.fetchRecords().then(function(data)
+                {
+                   $scope.catalogRecords = data;
+                });
         };
         this.editStamp = function (catalog)
         {
@@ -72,6 +84,7 @@
             if(catalogForm.$valid)
             {
                catalogRecord.image= image;
+                catalogRecord.rating= 0;
                catalogService.saveRecord(catalogRecord);
                 catalogService.fetchRecords().then(function(data)
                 {

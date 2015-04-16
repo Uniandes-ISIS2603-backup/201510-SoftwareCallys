@@ -11,7 +11,11 @@
                         <div class="price">
                             <a href="#"><h4>$17</h4></a>
                             <br>
-                            <div rating-stamps rating-value="3" max="5" on-rating-selected = "rate()"></div>
+                            <div>
+                                <a ng-model="valor"><i class="fa fa-thumbs-o-up"></i></a>
+                                <span>{{valor+1}}</span>
+                                <a><i class="fa fa-thumbs-o-down"></i></a>
+                            </div>
                         </div>
                         <span class="b_btm"></span>
                     </div>
@@ -21,7 +25,10 @@
                         <div class="price">
                             <a href="#"><h4>$25</h4></a>
                             <br>
-                            <div rating-stamps rating-value="3" max="5" on-rating-selected = "rateStamp()">
+                            <div>
+                                <a ng-click= "stampCtrl.likeStamp()"><i class="fa fa-thumbs-o-up"></i></a>
+                                <span>0</span>
+                                <a ng-click= "stampCtrl.dislikeStamp()"><i class="fa fa-thumbs-o-down"></i></a>
                             </div>
                         </div>
                         <span class="b_btm"></span>
@@ -32,7 +39,10 @@
                         <div class="price">
                             <a href="#"><h4>$25</h4></a>
                             <br>
-                            <div rating-stamps rating-value="3" max="5" on-rating-selected = "rateStamp()">
+                            <div>
+                                <a ng-click= "stampCtrl.likeStamp()"><i class="fa fa-thumbs-o-up"></i></a>
+                                <span>0</span>
+                                <a ng-click= "stampCtrl.dislikeStamp()"><i class="fa fa-thumbs-o-down"></i></a>
                             </div>
                         </div>
                         <span class="b_btm"></span>
@@ -42,7 +52,11 @@
                     <div class="grid1_of_3" ng-repeat = "catalog in catalogRecords">
                         <img src='{{catalog.image}}'  alt="" height="225" width="225"/>
                         <h3>{{catalog.name}}</h3>
-                        <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
+                            <div>
+                                <a ng-click= "stampCtrl.likeStamp()"><i class="fa fa-thumbs-o-up"></i></a>
+                                <span>{{catalog.rating}}</span>
+                                <a ng-click= "stampCtrl.dislikeStamp()"><i class="fa fa-thumbs-o-down"></i></a>
+                            </div>
                         <div class="price">
                             <a ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
                             <button ng-click= "stampCtrl.editRecord(catalog)"><span>Edit</span></button>
