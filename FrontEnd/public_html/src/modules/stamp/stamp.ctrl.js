@@ -32,18 +32,18 @@
         {
             this.saveRecords();
         };
-        this.likeStamp = function ()
+        this.likeStamp = function (record)
         {
-
-            $scope.currentRecord.rating = rating+1;
+            record.rating +=1;
+            alert(record.rating);
             catalogService.fetchRecords().then(function(data)
                 {
                    $scope.catalogRecords = data;
                 });
         };
-        this.dislikeStamp = function ()
+        this.dislikeStamp = function (record)
         {
-            $scope.currentRecord.rating = rating-1;
+            record.rating = record.rating-1;
             catalogService.fetchRecords().then(function(data)
                 {
                    $scope.catalogRecords = data;
