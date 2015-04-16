@@ -10,12 +10,10 @@ public class StampConverter {
         if (entity != null) {
             StampDTO dto = new StampDTO();
             dto.setId(entity.getId());
-            dto.setTema(entity.getTema());
+            dto.setTopic(entity.getTopic());
+            dto.setName(entity.getName());
             dto.setRating(entity.getRating());
-            dto.setPopularidad(entity.getPopularidad());
-            dto.setIdCatalogo(entity.getIdCatalogo());
             dto.setIdArtista(entity.getIdArtista());
-          
             return dto;
         } else {
             return null;
@@ -26,15 +24,9 @@ public class StampConverter {
         if (dto != null) {
             StampEntity entity = new StampEntity();
             entity.setId(dto.getId());
-
-            entity.setTema(dto.getTema());
-
+            entity.setTopic(dto.getTopic());
+            entity.setName(dto.getName());
             entity.setRating(dto.getRating());
-
-            entity.setPopularidad(dto.getPopularidad());
-
-            entity.setIdCatalogo(dto.getIdCatalogo());
-            
             entity.setIdArtista(dto.getIdArtista());
             return entity;
         } else {

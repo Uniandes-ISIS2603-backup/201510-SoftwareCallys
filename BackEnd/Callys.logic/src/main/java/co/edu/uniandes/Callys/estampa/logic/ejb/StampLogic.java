@@ -17,8 +17,7 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class StampLogic implements IStampLogic{
-    
-  
+   
     protected EntityManager entityManager;
 
     public StampDTO createStamp(StampDTO stamp) {

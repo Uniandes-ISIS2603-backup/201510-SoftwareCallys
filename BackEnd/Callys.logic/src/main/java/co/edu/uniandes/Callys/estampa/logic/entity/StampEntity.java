@@ -14,10 +14,8 @@ public class StampEntity {
     @GeneratedValue(generator = "Stamp")
     Long id;
     private String name;
-    private String tema;
-    private double rating;
-    private double popularidad;
-    private Long idCatalogo;
+    private String topic;
+    private int rating;
     private Long idArtista;
     
     @ManyToMany(mappedBy="stamps")
@@ -49,37 +47,28 @@ public class StampEntity {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
     
-    public String getTema() {
-        return tema;
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getTopic() {
+        return topic;
     }
 
-    public void setTema(String tema) {
-        this.tema = tema;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-    public double getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(int rating) {
         this.rating = rating;
-    }
-
-    public double getPopularidad() {
-        return popularidad;
-    }
-
-    public void setPopularidad(double popularidad) {
-        this.popularidad = popularidad;
-    }
-    
-    public Long getIdCatalogo() {
-        return idCatalogo;
-    }
-
-    public void setIdCatalogo(Long idCatalogo) {
-        this.idCatalogo = idCatalogo;
     }
     
     public Long getIdArtista() {

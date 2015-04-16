@@ -7,7 +7,7 @@ import java.util.List;
 public interface IStampLogic {
      public StampDTO createStamp(StampDTO detail);
 
-    public List<StampDTO> getStamp();
+    public List<StampDTO> getStamps();
 
     public StampPageDTO getStamp(Integer page, Integer maxRecords);
 
