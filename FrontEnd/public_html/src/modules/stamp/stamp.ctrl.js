@@ -35,7 +35,7 @@
         this.likeStamp = function (record)
         {
             record.rating +=1;
-            alert(record.rating);
+            catalogService.editRecord(record);
             catalogService.fetchRecords().then(function(data)
                 {
                    $scope.catalogRecords = data;
@@ -44,6 +44,7 @@
         this.dislikeStamp = function (record)
         {
             record.rating = record.rating-1;
+            catalogService.editRecord(record);
             catalogService.fetchRecords().then(function(data)
                 {
                    $scope.catalogRecords = data;
