@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 public class CamisetaLogic implements ICamisetaLogic{
-    
+    @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
 
     public CamisetaDTO createCamiseta(CamisetaDTO sport) {

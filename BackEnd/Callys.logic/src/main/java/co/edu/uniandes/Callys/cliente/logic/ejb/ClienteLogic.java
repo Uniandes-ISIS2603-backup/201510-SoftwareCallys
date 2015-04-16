@@ -18,7 +18,7 @@ import javax.persistence.Query;
 @LocalBean
 public class ClienteLogic implements IClienteLogic{
     
-    
+    @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
 
     public ClienteDTO createCliente(ClienteDTO sport) {
