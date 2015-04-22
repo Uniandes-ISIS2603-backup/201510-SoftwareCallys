@@ -49,7 +49,7 @@ public class StampService {
     @GET
     public StampPageDTO getStamps(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
           
-        return  stampLogicService .getStamps(page, maxRecords);
+        return  stampLogicService.getStamps(page, maxRecords);
     }
 
     @GET
