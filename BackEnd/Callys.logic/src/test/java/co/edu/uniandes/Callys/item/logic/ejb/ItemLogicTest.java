@@ -1,3 +1,4 @@
+/*
 package co.edu.uniandes.Callys.item.logic.ejb;
 
 import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
@@ -187,3 +188,4 @@ public class ItemLogicTest {
         }
     }
 }
+*/

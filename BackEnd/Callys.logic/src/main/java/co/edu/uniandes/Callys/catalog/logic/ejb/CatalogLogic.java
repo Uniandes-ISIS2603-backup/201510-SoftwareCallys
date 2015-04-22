@@ -16,7 +16,7 @@ import javax.persistence.Query;
 @LocalBean
 public class CatalogLogic implements ICatalogLogic {
 
-    @PersistenceContext(unitName = "CallysClassPU")
+    @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
     @Override

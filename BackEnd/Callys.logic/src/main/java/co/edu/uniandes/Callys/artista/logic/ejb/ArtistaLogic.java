@@ -12,7 +12,7 @@ import javax.persistence.Query;
 
 public class ArtistaLogic implements IArtistaLogic{
  
-    @PersistenceContext(unitName = "CallysClassPU")
+    @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
     public ArtistaDTO createArtista(ArtistaDTO artista) {

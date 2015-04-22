@@ -10,7 +10,7 @@ public class PurchaseEntity {
     
     @Id
     @GeneratedValue(generator = "Purchase")
-    Long id;
+    private Long id;
     private String name;
     private Date fecha;
     private String datosDeEnvio;
