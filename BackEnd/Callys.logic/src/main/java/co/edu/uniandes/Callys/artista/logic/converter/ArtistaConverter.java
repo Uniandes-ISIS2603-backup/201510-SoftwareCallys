@@ -1,7 +1,7 @@
-package co.edu.uniandes.Callys.artista.logic.converter;
+package co.edu.uniandes.callys.artista.logic.converter;
 
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.callys.artista.logic.entity.ArtistaEntity;
 import java.util.ArrayList;
 import java.util.List;
 

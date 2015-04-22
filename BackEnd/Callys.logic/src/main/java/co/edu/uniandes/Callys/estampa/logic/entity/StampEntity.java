@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
-import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.persistence.Entity;

@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.carroCompras.logic.ejb;
 
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;

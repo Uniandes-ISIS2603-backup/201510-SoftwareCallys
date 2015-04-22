@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.carroCompras.logic.api;
 
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import java.util.List;
