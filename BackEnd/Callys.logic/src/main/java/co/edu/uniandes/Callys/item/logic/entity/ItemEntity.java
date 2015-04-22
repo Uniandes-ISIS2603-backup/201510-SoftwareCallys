@@ -1,19 +1,41 @@
 package co.edu.uniandes.Callys.item.logic.entity;
 
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class ItemEntity {
     @Id
     @GeneratedValue(generator = "Item")
     Long id;
-    private String name;
     private Long idCamiseta;
     private Long idCarritoC;
     private double monto;
+    @ManyToOne
+    private CamisetaEntity camiseta;
+    @ManyToOne
+    private CarroComprasEntity carroCompras;
 
+    public CamisetaEntity getCamiseta() {
+        return camiseta;
+    }
+
+    public void setCamiseta(CamisetaEntity camiseta) {
+        this.camiseta = camiseta;
+    }
+    
+    public CarroComprasEntity getCarroCompras() {
+        return carroCompras;
+    }
+
+    public void setCarroCompras(CarroComprasEntity carroCompras) {
+        this.carroCompras = carroCompras;
+    }
+    
     public Long getId() {
         return id;
     }

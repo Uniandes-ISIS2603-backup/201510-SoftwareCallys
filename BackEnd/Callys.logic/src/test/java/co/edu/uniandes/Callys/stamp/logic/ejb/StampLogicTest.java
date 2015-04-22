@@ -165,12 +165,12 @@ public class StampLogicTest {
     @Test
     public void getSportPaginationTest() {
         //Page 1
-        StampPageDTO dto1=stampLogic.getStamp(1,2);
+        StampPageDTO dto1=stampLogic.getStamps(1,2);
         Assert.assertNotNull(dto1);
         Assert.assertEquals(2, dto1.getRecords().size());
         Assert.assertEquals(3L, dto1.getTotalRecords().longValue());
         
-        StampPageDTO dto2=stampLogic.getStamp(2, 2);
+        StampPageDTO dto2=stampLogic.getStamps(2, 2);
         Assert.assertNotNull(dto2);
         Assert.assertEquals(1, dto2.getRecords().size());
         Assert.assertEquals(3L, dto2.getTotalRecords().longValue());

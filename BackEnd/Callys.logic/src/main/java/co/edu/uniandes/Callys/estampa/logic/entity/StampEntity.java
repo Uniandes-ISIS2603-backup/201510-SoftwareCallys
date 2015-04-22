@@ -1,26 +1,28 @@
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class StampEntity {
 
     @Id
     @GeneratedValue(generator = "Stamp")
-    Long id;
+    private Long id;
     private String name;
     private String topic;
     private int rating;
     private Long idArtista;
-    
     @ManyToMany(mappedBy="stamps")
-    
-    private Collection<CamisetaEntity> camisetas;
+    private List<CamisetaEntity> camisetas;
+    @ManyToOne
+    private ArtistaEntity artista;
 
     public void addCamiseta(CamisetaEntity camiseta) {
         if (!getCamisetas().contains(camiseta)) {
@@ -31,11 +33,11 @@ public class StampEntity {
         }
     }
  
-    public Collection<CamisetaEntity> getCamisetas() {
+    public List<CamisetaEntity> getCamisetas() {
         return camisetas;
     }
 
-    public void setCamisetas(Collection<CamisetaEntity> camisetas) {
+    public void setCamisetas(List<CamisetaEntity> camisetas) {
         this.camisetas = camisetas;
     }
 
@@ -77,5 +79,13 @@ public class StampEntity {
 
     public void setIdArtista(Long idArtista) {
         this.idArtista = idArtista;
+    }
+    
+    public ArtistaEntity getArtista() {
+        return artista;
+    }
+
+    public void setArtista(ArtistaEntity artista) {
+        this.artista = artista;
     }
 }
