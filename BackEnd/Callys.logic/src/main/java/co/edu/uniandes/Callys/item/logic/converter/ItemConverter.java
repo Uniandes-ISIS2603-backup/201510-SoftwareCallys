@@ -13,7 +13,12 @@ public class ItemConverter {
             dto.setIdCamiseta(entity.getIdCamiseta());
             dto.setIdCarritoC(entity.getIdCarritoC());
             dto.setMonto(entity.getMonto());
-            
+            if (entity.getCamiseta()!= null) {
+                dto.setCamiseta(entity.getCamiseta().getId());
+            }
+            if (entity.getCarroCompras()!= null) {
+                dto.setCarroCompras(entity.getCarroCompras().getId());
+            }
             return dto;
         } else {
             return null;

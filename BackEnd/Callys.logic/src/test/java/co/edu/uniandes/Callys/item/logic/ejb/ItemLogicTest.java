@@ -84,7 +84,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void createStampTest() {
+    public void createItemTest() {
         ItemDTO dto = new ItemDTO();
         dto.setMonto(generateRandom(Double.class));
         dto.setId(generateRandom(Long.class));
@@ -100,7 +100,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void getStampsTest() {
+    public void getItemsTest() {
         List<ItemDTO> list = itemLogic.getItem();
         Assert.assertEquals(list.size(), data.size());
         for (ItemDTO dto : list) {
@@ -115,7 +115,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void getStampTest() {
+    public void getItemTest() {
         ItemEntity entity = data.get(0);
         ItemDTO dto = itemLogic.getStamp(entity.getId());
         Assert.assertNotNull(dto);
@@ -127,7 +127,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void deleteSportTest() {
+    public void deleteItemTest() {
         ItemEntity entity = data.get(0);
         itemLogic.deleteStamp(entity.getId());
         ItemEntity deleted = em.find(ItemEntity.class, entity.getId());
@@ -135,7 +135,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void updateSportTest() {
+    public void updateItemTest() {
         ItemEntity entity = data.get(0);
         ItemDTO dto = new ItemDTO();
         
@@ -155,7 +155,7 @@ public class ItemLogicTest {
     }
 
     @Test
-    public void getSportPaginationTest() {
+    public void getItemPaginationTest() {
         //Page 1
         ItemPageDTO dto1=itemLogic.getStamp(1,2);
         Assert.assertNotNull(dto1);
