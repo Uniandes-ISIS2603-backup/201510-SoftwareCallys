@@ -8,9 +8,9 @@ public interface IPurchaseItemLogic {
     
     public PurchaseItemDTO createPurchaseItem(PurchaseItemDTO detail);
 
-    public List<PurchaseItemDTO> getPurchaseItem();
+    public List<PurchaseItemDTO> getPurchaseItems();
 
-    public PurchaseItemPageDTO getPurchaseItem(Integer page, Integer maxRecords);
+    public PurchaseItemPageDTO getPurchaseItems(Integer page, Integer maxRecords);
 
     public PurchaseItemDTO getPurchaseItem(Long id);
 

@@ -9,7 +9,7 @@ public class PurchaseItemEntity {
     
     @Id
     @GeneratedValue(generator = "PurchaseItem")
-    Long id;
+    private Long id;
     private String name;
     private int monto;
     private Long idCamiseta;

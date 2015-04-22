@@ -7,9 +7,9 @@ import java.util.List;
 public interface IItemLogic {
     public ItemDTO createItem(ItemDTO detail);
 
-    public List<ItemDTO> getItem();
+    public List<ItemDTO> getItems();
 
-    public ItemPageDTO getItem(Integer page, Integer maxRecords);
+    public ItemPageDTO getItems(Integer page, Integer maxRecords);
 
     public ItemDTO getItem(Long id);
 

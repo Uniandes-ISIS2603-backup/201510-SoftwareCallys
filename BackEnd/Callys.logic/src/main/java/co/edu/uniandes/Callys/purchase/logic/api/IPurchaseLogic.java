@@ -8,9 +8,9 @@ public interface IPurchaseLogic {
     
     public PurchaseDTO createPurchase(PurchaseDTO detail);
 
-    public List<PurchaseDTO> getPurchase();
+    public List<PurchaseDTO> getPurchases();
 
-    public PurchasePageDTO getPurchase(Integer page, Integer maxRecords);
+    public PurchasePageDTO getPurchases(Integer page, Integer maxRecords);
 
     public PurchaseDTO getPurchase(Long id);
 

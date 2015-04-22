@@ -29,15 +29,15 @@ public class ItemLogic implements IItemLogic{
     }
 
     public List<ItemDTO> getItems() {
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ItemEntity u");
         return ItemConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     public ItemPageDTO getItems(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SportEntity u");
+        Query count = entityManager.createQuery("select count(u) from ItemEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ItemEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);
@@ -60,13 +60,5 @@ public class ItemLogic implements IItemLogic{
     public void updateItem(ItemDTO item) {
         ItemEntity entity = entityManager.merge(ItemConverter.persistenceDTO2Entity(item));
         ItemConverter.entity2PersistenceDTO(entity);
-    }
-
-    public List<ItemDTO> getItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public ItemPageDTO getItem(Integer page, Integer maxRecords) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -25,12 +25,12 @@ public class PurchaseLogic implements IPurchaseLogic{
         return PurchaseConverter.entity2PersistenceDTO(entity);
     }
 
-    public List<PurchaseDTO> getPurchase() {
+    public List<PurchaseDTO> getPurchases() {
         Query q = entityManager.createQuery("select u from PurchaseEntity u");
         return PurchaseConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public PurchasePageDTO getPurchase(Integer page, Integer maxRecords) {
+    public PurchasePageDTO getPurchases(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from PurchaseEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());

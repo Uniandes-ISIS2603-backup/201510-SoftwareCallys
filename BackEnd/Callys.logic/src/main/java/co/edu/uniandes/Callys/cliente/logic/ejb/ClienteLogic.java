@@ -47,33 +47,17 @@ public class ClienteLogic implements IClienteLogic{
         return response;
     }
 
-    public ClienteDTO getCliente(Long id) {
-        return ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, id));
-    }
-
-    public void deleteCliente(Long id) {
-        ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
-        entityManager.remove(entity);
-    }
-
     public void updateCliente(ClienteDTO cliente) {
         ClienteEntity entity = entityManager.merge(ClienteConverter.persistenceDTO2Entity(cliente));
         ClienteConverter.entity2PersistenceDTO(entity);
     }
 
-    public List<ClienteDTO> getCliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public ClientePageDTO getCliente(Integer page, Integer maxRecords) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public ClienteDTO getCliente(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, id));
     }
 
     public void deleteCliente(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
+        entityManager.remove(entity);
     }
 }

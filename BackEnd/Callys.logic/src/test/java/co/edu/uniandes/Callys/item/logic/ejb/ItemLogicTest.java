@@ -1,11 +1,10 @@
-package co.edu.uniandes.Callys.stamp.logic.ejb;
+package co.edu.uniandes.Callys.item.logic.ejb;
 
-import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
-import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
-import co.edu.uniandes.Callys.estampa.logic.ejb.StampLogic;
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
+import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.ejb.ItemLogic;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,24 +22,24 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class StampLogicTest {
+public class ItemLogicTest {
 
     public static final String DEPLOY = "Prueba";
 
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addPackage(StampEntity.class.getPackage())
-            .addPackage(StampDTO.class.getPackage())
-            .addPackage(StampConverter.class.getPackage())
-            .addPackage(IStampLogic.class.getPackage())
-            .addPackage(StampLogic.class.getPackage())
+            .addPackage(ItemEntity.class.getPackage())
+            .addPackage(ItemDTO.class.getPackage())
+            .addPackage(ItemConverter.class.getPackage())
+            .addPackage(IItemLogic.class.getPackage())
+            .addPackage(ItemLogic.class.getPackage())
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
 
     @Inject
-    private IStampLogic stampLogic;
+    private IItemLogic itemLogic;
 
     @PersistenceContext
     private EntityManager em;
@@ -70,16 +69,14 @@ public class StampLogicTest {
         em.createQuery("delete from StampEntity").executeUpdate();
     }
 
-    private List<StampEntity> data = new ArrayList<StampEntity>();
+    private List<ItemEntity> data = new ArrayList<ItemEntity>();
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
-            StampEntity entity = new StampEntity();
-            entity.setTopic(generateRandomTopic());
+            ItemEntity entity = new ItemEntity();
+
             entity.setId(generateRandom(Long.class));
-            entity.setIdArtista(generateRandom(Long.class));
-            entity.setRating(generateRandom(Integer.class));
-            entity.setName(generateRandom(String.class));
+
             em.persist(entity);
             data.add(entity);
         }
@@ -87,33 +84,27 @@ public class StampLogicTest {
 
     @Test
     public void createStampTest() {
-        StampDTO dto = new StampDTO();
-        dto.setTopic(generateRandomTopic());
+        ItemDTO dto = new ItemDTO();
+        dto.setMonto(generateRandom(Double.class));
         dto.setId(generateRandom(Long.class));
-        dto.setIdArtista(generateRandom(Long.class));
-        dto.setRating(generateRandom(Integer.class));
-        dto.setName(generateRandom(String.class));
-
-        StampDTO result = stampLogic.createStamp(dto);
-
+        
+        ItemDTO result = itemLogic.createItem(dto);
+        
         Assert.assertNotNull(result);
 
-        StampEntity entity = em.find(StampEntity.class, result.getId());
+        ItemEntity entity = em.find(ItemEntity.class, result.getId());
 
-        Assert.assertEquals(dto.getName(), entity.getName());
-        Assert.assertEquals(dto.getTopic(), entity.getTopic());
         Assert.assertEquals(dto.getId(), entity.getId());
-        Assert.assertEquals(dto.getIdArtista(), entity.getIdArtista());
-        Assert.assertEquals(dto.getRating(), entity.getRating());
+        Assert.assertEquals(dto.getMonto(), entity.getMonto());
     }
 
     @Test
     public void getStampsTest() {
-        List<StampDTO> list = stampLogic.getStamps();
+        List<ItemDTO> list = itemLogic.getItem();
         Assert.assertEquals(list.size(), data.size());
-        for (StampDTO dto : list) {
+        for (ItemDTO dto : list) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }
@@ -124,8 +115,8 @@ public class StampLogicTest {
 
     @Test
     public void getStampTest() {
-        StampEntity entity = data.get(0);
-        StampDTO dto = stampLogic.getStamp(entity.getId());
+        ItemEntity entity = data.get(0);
+        ItemDTO dto = itemLogic.getStamp(entity.getId());
         Assert.assertNotNull(dto);
         Assert.assertEquals(entity.getName(), dto.getName());
         Assert.assertEquals(entity.getTopic(), dto.getTopic());
@@ -136,16 +127,16 @@ public class StampLogicTest {
 
     @Test
     public void deleteSportTest() {
-        StampEntity entity = data.get(0);
-        stampLogic.deleteStamp(entity.getId());
-        StampEntity deleted = em.find(StampEntity.class, entity.getId());
+        ItemEntity entity = data.get(0);
+        itemLogic.deleteStamp(entity.getId());
+        ItemEntity deleted = em.find(ItemEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
 
     @Test
     public void updateSportTest() {
-        StampEntity entity = data.get(0);
-        StampDTO dto = new StampDTO();
+        ItemEntity entity = data.get(0);
+        ItemDTO dto = new ItemDTO();
         
         dto.setTopic(generateRandomTopic());
         dto.setId(generateRandom(Long.class));
@@ -153,8 +144,8 @@ public class StampLogicTest {
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
         
-        stampLogic.updateStamp(dto);
-        StampEntity resp = em.find(StampEntity.class, entity.getId());
+        itemLogic.updateStamp(dto);
+        ItemEntity resp = em.find(ItemEntity.class, entity.getId());
         Assert.assertEquals(dto.getName(), resp.getName());
         Assert.assertEquals(dto.getTopic(), resp.getTopic());
         Assert.assertEquals(dto.getId(), resp.getId());
@@ -165,19 +156,19 @@ public class StampLogicTest {
     @Test
     public void getSportPaginationTest() {
         //Page 1
-        StampPageDTO dto1=stampLogic.getStamp(1,2);
+        ItemPageDTO dto1=itemLogic.getStamp(1,2);
         Assert.assertNotNull(dto1);
         Assert.assertEquals(2, dto1.getRecords().size());
         Assert.assertEquals(3L, dto1.getTotalRecords().longValue());
         
-        StampPageDTO dto2=stampLogic.getStamp(2, 2);
+        ItemPageDTO dto2=itemLogic.getStamp(2, 2);
         Assert.assertNotNull(dto2);
         Assert.assertEquals(1, dto2.getRecords().size());
         Assert.assertEquals(3L, dto2.getTotalRecords().longValue());
 
-        for (StampDTO dto : dto1.getRecords()) {
+        for (ItemDTO dto : dto1.getRecords()) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }
@@ -185,24 +176,14 @@ public class StampLogicTest {
             Assert.assertTrue(found);
         }
 
-        for (StampDTO dto : dto2.getRecords()) {
+        for (ItemDTO dto : dto2.getRecords()) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }
             }
             Assert.assertTrue(found);
         }
-    }
-    
-    private String generateRandomTopic(){
-        int randomNum = 1 + (int)(Math.random()*3);
-        switch(randomNum){
-            case 1: return "Animales";
-            case 2: return "Videojuegos";
-            case 3: return "Otros";
-        }
-        return null;
     }
 }

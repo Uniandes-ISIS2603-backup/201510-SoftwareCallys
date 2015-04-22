@@ -11,7 +11,6 @@ public class ClienteConverter {
         if (entity != null) {
             ClienteDTO dto = new ClienteDTO();
             dto.setId(entity.getId());
-            
             dto.setNombre(entity.getNombre());
             dto.setNumCompras(entity.getNumCompras());
             dto.setNumeroTarjeta(entity.getNumeroTarjeta());
@@ -27,13 +26,13 @@ public class ClienteConverter {
     public static ClienteEntity persistenceDTO2Entity(ClienteDTO dto) {
         if (dto != null) {
             ClienteEntity entity = new ClienteEntity();
+            entity.setId(dto.getId());
             entity.setNombre(dto.getNombre());
             entity.setNumCompras(dto.getNumCompras());
             entity.setNumeroTarjeta(dto.getNumeroTarjeta());
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());
             entity.setCarroComprasId(dto.getCarroComprasId());
             entity.setIdCompras(dto.getIdCompras());
-            
             return entity;
         } else {
             return null;

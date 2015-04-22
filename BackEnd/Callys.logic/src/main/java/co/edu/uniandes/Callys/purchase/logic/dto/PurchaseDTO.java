@@ -39,7 +39,7 @@ public class PurchaseDTO {
         return datosDeEnvio;
     }
 
-    public void setDatosDeEnvio(String nDDE ) {
+    public void setDatosDeEnvio(String nDDE) {
         this.datosDeEnvio = nDDE;
     }
     

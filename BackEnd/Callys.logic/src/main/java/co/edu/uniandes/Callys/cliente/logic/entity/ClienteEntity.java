@@ -9,7 +9,7 @@ public class ClienteEntity
 {
     @Id
     @GeneratedValue(generator = "Cliente")
-    Long id;
+    private Long id;
     private String name;
     private Integer numCompras;
     private Integer numeroTarjeta;
