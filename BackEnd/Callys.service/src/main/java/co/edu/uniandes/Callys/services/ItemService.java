@@ -64,6 +64,7 @@ public class ItemService {
     
 
     @PUT
+    @Path("{id}") 
     public void updateItem(ItemDTO item) {
         itemLogicService.updateItem(item);
     } 

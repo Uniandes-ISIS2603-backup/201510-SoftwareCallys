@@ -48,6 +48,7 @@ public class ArtistaService {
     }
 
     @PUT
+    @Path("{id}")
     public void updateArtista(ArtistaDTO artista) {
         artistaLogicService.updateArtista(artista);
     }

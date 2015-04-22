@@ -56,6 +56,7 @@ public class ClienteService {
     }
 
     @PUT
+    @Path("{id}")
     public void updateCliente(ClienteDTO cliente) {
         clienteLogicService.updateCliente(cliente);
     }

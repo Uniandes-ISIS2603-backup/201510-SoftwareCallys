@@ -59,6 +59,7 @@ public class StampService {
     }
 
     @PUT
+    @Path("{id}") 
     public void updateStamp(StampDTO stamp) {
         stampLogicService.updateStamp(stamp);
     }

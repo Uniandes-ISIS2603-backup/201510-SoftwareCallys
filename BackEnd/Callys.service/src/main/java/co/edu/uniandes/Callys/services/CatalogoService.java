@@ -47,6 +47,7 @@ public class CatalogoService {
     }
 
     @PUT
+    @Path("{id}")
     public void updateCatalogo(CatalogDTO detail) {
         catalogoLogicService.updateCatalogo(detail);
     }

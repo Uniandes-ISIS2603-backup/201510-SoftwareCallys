@@ -52,6 +52,7 @@ public class PurchaseItemService {
     }
 
     @PUT
+    @Path("{id}") 
     public void updatePurchaseItem(PurchaseItemDTO detail) {
         purchaseItemLogicService.updatePurchaseItem(detail);
     }
