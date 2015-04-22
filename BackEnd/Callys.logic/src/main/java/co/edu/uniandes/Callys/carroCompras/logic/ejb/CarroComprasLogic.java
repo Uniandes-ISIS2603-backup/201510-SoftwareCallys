@@ -28,12 +28,12 @@ public class CarroComprasLogic implements ICarroCompras{
         return CarroComprasConverter.entity2PersistenceDTO(entity);
     }
 
-    public List<CarroComprasDTO> getCarroCompras() {
+    public List<CarroComprasDTO> getCarrosCompras() {
         Query q = entityManager.createQuery("select u from CarroComprasEntity u");
         return CarroComprasConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public CarroComprasPageDTO getCarroCompras(Integer page, Integer maxRecords) {
+    public CarroComprasPageDTO getCarrosCompras(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from CarroComprasEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());

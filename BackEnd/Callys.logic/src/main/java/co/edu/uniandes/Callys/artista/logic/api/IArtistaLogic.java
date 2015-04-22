@@ -12,9 +12,9 @@ public interface IArtistaLogic {
 
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords);
 
-    public ArtistaDTO getArtista(long id);
+    public ArtistaDTO getArtista(Long id);
 
-    public void deleteArtista(long id);
+    public void deleteArtista(Long id);
 
     public void updateArtista(ArtistaDTO detail);
 }

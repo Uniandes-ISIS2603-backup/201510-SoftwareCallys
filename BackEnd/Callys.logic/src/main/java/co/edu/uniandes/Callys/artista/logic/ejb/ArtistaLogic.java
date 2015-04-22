@@ -54,12 +54,4 @@ public class ArtistaLogic implements IArtistaLogic{
         ArtistaEntity entity = entityManager.merge(ArtistaConverter.persistenceDTO2Entity(artista));
         ArtistaConverter.entity2PersistenceDTO(entity);
     }
-
-    public ArtistaDTO getArtista(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void deleteArtista(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

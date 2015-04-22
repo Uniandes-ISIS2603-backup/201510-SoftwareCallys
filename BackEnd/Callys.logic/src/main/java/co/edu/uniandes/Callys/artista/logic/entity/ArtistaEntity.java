@@ -9,7 +9,6 @@ public class ArtistaEntity{
     @Id
     @GeneratedValue(generator = "Artista")
     Long id;
-    private String name;
     private String clave;
     private Integer numeroEstampas;
     private String datosContacto;

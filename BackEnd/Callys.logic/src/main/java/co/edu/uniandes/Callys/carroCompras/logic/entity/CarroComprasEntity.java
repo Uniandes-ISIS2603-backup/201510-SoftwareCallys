@@ -10,7 +10,6 @@ public class CarroComprasEntity {
     @Id
     @GeneratedValue(generator = "CarroCompras")
     Long id;
-    private String name;
     private double monto;
     private String formaPago;
     private String datosEnvio;

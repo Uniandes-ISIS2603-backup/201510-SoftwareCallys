@@ -8,9 +8,9 @@ import java.util.List;
 public interface ICarroCompras {
     public CarroComprasDTO createCarroCompras(CarroComprasDTO detail);
 
-    public List<CarroComprasDTO> getCarroCompras();
+    public List<CarroComprasDTO> getCarrosCompras();
 
-    public CarroComprasPageDTO getCarroCompras(Integer page, Integer maxRecords);
+    public CarroComprasPageDTO getCarrosCompras(Integer page, Integer maxRecords);
 
     public CarroComprasDTO getCarroCompras(Long id);
 

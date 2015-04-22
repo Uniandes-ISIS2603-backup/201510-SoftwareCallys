@@ -53,12 +53,4 @@ public class CamisetaLogic implements ICamisetaLogic{
         CamisetaEntity entity = entityManager.merge(CamisetaConverter.persistenceDTO2Entity(camiseta));
         CamisetaConverter.entity2PersistenceDTO(entity);
     }
-
-    public List<CamisetaDTO> getCamiseta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public CamisetaPageDTO getCamiseta(Integer page, Integer maxRecords) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -25,13 +25,9 @@ public class CamisetaConverter {
         if (dto != null) {
             CamisetaEntity entity = new CamisetaEntity();
             entity.setId(dto.getId());
-
             entity.setColor(dto.getColor());
-
             entity.setTalla(dto.getTalla());
-
             entity.setMaterial(dto.getMaterial());
-
             entity.setTexto(dto.getTexto());
             return entity;
         } else {

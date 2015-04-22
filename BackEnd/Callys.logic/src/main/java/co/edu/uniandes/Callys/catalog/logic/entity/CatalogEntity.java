@@ -9,7 +9,7 @@ public class CatalogEntity {
 
     @Id
     @GeneratedValue(generator = "Catalogo")
-    Long id;
+    private Long id;
     private String name;
     private Integer numElementos;
     

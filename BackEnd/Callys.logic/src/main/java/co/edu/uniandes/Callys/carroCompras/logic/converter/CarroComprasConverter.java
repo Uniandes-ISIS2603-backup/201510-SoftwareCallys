@@ -24,13 +24,9 @@ public class CarroComprasConverter {
         if (dto != null) {
             CarroComprasEntity entity = new CarroComprasEntity();
             entity.setId(dto.getId());
-
             entity.setMonto(dto.getMonto());
-
             entity.setFormaPago(dto.getFormaPago());
-
             entity.setDatosEnvio(dto.getDatosEnvio());
-
             return entity;
         } else {
             return null;
