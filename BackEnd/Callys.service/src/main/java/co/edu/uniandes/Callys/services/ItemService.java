@@ -57,10 +57,10 @@ public class ItemService {
         return itemLogicService.getItem(id);
     }
    
-    @GET
-    public List<ItemDTO> getItem() {
-        return itemLogicService.getItems();
-    }
+//    @GET
+//    public List<ItemDTO> getItem() {
+//        return itemLogicService.getItems();
+//    }
     
 
     @PUT
