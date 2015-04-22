@@ -38,12 +38,12 @@ public class CamisetaService {
 
     @GET
     public List<CamisetaDTO> getCamiseta() {
-        return camisetaLogicService.getCamiseta();
+        return camisetaLogicService.getCamisetas();
     }
     
     @GET
     public CamisetaPageDTO getCamiseta(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return camisetaLogicService.getCamiseta(page, maxRecords);
+        return camisetaLogicService.getCamisetas(page, maxRecords);
     }
 
     @GET

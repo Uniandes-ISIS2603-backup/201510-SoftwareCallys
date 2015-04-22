@@ -38,7 +38,7 @@ public class CarroComprasService {
 
     @GET
     public CarroComprasPageDTO getCarroCompras(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return carroComprasLogicService.getCarroCompras(page, maxRecords);
+        return carroComprasLogicService.getCarrosCompras(page, maxRecords);
     }
 
     @GET
@@ -48,6 +48,7 @@ public class CarroComprasService {
     }
 
     @PUT
+    @Path("{id}")
     public void updateCarroCompras(CarroComprasDTO carroCompras) {
         carroComprasLogicService.updateCarroCompras(carroCompras);
     }

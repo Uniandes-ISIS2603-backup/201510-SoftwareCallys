@@ -46,7 +46,7 @@ public class ClienteService {
 
     @GET
     public ClientePageDTO getCliente(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return clienteLogicService.getCliente(page, maxRecords);
+        return clienteLogicService.getClientes(page, maxRecords);
     }
 
     @GET

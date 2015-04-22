@@ -48,7 +48,7 @@ public class ItemService {
 
     @GET
     public ItemPageDTO getItem(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return itemLogicService.getItem(page, maxRecords);
+        return itemLogicService.getItems(page, maxRecords);
     }
 
     @GET
@@ -59,7 +59,7 @@ public class ItemService {
    
     @GET
     public List<ItemDTO> getItem() {
-        return itemLogicService.getItem();
+        return itemLogicService.getItems();
     }
     
 

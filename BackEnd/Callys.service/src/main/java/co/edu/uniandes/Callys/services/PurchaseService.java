@@ -43,7 +43,7 @@ public class PurchaseService {
 
     @GET
     public PurchasePageDTO getPurchase(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return purchaseLogicService.getPurchase(page, maxRecords);
+        return purchaseLogicService.getPurchases(page, maxRecords);
     }
 
     @GET
