@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class ArtistaPageDTO {
     
-     private Long totalRecords;
+    private Long totalRecords;
 
     private List<ArtistaDTO> records;
 
