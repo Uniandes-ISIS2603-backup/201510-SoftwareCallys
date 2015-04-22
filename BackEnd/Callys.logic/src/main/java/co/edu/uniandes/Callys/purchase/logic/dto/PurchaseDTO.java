@@ -1,18 +1,13 @@
 package co.edu.uniandes.Callys.purchase.logic.dto;
 
 import java.util.Date;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class PurchaseDTO {
     private Long id;
     private String name;
-    
-    @Temporal(TemporalType.DATE)
     private Date fecha;
-    
     private String datosDeEnvio;
     private String formaDePago;
     

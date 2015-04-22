@@ -36,10 +36,10 @@ public class CamisetaService {
         camisetaLogicService.deleteCamiseta(id);
     }
 
-//    @GET
-//    public List<CamisetaDTO> getCamiseta() {
-//        return camisetaLogicService.getCamisetas();
-//    }
+    @GET
+    public List<CamisetaDTO> getCamiseta() {
+        return camisetaLogicService.getCamisetas();
+    }
     
     @GET
     public CamisetaPageDTO getCamiseta(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {

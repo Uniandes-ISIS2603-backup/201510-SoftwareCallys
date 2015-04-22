@@ -4,8 +4,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class PurchaseEntity {
@@ -14,10 +12,7 @@ public class PurchaseEntity {
     @GeneratedValue(generator = "Purchase")
     private Long id;
     private String name;
-    
-    @Temporal(TemporalType.DATE)
     private Date fecha;
-    
     private String datosDeEnvio;
     private String formaDePago;
     
@@ -40,7 +35,7 @@ public class PurchaseEntity {
     public Date getDate() {
         return fecha;
     }
-    
+
     public void setDate(Date fecha) {
         this.fecha = fecha;
     }
