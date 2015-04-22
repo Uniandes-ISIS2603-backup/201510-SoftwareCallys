@@ -12,7 +12,7 @@
 
     <init-param>
         <param-name>com.sun.jersey.config.property.packages</param-name>
-        <param-value>ngdemo.rest</param-value>
+        <param-value>co.edu.uniandes.Callys.services</param-value>
     </init-param>
 
     <init-param>
