@@ -6,3 +6,4 @@ public_html/src/target/sonar/sonar-pom.xml
 /BackEnd/Callys.logic/target/
 /BackEnd/Callys.service/target/
 /FrontEnd/nbproject/private/
+/BackEnd/Callys.service/src/main/webapp/src/target/

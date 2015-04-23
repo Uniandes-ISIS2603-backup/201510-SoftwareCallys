@@ -112,44 +112,4 @@
             }
         };
     }]);
-    stampModule.directive('ratingStamps', function ()
-    {
-        return {
-            restrict: 'A',
-            template: '<ul class="rating line1">' +
-                    '<line1 ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">' +
-                    '\u2605' +
-                    '</line1>' +
-                    '</ul>',
-            scope: {
-                ratingValue: '=',
-                max: '='
-            },
-            link: function (scope, elem)
-            {
-                var updateStars = function ()
-                {
-                    scope.stars = [];
-                    for (var i = 0; i < scope.max; i++)
-                    {
-                        scope.stars.push({filled: i < scope.ratingValue});
-                    }
-                };
-                scope.toggle = function (index)
-                {
-                    scope.ratingValue = index + 1;
-                    elem.onRatingSelected({
-                        rating: index + 1
-                    });
-                };
-                scope.$watch('ratingValue', function (oldVal,newVal)
-                {
-                    if (newVal)
-                    {
-                        updateStars();
-                    }
-                });
-            }
-        };
-    });
 })();
