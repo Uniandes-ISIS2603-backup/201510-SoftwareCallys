@@ -14,17 +14,20 @@ public class CamisetaLogic implements ICamisetaLogic{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
+    @Override
     public CamisetaDTO createCamiseta(CamisetaDTO sport) {
         CamisetaEntity entity = CamisetaConverter.persistenceDTO2Entity(sport);
         entityManager.persist(entity);
         return CamisetaConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public List<CamisetaDTO> getCamisetas() {
         Query q = entityManager.createQuery("select u from CamisetaEntity u");
         return CamisetaConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
+    @Override
     public CamisetaPageDTO getCamisetas(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from CamisetaEntity u");
         Long regCount = 0L;
@@ -40,15 +43,18 @@ public class CamisetaLogic implements ICamisetaLogic{
         return response;
     }
 
+    @Override
     public CamisetaDTO getCamiseta(Long id) {
         return CamisetaConverter.entity2PersistenceDTO(entityManager.find(CamisetaEntity.class, id));
     }
 
+    @Override
     public void deleteCamiseta(Long id) {
         CamisetaEntity entity = entityManager.find(CamisetaEntity.class, id);
         entityManager.remove(entity);
     }
 
+    @Override
     public void updateCamiseta(CamisetaDTO camiseta) {
         CamisetaEntity entity = entityManager.merge(CamisetaConverter.persistenceDTO2Entity(camiseta));
         CamisetaConverter.entity2PersistenceDTO(entity);

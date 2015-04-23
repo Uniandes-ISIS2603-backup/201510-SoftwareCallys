@@ -22,17 +22,20 @@ public class CarroComprasLogic implements ICarroCompras{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
+    @Override
     public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {
         CarroComprasEntity entity = CarroComprasConverter.persistenceDTO2Entity(sport);
         entityManager.persist(entity);
         return CarroComprasConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public List<CarroComprasDTO> getCarrosCompras() {
         Query q = entityManager.createQuery("select u from CarroComprasEntity u");
         return CarroComprasConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
+    @Override
     public CarroComprasPageDTO getCarrosCompras(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from CarroComprasEntity u");
         Long regCount = 0L;
@@ -48,20 +51,24 @@ public class CarroComprasLogic implements ICarroCompras{
         return response;
     }
 
+    @Override
     public CarroComprasDTO getCarroCompras(Long id) {
         return CarroComprasConverter.entity2PersistenceDTO(entityManager.find(CarroComprasEntity.class, id));
     }
 
+    @Override
     public void deleteCarroCompras(Long id) {
         CarroComprasEntity entity = entityManager.find(CarroComprasEntity.class, id);
         entityManager.remove(entity);
     }
 
+    @Override
     public void updateCarroCompras(CarroComprasDTO carroCompras) {
         CarroComprasEntity entity = entityManager.merge(CarroComprasConverter.persistenceDTO2Entity(carroCompras));
         CarroComprasConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

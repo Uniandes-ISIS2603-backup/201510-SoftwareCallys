@@ -22,17 +22,20 @@ public class ItemLogic implements IItemLogic{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
+    @Override
     public ItemDTO createItem(ItemDTO sport) {
         ItemEntity entity = ItemConverter.persistenceDTO2Entity(sport);
         entityManager.persist(entity);
         return ItemConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public List<ItemDTO> getItems() {
         Query q = entityManager.createQuery("select u from ItemEntity u");
         return ItemConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
+    @Override
     public ItemPageDTO getItems(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from ItemEntity u");
         Long regCount = 0L;
@@ -48,15 +51,18 @@ public class ItemLogic implements IItemLogic{
         return response;
     }
 
+    @Override
     public ItemDTO getItem(Long id) {
         return ItemConverter.entity2PersistenceDTO(entityManager.find(ItemEntity.class, id));
     }
 
+    @Override
     public void deleteItem(Long id) {
         ItemEntity entity = entityManager.find(ItemEntity.class, id);
         entityManager.remove(entity);
     }
 
+    @Override
     public void updateItem(ItemDTO item) {
         ItemEntity entity = entityManager.merge(ItemConverter.persistenceDTO2Entity(item));
         ItemConverter.entity2PersistenceDTO(entity);

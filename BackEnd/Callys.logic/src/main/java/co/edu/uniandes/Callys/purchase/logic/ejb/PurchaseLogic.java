@@ -22,17 +22,20 @@ public class PurchaseLogic implements IPurchaseLogic{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
+    @Override
     public PurchaseDTO createPurchase(PurchaseDTO detail) {
         PurchaseEntity entity = PurchaseConverter.persistenceDTO2Entity(detail);
         entityManager.persist(entity);
         return PurchaseConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public List<PurchaseDTO> getPurchases() {
         Query q = entityManager.createQuery("select u from PurchaseEntity u");
         return PurchaseConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
+    @Override
     public PurchasePageDTO getPurchases(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from PurchaseEntity u");
         Long regCount = 0L;
@@ -48,15 +51,18 @@ public class PurchaseLogic implements IPurchaseLogic{
         return response;
     }
 
+    @Override
     public PurchaseDTO getPurchase(Long id) {
         return PurchaseConverter.entity2PersistenceDTO(entityManager.find(PurchaseEntity.class, id));
     }
 
+    @Override
     public void deletePurchase(Long id) {
         PurchaseEntity entity = entityManager.find(PurchaseEntity.class, id);
         entityManager.remove(entity);
     }
 
+    @Override
     public void updatePurchase(PurchaseDTO detail) {
         PurchaseEntity entity = entityManager.merge(PurchaseConverter.persistenceDTO2Entity(detail));
         PurchaseConverter.entity2PersistenceDTO(entity);

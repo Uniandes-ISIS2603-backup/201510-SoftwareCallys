@@ -15,17 +15,20 @@ public class ArtistaLogic implements IArtistaLogic{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
+    @Override
     public ArtistaDTO createArtista(ArtistaDTO artista) {
         ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(artista);
         entityManager.persist(entity);
         return ArtistaConverter.entity2PersistenceDTO(entity);
     }
 
+    @Override
     public List<ArtistaDTO> getArtistas() {
         Query q = entityManager.createQuery("select u from ArtistaEntity u");
         return ArtistaConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
+    @Override
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
         Query count = entityManager.createQuery("select count(u) from ArtistaEntity u");
         Long regCount = 0L;
@@ -41,15 +44,18 @@ public class ArtistaLogic implements IArtistaLogic{
         return response;
     }
 
+    @Override
     public ArtistaDTO getArtista(Long id) {
         return ArtistaConverter.entity2PersistenceDTO(entityManager.find(ArtistaEntity.class, id));
     }
 
+    @Override
     public void deleteArtista(Long id) {
         ArtistaEntity entity = entityManager.find(ArtistaEntity.class, id);
         entityManager.remove(entity);
     }
 
+    @Override
     public void updateArtista(ArtistaDTO artista) {
         ArtistaEntity entity = entityManager.merge(ArtistaConverter.persistenceDTO2Entity(artista));
         ArtistaConverter.entity2PersistenceDTO(entity);
