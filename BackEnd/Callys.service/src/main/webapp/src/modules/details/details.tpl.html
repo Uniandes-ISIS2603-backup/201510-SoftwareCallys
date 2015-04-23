@@ -1,0 +1,143 @@
+<!-- start main -->
+<div ng-controller="detailsCtrl as detailsCtrl">
+<div class="main_bg" >
+<div class="wrap">	
+    <div class="main" >
+    <!-- start content -->
+    <div class="single">
+        <!-- start span1_of_1 -->
+        <div class="left_content">
+        <div class="span1_of_1">
+            <!-- start product_slider -->
+            <div class="product-view">
+                <div class="product-essential">
+                    <div class="product-img-box">
+                        <div class="more-views" style="float:left;">
+                            <div class="more-views-container">
+				<ul>
+		
+				</ul>
+                            </div>
+                        </div>
+                        <div class="product-image"> 
+                            <div>
+                                <a>
+                                    <img alt="" src="{{ShirtRecords[0].image}}"  />
+                                </a> 
+                            </div>
+                        </div>  
+                    </div>
+		</div>
+            </div>
+            <!-- end product_slider -->
+        </div>
+            <!-- start span1_of_1 -->
+	<div class="span1_of_2">
+            <div class="desc1">
+                <div class="contact"><h3>Buy your shirt </h3></div>
+                    <h5>Name: {{ShirtRecords[0].name}}</h5>
+                    <p>Choose your shirt size, color, and quantity. <br> Sizes available: S, M, L, XL <br>Buy up to 5 shirts! </p>
+                        <h5>Price: {{ShirtRecords[0].price}}</h5>
+                         <h5>Stamps:</h5><br/>
+                            <img src='{{ ShirtRecords[0].stamps.image}}'  alt="" height="90" width="90"/>
+                            <h3>{{ ShirtRecords[0].stamps.name}}</h3>
+                            <h3>${{ ShirtRecords[0].stamps.price}}</h3>
+                            <span>Likes: {{ ShirtRecords[0].stamps.rating}}</span>
+                        <div class="available">
+                                <h4>Available Options :</h4>
+                                <ul>
+                                    <li>Color:
+                                        <select ng-model="currentRecord.color">
+                                                <option>Silver</option>
+                                                <option>Black</option>
+                                                <option>Dark Black</option>
+                                                <option>Red</option>
+                                        </select>
+                                    </li>
+                                    <li>Size:
+                                        <select ng-model="currentRecord.size">
+                                                <option>S</option>
+                                                <option>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                        </select>
+                                    </li>
+
+                                        <li>Quantity:
+                                                <select ng-model="currentRecord.quantity">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                </select>
+                                        </li>
+                                </ul>
+				<div class="btn_form">
+                                    <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.addToCar()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
+                                </div>		
+				<div class="clear"></div>
+			</div>
+                    </div>
+             <div class="grids_of_bimbi">
+                    <div class="grid1_of_bimbi" ng-repeat = "catalog in catalogRecords">
+                        <img src='{{catalog.image}}'  alt="" height="90" width="90"/>
+                        <h3>{{catalog.name}}</h3>
+                        <h3>${{catalog.price}}</h3>
+                      <span>Likes: {{catalog.rating}}</span>
+                        <div class="price">
+                            <button ng-show="detailsCtrl.stampMode" ng-click= "detailsCtrl.addStamp(catalog)"><span>Add</span></button>
+                            <button ng-hide="detailsCtrl.stampMode" ng-click= "detailsCtrl.deleteStamp(catalog)"><span>Delete</span></button>
+                        </div> 
+                        <span class="b_btm"></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                    <div class="share-desc">
+                        <br/>
+                        <br>
+                        <div class="share">
+                            <ul class="share_nav">
+                                <li><a href="#"><img src="images/facebook.png" title="facebook"></a></li>
+                                <li><a href="#"><img src="images/twitter.png" title="Twiiter"></a></li>
+                                <li><a href="#"><img src="images/rss.png" title="Rss"></a></li>
+                                <li><a href="#"><img src="images/gpluse.png" title="Google+"></a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+		<div class="banner-wrap bottom_banner color_link">
+                    <a  ng-click="detailsCtrl.shoppingCar()" class="main_link">
+                    <figure><img src="images/delivery.png" alt=""></figure>
+                    <h5><span>Shopping Car </span><br> </h5>
+                    <br/>
+                    <h5><span>Amount: {{amount}} </span><br> </h5>
+                    </a>
+                    <div class="grid1_of_3" ng-repeat = "record in records">
+                        <div class="wrap">
+                            <h3>Sales Element</h3> 
+                            <h3>Color: {{record.color}}</h3>
+                            <h3>Size: {{record.size}}</h3>
+                            <h3>Cuantity per unit: {{record.quantity}}</h3>
+                            <h3>Price: {{record.price}}</h3>
+                             <img alt="" src="{{ShirtRecords[0].image}}" height= "200" width="200"  />
+                            <br>
+                            <div class="price">
+                                <a ng-click = "detailsCtrl.deleteSale(record)" ><h4><span>Delete</span></h4></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>    
+                    <div class="btn_form">
+                        <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.savePurchase(records)"><span class="glyphicon glyphicon-floppy-disk">Buy</span> </button>		
+                    </div>
+                </div>
+            </div>
+        </div>	
+	<!-- end content -->
+    </div>
+</div>
+</div>	
