@@ -1,10 +1,10 @@
-package co.edu.uniandes.Callys.item.logic.ejb;
+package co.edu.uniandes.callys.item.logic.ejb;
 
-import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
-import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
-import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
-import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import co.edu.uniandes.callys.item.logic.api.IItemLogic;
+import co.edu.uniandes.callys.item.logic.converter.ItemConverter;
+import co.edu.uniandes.callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.callys.item.logic.dto.ItemPageDTO;
+import co.edu.uniandes.callys.item.logic.entity.ItemEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;

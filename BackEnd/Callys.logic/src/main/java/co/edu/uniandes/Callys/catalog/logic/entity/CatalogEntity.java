@@ -1,4 +1,4 @@
-package co.edu.uniandes.Callys.catalog.logic.entity;
+package co.edu.uniandes.callys.catalog.logic.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,7 +1,7 @@
-package co.edu.uniandes.Callys.item.logic.converter;
+package co.edu.uniandes.callys.item.logic.converter;
 
-import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import co.edu.uniandes.callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.callys.item.logic.entity.ItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 

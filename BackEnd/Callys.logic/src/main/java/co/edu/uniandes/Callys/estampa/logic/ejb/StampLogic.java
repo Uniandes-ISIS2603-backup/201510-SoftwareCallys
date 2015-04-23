@@ -1,11 +1,11 @@
-package co.edu.uniandes.Callys.estampa.logic.ejb;
+package co.edu.uniandes.callys.estampa.logic.ejb;
 
-import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
-import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
-import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.callys.estampa.logic.api.IStampLogic;
+import co.edu.uniandes.callys.estampa.logic.converter.StampConverter;
+import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.callys.estampa.logic.dto.StampPageDTO;
+import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

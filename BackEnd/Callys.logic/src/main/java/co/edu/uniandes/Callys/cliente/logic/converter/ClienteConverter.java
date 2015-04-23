@@ -1,7 +1,7 @@
-package co.edu.uniandes.Callys.cliente.logic.converter;
+package co.edu.uniandes.callys.cliente.logic.converter;
 
-import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.callys.cliente.logic.entity.ClienteEntity;
 import java.util.ArrayList;
 import java.util.List;
 

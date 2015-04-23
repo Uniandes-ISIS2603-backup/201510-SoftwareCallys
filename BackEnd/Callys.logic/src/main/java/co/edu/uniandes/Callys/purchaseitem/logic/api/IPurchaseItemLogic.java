@@ -1,7 +1,7 @@
-package co.edu.uniandes.Callys.purchaseitem.logic.api;
+package co.edu.uniandes.callys.purchaseitem.logic.api;
 
-import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
-import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
+import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
 import java.util.List;
 
 public interface IPurchaseItemLogic {

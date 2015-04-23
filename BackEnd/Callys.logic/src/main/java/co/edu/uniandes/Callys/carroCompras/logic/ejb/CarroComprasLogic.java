@@ -1,11 +1,11 @@
-package co.edu.uniandes.Callys.carroCompras.logic.ejb;
+package co.edu.uniandes.callys.carroCompras.logic.ejb;
 
 import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
-import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
-import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.callys.carroCompras.logic.converter.CarroComprasConverter;
+import co.edu.uniandes.callys.carroCompras.logic.api.ICarroCompras;
+import co.edu.uniandes.callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.callys.carroCompras.logic.dto.CarroComprasPageDTO;
+import co.edu.uniandes.callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

@@ -1,10 +1,10 @@
-package co.edu.uniandes.Callys.camiseta.logic.ejb;
+package co.edu.uniandes.callys.camiseta.logic.ejb;
 
-import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
-import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
-import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
-import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
-import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.callys.camiseta.logic.api.ICamisetaLogic;
+import co.edu.uniandes.callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.callys.camiseta.logic.dto.CamisetaPageDTO;
+import co.edu.uniandes.callys.camiseta.logic.converter.CamisetaConverter;
+import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

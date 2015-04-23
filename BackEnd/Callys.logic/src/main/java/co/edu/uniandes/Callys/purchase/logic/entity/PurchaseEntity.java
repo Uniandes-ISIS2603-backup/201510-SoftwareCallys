@@ -1,4 +1,4 @@
-package co.edu.uniandes.Callys.purchase.logic.entity;
+package co.edu.uniandes.callys.purchase.logic.entity;
 
 import java.util.Date;
 import javax.persistence.Entity;

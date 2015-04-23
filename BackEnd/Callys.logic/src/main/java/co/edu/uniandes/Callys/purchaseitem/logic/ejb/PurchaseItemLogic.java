@@ -1,10 +1,10 @@
-package co.edu.uniandes.Callys.purchaseitem.logic.ejb;
+package co.edu.uniandes.callys.purchaseitem.logic.ejb;
 
-import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
-import co.edu.uniandes.Callys.purchaseitem.logic.converter.PurchaseItemConverter;
-import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
-import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
-import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
+import co.edu.uniandes.callys.purchaseitem.logic.api.IPurchaseItemLogic;
+import co.edu.uniandes.callys.purchaseitem.logic.converter.PurchaseItemConverter;
+import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
+import co.edu.uniandes.callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
