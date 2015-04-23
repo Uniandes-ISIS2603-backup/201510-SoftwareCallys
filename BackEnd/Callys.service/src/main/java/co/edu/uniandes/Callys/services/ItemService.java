@@ -5,9 +5,9 @@
  */
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
-import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
-import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
+import co.edu.uniandes.callys.item.logic.api.IItemLogic;
+import co.edu.uniandes.callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.callys.item.logic.dto.ItemPageDTO;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;

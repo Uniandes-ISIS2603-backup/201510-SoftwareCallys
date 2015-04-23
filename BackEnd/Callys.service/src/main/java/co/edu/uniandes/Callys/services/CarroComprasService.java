@@ -1,8 +1,8 @@
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
+import co.edu.uniandes.callys.carroCompras.logic.api.ICarroCompras;
+import co.edu.uniandes.callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
