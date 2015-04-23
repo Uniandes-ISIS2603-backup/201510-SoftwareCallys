@@ -21,10 +21,15 @@
         {
             $scope.catalogRecords = data;
         });
+        this.uploadMode = false;
         this.editMode = false;
         this.error= false;
         var image;
         this.upload = function ()
+        {
+            this.uploadMode = !this.uploadMode;
+        };
+        this.edit = function ()
         {
             this.editMode = !this.editMode;
         };
@@ -50,10 +55,14 @@
                    $scope.catalogRecords = data;
                 });
         };
-        this.editStamp = function (catalog)
+        this.editStamp = function (record)
         {
-            catalogService.editRecord(catalog);
+            catalogService.editRecord(record);
             this.editMode = true;
+            catalogService.fetchRecords().then(function(data)
+                {
+                   $scope.catalogRecords = data;
+                });
         };
         this.deleteStamp = function (catalogRecord)
         {
@@ -91,7 +100,7 @@
                 {
                    $scope.catalogRecords = data;
                 });
-               this.editMode = false;
+               this.uploadMode = false;
                 this.error=false;
                catalogForm.$setPristine();
                catalogForm.$setUntouched();

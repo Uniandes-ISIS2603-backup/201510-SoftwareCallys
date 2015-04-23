@@ -53,7 +53,7 @@
                         </div>
                         <div class="price">
                             <a ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
-                            <button ng-click= "stampCtrl.editRecord(catalog)"><span>Edit</span></button>
+                            <button ng-click= "stampCtrl.edit()"><span>Edit</span></button>
                         </div> 
                         <span class="b_btm"></span>
                     </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="wrap" ng-show="stampCtrl.editMode">
+                    <div class="wrap" ng-show="stampCtrl.uploadMode">
                     <div class="copy ">
                         <div class="price ">
                             <div class="contact">				
@@ -103,6 +103,43 @@
                     </div>
                 </div>	
 
+                <div class="wrap" ng-show="stampCtrl.editMode">
+                    <div class="copy ">
+                        <div class="price ">
+                            <div class="contact">				
+                                <h2>Edit stamp</h2>
+                                <form name="catalogForm" class="css-form" novalidate>
+                                    <input class="form-control" type="hidden" ng-model="catalogRecord.id"/>
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input name="name" type="text" ng-model="catalogRecord.name" required/>
+                                         <br />
+                                        <div ng-show="catalogForm.$submitted || catalogForm.name.$touched">
+                                          <div ng-show="catalogForm.name.$error.required">Tell us the name.</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input name="price" type="number" ng-model="catalogRecord.price" required/>
+                                        <br />
+                                        <div ng-show="catalogForm.$submitted || catalogForm.price.$touched">
+                                          <div ng-show="catalogForm.price.$error.required">Tell us the price</div>  
+                                          <div ng-show="catalogForm.price.$error.number">That is not a number</div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="as"  ng-model="catalogRecord.image"/>
+                                    <input id="files" type="file" name="uploadField"/> 
+                                    <br/>
+                                    
+                                    <button class="btn btn-default navbar-btn"  ng-click="stampCtrl.editStamp(catalogRecord)"><span class="glyphicon glyphicon-floppy-disk"></span> Edit</button>
+                                    <div ng-show="stampCtrl.error">Resolve the errors before saving the new stamp</div>
+                                </form>
+                            </div>
+                            <!-- end grids_of_3 -->
+                        </div>
+                    </div>
+                </div>	
+            
             </div>	
         </div>
     </div>
