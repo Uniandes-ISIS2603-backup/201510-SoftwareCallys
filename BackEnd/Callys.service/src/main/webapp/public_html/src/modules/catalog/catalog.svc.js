@@ -5,6 +5,11 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
+        
+        this.getCatalogo = function () {
+                return this.api.customGET('Catalogo');
+            };
+            
     }]);
 })();
 

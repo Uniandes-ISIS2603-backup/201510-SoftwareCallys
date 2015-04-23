@@ -1,5 +1,4 @@
 package co.edu.uniandes.Callys.services;
-
 import co.edu.uniandes.Callys.artista.logic.api.IArtistaLogic;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;

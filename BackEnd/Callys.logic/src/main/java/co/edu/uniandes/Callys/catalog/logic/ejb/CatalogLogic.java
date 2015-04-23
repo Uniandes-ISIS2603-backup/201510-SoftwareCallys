@@ -59,4 +59,16 @@ public class CatalogLogic implements ICatalogLogic {
         CatalogEntity entity = entityManager.merge(CatalogConverter.persistenceDTO2Entity(detail));
         CatalogConverter.entity2PersistenceDTO(entity);
     }
+    
+    @Override
+    public CatalogDTO orderByRanking(){
+        Query query = entityManager.createQuery("select u from StampEntity u Order by u.rating asc");
+        return CatalogConverter.entity2PersistenceDTO((CatalogEntity)query.getResultList());
+    }
+    
+    @Override
+    public CatalogDTO orderByName(){
+        Query query = entityManager.createQuery("select u from StampEntity u Order by u.name asc");
+        return CatalogConverter.entity2PersistenceDTO((CatalogEntity)query.getResultList());
+    }
 }

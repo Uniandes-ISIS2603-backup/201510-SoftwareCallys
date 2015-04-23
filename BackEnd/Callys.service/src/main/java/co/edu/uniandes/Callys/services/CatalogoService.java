@@ -51,4 +51,16 @@ public class CatalogoService {
     public void updateCatalogo(CatalogDTO detail) {
         catalogoLogicService.updateCatalogo(detail);
     }
+    
+    @GET
+    @Path("orderByRanking")
+    public CatalogDTO orderByRankig(){
+        return catalogoLogicService.orderByRanking();
+    }
+ 
+    @GET
+    @Path("orderByName")
+    public CatalogDTO orderByName(){
+        return catalogoLogicService.orderByName();
+    }
 }

@@ -17,4 +17,8 @@ public interface ICatalogLogic {
     public void deleteCatalogo(Long id);
 
     public void updateCatalogo(CatalogDTO detail);
+
+    public CatalogDTO orderByRanking();
+
+    public CatalogDTO orderByName();
 }
