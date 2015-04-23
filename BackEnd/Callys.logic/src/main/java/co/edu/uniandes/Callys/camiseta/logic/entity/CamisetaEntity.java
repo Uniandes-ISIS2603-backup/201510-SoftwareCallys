@@ -13,8 +13,7 @@ import javax.persistence.ManyToMany;
 public class CamisetaEntity {
     @Id
     @GeneratedValue(generator = "Camiseta")
-    Long id;
-    private String name;
+    private Long id;
     private String color;
     private String talla;
     private String material;
