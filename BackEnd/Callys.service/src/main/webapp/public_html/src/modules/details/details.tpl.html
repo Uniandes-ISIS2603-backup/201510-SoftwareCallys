@@ -37,8 +37,12 @@
                 <div class="contact"><h3>Buy your shirt </h3></div>
                     <h5>Name: {{ShirtRecords[0].name}}</h5>
                     <p>Choose your shirt size, color, and quantity. <br> Sizes available: S, M, L, XL <br>Buy up to 5 shirts! </p>
-                        <h5>Price: {{ShirtRecords[0].price}}</h5>      
-                        <h5>Stamps: </h5>  <pre>{{ShirtRecords[0].stamps}}</pre>
+                        <h5>Price: {{ShirtRecords[0].price}}</h5>
+                         <h5>Stamps:</h5><br/>
+                            <img src='{{ ShirtRecords[0].stamps.image}}'  alt="" height="90" width="90"/>
+                            <h3>{{ ShirtRecords[0].stamps.name}}</h3>
+                            <h3>${{ ShirtRecords[0].stamps.price}}</h3>
+                            <span>Likes: {{ ShirtRecords[0].stamps.rating}}</span>
                         <div class="available">
                                 <h4>Available Options :</h4>
                                 <ul>
@@ -70,7 +74,7 @@
                                         </li>
                                 </ul>
 				<div class="btn_form">
-                                    <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.saveSale()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
+                                    <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.addToCar()"><span class="glyphicon glyphicon-floppy-disk">Add to cart</span> </button>			
                                 </div>		
 				<div class="clear"></div>
 			</div>
@@ -80,7 +84,7 @@
                         <img src='{{catalog.image}}'  alt="" height="90" width="90"/>
                         <h3>{{catalog.name}}</h3>
                         <h3>${{catalog.price}}</h3>
-                        <div rating-stamps rating-value="0" max="5" on-rating-selected = "rateStamp()"></div>
+                      <span>Likes: {{catalog.rating}}</span>
                         <div class="price">
                             <button ng-show="detailsCtrl.stampMode" ng-click= "detailsCtrl.addStamp(catalog)"><span>Add</span></button>
                             <button ng-hide="detailsCtrl.stampMode" ng-click= "detailsCtrl.deleteStamp(catalog)"><span>Delete</span></button>
@@ -127,6 +131,9 @@
                         </div>
                     </div>
                     <div class="clear"></div>    
+                    <div class="btn_form">
+                        <button class="btn btn-default navbar-btn" ng-click="detailsCtrl.savePurchase(records)"><span class="glyphicon glyphicon-floppy-disk">Buy</span> </button>		
+                    </div>
                 </div>
             </div>
         </div>	

@@ -1,11 +1,12 @@
 (function ()
 {
         var detailsModule =angular.module('detailsModule');
-        detailsModule.controller('detailsCtrl',['$scope','detailsService','shirtService','catalogService',function($scope,detailsService,shirtService,catalogService)
+        detailsModule.controller('detailsCtrl',['$scope','detailsService','shirtService','catalogService','purchaseService',function($scope,detailsService,shirtService,catalogService,purchaseService )
         {
             detailsService.extendCtrl(this, $scope);
             this.fetchRecords();
             this.stampMode=true;
+            $scope.amount=0;
             catalogService.fetchRecords().then(function(data)
             {
                 $scope.catalogRecords = data;
@@ -14,13 +15,16 @@
             {
                $scope.ShirtRecords = data;
             });
-            $scope.amount=0;
+            this.savePurchase = function(records)
+            {
+                   purchaseService.saveRecord(records);
+            };
             this.editMode=false;
             this.shoppingCar = function ()
             {
                     this.editMode = !this.editMode;
             };
-            this.saveSale = function ()
+            this.addToCar = function ()
             {
                 $scope.currentRecord.price= $scope.ShirtRecords[0].price*$scope.currentRecord.quantity;
                 $scope.amount = $scope.amount+$scope.currentRecord.price;
@@ -28,7 +32,7 @@
             };
             this.addStamp = function (catalog)
             {
-                $scope.ShirtRecords[0].stamps=$scope.ShirtRecords[0].stamps+"\n StampName: "+catalog.name+"    StampPrice: "+catalog.price+"\n";
+                $scope.ShirtRecords[0].stamps=catalog;
                 $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price+catalog.price;
                 this.stampMode=false;
             };

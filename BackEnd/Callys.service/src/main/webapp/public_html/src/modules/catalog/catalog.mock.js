@@ -1,12 +1,7 @@
 (function () {
     var catalogModule = angular.module('catalogModule');
 
-    catalogModule.run(['$httpBackend', 'catalog.context', 'MockModule.mockRecords','catalog.skipMock', function ($httpBackend, context, mockRecords, skipMock) {
-            if (skipMock)
-            {
-                $httpBackend.whenGET(baseUrl + '/' + context + '/mostPopulated').passThrough();
-                $httpBackend.whenGET(baseUrl + '/' + context + '/leastPopulated').passThrough();
-            } 
+    catalogModule.run(['$httpBackend', 'catalog.context', 'MockModule.mockRecords', function ($httpBackend, context, mockRecords) {
             $httpBackend.whenGET('webresources/' + context + '/mostPopulated').respond(function () {
                 var top;
                 var collection = mockRecords[context];

@@ -1,11 +1,9 @@
 (function ()
 {
     var catalogModule = angular.module('catalogModule', ['CrudModule', 'MockModule']);
-    
-    catalogoModule.constant('catalogo.skipMock', true);
     catalogModule.constant('catalog.context', 'catalogs');
-    catalogModule.config(['catalog.context', 'MockModule.urlsProvider', 'catalogo.skipMock', function (context, urlsProvider, skipMock)
+    catalogModule.config(['catalog.context', 'MockModule.urlsProvider', function (context, urlsProvider)
     {
-        urlsProvider.registerUrl(context, skipMock);
+        urlsProvider.registerUrl(context);
     }]);
 })();
