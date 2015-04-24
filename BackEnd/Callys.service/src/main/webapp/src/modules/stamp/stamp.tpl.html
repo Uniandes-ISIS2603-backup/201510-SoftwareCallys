@@ -62,7 +62,7 @@
                 <div class="wrap">
                     <div class="copy ">
                         <div class="price ">
-                            <a  ng-click="stampCtrl.upload()"><h4><span>upload new stamp</span></h4></a>
+                            <a  id="upload" ng-click="stampCtrl.upload()"><h4><span>upload new stamp</span></h4></a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                                     <input class="form-control" type="hidden" ng-model="catalogRecord.id"/>
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input name="name" type="text" ng-model="catalogRecord.name" required/>
+                                        <input id="name" name="name" type="text" ng-model="catalogRecord.name" required/>
                                          <br />
                                         <div ng-show="catalogForm.$submitted || catalogForm.name.$touched">
                                           <div ng-show="catalogForm.name.$error.required">Tell us the name.</div>
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
-                                        <input name="price" type="number" ng-model="catalogRecord.price" required/>
+                                        <input id="price" name="price" type="number" ng-model="catalogRecord.price" required/>
                                         <br />
                                         <div ng-show="catalogForm.$submitted || catalogForm.price.$touched">
                                           <div ng-show="catalogForm.price.$error.required">Tell us the price</div>  
@@ -94,7 +94,7 @@
                                     <input id="files" type="file" name="uploadField"/> 
                                     <br/>
                                     
-                                    <button class="btn btn-default navbar-btn"  ng-click="stampCtrl.saveStamp(catalogRecord,catalogForm)"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                                    <button id="saveStamp" class="btn btn-default navbar-btn"  ng-click="stampCtrl.saveStamp(catalogRecord,catalogForm)"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
                                     <div ng-show="stampCtrl.error">Resolve the errors before saving the new stamp</div>
                                 </form>
                             </div>
