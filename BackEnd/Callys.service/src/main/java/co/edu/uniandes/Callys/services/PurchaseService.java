@@ -1,10 +1,5 @@
-
 package co.edu.uniandes.Callys.services;
 
-/**
- *
- * @author estudiante
- */
 import co.edu.uniandes.callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
@@ -57,5 +52,4 @@ public class PurchaseService {
     public void updatePurchase(PurchaseDTO detail) {
         purchaseLogicService.updatePurchase(detail);
     }
-
 }
