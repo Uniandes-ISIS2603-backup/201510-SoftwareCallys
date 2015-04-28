@@ -21,6 +21,7 @@
         {
             $scope.catalogRecords = data;
         });
+        this.artist=catalogService.artist;
         this.uploadMode = false;
         this.editMode = false;
         this.error= false;
