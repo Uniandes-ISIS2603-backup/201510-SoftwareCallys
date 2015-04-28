@@ -6,10 +6,8 @@ import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -30,14 +28,8 @@ public class PurchaseService {
         return purchaseLogicService.createPurchase(p);
     }
 
-    @DELETE
-    @Path("{id}")
-    public void deletePurchase(@PathParam("id") Long id) {
-        purchaseLogicService.deletePurchase(id);
-    }
-
     @GET
-    public PurchasePageDTO getPurchase(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+    public PurchasePageDTO getPurchases(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return purchaseLogicService.getPurchases(page, maxRecords);
     }
 
@@ -45,11 +37,5 @@ public class PurchaseService {
     @Path("{id}")
     public PurchaseDTO getPurchase(@PathParam("id") Long id) {
         return purchaseLogicService.getPurchase(id);
-    }
-
-    @PUT
-    @Path("{id}") 
-    public void updatePurchase(PurchaseDTO detail) {
-        purchaseLogicService.updatePurchase(detail);
     }
 }
