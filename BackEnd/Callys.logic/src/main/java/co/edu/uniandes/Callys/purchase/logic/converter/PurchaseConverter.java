@@ -11,7 +11,6 @@ public class PurchaseConverter {
         if (entity != null) {
             PurchaseDTO dto = new PurchaseDTO();
             dto.setId(entity.getId());
-            dto.setName(entity.getName());
             dto.setDate(entity.getDate());
             dto.setDatosDeEnvio(entity.getDatosDeEnvio());
             dto.setFormaDePago(entity.getFormaDePago());
@@ -25,7 +24,6 @@ public class PurchaseConverter {
         if (dto != null) {
             PurchaseEntity entity = new PurchaseEntity();
             entity.setId(dto.getId());
-            entity.setName(dto.getName());
             entity.setDate(dto.getDate());
             entity.setDatosDeEnvio(dto.getDatosDeEnvio());
             entity.setFormaDePago(dto.getFormaDePago());

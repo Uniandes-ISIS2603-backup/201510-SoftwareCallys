@@ -1,5 +1,5 @@
 package co.edu.uniandes.Callys.purchase.logic.ejb;
-
+/*
 import co.edu.uniandes.Callys.util._TestUtil;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandomDate;
@@ -9,6 +9,7 @@ import co.edu.uniandes.callys.purchase.logic.converter.PurchaseConverter;
 import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
 import co.edu.uniandes.callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.callys.purchase.logic.ejb.PurchaseLogic;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -160,4 +161,4 @@ public class PurchaseLogicTest {
         }
     }
 }
-
+*/

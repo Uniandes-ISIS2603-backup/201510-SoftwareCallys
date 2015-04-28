@@ -13,11 +13,8 @@ public class PurchaseEntity {
     @Id
     @GeneratedValue(generator = "Purchase")
     private Long id;
-    private String name;
-    
     @Temporal(TemporalType.DATE)
     private Date fecha;
-    
     private String datosDeEnvio;
     private String formaDePago;
     
@@ -27,14 +24,6 @@ public class PurchaseEntity {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Date getDate() {
