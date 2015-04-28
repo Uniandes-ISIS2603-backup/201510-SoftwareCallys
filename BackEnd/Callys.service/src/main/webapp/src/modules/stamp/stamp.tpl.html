@@ -47,13 +47,13 @@
                         <img src='{{catalog.image}}'  alt="" height="225" width="225"/>
                         <h3>{{catalog.name}}</h3>
                         <div>
-                            <button ng-click= "stampCtrl.likeStamp(catalog)"><i class="fa fa-thumbs-o-up"></i></button>
+                            <button id="like" ng-click= "stampCtrl.likeStamp(catalog)"><i class="fa fa-thumbs-o-up"></i></button>
                             <span>{{catalog.rating}}</span>
-                            <button ng-click= "stampCtrl.dislikeStamp(catalog)"><i class="fa fa-thumbs-o-down"></i></button>
+                            <button id="dislike" ng-click= "stampCtrl.dislikeStamp(catalog)"><i class="fa fa-thumbs-o-down"></i></button>
                         </div>
                         <div class="price">
-                            <a ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
-                            <button ng-click= "stampCtrl.edit()"><span>Edit</span></button>
+                            <a id="delete" ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
+                            <button id="edit" ng-click= "stampCtrl.edit()"><span>Edit</span></button>
                         </div> 
                         <span class="b_btm"></span>
                     </div>

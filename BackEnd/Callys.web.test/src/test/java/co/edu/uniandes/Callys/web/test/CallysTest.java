@@ -80,4 +80,142 @@ public class CallysTest {
         assertTrue(success);
         Thread.sleep(2000);
     }
+    
+    @Test
+    public void t2deleteStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+   
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("delete")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+        
+    }
+ 
+    @Test
+    public void t3likeStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+   
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("like")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+        
+    }
+    
+      @Test
+    public void t4dislikeStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+   
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("dislike")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+        
+    }
+    
+    @Test
+    public void t5editStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("edit")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("price")).equals("20");
+        driver.findElement(By.id("name")).sendKeys("Flash");
+        driver.findElement(By.id("price")).sendKeys("35");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
+    
+     @Test
+    public void t6buyShirt() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("shirt")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("shirt1")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("edit")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("name")).equals("Estampa");
+        driver.findElement(By.id("price")).equals("20");
+        driver.findElement(By.id("name")).sendKeys("Flash");
+        driver.findElement(By.id("price")).sendKeys("35");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
 }
+    
