@@ -9,5 +9,6 @@
     <modules>
         <module>../Callys.logic</module>
         <module>../Callys.service</module>
+        <module>Callys.web.test</module>
     </modules>
 </project>
