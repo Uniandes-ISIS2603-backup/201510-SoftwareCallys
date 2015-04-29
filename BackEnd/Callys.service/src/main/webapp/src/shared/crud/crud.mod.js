@@ -2,8 +2,7 @@
     var crud = angular.module('CrudModule', ['restangular', 'ui.bootstrap']);
  
     crud.config(['RestangularProvider', function (rp) {
-            rp.setBaseUrl('webresources');
- 
+            rp.setBaseUrl('http://localhost:8080/Callys.service/webresources');
             //Se añade RequestInterceptor para borrar el cuerpo de la solicitud DELETE
             rp.addRequestInterceptor(function (data, operation) {
                 if (operation === "remove") {
