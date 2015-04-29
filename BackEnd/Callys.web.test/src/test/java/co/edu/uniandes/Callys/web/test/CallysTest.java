@@ -169,15 +169,16 @@ public class CallysTest {
         driver.findElement(By.id("price")).sendKeys("20");
         driver.findElement(By.id("saveStamp")).click();
         Thread.sleep(2000);
-        success = true;
-        assertTrue(success);
-        Thread.sleep(2000);
         
         driver.findElement(By.id("name")).equals("Estampa");
         driver.findElement(By.id("edit")).click();
         Thread.sleep(2000);
+        /*
         driver.findElement(By.id("name")).equals("Estampa");
         driver.findElement(By.id("price")).equals("20");
+                */
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
         driver.findElement(By.id("name")).sendKeys("Flash");
         driver.findElement(By.id("price")).sendKeys("35");
         driver.findElement(By.id("saveStamp")).click();
@@ -194,24 +195,13 @@ public class CallysTest {
         Thread.sleep(3000);
         driver.findElement(By.id("shirt1")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("name")).clear();
-        driver.findElement(By.id("price")).clear();
-        driver.findElement(By.id("name")).sendKeys("Estampa");
-        driver.findElement(By.id("price")).sendKeys("20");
-        driver.findElement(By.id("saveStamp")).click();
-        Thread.sleep(2000);
-        success = true;
-        assertTrue(success);
-        Thread.sleep(2000);
-        
-        driver.findElement(By.id("name")).equals("Estampa");
-        driver.findElement(By.id("edit")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.id("name")).equals("Estampa");
-        driver.findElement(By.id("price")).equals("20");
-        driver.findElement(By.id("name")).sendKeys("Flash");
-        driver.findElement(By.id("price")).sendKeys("35");
-        driver.findElement(By.id("saveStamp")).click();
+        driver.findElement(By.id("color")).clear();
+        driver.findElement(By.id("size")).clear();
+        driver.findElement(By.id("quantity")).clear();
+        driver.findElement(By.id("color")).sendKeys("Silver");
+        driver.findElement(By.id("size")).sendKeys("S");
+        driver.findElement(By.id("quantity")).sendKeys("2");
+        driver.findElement(By.id("addToCart")).click();
         Thread.sleep(2000);
         success = true;
         assertTrue(success);
