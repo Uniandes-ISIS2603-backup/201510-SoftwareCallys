@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.estampa.logic.converter;
+package co.edu.uniandes.Callys.estampa.logic.converter;
 
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
 

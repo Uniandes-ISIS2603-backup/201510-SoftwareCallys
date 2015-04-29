@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.catalog.logic.api;
+package co.edu.uniandes.Callys.catalog.logic.api;
 
-import co.edu.uniandes.callys.catalog.logic.dto.CatalogDTO;
-import co.edu.uniandes.callys.catalog.logic.dto.CatalogPageDTO;
+import co.edu.uniandes.Callys.catalog.logic.dto.CatalogDTO;
+import co.edu.uniandes.Callys.catalog.logic.dto.CatalogPageDTO;
 import java.util.List;
 
 public interface ICatalogLogic {

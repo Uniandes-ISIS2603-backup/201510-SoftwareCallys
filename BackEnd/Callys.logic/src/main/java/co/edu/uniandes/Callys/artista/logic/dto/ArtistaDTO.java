@@ -1,4 +1,4 @@
-package co.edu.uniandes.callys.artista.logic.dto;
+package co.edu.uniandes.Callys.artista.logic.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

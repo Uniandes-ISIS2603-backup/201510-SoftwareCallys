@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.artista.logic.api;
+package co.edu.uniandes.Callys.artista.logic.api;
 
-import co.edu.uniandes.callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import java.util.List;
 
 public interface IArtistaLogic {

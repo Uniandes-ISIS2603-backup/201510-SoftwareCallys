@@ -1,4 +1,4 @@
-package co.edu.uniandes.callys.estampa.logic.dto;
+package co.edu.uniandes.Callys.estampa.logic.dto;
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;

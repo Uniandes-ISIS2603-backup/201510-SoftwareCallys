@@ -1,6 +1,6 @@
-package co.edu.uniandes.callys.estampa.logic.dto;
+package co.edu.uniandes.Callys.estampa.logic.dto;
 
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 

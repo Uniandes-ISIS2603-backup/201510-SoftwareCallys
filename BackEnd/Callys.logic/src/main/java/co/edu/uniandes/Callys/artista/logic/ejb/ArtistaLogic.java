@@ -1,10 +1,10 @@
-package co.edu.uniandes.callys.artista.logic.ejb;
+package co.edu.uniandes.Callys.artista.logic.ejb;
 
-import co.edu.uniandes.callys.artista.logic.api.IArtistaLogic;
-import co.edu.uniandes.callys.artista.logic.converter.ArtistaConverter;
-import co.edu.uniandes.callys.artista.logic.dto.ArtistaDTO;
-import co.edu.uniandes.callys.artista.logic.dto.ArtistaPageDTO;
-import co.edu.uniandes.callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.artista.logic.api.IArtistaLogic;
+import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

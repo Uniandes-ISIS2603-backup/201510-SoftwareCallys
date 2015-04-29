@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.cliente.logic.api;
+package co.edu.uniandes.Callys.cliente.logic.api;
 
-import co.edu.uniandes.callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.callys.cliente.logic.dto.ClientePageDTO;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import java.util.List;
 
 public interface IClienteLogic {
