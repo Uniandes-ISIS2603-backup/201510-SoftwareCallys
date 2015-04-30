@@ -25,6 +25,6 @@
 
 <servlet-mapping>
     <servlet-name>jersey-serlvet</servlet-name>
-    <url-pattern>/webresources/*</url-pattern>
+    <url-pattern>/rest/*</url-pattern>
 </servlet-mapping>
 </web-app>

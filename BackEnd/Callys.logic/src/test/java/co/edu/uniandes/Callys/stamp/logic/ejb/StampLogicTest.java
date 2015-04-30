@@ -1,5 +1,5 @@
 package co.edu.uniandes.Callys.stamp.logic.ejb;
-
+/*
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
@@ -90,6 +90,7 @@ public class StampLogicTest {
         StampDTO dto = new StampDTO();
         dto.setTopic(generateRandomTopic());
         dto.setId(generateRandom(Long.class));
+        dto.setIdArtista(generateRandom(Long.class));
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
 
@@ -102,6 +103,7 @@ public class StampLogicTest {
         Assert.assertEquals(dto.getName(), entity.getName());
         Assert.assertEquals(dto.getTopic(), entity.getTopic());
         Assert.assertEquals(dto.getId(), entity.getId());
+        Assert.assertEquals(dto.getIdArtista(), entity.getIdArtista());
         Assert.assertEquals(dto.getRating(), entity.getRating());
     }
 
@@ -128,6 +130,7 @@ public class StampLogicTest {
         Assert.assertEquals(entity.getName(), dto.getName());
         Assert.assertEquals(entity.getTopic(), dto.getTopic());
         Assert.assertEquals(entity.getId(), dto.getId());
+        Assert.assertEquals(entity.getIdArtista(), dto.getIdArtista());
         Assert.assertEquals(entity.getRating(), dto.getRating());
     }
 
@@ -146,6 +149,7 @@ public class StampLogicTest {
         
         dto.setTopic(generateRandomTopic());
         dto.setId(generateRandom(Long.class));
+        dto.setIdArtista(generateRandom(Long.class));
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
         
@@ -154,6 +158,7 @@ public class StampLogicTest {
         Assert.assertEquals(dto.getName(), resp.getName());
         Assert.assertEquals(dto.getTopic(), resp.getTopic());
         Assert.assertEquals(dto.getId(), resp.getId());
+        Assert.assertEquals(dto.getIdArtista(), resp.getIdArtista());
         Assert.assertEquals(dto.getRating(), resp.getRating());
     }
 
@@ -200,4 +205,4 @@ public class StampLogicTest {
         }
         return null;
     }
-}
+}*/

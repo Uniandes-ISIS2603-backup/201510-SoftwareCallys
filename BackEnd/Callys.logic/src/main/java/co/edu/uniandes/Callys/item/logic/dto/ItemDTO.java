@@ -7,7 +7,7 @@ public class ItemDTO {
     private Long id;
     private Long camiseta;
     private Long carroCompras;
-    private Double monto;
+    private double monto;
 
     public Long getId() {
         return id;
@@ -53,7 +53,7 @@ public class ItemDTO {
         return monto;
     }
 
-    public void setMonto(Double monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
     }
 }

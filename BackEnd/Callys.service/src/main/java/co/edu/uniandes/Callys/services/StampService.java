@@ -23,11 +23,13 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class StampService {
     
+    
     @Inject
     protected IStampLogic stampLogicService;
 
     @POST
     public StampDTO createStamp(StampDTO stamp) {
+        System.out.println("Entro");
         return stampLogicService.createStamp(stamp);
     }
 
@@ -37,10 +39,10 @@ public class StampService {
         stampLogicService.deleteStamp(id);
     }
 
+    
     @GET
     public StampPageDTO getStamps(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        
-        return  stampLogicService.getStamps(page, maxRecords);
+          return  stampLogicService.getStamps(page, maxRecords);
     }
 
     @GET

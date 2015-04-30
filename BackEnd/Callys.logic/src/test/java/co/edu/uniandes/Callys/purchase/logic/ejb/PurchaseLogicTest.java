@@ -130,7 +130,7 @@ public class PurchaseLogicTest {
     }
 
     @Test
-    public void getPurchasePaginationTest() {
+    public void getItemPaginationTest() {
         //Page 1
         PurchasePageDTO dto1 = purchaseLogic.getPurchases(1, 2);
         Assert.assertNotNull(dto1);

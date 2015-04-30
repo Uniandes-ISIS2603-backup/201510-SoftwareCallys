@@ -14,7 +14,7 @@ public class ItemEntity {
     Long id;
     private Long idCamiseta;
     private Long idCarritoC;
-    private Double monto;
+    private double monto;
     @ManyToOne
     private CamisetaEntity camiseta;
     @ManyToOne
@@ -64,7 +64,7 @@ public class ItemEntity {
         return monto;
     }
 
-    public void setMonto(Double monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
     }
 }

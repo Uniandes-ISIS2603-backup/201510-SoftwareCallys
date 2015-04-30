@@ -9,7 +9,7 @@ public class StampDTO {
     private Long id;
     private String name;
     private String topic;
-    private Integer rating;
+    private int rating;
     private Integer price;
     private String image;
  
@@ -53,11 +53,11 @@ public class StampDTO {
         this.topic = topic;
     }
 
-    public Integer getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 }

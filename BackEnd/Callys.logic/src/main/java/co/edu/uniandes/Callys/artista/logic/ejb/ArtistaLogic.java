@@ -6,17 +6,13 @@ import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import java.util.List;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Stateless
-@LocalBean
 public class ArtistaLogic implements IArtistaLogic{
  
-    @PersistenceContext(unitName = "CallysClassPU")
+    @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
     @Override

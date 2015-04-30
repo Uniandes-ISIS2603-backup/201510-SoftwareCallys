@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class CarroComprasDTO {
     private Long id;
-    private Double monto;
+    private double monto;
     private String formaPago;
     private String datosEnvio;
 
@@ -17,11 +17,11 @@ public class CarroComprasDTO {
         this.id = id;
     }
 
-    public Double getMonto() {
+    public double getMonto() {
         return monto;
     }
 
-    public void setMonto(Double monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
     }
 
