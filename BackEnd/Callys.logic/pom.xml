@@ -3,7 +3,7 @@
     <groupId>co.edu.uniandes.callys</groupId>
     <artifactId>Callys.logic</artifactId>
         <name>Callys.logic</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <dependencies>
         <!-- embedded glassfish 3.1.2 --> 
         <dependency>

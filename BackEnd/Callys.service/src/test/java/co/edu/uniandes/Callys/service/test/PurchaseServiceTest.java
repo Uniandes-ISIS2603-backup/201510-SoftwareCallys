@@ -50,7 +50,7 @@ public class PurchaseServiceTest {
         
 
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml").artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1-SNAPSHOT").resolveAsFiles())
+            .addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml").artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1").resolveAsFiles())
             .addPackage(StampService.class.getPackage())
             .addAsWebResource(new File(URLRESOURCES, "index.html"))
             .merge(ShrinkWrap.create(GenericArchive.class).as(ExplodedImporter.class).importDirectory(URLRESOURCES + "/src/").as(GenericArchive.class), "/src/", Filters.includeAll())
