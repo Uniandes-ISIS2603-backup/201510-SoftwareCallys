@@ -19,7 +19,7 @@ public class StampEntity {
     private String topic;
     private int rating;
     private Long idArtista;
-    private Double price;
+    private int price;
     private String image;
     
     public String getImage(){
@@ -38,11 +38,11 @@ public class StampEntity {
         this.id = id;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
     

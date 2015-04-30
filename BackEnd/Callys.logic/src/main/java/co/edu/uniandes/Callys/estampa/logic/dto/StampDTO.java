@@ -10,7 +10,7 @@ public class StampDTO {
     private String name;
     private String topic;
     private int rating;
-    private Double price;
+    private int price;
     private String image;
  
     public String getImage(){
@@ -21,11 +21,11 @@ public class StampDTO {
         this.image = image;
     }
     
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
     
