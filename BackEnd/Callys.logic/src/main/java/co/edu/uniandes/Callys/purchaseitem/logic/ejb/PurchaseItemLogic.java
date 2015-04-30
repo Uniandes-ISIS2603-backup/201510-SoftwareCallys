@@ -52,16 +52,4 @@ public class PurchaseItemLogic implements IPurchaseItemLogic{
     public PurchaseItemDTO getPurchaseItem(Long id) {
         return PurchaseItemConverter.entity2PersistenceDTO(entityManager.find(PurchaseItemEntity.class, id));
     }
-
-    @Override
-    public void deletePurchaseItem(Long id) {
-        PurchaseItemEntity entity = entityManager.find(PurchaseItemEntity.class, id);
-        entityManager.remove(entity);
-    }
-
-    @Override
-    public void updatePurchaseItem(PurchaseItemDTO detail) {
-        PurchaseItemEntity entity = entityManager.merge(PurchaseItemConverter.persistenceDTO2Entity(detail));
-        PurchaseItemConverter.entity2PersistenceDTO(entity);
-    }
 }
