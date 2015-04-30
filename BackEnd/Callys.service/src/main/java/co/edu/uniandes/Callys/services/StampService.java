@@ -3,6 +3,7 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import javax.ejb.Stateless;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -16,16 +17,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-@Path("/stamps")
+@Path("/stamp")
+@Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class StampService {
+    
     
     @Inject
     protected IStampLogic stampLogicService;
 
     @POST
     public StampDTO createStamp(StampDTO stamp) {
+        System.out.println("Entro");
         return stampLogicService.createStamp(stamp);
     }
 
@@ -35,10 +39,10 @@ public class StampService {
         stampLogicService.deleteStamp(id);
     }
 
+    
     @GET
     public StampPageDTO getStamps(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-          
-        return  stampLogicService.getStamps(page, maxRecords);
+          return  stampLogicService.getStamps(page, maxRecords);
     }
 
     @GET

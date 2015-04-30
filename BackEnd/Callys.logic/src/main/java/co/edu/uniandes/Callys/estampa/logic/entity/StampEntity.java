@@ -17,19 +17,11 @@ public class StampEntity {
     private Long id;
     private String name;
     private String topic;
-    private int rating;
+    private Integer rating;
     private Long idArtista;
-    private Double price;
     private String image;
+    private Integer price;
     
-    public String getImage(){
-        return image;
-    }
-    
-    public void setImage(String image){
-        this.image = image;
-    }
-
     public Long getId() {
         return id;
     }
@@ -37,14 +29,16 @@ public class StampEntity {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Double getPrice() {
-        return price;
+    
+        
+    public String getImage() {
+        return image;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setImage(String image) {
+        this.image = image;
     }
+
     
     public String getName() {
         return name;
@@ -62,13 +56,21 @@ public class StampEntity {
         this.topic = topic;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+        public Integer getPrice() {
+        return price;
+    }
+
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
+    
     
     public Long getIdArtista() {
         return idArtista;

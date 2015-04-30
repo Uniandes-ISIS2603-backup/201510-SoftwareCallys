@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.estampa.logic.ejb;
 
-import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
@@ -18,6 +17,8 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class StampLogic implements IStampLogic{
+    
+    
     
     @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;

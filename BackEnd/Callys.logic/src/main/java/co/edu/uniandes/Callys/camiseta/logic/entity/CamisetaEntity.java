@@ -37,9 +37,6 @@ public class CamisetaEntity {
         if (!getStamps().contains(stamp)) {
             stamps.add(stamp);
         }
-        if (!stamp.getCamisetas().contains(this)) {
-            stamp.getCamisetas().add(this);
-        }
     }
 
     public Long getId() {
