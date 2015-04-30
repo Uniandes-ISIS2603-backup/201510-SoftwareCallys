@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','homeModule','shirtModule','detailsModule','contactModule','purchaseModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','loginModule','shirtModule','signupModule','detailsModule','contactModule','purchaseModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -10,9 +10,13 @@
                     {
 			templateUrl: 'src/modules/stamp/stamp.tpl.html'
                     }).otherwise('/');
-                     $routeProvider.when('/home', 
+                    $routeProvider.when('/signup', 
                     {
-			templateUrl: 'src/modules/home/home.tpl.html'
+			templateUrl: 'src/modules/signup/signup.tpl.html'
+                    }).otherwise('/');
+                     $routeProvider.when('/login', 
+                    {
+			templateUrl: 'src/modules/login/login.tpl.html'
                     }).otherwise('/');
                     $routeProvider.when('/details', 
                     {
