@@ -1,0 +1,334 @@
+{
+	"id": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+	"name": "collection Item",
+	"description": "",
+	"order": [
+		"b1305e49-aa1d-2066-fea1-781729ef7fbc",
+		"5a71fe9e-b4c5-d0b2-8a37-a70c352e9bb9",
+		"cee897a5-7fd2-81f4-b202-2c9c04010ab4",
+		"f7bc15d1-c9f6-11b4-0ae8-248fd272a30a",
+		"99e1dd96-64c9-8154-a5d2-cfd058feea50",
+		"2c5151ac-2c19-df36-b955-1dee2341f42a",
+		"d55b9b72-31ae-1788-5a1b-201312f4e5ab",
+		"d3a807e1-22e9-b849-2ef8-314389b6fdc1"
+	],
+	"folders": [],
+	"timestamp": 1430364194728,
+	"synced": false,
+	"owner": "",
+	"subscribed": false,
+	"remoteLink": "",
+	"public": false,
+	"write": true,
+	"requests": [
+		{
+			"id": "2c5151ac-2c19-df36-b955-1dee2341f42a",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item/4",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "PUT",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "upadateIndex",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364384542,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false,
+			"rawModeData": "{\n\"id\" :4 ,\n\"camiseta\" : 4,\n\"carroCompras\" : 4,\n\"monto\": 1000000000 \n}\n"
+		},
+		{
+			"id": "5a71fe9e-b4c5-d0b2-8a37-a70c352e9bb9",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "add1",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364312272,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false,
+			"rawModeData": "{\n\"id\" :1 ,\n\"camiseta\" : 1,\n\"carroCompras\" : 1,\n\"monto\": 200000 \n}\n"
+		},
+		{
+			"id": "99e1dd96-64c9-8154-a5d2-cfd058feea50",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "add4",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364337530,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false,
+			"rawModeData": "{\n\"id\" :4 ,\n\"camiseta\" : 4,\n\"carroCompras\" : 4,\n\"monto\": 500000 \n}\n"
+		},
+		{
+			"id": "b1305e49-aa1d-2066-fea1-781729ef7fbc",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [
+				{
+					"key": "id",
+					"value": "111",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "juan esteban",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numCompras",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numeroTargeta",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "codigoSeguridad",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "carroComprasId",
+					"value": "11",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "idCompras",
+					"value": "12",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "getAll",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364194728,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"synced": false
+		},
+		{
+			"id": "cee897a5-7fd2-81f4-b202-2c9c04010ab4",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "add2",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364320272,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false,
+			"rawModeData": "{\n\"id\" :2 ,\n\"camiseta\" : 2,\n\"carroCompras\" : 2,\n\"monto\": 300000 \n}\n"
+		},
+		{
+			"id": "d3a807e1-22e9-b849-2ef8-314389b6fdc1",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item/4",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [
+				{
+					"key": "id",
+					"value": "111",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "juan esteban",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numCompras",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numeroTargeta",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "codigoSeguridad",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "carroComprasId",
+					"value": "11",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "idCompras",
+					"value": "12",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364461084,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false
+		},
+		{
+			"id": "d55b9b72-31ae-1788-5a1b-201312f4e5ab",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item/4",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [
+				{
+					"key": "id",
+					"value": "111",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "juan esteban",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numCompras",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numeroTargeta",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "codigoSeguridad",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "carroComprasId",
+					"value": "11",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "idCompras",
+					"value": "12",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "getIndex",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364426203,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false
+		},
+		{
+			"id": "f7bc15d1-c9f6-11b4-0ae8-248fd272a30a",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/Callys.service/rest/item",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "61e48b43-43b8-8f60-ede1-e41fc0c3648c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "add3",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1430364328256,
+			"version": 2,
+			"responses": [],
+			"tests": "\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"collectionOwner": 0,
+			"synced": false,
+			"rawModeData": "{\n\"id\" :3 ,\n\"camiseta\" : 3,\n\"carroCompras\" : 3,\n\"monto\": 400000 \n}\n"
+		}
+	]
+}
