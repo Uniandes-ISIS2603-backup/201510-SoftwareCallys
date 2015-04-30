@@ -2,7 +2,7 @@ package co.edu.uniandes.Callys.carroCompras.logic.ejb;
 
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
@@ -17,7 +17,7 @@ import javax.persistence.Query;
 @Default
 @Stateless
 @LocalBean
-public class CarroComprasLogic implements ICarroCompras{
+public class CarroComprasLogic implements ICarroComprasLogic{
        
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
