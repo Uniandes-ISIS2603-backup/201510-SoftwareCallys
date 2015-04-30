@@ -13,8 +13,8 @@ public class StampConverter {
             dto.setTopic(entity.getTopic());
             dto.setName(entity.getName());
             dto.setRating(entity.getRating());
-            dto.setIdArtista(entity.getIdArtista());
             dto.setPrice(entity.getPrice());
+            dto.setImage(entity.getImage());
             return dto;
         } else {
             return null;
@@ -28,8 +28,8 @@ public class StampConverter {
             entity.setTopic(dto.getTopic());
             entity.setName(dto.getName());
             entity.setRating(dto.getRating());
-            entity.setIdArtista(dto.getIdArtista());
             entity.setPrice(dto.getPrice());
+            entity.setImage(dto.getImage());
             return entity;
         } else {
             return null;

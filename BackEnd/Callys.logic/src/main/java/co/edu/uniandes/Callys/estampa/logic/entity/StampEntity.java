@@ -20,26 +20,14 @@ public class StampEntity {
     private int rating;
     private Long idArtista;
     private Double price;
-    @ManyToMany(mappedBy="stamps")
-    private List<CamisetaEntity> camisetas;
-    @ManyToOne
-    private ArtistaEntity artista;
-
-    public void addCamiseta(CamisetaEntity camiseta) {
-        if (!getCamisetas().contains(camiseta)) {
-            camisetas.add(camiseta);
-        }
-        if (!camiseta.getStamps().contains(this)) {
-            camiseta.getStamps().add(this);
-        }
+    private String image;
+    
+    public String getImage(){
+        return image;
     }
- 
-    public List<CamisetaEntity> getCamisetas() {
-        return camisetas;
-    }
-
-    public void setCamisetas(List<CamisetaEntity> camisetas) {
-        this.camisetas = camisetas;
+    
+    public void setImage(String image){
+        this.image = image;
     }
 
     public Long getId() {
@@ -88,13 +76,5 @@ public class StampEntity {
 
     public void setIdArtista(Long idArtista) {
         this.idArtista = idArtista;
-    }
-    
-    public ArtistaEntity getArtista() {
-        return artista;
-    }
-
-    public void setArtista(ArtistaEntity artista) {
-        this.artista = artista;
     }
 }

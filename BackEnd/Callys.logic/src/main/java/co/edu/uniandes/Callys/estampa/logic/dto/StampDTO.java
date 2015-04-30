@@ -10,18 +10,17 @@ public class StampDTO {
     private String name;
     private String topic;
     private int rating;
-    private Long idArtista;
     private Double price;
-    private List<CamisetaEntity> camisetas;
+    private String image;
  
-    public List<CamisetaEntity> getCamisetas() {
-        return camisetas;
+    public String getImage(){
+        return image;
     }
-
-    public void setCamisetas(List<CamisetaEntity> camisetas) {
-        this.camisetas = camisetas;
+    
+    public void setImage(String image){
+        this.image = image;
     }
-
+    
     public Double getPrice() {
         return price;
     }
@@ -60,13 +59,5 @@ public class StampDTO {
 
     public void setRating(int rating) {
         this.rating = rating;
-    }
-    
-    public Long getIdArtista() {
-        return idArtista;
-    }
-
-    public void setIdArtista(Long idArtista) {
-        this.idArtista = idArtista;
     }
 }

@@ -67,9 +67,4 @@ public class StampLogic implements IStampLogic{
         StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
         StampConverter.entity2PersistenceDTO(entity);
     }
-
-    @Override
-    public List<CamisetaEntity> getCamisetasStamp(StampDTO stamp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

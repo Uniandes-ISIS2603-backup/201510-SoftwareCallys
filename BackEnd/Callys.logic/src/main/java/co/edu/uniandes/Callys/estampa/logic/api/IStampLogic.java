@@ -18,5 +18,4 @@ public interface IStampLogic {
 
     public void updateStamp(StampDTO detail);
     
-    public List<CamisetaEntity> getCamisetasStamp(StampDTO stamp);
 }
