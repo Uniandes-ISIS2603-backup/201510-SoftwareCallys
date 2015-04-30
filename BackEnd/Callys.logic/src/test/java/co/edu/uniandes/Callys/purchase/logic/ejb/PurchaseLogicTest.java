@@ -102,7 +102,7 @@ public class PurchaseLogicTest {
         Assert.assertEquals(dto.getDatosDeEnvio(), entity.getDatosDeEnvio());
         Assert.assertEquals(dto.getFormaDePago(), entity.getFormaDePago());
     }
-/*
+
     @Test
     public void getPurchasesTest() {
         List<PurchaseDTO> list = purchaseLogic.getPurchases();
@@ -158,5 +158,5 @@ public class PurchaseLogicTest {
             }
             Assert.assertTrue(found);
         }
-    }*/
+    }
 }

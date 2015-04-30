@@ -4,17 +4,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class ArtistaDTO {
-    private long id;
+    private Long id;
     private String clave;
     private Integer numeroEstampas;
     private String datosContacto;
-    private double comisionPorVenta;
+    private Double comisionPorVenta;
     
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,11 +42,11 @@ public class ArtistaDTO {
         this.datosContacto = datosContacto;
     }
     
-    public double getComisionPorVenta() {
+    public Double getComisionPorVenta() {
         return comisionPorVenta;
     }
 
-    public void setComisionPorVenta( double comisionPorVenta) {
+    public void setComisionPorVenta(Double comisionPorVenta) {
         this.comisionPorVenta = comisionPorVenta;
     }
 }
