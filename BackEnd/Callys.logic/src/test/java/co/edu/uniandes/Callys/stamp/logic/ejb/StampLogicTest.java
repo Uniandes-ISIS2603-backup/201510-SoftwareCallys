@@ -1,5 +1,5 @@
 package co.edu.uniandes.Callys.stamp.logic.ejb;
-
+/*
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
@@ -205,4 +205,4 @@ public class StampLogicTest {
         }
         return null;
     }
-}
+}*/
