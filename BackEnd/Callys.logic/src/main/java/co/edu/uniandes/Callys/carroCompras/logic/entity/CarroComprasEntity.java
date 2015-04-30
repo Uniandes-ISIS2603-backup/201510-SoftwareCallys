@@ -9,8 +9,8 @@ public class CarroComprasEntity {
     
     @Id
     @GeneratedValue(generator = "CarroCompras")
-    Long id;
-    private double monto;
+    private Long id;
+    private Double monto;
     private String formaPago;
     private String datosEnvio;
 
@@ -22,11 +22,11 @@ public class CarroComprasEntity {
         this.id = id;
     }
 
-    public double getMonto() {
+    public Double getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
 

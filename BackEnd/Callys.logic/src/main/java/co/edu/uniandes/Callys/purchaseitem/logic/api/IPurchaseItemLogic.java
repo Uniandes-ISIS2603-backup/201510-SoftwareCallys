@@ -13,8 +13,4 @@ public interface IPurchaseItemLogic {
     public PurchaseItemPageDTO getPurchaseItems(Integer page, Integer maxRecords);
 
     public PurchaseItemDTO getPurchaseItem(Long id);
-
-    public void deletePurchaseItem(Long id);
-
-    public void updatePurchaseItem(PurchaseItemDTO detail);
 }

@@ -47,7 +47,6 @@ public class PurchaseServiceTest {
     
     @Deployment
     public static Archive<?> createDeployment() {
-        
 
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
             .addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml").artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1").resolveAsFiles())
