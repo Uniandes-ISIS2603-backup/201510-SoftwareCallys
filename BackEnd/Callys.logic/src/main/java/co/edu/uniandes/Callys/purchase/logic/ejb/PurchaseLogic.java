@@ -1,10 +1,10 @@
-package co.edu.uniandes.callys.purchase.logic.ejb;
+package co.edu.uniandes.Callys.purchase.logic.ejb;
 
-import co.edu.uniandes.callys.purchase.logic.api.IPurchaseLogic;
-import co.edu.uniandes.callys.purchase.logic.converter.PurchaseConverter;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
-import co.edu.uniandes.callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
+import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -13,13 +13,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
 @Default
 @Stateless
 @LocalBean
-public class PurchaseLogic implements IPurchaseLogic{
-    
-    @PersistenceContext(unitName ="CallysClassPU")
+public class PurchaseLogic implements IPurchaseLogic {
+
+    @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
 
     @Override
@@ -54,17 +53,5 @@ public class PurchaseLogic implements IPurchaseLogic{
     @Override
     public PurchaseDTO getPurchase(Long id) {
         return PurchaseConverter.entity2PersistenceDTO(entityManager.find(PurchaseEntity.class, id));
-    }
-
-    @Override
-    public void deletePurchase(Long id) {
-        PurchaseEntity entity = entityManager.find(PurchaseEntity.class, id);
-        entityManager.remove(entity);
-    }
-
-    @Override
-    public void updatePurchase(PurchaseDTO detail) {
-        PurchaseEntity entity = entityManager.merge(PurchaseConverter.persistenceDTO2Entity(detail));
-        PurchaseConverter.entity2PersistenceDTO(entity);
     }
 }

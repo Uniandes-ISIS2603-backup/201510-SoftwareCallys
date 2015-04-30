@@ -1,12 +1,13 @@
-package co.edu.uniandes.callys.estampa.logic.api;
+package co.edu.uniandes.Callys.estampa.logic.api;
 
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.dto.StampPageDTO;
+
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import java.util.List;
 
 public interface IStampLogic {
-     public StampDTO createStamp(StampDTO detail);
+     
+    public StampDTO createStamp(StampDTO detail);
 
     public List<StampDTO> getStamps();
 
@@ -18,5 +19,4 @@ public interface IStampLogic {
 
     public void updateStamp(StampDTO detail);
     
-    public List<CamisetaEntity> getCamisetasStamp(StampDTO stamp);
 }

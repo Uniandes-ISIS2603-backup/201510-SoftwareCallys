@@ -1,4 +1,4 @@
-package  co.edu.uniandes.callys.item.logic.dto;
+package  co.edu.uniandes.Callys.item.logic.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -7,7 +7,7 @@ public class ItemDTO {
     private Long id;
     private Long camiseta;
     private Long carroCompras;
-    private double monto;
+    private Double monto;
 
     public Long getId() {
         return id;
@@ -53,7 +53,7 @@ public class ItemDTO {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
 }

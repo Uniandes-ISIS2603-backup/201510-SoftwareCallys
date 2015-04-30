@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.purchaseitem.logic.converter;
+package co.edu.uniandes.Callys.purchaseitem.logic.converter;
 
-import co.edu.uniandes.callys.purchaseitem.logic.dto.PurchaseItemDTO;
-import co.edu.uniandes.callys.purchaseitem.logic.entity.PurchaseItemEntity;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 

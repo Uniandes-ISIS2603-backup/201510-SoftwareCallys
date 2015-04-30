@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.carroCompras.logic.converter;
+package co.edu.uniandes.Callys.carroCompras.logic.converter;
 
-import co.edu.uniandes.callys.carroCompras.logic.dto.CarroComprasDTO;
-import co.edu.uniandes.callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.ArrayList;
 import java.util.List;
 

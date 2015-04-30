@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.camiseta.logic.converter;
+package co.edu.uniandes.Callys.camiseta.logic.converter;
 
-import co.edu.uniandes.callys.camiseta.logic.dto.CamisetaDTO;
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.ArrayList;
 import java.util.List;
 

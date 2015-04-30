@@ -1,10 +1,8 @@
-/*
 package co.edu.uniandes.Callys.item.logic.ejb;
 
 import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
 import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
-import co.edu.uniandes.Callys.item.logic.ejb.ItemLogic;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
+/*
 @RunWith(Arquillian.class)
 public class ItemLogicTest {
 
@@ -67,7 +65,7 @@ public class ItemLogicTest {
     }
 
     private void clearData() {
-        em.createQuery("delete from StampEntity").executeUpdate();
+        em.createQuery("delete from ItemEntity").executeUpdate();
     }
 
     private List<ItemEntity> data = new ArrayList<ItemEntity>();

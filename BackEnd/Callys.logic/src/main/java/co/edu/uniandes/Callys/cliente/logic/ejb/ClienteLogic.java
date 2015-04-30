@@ -1,10 +1,10 @@
-package co.edu.uniandes.callys.cliente.logic.ejb;
+package co.edu.uniandes.Callys.cliente.logic.ejb;
 
-import co.edu.uniandes.callys.cliente.logic.api.IClienteLogic;
-import co.edu.uniandes.callys.cliente.logic.converter.ClienteConverter;
-import co.edu.uniandes.callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.callys.cliente.logic.dto.ClientePageDTO;
-import co.edu.uniandes.callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
+import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
+import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
+import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -30,16 +30,16 @@ public class ClienteLogic implements IClienteLogic{
 
     @Override
     public List<ClienteDTO> getClientes() {
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ClienteEntity u");
         return ClienteConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     @Override
     public ClientePageDTO getClientes(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SportEntity u");
+        Query count = entityManager.createQuery("select count(u) from ClienteEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from SportEntity u");
+        Query q = entityManager.createQuery("select u from ClienteEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

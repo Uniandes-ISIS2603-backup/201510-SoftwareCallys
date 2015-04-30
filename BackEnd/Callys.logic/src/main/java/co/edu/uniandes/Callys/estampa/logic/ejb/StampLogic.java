@@ -1,11 +1,10 @@
-package co.edu.uniandes.callys.estampa.logic.ejb;
+package co.edu.uniandes.Callys.estampa.logic.ejb;
 
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
-import co.edu.uniandes.callys.estampa.logic.api.IStampLogic;
-import co.edu.uniandes.callys.estampa.logic.converter.StampConverter;
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.dto.StampPageDTO;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
+import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -18,6 +17,8 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class StampLogic implements IStampLogic{
+    
+    
     
     @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
@@ -66,10 +67,5 @@ public class StampLogic implements IStampLogic{
     public void updateStamp(StampDTO stamp) {
         StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
         StampConverter.entity2PersistenceDTO(entity);
-    }
-
-    @Override
-    public List<CamisetaEntity> getCamisetasStamp(StampDTO stamp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

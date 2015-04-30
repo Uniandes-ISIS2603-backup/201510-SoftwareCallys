@@ -1,8 +1,8 @@
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.callys.purchase.logic.api.IPurchaseLogic;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;

@@ -1,6 +1,6 @@
-package co.edu.uniandes.callys.estampa.logic.dto;
+package co.edu.uniandes.Callys.estampa.logic.dto;
 
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -9,18 +9,26 @@ public class StampDTO {
     private Long id;
     private String name;
     private String topic;
-    private int rating;
-    private Long idArtista;
-    private List<CamisetaEntity> camisetas;
+    private Integer rating;
+    private Integer price;
+    private String image;
  
-    public List<CamisetaEntity> getCamisetas() {
-        return camisetas;
+    public String getImage(){
+        return image;
+    }
+    
+    public void setImage(String image){
+        this.image = image;
+    }
+    
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setCamisetas(List<CamisetaEntity> camisetas) {
-        this.camisetas = camisetas;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
-
+    
     public Long getId() {
         return id;
     }
@@ -45,19 +53,11 @@ public class StampDTO {
         this.topic = topic;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
-    }
-    
-    public Long getIdArtista() {
-        return idArtista;
-    }
-
-    public void setIdArtista(Long idArtista) {
-        this.idArtista = idArtista;
     }
 }

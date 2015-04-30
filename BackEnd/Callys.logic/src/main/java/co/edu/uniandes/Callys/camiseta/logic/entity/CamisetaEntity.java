@@ -1,6 +1,6 @@
-package co.edu.uniandes.callys.camiseta.logic.entity;
+package co.edu.uniandes.Callys.camiseta.logic.entity;
 
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,9 +36,6 @@ public class CamisetaEntity {
     public void addStamp(StampEntity stamp) {
         if (!getStamps().contains(stamp)) {
             stamps.add(stamp);
-        }
-        if (!stamp.getCamisetas().contains(this)) {
-            stamp.getCamisetas().add(this);
         }
     }
 

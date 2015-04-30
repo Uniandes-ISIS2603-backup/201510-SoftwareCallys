@@ -1,4 +1,4 @@
-package co.edu.uniandes.callys.catalog.logic.dto;
+package co.edu.uniandes.Callys.catalog.logic.dto;
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;

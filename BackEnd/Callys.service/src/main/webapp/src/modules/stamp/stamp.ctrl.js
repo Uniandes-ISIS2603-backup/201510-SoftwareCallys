@@ -94,7 +94,8 @@
         {
             if(catalogForm.$valid)
             {
-               catalogRecord.image= image;
+               
+               catalogRecord.image= "image";
                 catalogRecord.rating= 0;
                catalogService.saveRecord(catalogRecord);
                 catalogService.fetchRecords().then(function(data)

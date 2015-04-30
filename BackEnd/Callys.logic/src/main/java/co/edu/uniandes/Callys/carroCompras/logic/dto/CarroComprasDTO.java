@@ -1,11 +1,11 @@
-package co.edu.uniandes.callys.carroCompras.logic.dto;
+package co.edu.uniandes.Callys.carroCompras.logic.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class CarroComprasDTO {
     private Long id;
-    private double monto;
+    private Double monto;
     private String formaPago;
     private String datosEnvio;
 
@@ -17,11 +17,11 @@ public class CarroComprasDTO {
         this.id = id;
     }
 
-    public double getMonto() {
+    public Double getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
 

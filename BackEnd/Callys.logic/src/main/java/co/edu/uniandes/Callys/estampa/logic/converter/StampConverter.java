@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.estampa.logic.converter;
+package co.edu.uniandes.Callys.estampa.logic.converter;
 
-import co.edu.uniandes.callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,8 @@ public class StampConverter {
             dto.setTopic(entity.getTopic());
             dto.setName(entity.getName());
             dto.setRating(entity.getRating());
-            dto.setIdArtista(entity.getIdArtista());
+             dto.setImage(entity.getImage());
+              dto.setPrice(entity.getPrice());
             return dto;
         } else {
             return null;
@@ -27,7 +28,8 @@ public class StampConverter {
             entity.setTopic(dto.getTopic());
             entity.setName(dto.getName());
             entity.setRating(dto.getRating());
-            entity.setIdArtista(dto.getIdArtista());
+            entity.setImage(dto.getImage());
+            entity.setPrice(dto.getPrice());
             return entity;
         } else {
             return null;

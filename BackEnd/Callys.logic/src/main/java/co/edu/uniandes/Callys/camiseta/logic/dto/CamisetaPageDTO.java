@@ -1,4 +1,4 @@
-package co.edu.uniandes.callys.camiseta.logic.dto;
+package co.edu.uniandes.Callys.camiseta.logic.dto;
 
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;

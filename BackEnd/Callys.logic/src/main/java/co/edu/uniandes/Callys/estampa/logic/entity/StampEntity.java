@@ -1,7 +1,7 @@
-package co.edu.uniandes.callys.estampa.logic.entity;
+package co.edu.uniandes.Callys.estampa.logic.entity;
 
-import co.edu.uniandes.callys.artista.logic.entity.ArtistaEntity;
-import co.edu.uniandes.callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,30 +17,10 @@ public class StampEntity {
     private Long id;
     private String name;
     private String topic;
-    private int rating;
-    private Long idArtista;
-    @ManyToMany(mappedBy="stamps")
-    private List<CamisetaEntity> camisetas;
-    @ManyToOne
-    private ArtistaEntity artista;
-
-    public void addCamiseta(CamisetaEntity camiseta) {
-        if (!getCamisetas().contains(camiseta)) {
-            camisetas.add(camiseta);
-        }
-        if (!camiseta.getStamps().contains(this)) {
-            camiseta.getStamps().add(this);
-        }
-    }
- 
-    public List<CamisetaEntity> getCamisetas() {
-        return camisetas;
-    }
-
-    public void setCamisetas(List<CamisetaEntity> camisetas) {
-        this.camisetas = camisetas;
-    }
-
+    private Integer rating;
+    private Integer price;
+    private String image;
+    
     public Long getId() {
         return id;
     }
@@ -48,7 +28,25 @@ public class StampEntity {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Integer getPrice() 
+    {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    
     public String getName() {
         return name;
     }
@@ -65,27 +63,12 @@ public class StampEntity {
         this.topic = topic;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+
+    public void setRating(Integer rating) {
         this.rating = rating;
-    }
-    
-    public Long getIdArtista() {
-        return idArtista;
-    }
-
-    public void setIdArtista(Long idArtista) {
-        this.idArtista = idArtista;
-    }
-    
-    public ArtistaEntity getArtista() {
-        return artista;
-    }
-
-    public void setArtista(ArtistaEntity artista) {
-        this.artista = artista;
     }
 }

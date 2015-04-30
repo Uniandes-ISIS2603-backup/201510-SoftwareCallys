@@ -1,15 +1,11 @@
 package co.edu.uniandes.Callys.purchase.logic.ejb;
-/*
-import co.edu.uniandes.Callys.util._TestUtil;
-import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
-import static co.edu.uniandes.Callys.util._TestUtil.generateRandomDate;
-import static co.edu.uniandes.Callys.util._TestUtil.parseDate;
-import co.edu.uniandes.callys.purchase.logic.api.IPurchaseLogic;
-import co.edu.uniandes.callys.purchase.logic.converter.PurchaseConverter;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
-import co.edu.uniandes.callys.purchase.logic.entity.PurchaseEntity;
-import co.edu.uniandes.callys.purchase.logic.ejb.PurchaseLogic;
+
+import static co.edu.uniandes.Callys.util._TestUtil.*;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
+import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -33,13 +29,13 @@ public class PurchaseLogicTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addPackage(PurchaseEntity.class.getPackage())
-            .addPackage(PurchaseDTO.class.getPackage())
-            .addPackage(PurchaseConverter.class.getPackage())
-            .addPackage(IPurchaseLogic.class.getPackage())
-            .addPackage(PurchaseLogic.class.getPackage())
-            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-            .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
+                .addPackage(PurchaseEntity.class.getPackage())
+                .addPackage(PurchaseDTO.class.getPackage())
+                .addPackage(PurchaseConverter.class.getPackage())
+                .addPackage(PurchaseLogic.class.getPackage())
+                .addPackage(IPurchaseLogic.class.getPackage())
+                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+                .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
 
     @Inject
@@ -70,7 +66,7 @@ public class PurchaseLogicTest {
     }
 
     private void clearData() {
-        em.createQuery("delete from StampEntity").executeUpdate();
+        em.createQuery("delete from PurchaseEntity").executeUpdate();
     }
 
     private List<PurchaseEntity> data = new ArrayList<PurchaseEntity>();
@@ -79,11 +75,14 @@ public class PurchaseLogicTest {
         for (int i = 0; i < 3; i++) {
             PurchaseEntity entity = new PurchaseEntity();
             entity.setId(generateRandom(Long.class));
+            entity.setDate(parseDate(generateRandomDate()));
+            entity.setDatosDeEnvio(generateRandom(String.class));
+            entity.setFormaDePago(generateRandom(String.class));
             em.persist(entity);
             data.add(entity);
         }
     }
-    
+
     @Test
     public void createPurchaseTest() {
         PurchaseDTO dto = new PurchaseDTO();
@@ -91,9 +90,9 @@ public class PurchaseLogicTest {
         dto.setDate(parseDate(generateRandomDate()));
         dto.setDatosDeEnvio(generateRandom(String.class));
         dto.setFormaDePago(generateRandom(String.class));
-        
+
         PurchaseDTO result = purchaseLogic.createPurchase(dto);
-        
+
         Assert.assertNotNull(result);
 
         PurchaseEntity entity = em.find(PurchaseEntity.class, result.getId());
@@ -131,13 +130,13 @@ public class PurchaseLogicTest {
     }
 
     @Test
-    public void getItemPaginationTest() {
+    public void getPurchasePaginationTest() {
         //Page 1
-        PurchasePageDTO dto1=purchaseLogic.getPurchases(1,2);
+        PurchasePageDTO dto1 = purchaseLogic.getPurchases(1, 2);
         Assert.assertNotNull(dto1);
         Assert.assertEquals(2, dto1.getRecords().size());
         Assert.assertEquals(3L, dto1.getTotalRecords().longValue());
-        PurchasePageDTO dto2=purchaseLogic.getPurchases(2, 2);
+        PurchasePageDTO dto2 = purchaseLogic.getPurchases(2, 2);
         Assert.assertNotNull(dto2);
         Assert.assertEquals(1, dto2.getRecords().size());
         Assert.assertEquals(3L, dto2.getTotalRecords().longValue());
@@ -161,4 +160,3 @@ public class PurchaseLogicTest {
         }
     }
 }
-*/
