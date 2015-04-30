@@ -14,6 +14,7 @@ public class StampConverter {
             dto.setName(entity.getName());
             dto.setRating(entity.getRating());
             dto.setIdArtista(entity.getIdArtista());
+            dto.setPrice(entity.getPrice());
             return dto;
         } else {
             return null;
@@ -28,6 +29,7 @@ public class StampConverter {
             entity.setName(dto.getName());
             entity.setRating(dto.getRating());
             entity.setIdArtista(dto.getIdArtista());
+            entity.setPrice(dto.getPrice());
             return entity;
         } else {
             return null;

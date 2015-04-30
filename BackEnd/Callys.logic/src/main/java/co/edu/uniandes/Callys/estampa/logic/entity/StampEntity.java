@@ -19,6 +19,7 @@ public class StampEntity {
     private String topic;
     private int rating;
     private Long idArtista;
+    private Double price;
     @ManyToMany(mappedBy="stamps")
     private List<CamisetaEntity> camisetas;
     @ManyToOne
@@ -49,6 +50,14 @@ public class StampEntity {
         this.id = id;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
     public String getName() {
         return name;
     }

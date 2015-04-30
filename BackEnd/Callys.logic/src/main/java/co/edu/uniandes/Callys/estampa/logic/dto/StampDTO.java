@@ -11,6 +11,7 @@ public class StampDTO {
     private String topic;
     private int rating;
     private Long idArtista;
+    private Double price;
     private List<CamisetaEntity> camisetas;
  
     public List<CamisetaEntity> getCamisetas() {
@@ -21,6 +22,14 @@ public class StampDTO {
         this.camisetas = camisetas;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
     public Long getId() {
         return id;
     }
