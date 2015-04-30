@@ -5,7 +5,7 @@ import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import java.util.List;
 
-public interface ICarroCompras {
+public interface ICarroComprasLogic {
     public CarroComprasDTO createCarroCompras(CarroComprasDTO detail);
 
     public List<CarroComprasDTO> getCarrosCompras();
