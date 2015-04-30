@@ -5,7 +5,7 @@
     {
         shirtService.extendCtrl(this, $scope);
         this.fetchRecords();
-        this.saveShirt = function (pName,pImage,pPrice)
+        this.selectShirt = function (pName,pImage,pPrice)
         {
             if($scope.currentRecord !== null)
             {
@@ -13,8 +13,11 @@
                 $scope.currentRecord = {name:pName,image:pImage,price:pPrice,stamps:""};
                 this.saveRecord();
             }
-            $scope.currentRecord={name:pName,image:pImage,price:pPrice,stamps:""};
-            this.saveRecord();
+            else
+            {
+                $scope.currentRecord={name:pName,image:pImage,price:pPrice,stamps:""};
+                this.saveRecord();
+            }
         };
     }]);
 })();

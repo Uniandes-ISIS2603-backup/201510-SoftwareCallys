@@ -58,12 +58,12 @@
         };
         this.editStamp = function (record)
         {
-            catalogService.editRecord(record);
-            this.editMode = true;
+            this.uploadMode = true;
+            this.editRecord(record);
             catalogService.fetchRecords().then(function(data)
-                {
-                   $scope.catalogRecords = data;
-                });
+            {
+               $scope.catalogRecords = data;
+            });
         };
         this.deleteStamp = function (catalogRecord)
         {
