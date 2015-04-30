@@ -1,7 +1,7 @@
 package co.edu.uniandes.Callys.services;
-import co.edu.uniandes.callys.camiseta.logic.api.ICamisetaLogic;
-import co.edu.uniandes.callys.camiseta.logic.dto.CamisetaDTO;
-import co.edu.uniandes.callys.camiseta.logic.dto.CamisetaPageDTO;
+import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
