@@ -17,8 +17,8 @@ public class StampEntity {
     private Long id;
     private String name;
     private String topic;
-    private int rating;
-    private int price;
+    private Integer rating;
+    private Integer price;
     private String image;
     
     public String getImage(){
@@ -37,11 +37,11 @@ public class StampEntity {
         this.id = id;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
     
@@ -61,11 +61,11 @@ public class StampEntity {
         this.topic = topic;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }
