@@ -108,7 +108,7 @@ public class ArtistLogicTest {
     }
     
     @Test
-    public void getArtistTest() {
+    public void getArtistsTest() {
         List<ArtistaDTO> list = artistaLogic.getArtistas();
         Assert.assertEquals(list.size(), data.size());
         for (ArtistaDTO dto : list) {
@@ -120,5 +120,77 @@ public class ArtistLogicTest {
             }
             Assert.assertTrue(found);
         }
+    }
+    
+    @Test
+    public void getArtistTest() {
+        ArtistaEntity entity = data.get(0);
+        ArtistaDTO dto = artistaLogic.getArtista(entity.getId());
+        Assert.assertNotNull(dto);
+        Assert.assertEquals(entity.getId(), dto.getId());
+        Assert.assertEquals(entity.getClave(), dto.getClave());
+        Assert.assertEquals(entity.getComisionPorVenta(), dto.getComisionPorVenta());
+        Assert.assertEquals(entity.getDatosContacto(), dto.getDatosContacto());
+        Assert.assertEquals(entity.getNumeroEstampas(), dto.getNumeroEstampas());
+    }
+    
+    @Test
+    public void getArtistPaginationTest() {
+        //Page 1
+        ArtistaPageDTO dto1 = artistaLogic.getArtistas(1, 2);
+        Assert.assertNotNull(dto1);
+        Assert.assertEquals(2, dto1.getRecords().size());
+        Assert.assertEquals(3L, dto1.getTotalRecords().longValue());
+        ArtistaPageDTO dto2 = artistaLogic.getArtistas(2, 2);
+        Assert.assertNotNull(dto2);
+        Assert.assertEquals(1, dto2.getRecords().size());
+        Assert.assertEquals(3L, dto2.getTotalRecords().longValue());
+        for (ArtistaDTO dto : dto1.getRecords()) {
+            boolean found = false;
+            for (ArtistaEntity entity : data) {
+                if (dto.getId().equals(entity.getId())) {
+                    found = true;
+                }
+            }
+            Assert.assertTrue(found);
+        }
+        for (ArtistaDTO dto : dto2.getRecords()) {
+            boolean found = false;
+            for (ArtistaEntity entity : data) {
+                if (dto.getId().equals(entity.getId())) {
+                    found = true;
+                }
+            }
+            Assert.assertTrue(found);
+        }
+    }
+    
+    @Test
+    public void deleteArtistTest() {
+        ArtistaEntity entity = data.get(0);
+        artistaLogic.deleteArtista(entity.getId());
+        ArtistaEntity deleted = em.find(ArtistaEntity.class, entity.getId());
+        Assert.assertNull(deleted);
+    }
+
+    @Test
+    public void updateArtistTest() {
+        ArtistaEntity entity = data.get(0);
+
+        ArtistaDTO dto = new ArtistaDTO();
+        dto.setId(entity.getId());
+        dto.setClave(generateRandom(String.class));
+        dto.setNumeroEstampas(generateRandom(Integer.class));
+        dto.setDatosContacto(generateRandom(String.class));
+        dto.setComisionPorVenta(generateRandom(Double.class));
+
+        artistaLogic.updateArtista(dto);
+
+        ArtistaEntity resp = em.find(ArtistaEntity.class, entity.getId());
+
+        Assert.assertEquals(dto.getClave(), resp.getClave());
+        Assert.assertEquals(dto.getComisionPorVenta(), resp.getComisionPorVenta());
+        Assert.assertEquals(dto.getDatosContacto(), resp.getDatosContacto());
+        Assert.assertEquals(dto.getNumeroEstampas(), resp.getNumeroEstampas());
     }
 }
