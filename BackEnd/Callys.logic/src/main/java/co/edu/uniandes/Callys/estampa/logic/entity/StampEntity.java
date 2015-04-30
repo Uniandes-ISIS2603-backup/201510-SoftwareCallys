@@ -18,7 +18,6 @@ public class StampEntity {
     private String name;
     private String topic;
     private int rating;
-    private Long idArtista;
     private int price;
     private String image;
     
@@ -68,13 +67,5 @@ public class StampEntity {
 
     public void setRating(int rating) {
         this.rating = rating;
-    }
-    
-    public Long getIdArtista() {
-        return idArtista;
-    }
-
-    public void setIdArtista(Long idArtista) {
-        this.idArtista = idArtista;
     }
 }
