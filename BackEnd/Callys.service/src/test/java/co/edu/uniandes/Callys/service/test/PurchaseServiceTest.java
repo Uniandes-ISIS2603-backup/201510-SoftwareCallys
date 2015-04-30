@@ -2,12 +2,6 @@ package co.edu.uniandes.Callys.service.test;
 
 import co.edu.uniandes.Callys.services.StampService;
 import java.io.File;
-import co.edu.uniandes.callys.purchase.logic.api.IPurchaseLogic;
-import co.edu.uniandes.callys.purchase.logic.converter.PurchaseConverter;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.callys.purchase.logic.dto.PurchasePageDTO;
-import co.edu.uniandes.callys.purchase.logic.entity.PurchaseEntity;
-import co.edu.uniandes.callys.purchase.logic.ejb.PurchaseLogic;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
