@@ -4,13 +4,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class ClienteDTO {
-    private long id;
+    private Long id;
     private String nombre;
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
-    private long carroComprasId;
+    private Long carroComprasId;
     private String idCompras;
+    private String password;
     
     public String getIdCompras() {
         return idCompras;
@@ -24,7 +25,7 @@ public class ClienteDTO {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,11 +61,19 @@ public class ClienteDTO {
         this.codigoSeguridad = codigoSeguridad;
     }
     
-    public long getCarroComprasId() {
+    public Long getCarroComprasId() {
         return carroComprasId;
     }
     
-    public void setCarroComprasId(long carroComprasId) {
+    public void setCarroComprasId(Long carroComprasId) {
         this.carroComprasId= carroComprasId;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setPassword(String password) {
+        this.password= password;
     }
 }

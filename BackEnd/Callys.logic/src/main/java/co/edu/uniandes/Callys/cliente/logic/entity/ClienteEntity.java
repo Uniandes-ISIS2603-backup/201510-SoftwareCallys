@@ -14,8 +14,17 @@ public class ClienteEntity
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
-    private long carroComprasId;
+    private Long carroComprasId;
     private String idCompras;
+    private String password;
+    
+    public String getPassword(){
+        return password;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
+    }
     
     public String getIdCompras() {
         return idCompras;

@@ -12,9 +12,11 @@ public interface IClienteLogic {
 
     public ClientePageDTO getClientes(Integer page, Integer maxRecords);
 
-    public ClienteDTO getCliente(long id);
+    public ClienteDTO getCliente(Long id);
 
-    public void deleteCliente(long id);
+    public void deleteCliente(Long id);
 
     public void updateCliente(ClienteDTO detail);
+    
+    public Integer loginCliente(String name, String password);
 }

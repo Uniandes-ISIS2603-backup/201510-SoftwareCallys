@@ -17,6 +17,7 @@ public class ClienteConverter {
             dto.setCodigoDeSeguridad(entity.getCodigoSeguridad());
             dto.setCarroComprasId(entity.getCarroComprasId());
             dto.setIdCompras(entity.getIdCompras());
+            dto.setPassword(entity.getPassword());
             return dto;
         } else {
             return null;
@@ -33,6 +34,7 @@ public class ClienteConverter {
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());
             entity.setCarroComprasId(dto.getCarroComprasId());
             entity.setIdCompras(dto.getIdCompras());
+            entity.setPassword(dto.getPassword());
             return entity;
         } else {
             return null;

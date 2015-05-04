@@ -34,12 +34,6 @@ public class PurchaseItemService {
         return purchaseItemLogicService.createPurchaseItem(pi);
     }
 
-    @DELETE
-    @Path("{id}")
-    public void deletePurchaseItem(@PathParam("id") Long id) {
-        purchaseItemLogicService.deletePurchaseItem(id);
-    }
-
     @GET
     public PurchaseItemPageDTO getPurchaseItem(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return purchaseItemLogicService.getPurchaseItems(page, maxRecords);
@@ -49,12 +43,6 @@ public class PurchaseItemService {
     @Path("{id}")
     public PurchaseItemDTO getCatalogo(@PathParam("id") Long id) {
         return purchaseItemLogicService.getPurchaseItem(id);
-    }
-
-    @PUT
-    @Path("{id}") 
-    public void updatePurchaseItem(PurchaseItemDTO detail) {
-        purchaseItemLogicService.updatePurchaseItem(detail);
     }
 
 }

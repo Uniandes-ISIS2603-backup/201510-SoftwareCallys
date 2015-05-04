@@ -39,7 +39,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 @RunWith(Arquillian.class)
 public class PurchaseServiceTest {
 
-    public static final String DEPLOY = "Callys.service";
     public static String URLRESOURCES = "src/main/webapp";
 
     @ArquillianResource
@@ -48,14 +47,18 @@ public class PurchaseServiceTest {
     @Deployment
     public static Archive<?> createDeployment() {
 
-        return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml").artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1").resolveAsFiles())
+        MavenDependencyResolver resolver = DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml").artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1");
+        WebArchive war = ShrinkWrap
+            .create(WebArchive.class, "Callys.service.war")
+            .addAsLibraries(resolver.artifact("co.edu.uniandes.Callys:Callys.logic:0.0.1").resolveAsFiles())
             .addPackage(StampService.class.getPackage())
             .addAsWebResource(new File(URLRESOURCES, "index.html"))
             .merge(ShrinkWrap.create(GenericArchive.class).as(ExplodedImporter.class).importDirectory(URLRESOURCES + "/src/").as(GenericArchive.class), "/src/", Filters.includeAll())
             .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
             .addAsWebInfResource(new File("src/main/webapp/WEB-INF/beans.xml"))
             .setWebXML(new File("src/main/webapp/WEB-INF/web.xml"));
+      
+        return war;
     }
     private static WebDriver driver;
     private static boolean acceptNextAlert = true;

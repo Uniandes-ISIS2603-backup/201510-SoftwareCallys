@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroCompras;
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import javax.ejb.Stateless;
@@ -23,7 +23,7 @@ import javax.ws.rs.core.MediaType;
 public class CarroComprasService {
     
     @Inject
-    protected ICarroCompras carroComprasLogicService;
+    protected ICarroComprasLogic carroComprasLogicService;
 
     @POST
     public CarroComprasDTO createCarroCompras(CarroComprasDTO carroCompras) {
