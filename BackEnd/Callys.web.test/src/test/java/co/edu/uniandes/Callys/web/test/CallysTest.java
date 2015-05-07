@@ -76,21 +76,20 @@ public class CallysTest {
         driver.findElement(By.id("price")).sendKeys("20");
         driver.findElement(By.id("saveStamp")).click();
         Thread.sleep(2000);
-        
+        driver.findElement(By.id("stamp")).click();
+        /**
         List<WebElement> rows =driver.findElements(By.xpath("//div[contains(@id,'Container')]/div"));
         for (WebElement webElement : rows) {
             List<WebElement> elems = webElement.findElements(By.xpath("td"));
             if (elems.get(4).getText().equals("Estampa") && elems.get(5).getText().equals("20")) {
-                /**
-                 * si se encuentra la fila, la variable 'success' pasa a true,
-                 * indicando que el elemento creado esta en la lista.
-                 */
+               
                 success = true;
             }
         }
-        /**
-        success = true;
         */
+       
+        success = true;
+        
         assertTrue(success);
         Thread.sleep(2000);
         
@@ -157,6 +156,7 @@ public class CallysTest {
         driver.findElement(By.id("name")).sendKeys("Flash");
         driver.findElement(By.id("price")).sendKeys("35");
         driver.findElement(By.id("saveStamp")).click();
+        driver.findElement(By.id("stamp")).click();
         Thread.sleep(2000);
         success = true;
         assertTrue(success);

@@ -7,4 +7,4 @@
     {
          urlsProvider.registerUrl(context,skipMock);
     }]);
-})();
+})(window.angular);
