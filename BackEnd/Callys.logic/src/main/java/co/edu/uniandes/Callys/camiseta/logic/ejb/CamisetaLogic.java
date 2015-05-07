@@ -6,10 +6,16 @@ import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
 import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Default
+@Stateless
+@LocalBean
 public class CamisetaLogic implements ICamisetaLogic{
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
