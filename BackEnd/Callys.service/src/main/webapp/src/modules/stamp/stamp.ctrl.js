@@ -4,18 +4,7 @@
     stampModule.controller('stampCtrl', ['$scope', 'stampService', 'catalogService', function ($scope, stampService,catalogService)
     {
         stampService.extendCtrl(this, $scope);
-        function saveStamp (stamp, callback, callbackError )
-        {
-            $http.get({
-                url: 'WebResources/Stamp/saveStamp/',
-                data: angular.toJson(stamp),
-                contentType: 'application/json'
-            }).succes(_.bind(function(data) {
-                callback(data);
-            },this)).error(_.bind(function(data){
-                callbackError(data);
-            },this));
-        };
+        
         this.fetchRecords();
         catalogService.fetchRecords().then(function(data)
         {
