@@ -34,7 +34,7 @@ public class ClienteEntity
         this.idCompras= idCompras;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -74,11 +74,11 @@ public class ClienteEntity
         this.codigoSeguridad = codigoSeguridad;
     }
     
-    public long getCarroComprasId() {
+    public Long getCarroComprasId() {
         return carroComprasId;
     }
     
-    public void setCarroComprasId(long carroComprasId) {
+    public void setCarroComprasId(Long carroComprasId) {
         this.carroComprasId= carroComprasId;
     }
 }

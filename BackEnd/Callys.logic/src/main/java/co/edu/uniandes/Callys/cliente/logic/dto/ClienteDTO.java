@@ -21,7 +21,7 @@ public class ClienteDTO {
         this.idCompras= idCompras;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -53,7 +53,7 @@ public class ClienteDTO {
         this.numeroTarjeta = numeroTarjeta;
     }
     
-    public  Integer getCodigoSeguridad() {
+    public Integer getCodigoSeguridad() {
         return codigoSeguridad;
     }
 
