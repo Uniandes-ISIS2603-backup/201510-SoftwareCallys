@@ -1,8 +1,10 @@
 package co.edu.uniandes.Callys.cliente.logic.entity;
 
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class ClienteEntity 
@@ -14,6 +16,8 @@ public class ClienteEntity
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
+    @OneToOne
+    private CarroComprasEntity carroCompras;
     private Long carroComprasId;
     private String idCompras;
     private String password;
@@ -80,5 +84,13 @@ public class ClienteEntity
     
     public void setCarroComprasId(Long carroComprasId) {
         this.carroComprasId= carroComprasId;
+    }
+    
+    public CarroComprasEntity getCarroCompras() {
+        return carroCompras;
+    }
+
+    public void setCarroCompras(CarroComprasEntity carroCompras) {
+        this.carroCompras = carroCompras;
     }
 }

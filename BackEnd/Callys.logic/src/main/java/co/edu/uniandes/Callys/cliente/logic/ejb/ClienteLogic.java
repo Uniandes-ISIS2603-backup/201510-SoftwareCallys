@@ -1,5 +1,8 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
+import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
@@ -22,8 +25,12 @@ public class ClienteLogic implements IClienteLogic{
     protected EntityManager entityManager;
 
     @Override
-    public ClienteDTO createCliente(ClienteDTO sport) {
-        ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(sport);
+    public ClienteDTO createCliente(ClienteDTO cliente) {
+        ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(cliente);
+        CarroComprasEntity carroCompras = this.getSelectedShoppingCart(cliente);
+        if (carroCompras != null) {
+            entity.setCarroCompras(carroCompras);
+        }
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);
     }
@@ -66,7 +73,26 @@ public class ClienteLogic implements IClienteLogic{
         ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
         entityManager.remove(entity);
     }
-
+    
+    private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente){
+        if (cliente != null && cliente.getCarroComprasId() != null) {
+            return entityManager.find(CarroComprasEntity.class, cliente.getCarroComprasId());
+        }else{
+            return null;
+        }
+    }
+    
+    @Override
+    public CarroComprasDTO getCarroComprasClient(ClienteDTO cliente) {
+        System.out.println("Llega al método");
+        if (cliente != null && cliente.getCarroComprasId() != null) {
+            System.out.println("Llega al if");
+            return CarroComprasConverter.entity2PersistenceDTO(entityManager.find(CarroComprasEntity.class, cliente.getCarroComprasId()));
+        }else{
+            return null;
+        }
+    }
+    
     @Override
     public Integer loginCliente(String nombre, String password) {
         Query q;

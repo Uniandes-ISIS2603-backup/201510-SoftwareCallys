@@ -68,6 +68,18 @@ public class CarroComprasLogic implements ICarroComprasLogic{
         CarroComprasConverter.entity2PersistenceDTO(entity);
     }
 
+    /*
+    public CarroComprasDTO getCarroComprasCliente(Long idClient) {
+        Query q = entityManager.createQuery("select u from CarroComprasEntity u where u.idClient="+idClient);
+        List<CarroComprasDTO> lista = CarroComprasConverter.entity2PersistenceDTOList(q.getResultList());
+        if(lista.isEmpty()) {
+            return null;
+        }
+        else {
+            return lista.get(0);
+        }
+    }*/
+    
     @Override
     public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

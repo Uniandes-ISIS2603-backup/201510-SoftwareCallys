@@ -11,7 +11,6 @@ public class PurchaseItemConverter {
         if (entity != null) {
             PurchaseItemDTO dto = new PurchaseItemDTO();
             dto.setId(entity.getId());
-            dto.setName(entity.getName());
             dto.setMonto(entity.getMonto());
             dto.setIdCamiseta(entity.getIdCamiseta());
             dto.setIdPurchase(entity.getIdPurchase());
@@ -25,7 +24,6 @@ public class PurchaseItemConverter {
         if (dto != null) {
             PurchaseItemEntity entity = new PurchaseItemEntity();
             entity.setId(dto.getId());
-            entity.setName(dto.getName());
             entity.setMonto(dto.getMonto());
             entity.setIdCamiseta(dto.getIdCamiseta());
             entity.setIdPurchase(dto.getIdPurchase());

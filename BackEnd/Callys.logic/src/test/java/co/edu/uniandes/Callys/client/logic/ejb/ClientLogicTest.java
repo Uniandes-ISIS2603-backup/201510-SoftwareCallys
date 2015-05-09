@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.client.logic.ejb;
 
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
@@ -26,27 +22,22 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-/**
- *
- * @author estudiante
- */
 
 @RunWith(Arquillian.class)
 public class ClientLogicTest {
-    
     
     public static final String DEPLOY = "Prueba";
     
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-                .addPackage(ClienteEntity.class.getPackage())
-                .addPackage(ClienteDTO.class.getPackage())
-                .addPackage(ClienteConverter.class.getPackage())
-                .addPackage(ClienteLogic.class.getPackage())
-                .addPackage(IClienteLogic.class.getPackage())
-                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-                .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
+            .addPackage(ClienteEntity.class.getPackage())
+            .addPackage(ClienteDTO.class.getPackage())
+            .addPackage(ClienteConverter.class.getPackage())
+            .addPackage(ClienteLogic.class.getPackage())
+            .addPackage(IClienteLogic.class.getPackage())
+            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+            .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
     
     @Inject
@@ -84,8 +75,11 @@ public class ClientLogicTest {
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
+            CarroComprasEntity carroCompras = new CarroComprasEntity();
+            carroCompras.setDatosEnvio(DEPLOY);
+            carroCompras.setFormaPago(DEPLOY);
+            carroCompras.setMonto(Double.NaN);
             ClienteEntity entity = new ClienteEntity();
-            entity.setId(generateRandom(Long.class));
             entity.setNombre(generateRandom(String.class));
             entity.setNumCompras(generateRandom(Integer.class));
             entity.setNumeroTarjeta(generateRandom(Integer.class));
@@ -101,14 +95,14 @@ public class ClientLogicTest {
     @Test
     public void createClienteTest() {
         ClienteDTO dto = new ClienteDTO();
-            dto.setId(generateRandom(Long.class));
-            dto.setNombre(generateRandom(String.class));
-            dto.setNumCompras(generateRandom(Integer.class));
-            dto.setNumeroTarjeta(generateRandom(Integer.class));
-            dto.setIdCompras(generateRandom(String.class));
-            dto.setPassword(generateRandom(String.class));
-            dto.setCarroComprasId(generateRandom(Long.class));
-            dto.setCodigoDeSeguridad(generateRandom(Integer.class));
+        dto.setId(generateRandom(Long.class));
+        dto.setNombre(generateRandom(String.class));
+        dto.setNumCompras(generateRandom(Integer.class));
+        dto.setNumeroTarjeta(generateRandom(Integer.class));
+        dto.setIdCompras(generateRandom(String.class));
+        dto.setPassword(generateRandom(String.class));
+        dto.setCarroComprasId(generateRandom(Long.class));
+        dto.setCodigoDeSeguridad(generateRandom(Integer.class));
 
         ClienteDTO result = clienteLogic.createCliente(dto);
 
@@ -198,20 +192,20 @@ public class ClientLogicTest {
         ClienteEntity deleted = em.find(ClienteEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
-
+    
     @Test
     public void updateClientTest() {
         ClienteEntity entity = data.get(0);
 
         ClienteDTO dto = new ClienteDTO();
-            dto.setId(generateRandom(Long.class));
-            dto.setNombre(generateRandom(String.class));
-            dto.setNumCompras(generateRandom(Integer.class));
-            dto.setNumeroTarjeta(generateRandom(Integer.class));
-            dto.setIdCompras(generateRandom(String.class));
-            dto.setPassword(generateRandom(String.class));
-            dto.setCarroComprasId(generateRandom(Long.class));
-            dto.setCodigoDeSeguridad(generateRandom(Integer.class));
+        dto.setId(entity.getId());
+        dto.setNombre(generateRandom(String.class));
+        dto.setNumCompras(generateRandom(Integer.class));
+        dto.setNumeroTarjeta(generateRandom(Integer.class));
+        dto.setIdCompras(generateRandom(String.class));
+        dto.setPassword(generateRandom(String.class));
+        dto.setCarroComprasId(generateRandom(Long.class));
+        dto.setCodigoDeSeguridad(generateRandom(Integer.class));
 
         clienteLogic.updateCliente(dto);
 
