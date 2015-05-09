@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.carroCompras.logic.ejb;
 
-import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
@@ -9,12 +8,10 @@ import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless
 @LocalBean
 public class CarroComprasLogic implements ICarroComprasLogic{
@@ -79,9 +76,4 @@ public class CarroComprasLogic implements ICarroComprasLogic{
             return lista.get(0);
         }
     }*/
-    
-    @Override
-    public ArtistaPageDTO getArtistas(Integer page, Integer maxRecords) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -9,7 +9,7 @@ public class ClienteDTO {
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
-    private Long carroComprasId;
+    private Long carroCompras;
     private String idCompras;
     private String password;
     
@@ -61,12 +61,12 @@ public class ClienteDTO {
         this.codigoSeguridad = codigoSeguridad;
     }
     
-    public Long getCarroComprasId() {
-        return carroComprasId;
+    public Long getCarroCompras() {
+        return carroCompras;
     }
     
-    public void setCarroComprasId(Long carroComprasId) {
-        this.carroComprasId= carroComprasId;
+    public void setCarroCompras(Long carroCompras) {
+        this.carroCompras=carroCompras;
     }
     
     public String getPassword() {

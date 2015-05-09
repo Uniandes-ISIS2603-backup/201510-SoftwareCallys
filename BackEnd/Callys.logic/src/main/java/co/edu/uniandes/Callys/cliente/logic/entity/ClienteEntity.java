@@ -16,12 +16,11 @@ public class ClienteEntity
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
-    @OneToOne
-    private CarroComprasEntity carroCompras;
-    private Long carroComprasId;
     private String idCompras;
     private String password;
-    
+    @OneToOne
+    private CarroComprasEntity carroCompras;
+        
     public String getPassword(){
         return password;
     }
@@ -76,14 +75,6 @@ public class ClienteEntity
 
     public void setCodigoDeSeguridad(Integer codigoSeguridad) {
         this.codigoSeguridad = codigoSeguridad;
-    }
-    
-    public Long getCarroComprasId() {
-        return carroComprasId;
-    }
-    
-    public void setCarroComprasId(Long carroComprasId) {
-        this.carroComprasId= carroComprasId;
     }
     
     public CarroComprasEntity getCarroCompras() {

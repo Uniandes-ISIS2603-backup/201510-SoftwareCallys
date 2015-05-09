@@ -6,7 +6,6 @@ import javax.persistence.Id;
 
 @Entity
 public class CarroComprasEntity {
-    
     @Id
     @GeneratedValue(generator = "CarroCompras")
     private Long id;

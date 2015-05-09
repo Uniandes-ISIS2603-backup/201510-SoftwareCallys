@@ -15,9 +15,11 @@ public class ClienteConverter {
             dto.setNumCompras(entity.getNumCompras());
             dto.setNumeroTarjeta(entity.getNumeroTarjeta());
             dto.setCodigoDeSeguridad(entity.getCodigoSeguridad());
-            dto.setCarroComprasId(entity.getCarroComprasId());
             dto.setIdCompras(entity.getIdCompras());
             dto.setPassword(entity.getPassword());
+            if (entity.getCarroCompras()!= null) {
+                dto.setCarroCompras(entity.getCarroCompras().getId());
+            }            
             return dto;
         } else {
             return null;
@@ -32,7 +34,6 @@ public class ClienteConverter {
             entity.setNumCompras(dto.getNumCompras());
             entity.setNumeroTarjeta(dto.getNumeroTarjeta());
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());
-            entity.setCarroComprasId(dto.getCarroComprasId());
             entity.setIdCompras(dto.getIdCompras());
             entity.setPassword(dto.getPassword());
             return entity;

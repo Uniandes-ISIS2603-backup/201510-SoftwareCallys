@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.cliente.logic.api;
 
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import java.util.List;
@@ -18,8 +17,6 @@ public interface IClienteLogic {
     public void deleteCliente(Long id);
 
     public void updateCliente(ClienteDTO detail);
-    
-    public CarroComprasDTO getCarroComprasClient(ClienteDTO cliente);
              
     public Integer loginCliente(String name, String password);
 }

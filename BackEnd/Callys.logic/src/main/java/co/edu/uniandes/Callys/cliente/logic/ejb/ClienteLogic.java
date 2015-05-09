@@ -1,17 +1,16 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
-import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
-import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
 import java.util.List;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -75,19 +74,8 @@ public class ClienteLogic implements IClienteLogic{
     }
     
     private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente){
-        if (cliente != null && cliente.getCarroComprasId() != null) {
-            return entityManager.find(CarroComprasEntity.class, cliente.getCarroComprasId());
-        }else{
-            return null;
-        }
-    }
-    
-    @Override
-    public CarroComprasDTO getCarroComprasClient(ClienteDTO cliente) {
-        System.out.println("Llega al método");
-        if (cliente != null && cliente.getCarroComprasId() != null) {
-            System.out.println("Llega al if");
-            return CarroComprasConverter.entity2PersistenceDTO(entityManager.find(CarroComprasEntity.class, cliente.getCarroComprasId()));
+        if (cliente != null && cliente.getCarroCompras() != null) {
+            return entityManager.find(CarroComprasEntity.class, cliente.getCarroCompras());
         }else{
             return null;
         }
