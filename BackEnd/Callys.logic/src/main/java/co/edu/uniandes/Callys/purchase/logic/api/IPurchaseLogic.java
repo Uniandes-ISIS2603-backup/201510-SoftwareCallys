@@ -13,4 +13,6 @@ public interface IPurchaseLogic {
     public PurchasePageDTO getPurchases(Integer page, Integer maxRecords);
 
     public PurchaseDTO getPurchase(Long id);
+    
+    public void deletePurchase(Long id);
 }

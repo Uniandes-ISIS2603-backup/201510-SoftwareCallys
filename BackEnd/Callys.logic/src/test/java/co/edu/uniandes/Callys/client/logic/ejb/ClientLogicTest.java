@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.client.logic.ejb;
 
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
@@ -8,6 +9,7 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.ejb.ClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.*;
@@ -167,7 +169,6 @@ public class ClientLogicTest {
         ClienteDTO dto = clienteLogic.getCliente(entity.getId());
         Assert.assertNotNull(dto);
         
-        Assert.assertEquals(entity.getId(), dto.getId());
         Assert.assertEquals(entity.getNombre(), dto.getNombre());
         Assert.assertEquals(entity.getNumCompras(), dto.getNumCompras());
         Assert.assertEquals(entity.getNumeroTarjeta(), dto.getNumeroTarjeta());
@@ -221,7 +222,8 @@ public class ClientLogicTest {
     @Test
     public void updateClientTest() {
         ClienteEntity entity = data.get(0);
-
+        Long newShoppingCart = data.get(1).getCarroCompras().getId();
+        
         ClienteDTO dto = new ClienteDTO();
         dto.setId(entity.getId());
         dto.setNombre(generateRandom(String.class));
@@ -229,16 +231,16 @@ public class ClientLogicTest {
         dto.setNumeroTarjeta(generateRandom(Integer.class));
         dto.setPassword(generateRandom(String.class));
         dto.setCodigoDeSeguridad(generateRandom(Integer.class));
-
+        dto.setCarroCompras(newShoppingCart);
         clienteLogic.updateCliente(dto);
 
         ClienteEntity resp = em.find(ClienteEntity.class, entity.getId());
         
-        Assert.assertEquals(dto.getId(), resp.getId());
         Assert.assertEquals(dto.getNombre(), resp.getNombre());
         Assert.assertEquals(dto.getNumCompras(), resp.getNumCompras());
         Assert.assertEquals(dto.getNumeroTarjeta(), resp.getNumeroTarjeta());
         Assert.assertEquals(dto.getPassword(), resp.getPassword());
         Assert.assertEquals(dto.getCodigoSeguridad(), resp.getCodigoSeguridad());
+        Assert.assertEquals(dto.getCarroCompras(), resp.getCarroCompras().getId());
     }
 }

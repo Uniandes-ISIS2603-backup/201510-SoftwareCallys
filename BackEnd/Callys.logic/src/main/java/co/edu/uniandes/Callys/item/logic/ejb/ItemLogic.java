@@ -76,6 +76,10 @@ public class ItemLogic implements IItemLogic{
     @Override
     public void updateItem(ItemDTO item) {
         ItemEntity entity = entityManager.merge(ItemConverter.persistenceDTO2Entity(item));
+        CamisetaEntity shirt = this.getSelectedShirt(item);
+        if (shirt != null) {
+            entity.setCamiseta(shirt);
+        }
         ItemConverter.entity2PersistenceDTO(entity);
     }
 }

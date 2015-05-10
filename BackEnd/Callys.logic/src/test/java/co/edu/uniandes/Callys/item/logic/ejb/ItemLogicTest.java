@@ -4,6 +4,9 @@ import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
 import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +22,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-/*
+
 @RunWith(Arquillian.class)
 public class ItemLogicTest {
 
@@ -30,6 +33,8 @@ public class ItemLogicTest {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
             .addPackage(ItemEntity.class.getPackage())
             .addPackage(ItemDTO.class.getPackage())
+            .addPackage(CamisetaEntity.class.getPackage())
+            .addPackage(CamisetaDTO.class.getPackage())
             .addPackage(ItemConverter.class.getPackage())
             .addPackage(IItemLogic.class.getPackage())
             .addPackage(ItemLogic.class.getPackage())
@@ -72,9 +77,17 @@ public class ItemLogicTest {
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
+            CamisetaEntity shirt = new CamisetaEntity();
+            shirt.setColor(generateRandom(String.class));
+            shirt.setMaterial(generateRandom(String.class));
+            shirt.setTalla(generateRandom(String.class));
+            shirt.setTexto(generateRandom(String.class));
+            em.persist(shirt);
+            //TODO queda pendiente las estampas
+            
             ItemEntity entity = new ItemEntity();
-
-            entity.setId(generateRandom(Long.class));
+            entity.setMonto(generateRandom(Double.class));
+            entity.setCamiseta(shirt);
 
             em.persist(entity);
             data.add(entity);
@@ -83,9 +96,10 @@ public class ItemLogicTest {
 
     @Test
     public void createItemTest() {
+        Long shirt = data.get(0).getCamiseta().getId();
         ItemDTO dto = new ItemDTO();
         dto.setMonto(generateRandom(Double.class));
-        dto.setId(generateRandom(Long.class));
+        dto.setCamiseta(shirt);
         
         ItemDTO result = itemLogic.createItem(dto);
         
@@ -93,13 +107,13 @@ public class ItemLogicTest {
 
         ItemEntity entity = em.find(ItemEntity.class, result.getId());
 
-        Assert.assertEquals(dto.getId(), entity.getId());
         Assert.assertEquals(dto.getMonto(), entity.getMonto());
+        Assert.assertEquals(dto.getCamiseta(), entity.getCamiseta().getId());
     }
 
     @Test
     public void getItemsTest() {
-        List<ItemDTO> list = itemLogic.getItem();
+        List<ItemDTO> list = itemLogic.getItems();
         Assert.assertEquals(list.size(), data.size());
         for (ItemDTO dto : list) {
             boolean found = false;
@@ -115,19 +129,18 @@ public class ItemLogicTest {
     @Test
     public void getItemTest() {
         ItemEntity entity = data.get(0);
-        ItemDTO dto = itemLogic.getStamp(entity.getId());
+        ItemDTO dto = itemLogic.getItem(entity.getId());
+        
         Assert.assertNotNull(dto);
-        Assert.assertEquals(entity.getName(), dto.getName());
-        Assert.assertEquals(entity.getTopic(), dto.getTopic());
-        Assert.assertEquals(entity.getId(), dto.getId());
-        Assert.assertEquals(entity.getIdArtista(), dto.getIdArtista());
-        Assert.assertEquals(entity.getRating(), dto.getRating());
+        
+        Assert.assertEquals(entity.getMonto(), dto.getMonto());
+        Assert.assertEquals(entity.getCamiseta().getId(), dto.getCamiseta());
     }
 
     @Test
     public void deleteItemTest() {
         ItemEntity entity = data.get(0);
-        itemLogic.deleteStamp(entity.getId());
+        itemLogic.deleteItem(entity.getId());
         ItemEntity deleted = em.find(ItemEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
@@ -135,32 +148,29 @@ public class ItemLogicTest {
     @Test
     public void updateItemTest() {
         ItemEntity entity = data.get(0);
+        Long newShirt = data.get(1).getCamiseta().getId();
+
         ItemDTO dto = new ItemDTO();
         
-        dto.setTopic(generateRandomTopic());
-        dto.setId(generateRandom(Long.class));
-        dto.setIdArtista(generateRandom(Long.class));
-        dto.setRating(generateRandom(Integer.class));
-        dto.setName(generateRandom(String.class));
+        dto.setCamiseta(newShirt);
+        dto.setMonto(generateRandom(Double.class));
         
-        itemLogic.updateStamp(dto);
+        itemLogic.updateItem(dto);
         ItemEntity resp = em.find(ItemEntity.class, entity.getId());
-        Assert.assertEquals(dto.getName(), resp.getName());
-        Assert.assertEquals(dto.getTopic(), resp.getTopic());
-        Assert.assertEquals(dto.getId(), resp.getId());
-        Assert.assertEquals(dto.getIdArtista(), resp.getIdArtista());
-        Assert.assertEquals(dto.getRating(), resp.getRating());
+
+        Assert.assertEquals(dto.getMonto(), resp.getMonto());
+        Assert.assertEquals(dto.getCamiseta(), entity.getCamiseta().getId());
     }
 
     @Test
     public void getItemPaginationTest() {
         //Page 1
-        ItemPageDTO dto1=itemLogic.getStamp(1,2);
+        ItemPageDTO dto1=itemLogic.getItems(1,2);
         Assert.assertNotNull(dto1);
         Assert.assertEquals(2, dto1.getRecords().size());
         Assert.assertEquals(3L, dto1.getTotalRecords().longValue());
         
-        ItemPageDTO dto2=itemLogic.getStamp(2, 2);
+        ItemPageDTO dto2=itemLogic.getItems(2, 2);
         Assert.assertNotNull(dto2);
         Assert.assertEquals(1, dto2.getRecords().size());
         Assert.assertEquals(3L, dto2.getTotalRecords().longValue());
@@ -186,4 +196,4 @@ public class ItemLogicTest {
         }
     }
 }
-*/
+

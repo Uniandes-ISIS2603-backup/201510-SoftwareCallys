@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ItemDTO {
     private Long id;
     private Long camiseta;
-    private double monto;
+    private Double monto;
 
     public Long getId() {
         return id;
@@ -24,11 +24,11 @@ public class ItemDTO {
         this.camiseta = camiseta;
     }
 
-    public double getMonto() {
+    public Double getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
 }

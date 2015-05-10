@@ -54,4 +54,10 @@ public class PurchaseLogic implements IPurchaseLogic {
     public PurchaseDTO getPurchase(Long id) {
         return PurchaseConverter.entity2PersistenceDTO(entityManager.find(PurchaseEntity.class, id));
     }
+    
+    @Override
+    public void deletePurchase(Long id) {
+        PurchaseEntity entity = entityManager.find(PurchaseEntity.class, id);
+        entityManager.remove(entity);
+    }
 }
