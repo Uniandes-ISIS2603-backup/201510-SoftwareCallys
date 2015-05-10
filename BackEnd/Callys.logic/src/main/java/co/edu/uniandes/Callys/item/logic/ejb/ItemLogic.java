@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.item.logic.ejb;
 
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
 import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
@@ -7,14 +8,12 @@ import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless
 @LocalBean
 public class ItemLogic implements IItemLogic{
@@ -23,8 +22,12 @@ public class ItemLogic implements IItemLogic{
     protected EntityManager entityManager;
 
     @Override
-    public ItemDTO createItem(ItemDTO sport) {
-        ItemEntity entity = ItemConverter.persistenceDTO2Entity(sport);
+    public ItemDTO createItem(ItemDTO item) {
+        ItemEntity entity = ItemConverter.persistenceDTO2Entity(item);
+        CamisetaEntity camiseta = this.getSelectedShirt(item);
+        if (camiseta != null) {
+            entity.setCamiseta(camiseta);
+        }
         entityManager.persist(entity);
         return ItemConverter.entity2PersistenceDTO(entity);
     }
@@ -56,6 +59,14 @@ public class ItemLogic implements IItemLogic{
         return ItemConverter.entity2PersistenceDTO(entityManager.find(ItemEntity.class, id));
     }
 
+    private CamisetaEntity getSelectedShirt(ItemDTO item){
+        if (item != null && item.getCamiseta() != null) {
+            return entityManager.find(CamisetaEntity.class, item.getCamiseta());
+        }else{
+            return null;
+        }
+    }
+        
     @Override
     public void deleteItem(Long id) {
         ItemEntity entity = entityManager.find(ItemEntity.class, id);

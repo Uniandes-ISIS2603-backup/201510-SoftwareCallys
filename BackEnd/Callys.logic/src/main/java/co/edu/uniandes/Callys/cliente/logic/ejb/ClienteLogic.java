@@ -3,7 +3,6 @@ package co.edu.uniandes.Callys.cliente.logic.ejb;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
@@ -17,7 +16,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless
 @LocalBean
 public class ClienteLogic implements IClienteLogic{
@@ -29,10 +27,10 @@ public class ClienteLogic implements IClienteLogic{
     public ClienteDTO createCliente(ClienteDTO cliente) {
         ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(cliente);
         CarroComprasEntity carroCompras = this.getSelectedShoppingCart(cliente);
-        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
         if (carroCompras != null) {
             entity.setCarroCompras(carroCompras);
         }
+        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
         entity.setPurchases(purchases);
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);

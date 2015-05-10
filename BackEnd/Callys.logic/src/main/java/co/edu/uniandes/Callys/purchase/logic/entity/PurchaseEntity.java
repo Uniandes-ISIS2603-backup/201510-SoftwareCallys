@@ -9,7 +9,6 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class PurchaseEntity {
-    
     @Id
     @GeneratedValue(generator = "Purchase")
     private Long id;
