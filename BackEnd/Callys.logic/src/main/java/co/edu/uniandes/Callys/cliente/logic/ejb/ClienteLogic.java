@@ -10,6 +10,8 @@ import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,9 +29,11 @@ public class ClienteLogic implements IClienteLogic{
     public ClienteDTO createCliente(ClienteDTO cliente) {
         ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(cliente);
         CarroComprasEntity carroCompras = this.getSelectedShoppingCart(cliente);
+        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
         if (carroCompras != null) {
             entity.setCarroCompras(carroCompras);
         }
+        entity.setPurchases(purchases);
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);
     }
@@ -77,6 +81,19 @@ public class ClienteLogic implements IClienteLogic{
         if (cliente != null && cliente.getCarroCompras() != null) {
             return entityManager.find(CarroComprasEntity.class, cliente.getCarroCompras());
         }else{
+            return null;
+        }
+    }
+    
+    private List<PurchaseEntity> getSelectedPurchases(ClienteDTO cliente){
+        if(cliente != null && cliente.getPurchases() != null) {
+            List<PurchaseEntity> purchases = new ArrayList<PurchaseEntity>();
+            for (Long purchase : cliente.getPurchases()) {
+                purchases.add(entityManager.find(PurchaseEntity.class, purchase));
+            }
+            return purchases;
+        }
+        else {
             return null;
         }
     }
