@@ -8,6 +8,8 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.ejb.ClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,8 @@ public class ClientLogicTest {
             .addPackage(ClienteDTO.class.getPackage())
             .addPackage(CarroComprasEntity.class.getPackage())
             .addPackage(CarroComprasDTO.class.getPackage())
+            .addPackage(PurchaseEntity.class.getPackage())
+            .addPackage(PurchaseDTO.class.getPackage())
             .addPackage(ClienteConverter.class.getPackage())
             .addPackage(ClienteLogic.class.getPackage())
             .addPackage(IClienteLogic.class.getPackage())
@@ -84,13 +88,23 @@ public class ClientLogicTest {
             carroCompras.setMonto(generateRandom(Double.class));
             em.persist(carroCompras);
             
+            List<PurchaseEntity> purchases = new ArrayList<PurchaseEntity>();
+            for(int j=0; j < 3; j++) {
+                PurchaseEntity purchase=new PurchaseEntity();
+                purchase.setDate(parseDate(generateRandomDate()));
+                purchase.setDatosDeEnvio(generateRandom(String.class));
+                purchase.setFormaDePago(generateRandom(String.class));
+                purchases.add(purchase);
+                em.persist(purchase);
+            }
+            
             ClienteEntity entity = new ClienteEntity();
             entity.setNombre(generateRandom(String.class));
             entity.setNumCompras(generateRandom(Integer.class));
             entity.setNumeroTarjeta(generateRandom(Integer.class));
-            entity.setIdCompras(generateRandom(String.class));
             entity.setPassword(generateRandom(String.class));
             entity.setCodigoDeSeguridad(generateRandom(Integer.class));
+            entity.setPurchases(purchases);
             entity.setCarroCompras(carroCompras);
             em.persist(entity);
             data.add(entity);
@@ -100,11 +114,15 @@ public class ClientLogicTest {
     @Test
     public void createClienteTest() {
         Long carroCompras = data.get(0).getCarroCompras().getId();
+        List<Long> purchases = new ArrayList<Long>();
+        for (int i = 0; i < 3; i++) {
+            purchases.add(data.get(0).getPurchases().get(i).getId());
+        }
         ClienteDTO dto = new ClienteDTO();
         dto.setNombre(generateRandom(String.class));
         dto.setNumCompras(generateRandom(Integer.class));
         dto.setNumeroTarjeta(generateRandom(Integer.class));
-        dto.setIdCompras(generateRandom(String.class));
+        dto.setPurchases(purchases);
         dto.setPassword(generateRandom(String.class));
         dto.setCodigoDeSeguridad(generateRandom(Integer.class));
         dto.setCarroCompras(carroCompras);
@@ -118,7 +136,10 @@ public class ClientLogicTest {
         Assert.assertEquals(dto.getNombre(), entity.getNombre());
         Assert.assertEquals(dto.getNumCompras(), entity.getNumCompras());
         Assert.assertEquals(dto.getNumeroTarjeta(), entity.getNumeroTarjeta());
-        Assert.assertEquals(dto.getIdCompras(), entity.getIdCompras());
+        Assert.assertEquals(dto.getPurchases().size(), entity.getPurchases().size());
+        for (int i = 0; i < dto.getPurchases().size(); i++) {
+            Assert.assertEquals(dto.getPurchases().get(i), entity.getPurchases().get(i).getId());
+        }
         Assert.assertEquals(dto.getPassword(), entity.getPassword());
         Assert.assertEquals(dto.getCodigoSeguridad(), entity.getCodigoSeguridad());
         Assert.assertEquals(dto.getCarroCompras(), entity.getCarroCompras().getId());
@@ -141,7 +162,7 @@ public class ClientLogicTest {
     }
     
     @Test
-    public void getArtistTest() {
+    public void getClientTest() {
         ClienteEntity entity = data.get(0);
         ClienteDTO dto = clienteLogic.getCliente(entity.getId());
         Assert.assertNotNull(dto);
@@ -150,7 +171,9 @@ public class ClientLogicTest {
         Assert.assertEquals(entity.getNombre(), dto.getNombre());
         Assert.assertEquals(entity.getNumCompras(), dto.getNumCompras());
         Assert.assertEquals(entity.getNumeroTarjeta(), dto.getNumeroTarjeta());
-        Assert.assertEquals(entity.getIdCompras(), dto.getIdCompras());
+        for (int i = 0; i < entity.getPurchases().size(); i++) {
+            Assert.assertEquals(entity.getPurchases().get(i).getId(), dto.getPurchases().get(i));
+        }
         Assert.assertEquals(entity.getPassword(), dto.getPassword());
         Assert.assertEquals(entity.getCarroCompras().getId(), dto.getCarroCompras());
         Assert.assertEquals(entity.getCodigoSeguridad(), dto.getCodigoSeguridad());
@@ -204,7 +227,6 @@ public class ClientLogicTest {
         dto.setNombre(generateRandom(String.class));
         dto.setNumCompras(generateRandom(Integer.class));
         dto.setNumeroTarjeta(generateRandom(Integer.class));
-        dto.setIdCompras(generateRandom(String.class));
         dto.setPassword(generateRandom(String.class));
         dto.setCodigoDeSeguridad(generateRandom(Integer.class));
 
@@ -216,7 +238,6 @@ public class ClientLogicTest {
         Assert.assertEquals(dto.getNombre(), resp.getNombre());
         Assert.assertEquals(dto.getNumCompras(), resp.getNumCompras());
         Assert.assertEquals(dto.getNumeroTarjeta(), resp.getNumeroTarjeta());
-        Assert.assertEquals(dto.getIdCompras(), resp.getIdCompras());
         Assert.assertEquals(dto.getPassword(), resp.getPassword());
         Assert.assertEquals(dto.getCodigoSeguridad(), resp.getCodigoSeguridad());
     }

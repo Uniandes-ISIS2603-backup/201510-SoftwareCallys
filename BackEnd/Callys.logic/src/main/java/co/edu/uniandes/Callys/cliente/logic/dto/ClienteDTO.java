@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.cliente.logic.dto;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -10,15 +11,15 @@ public class ClienteDTO {
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
     private Long carroCompras;
-    private String idCompras;
+    private List<Long> purchases;
     private String password;
     
-    public String getIdCompras() {
-        return idCompras;
+    public List<Long> getPurchases() {
+        return purchases;
     }
     
-    public void setIdCompras(String idCompras) {
-        this.idCompras= idCompras;
+    public void setPurchases(List<Long> purchases) {
+        this.purchases=purchases;
     }
 
     public Long getId() {

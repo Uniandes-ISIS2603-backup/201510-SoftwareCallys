@@ -1,9 +1,12 @@
 package co.edu.uniandes.Callys.cliente.logic.entity;
 
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,8 +19,9 @@ public class ClienteEntity
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
-    private String idCompras;
     private String password;
+    @OneToMany
+    private List<PurchaseEntity> purchases;
     @OneToOne
     private CarroComprasEntity carroCompras;
         
@@ -29,12 +33,12 @@ public class ClienteEntity
         this.password = password;
     }
     
-    public String getIdCompras() {
-        return idCompras;
+    public List<PurchaseEntity> getPurchases() {
+        return purchases;
     }
     
-    public void setIdCompras(String idCompras) {
-        this.idCompras= idCompras;
+    public void setPurchases(List<PurchaseEntity> purchases) {
+        this.purchases= purchases;
     }
 
     public Long getId() {

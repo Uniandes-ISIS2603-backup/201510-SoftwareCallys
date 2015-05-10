@@ -74,7 +74,6 @@ public class PurchaseLogicTest {
     private void insertData() {
         for (int i = 0; i < 3; i++) {
             PurchaseEntity entity = new PurchaseEntity();
-            entity.setId(generateRandom(Long.class));
             entity.setDate(parseDate(generateRandomDate()));
             entity.setDatosDeEnvio(generateRandom(String.class));
             entity.setFormaDePago(generateRandom(String.class));
