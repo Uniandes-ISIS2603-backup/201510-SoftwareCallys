@@ -115,7 +115,7 @@ public class ClienteLogic implements IClienteLogic{
             return null;
         }
     }
-    
+    /*
     @Override
     public Integer loginCliente(String nombre, String password) {
         Query q;
@@ -123,4 +123,5 @@ public class ClienteLogic implements IClienteLogic{
         ClienteDTO dto = ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, q.getSingleResult()));
         return (dto.getPassword().equals(password))?1:0;
     }
+    */
 }

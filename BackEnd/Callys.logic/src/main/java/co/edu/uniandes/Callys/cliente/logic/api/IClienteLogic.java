@@ -17,6 +17,7 @@ public interface IClienteLogic {
     public void deleteCliente(Long id);
 
     public void updateCliente(ClienteDTO detail);
-             
-    public Integer loginCliente(String name, String password);
+    
+    /*public Integer loginCliente(String name, String password);*/
+
 }
