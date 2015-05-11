@@ -8,12 +8,16 @@ import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Default
 @Stateless
 @LocalBean
+@Dependent
 public class CarroComprasLogic implements ICarroComprasLogic{
        
     @PersistenceContext(unitName ="CallysClassPU")

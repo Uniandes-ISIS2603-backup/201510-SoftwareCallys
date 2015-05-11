@@ -170,6 +170,7 @@ public class ClientLogicTest {
         Assert.assertEquals(entity.getNombre(), dto.getNombre());
         Assert.assertEquals(entity.getNumCompras(), dto.getNumCompras());
         Assert.assertEquals(entity.getNumeroTarjeta(), dto.getNumeroTarjeta());
+        Assert.assertEquals(entity.getPurchases().size(), dto.getPurchases().size());
         for (int i = 0; i < entity.getPurchases().size(); i++) {
             Assert.assertEquals(entity.getPurchases().get(i).getId(), dto.getPurchases().get(i));
         }

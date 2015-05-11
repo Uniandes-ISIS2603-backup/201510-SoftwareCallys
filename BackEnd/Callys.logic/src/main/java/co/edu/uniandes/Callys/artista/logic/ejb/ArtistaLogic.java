@@ -5,19 +5,26 @@ import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Default
 @Stateless 
 @LocalBean
 public class ArtistaLogic implements IArtistaLogic{
  
+    @Inject
+    private IStampLogic stampLogic;
+    
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
@@ -61,6 +68,9 @@ public class ArtistaLogic implements IArtistaLogic{
     public void deleteArtista(Long id) {
         ArtistaEntity entity = entityManager.find(ArtistaEntity.class, id);
         entityManager.remove(entity);
+        for (StampEntity stamp : entity.getStamps()) {
+            stampLogic.deleteStamp(stamp.getId());
+        }
     }
 
     @Override

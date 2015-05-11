@@ -7,6 +7,8 @@ import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.ejb.ArtistaLogic;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -30,13 +32,15 @@ public class ArtistLogicTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-                .addPackage(ArtistaEntity.class.getPackage())
-                .addPackage(ArtistaDTO.class.getPackage())
-                .addPackage(ArtistaConverter.class.getPackage())
-                .addPackage(ArtistaLogic.class.getPackage())
-                .addPackage(IArtistaLogic.class.getPackage())
-                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-                .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
+            .addPackage(ArtistaEntity.class.getPackage())
+            .addPackage(ArtistaDTO.class.getPackage())
+            .addPackage(StampEntity.class.getPackage())
+            .addPackage(StampDTO.class.getPackage())
+            .addPackage(ArtistaConverter.class.getPackage())
+            .addPackage(ArtistaLogic.class.getPackage())
+            .addPackage(IArtistaLogic.class.getPackage())
+            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+            .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
     
     @Inject
@@ -74,12 +78,24 @@ public class ArtistLogicTest {
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
+            List<StampEntity> stamps = new ArrayList<StampEntity>();
             ArtistaEntity entity = new ArtistaEntity();
-            entity.setId(generateRandom(Long.class));
             entity.setClave(generateRandom(String.class));
             entity.setNumeroEstampas(generateRandom(Integer.class));
             entity.setDatosContacto(generateRandom(String.class));
             entity.setComisionPorVenta(generateRandom(Double.class));
+            for(int j=0; j < 3; j++) {
+                StampEntity stamp=new StampEntity();
+                stamp.setArtist(entity);
+                stamp.setImage(generateRandom(String.class));
+                stamp.setName(generateRandom(String.class));
+                stamp.setPrice(generateRandom(Integer.class));
+                stamp.setRating(generateRandom(Integer.class));
+                stamp.setTopic(generateRandom(String.class));
+                stamps.add(stamp);
+                em.persist(stamp);
+            }
+            entity.setStamps(stamps);
             em.persist(entity);
             data.add(entity);
         }
@@ -87,24 +103,32 @@ public class ArtistLogicTest {
     
     @Test
     public void createArtistTest() {
+        List<Long> stamps = new ArrayList<Long>();
+        for (int i = 0; i < 3; i++) {
+            stamps.add(data.get(0).getStamps().get(i).getId());
+        }
         ArtistaDTO dto = new ArtistaDTO();
         dto.setId(generateRandom(Long.class));
         dto.setClave(generateRandom(String.class));
         dto.setNumeroEstampas(generateRandom(Integer.class));
         dto.setDatosContacto(generateRandom(String.class));
         dto.setComisionPorVenta(generateRandom(Double.class));
-
+        dto.setStamps(stamps);
+        
         ArtistaDTO result = artistaLogic.createArtista(dto);
 
         Assert.assertNotNull(result);
 
         ArtistaEntity entity = em.find(ArtistaEntity.class, result.getId());
 
-        Assert.assertEquals(dto.getId(), entity.getId());
         Assert.assertEquals(dto.getClave(), entity.getClave());
         Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
         Assert.assertEquals(dto.getNumeroEstampas(), entity.getNumeroEstampas());
+        Assert.assertEquals(dto.getStamps().size(), entity.getStamps().size());
+        for (int i = 0; i < dto.getStamps().size(); i++) {
+            Assert.assertEquals(dto.getStamps().get(i), entity.getStamps().get(i).getId());
+        }
     }
     
     @Test
@@ -132,6 +156,10 @@ public class ArtistLogicTest {
         Assert.assertEquals(entity.getComisionPorVenta(), dto.getComisionPorVenta());
         Assert.assertEquals(entity.getDatosContacto(), dto.getDatosContacto());
         Assert.assertEquals(entity.getNumeroEstampas(), dto.getNumeroEstampas());
+        Assert.assertEquals(entity.getStamps().size(), dto.getStamps().size());
+        for (int i = 0; i < entity.getStamps().size(); i++) {
+            Assert.assertEquals(entity.getStamps().get(i).getId(), dto.getStamps().get(i));
+        }
     }
     
     @Test
