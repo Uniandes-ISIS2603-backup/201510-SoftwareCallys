@@ -7,7 +7,7 @@
                     <div class="price ">
                         <a ng-click="signupCtrl.clientFunction()"><h4><span>Client</span></h4></a>
                     </div>
-                    <div ng-view="signupCtrl.client">
+                    <div ng-show="signupCtrl.client">
                         <form name="catalogForm" class="css-form" novalidate>
                             <span> User name: </span>
                             <br/>
@@ -16,20 +16,17 @@
                             <br/>
                             <span> Password: </span>
                             <br/>
-                            <input type="text" value="" ng-model="userRecord.password">
+                            <input type="password" value="" ng-model="userRecord.password">
                              <br/>
                             <br/>
                             <span> CreditCard number: </span>
                             <br/>
-                            <input type="number" value="" >
-                            <br/>
-                            <br/>
-                            <input type="number" value="" ng-model="userRecord.email">
+                            <input type="number" value="" ng-model="userRecord.creditNumber">
                             <br/>
                             <br/>
                             <span> Email: </span>
                             <br/>
-                            <input type="text" value="" ng-model="userRecord.email">
+                            <input type="email" value="" ng-model="userRecord.email">
                             <br/>
                             <br/>
                             <input type="submit" value="signUp artist" ng-click="signupCtrl.saveClient()">
@@ -38,7 +35,7 @@
                     <div class="price ">
                         <a ng-click="signupCtrl.artistFunction()"><h4><span>Artist</span></h4></a>
                     </div>
-                    <div ng-view="signupCtrl.artist">
+                    <div ng-show="signupCtrl.artist">
                         <form name="catalogForm2" class="css-form" novalidate>
                             <span> Name: </span>
                             <br/>

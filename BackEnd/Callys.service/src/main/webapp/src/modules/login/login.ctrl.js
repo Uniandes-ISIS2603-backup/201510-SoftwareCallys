@@ -6,15 +6,17 @@
         
         this.login= function(username,password)
         {
-            if(this.api.customGET('login',username,password)!=null)
+            if(this.api.customGET('login',username,password)!==null)
             {
                 this.currentRecord=this.api.customGET('login',username,password);
-                catalogService.artist=true;  
+                catalogService.artist=true; 
+                this.artist=true;
+                  alert("Su usuario tos");
             }
             else
             {
                 alert("Su usuario o contraseña no son correctos");
             }
-        }
+        };
     }]);
 })();

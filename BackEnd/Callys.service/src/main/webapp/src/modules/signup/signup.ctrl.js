@@ -16,7 +16,7 @@
         };
         this.saveArtist= function ()
         {
-            this.artist = !this.artist;
+           
         };
     }]);
 })();
