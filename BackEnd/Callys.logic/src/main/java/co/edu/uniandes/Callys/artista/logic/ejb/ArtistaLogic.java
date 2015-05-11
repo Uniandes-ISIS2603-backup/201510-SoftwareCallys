@@ -11,13 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless 
 @LocalBean
 public class ArtistaLogic implements IArtistaLogic{
@@ -93,4 +91,8 @@ public class ArtistaLogic implements IArtistaLogic{
             return null;
         }
     }
+    
+//    public ArtistaDTO login(String userName, String password) {
+//        Query q = entityManager.createQuery("select u from ArtistaEntity u WHERE u.");
+//    }
 }
