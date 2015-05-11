@@ -81,7 +81,7 @@ public class ArtistLogicTest {
             List<StampEntity> stamps = new ArrayList<StampEntity>();
             ArtistaEntity entity = new ArtistaEntity();
             entity.setClave(generateRandom(String.class));
-            entity.setNumeroEstampas(generateRandom(Integer.class));
+//            entity.setNumeroEstampas(generateRandom(Integer.class));
             entity.setDatosContacto(generateRandom(String.class));
             entity.setComisionPorVenta(generateRandom(Double.class));
             for(int j=0; j < 3; j++) {
@@ -124,7 +124,7 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getClave(), entity.getClave());
         Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
-        Assert.assertEquals(dto.getNumeroEstampas(), entity.getNumeroEstampas());
+//        Assert.assertEquals(dto.getNumeroEstampas(), entity.getNumeroEstampas());
         Assert.assertEquals(dto.getStamps().size(), entity.getStamps().size());
         for (int i = 0; i < dto.getStamps().size(); i++) {
             Assert.assertEquals(dto.getStamps().get(i), entity.getStamps().get(i).getId());
@@ -155,7 +155,7 @@ public class ArtistLogicTest {
         Assert.assertEquals(entity.getClave(), dto.getClave());
         Assert.assertEquals(entity.getComisionPorVenta(), dto.getComisionPorVenta());
         Assert.assertEquals(entity.getDatosContacto(), dto.getDatosContacto());
-        Assert.assertEquals(entity.getNumeroEstampas(), dto.getNumeroEstampas());
+//        Assert.assertEquals(entity.getNumeroEstampas(), dto.getNumeroEstampas());
         Assert.assertEquals(entity.getStamps().size(), dto.getStamps().size());
         for (int i = 0; i < entity.getStamps().size(); i++) {
             Assert.assertEquals(entity.getStamps().get(i).getId(), dto.getStamps().get(i));
@@ -219,6 +219,6 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getClave(), resp.getClave());
         Assert.assertEquals(dto.getComisionPorVenta(), resp.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), resp.getDatosContacto());
-        Assert.assertEquals(dto.getNumeroEstampas(), resp.getNumeroEstampas());
+//        Assert.assertEquals(dto.getNumeroEstampas(), resp.getNumeroEstampas());
     }
 }

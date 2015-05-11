@@ -13,7 +13,6 @@ public class PurchaseItemConverter {
             dto.setId(entity.getId());
             dto.setMonto(entity.getMonto());
             dto.setIdCamiseta(entity.getIdCamiseta());
-            dto.setIdPurchase(entity.getIdPurchase());
             return dto;
         } else {
             return null;
@@ -26,7 +25,6 @@ public class PurchaseItemConverter {
             entity.setId(dto.getId());
             entity.setMonto(dto.getMonto());
             entity.setIdCamiseta(dto.getIdCamiseta());
-            entity.setIdPurchase(dto.getIdPurchase());
             return entity;
         } else {
             return null;

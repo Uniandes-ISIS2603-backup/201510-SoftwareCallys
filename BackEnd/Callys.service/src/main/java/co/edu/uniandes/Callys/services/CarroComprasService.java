@@ -78,6 +78,7 @@ public class CarroComprasService {
             purItems.add(p);
         }
         pur.setPurchaseItems(purItems);
-        return purchaseLogicService.createPurchase(null);
+        deleteCarroCompras(carroCompras.getId());
+        return purchaseLogicService.createPurchase(pur);
     }
 }
