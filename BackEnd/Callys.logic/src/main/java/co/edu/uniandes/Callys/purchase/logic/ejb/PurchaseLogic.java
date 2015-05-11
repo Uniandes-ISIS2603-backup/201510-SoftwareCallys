@@ -5,6 +5,8 @@ import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -59,5 +61,18 @@ public class PurchaseLogic implements IPurchaseLogic {
     public void deletePurchase(Long id) {
         PurchaseEntity entity = entityManager.find(PurchaseEntity.class, id);
         entityManager.remove(entity);
+    }
+    
+    private List<PurchaseItemEntity> getSelectedPurchaseItems(PurchaseDTO dto){
+        if(dto != null && dto.getPurchaseItems() != null){
+           List<PurchaseItemEntity> items = new ArrayList<PurchaseItemEntity>();
+            for (Long item : dto.getPurchaseItems()) {
+                items.add(entityManager.find(PurchaseItemEntity.class, item));
+            }
+            return items;
+        }
+        else {
+            return null;
+        }
     }
 }
