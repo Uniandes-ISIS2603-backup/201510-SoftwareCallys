@@ -14,25 +14,21 @@ import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.Dependent;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Dependent
-@Default
 @Stateless
 @LocalBean
 public class ClienteLogic implements IClienteLogic{
-    
+    /*
     @Inject
     private IPurchaseLogic purchaseLogic;
     
     @Inject
     private ICarroComprasLogic shoppingCartLogic;
-    
+    */
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
@@ -92,10 +88,11 @@ public class ClienteLogic implements IClienteLogic{
     public void deleteCliente(Long id) {
         ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
         entityManager.remove(entity);
+        /*
         shoppingCartLogic.deleteCarroCompras(entity.getCarroCompras().getId());
         for (PurchaseEntity purchase : entity.getPurchases()) {
             purchaseLogic.deletePurchase(purchase.getId());
-        }
+        }*/
     }
     
     private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {

@@ -9,15 +9,13 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
-import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
+@Dependent
 @Stateless
 @LocalBean
-@Dependent
 public class CarroComprasLogic implements ICarroComprasLogic{
        
     @PersistenceContext(unitName ="CallysClassPU")
@@ -68,16 +66,4 @@ public class CarroComprasLogic implements ICarroComprasLogic{
         CarroComprasEntity entity = entityManager.merge(CarroComprasConverter.persistenceDTO2Entity(carroCompras));
         CarroComprasConverter.entity2PersistenceDTO(entity);
     }
-
-    /*
-    public CarroComprasDTO getCarroComprasCliente(Long idClient) {
-        Query q = entityManager.createQuery("select u from CarroComprasEntity u where u.idClient="+idClient);
-        List<CarroComprasDTO> lista = CarroComprasConverter.entity2PersistenceDTOList(q.getResultList());
-        if(lista.isEmpty()) {
-            return null;
-        }
-        else {
-            return lista.get(0);
-        }
-    }*/
 }
