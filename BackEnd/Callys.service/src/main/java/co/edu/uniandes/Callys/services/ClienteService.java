@@ -60,10 +60,10 @@ public class ClienteService {
     public void updateCliente(ClienteDTO cliente) {
         clienteLogicService.updateCliente(cliente);
     }
-    /*
+    
     @GET
     public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
         return clienteLogicService.loginCliente(name, password);
     }
-    */
+    
 }
