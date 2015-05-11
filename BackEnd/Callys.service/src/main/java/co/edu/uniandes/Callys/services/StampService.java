@@ -22,14 +22,11 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class StampService {
-    
-    
     @Inject
     protected IStampLogic stampLogicService;
 
     @POST
     public StampDTO createStamp(StampDTO stamp) {
-        System.out.println("Entro");
         return stampLogicService.createStamp(stamp);
     }
 
