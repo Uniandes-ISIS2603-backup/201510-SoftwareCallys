@@ -116,12 +116,12 @@ public class ClienteLogic implements IClienteLogic{
         }
     }
     
-    @Override
-    public Integer loginCliente(String nombre, String password) {
-        Query q;
-        q = entityManager.createQuery("Select password from ClienteEntity u where u.name = '"+nombre+"';");
-        ClienteDTO dto = ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, q.getSingleResult()));
-        return (dto.getPassword().equals(password))?1:0;
-    }
+//    @Override
+//    public Integer loginCliente(String nombre, String password) {
+//        Query q;
+//        q = entityManager.createQuery("Select password from ClienteEntity u where u.name = '"+nombre+"';");
+//        ClienteDTO dto = ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, q.getSingleResult()));
+//        return (dto.getPassword().equals(password))?1:0;
+//    }
     
 }
