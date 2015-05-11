@@ -64,7 +64,9 @@ public class CarroComprasService {
     }
     
     @POST
-    public PurchaseDTO registrarCompra(CarroComprasDTO carroCompras){
+    @Path("{id}")
+    public PurchaseDTO registrarCompra(@PathParam("id")Long id){
+        CarroComprasDTO carroCompras = carroComprasLogicService.getCarroCompras(id);
         PurchaseDTO pur = new PurchaseDTO();
         pur.setDate(new Date());
         pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
