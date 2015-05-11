@@ -7,7 +7,7 @@ import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import co.edu.uniandes.Callys.estampa.logic.ejb.StampLogic;
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.ItemEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class StampLogicTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addPackage(StampEntity.class.getPackage())
+            .addPackage(ItemEntity.class.getPackage())
             .addPackage(StampDTO.class.getPackage())
             .addPackage(ArtistaEntity.class.getPackage())
             .addPackage(ArtistaDTO.class.getPackage())
@@ -74,7 +74,7 @@ public class StampLogicTest {
         em.createQuery("delete from StampEntity").executeUpdate();
     }
 
-    private List<StampEntity> data = new ArrayList<StampEntity>();
+    private List<ItemEntity> data = new ArrayList<ItemEntity>();
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
@@ -85,7 +85,7 @@ public class StampLogicTest {
             artist.setNumeroEstampas(generateRandom(Integer.class));
             em.persist(artist);
             
-            StampEntity entity = new StampEntity();
+            ItemEntity entity = new ItemEntity();
             entity.setTopic(generateRandomTopic());
             entity.setRating(generateRandom(Integer.class));
             entity.setName(generateRandom(String.class));
@@ -112,7 +112,7 @@ public class StampLogicTest {
 
         Assert.assertNotNull(result);
 
-        StampEntity entity = em.find(StampEntity.class, result.getId());
+        ItemEntity entity = em.find(ItemEntity.class, result.getId());
 
         Assert.assertEquals(dto.getName(), entity.getName());
         Assert.assertEquals(dto.getTopic(), entity.getTopic());
@@ -128,7 +128,7 @@ public class StampLogicTest {
         Assert.assertEquals(list.size(), data.size());
         for (StampDTO dto : list) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }
@@ -139,7 +139,7 @@ public class StampLogicTest {
 
     @Test
     public void getStampTest() {
-        StampEntity entity = data.get(0);
+        ItemEntity entity = data.get(0);
         StampDTO dto = stampLogic.getStamp(entity.getId());
         Assert.assertNotNull(dto);
         Assert.assertEquals(entity.getName(), dto.getName());
@@ -152,15 +152,15 @@ public class StampLogicTest {
 
     @Test
     public void deleteStampTest() {
-        StampEntity entity = data.get(0);
+        ItemEntity entity = data.get(0);
         stampLogic.deleteStamp(entity.getId());
-        StampEntity deleted = em.find(StampEntity.class, entity.getId());
+        ItemEntity deleted = em.find(ItemEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
 
     @Test
     public void updateStampTest() {
-        StampEntity entity = data.get(0);
+        ItemEntity entity = data.get(0);
         Long newArtist = data.get(1).getArtist().getId();
         
         StampDTO dto = new StampDTO();
@@ -173,7 +173,7 @@ public class StampLogicTest {
         dto.setPrice(generateRandom(Integer.class));
         
         stampLogic.updateStamp(dto);
-        StampEntity resp = em.find(StampEntity.class, entity.getId());
+        ItemEntity resp = em.find(ItemEntity.class, entity.getId());
         Assert.assertEquals(dto.getName(),resp.getName());
         Assert.assertEquals(dto.getTopic(),resp.getTopic());
         Assert.assertEquals(dto.getArtist(),resp.getArtist().getId());
@@ -197,7 +197,7 @@ public class StampLogicTest {
 
         for (StampDTO dto : dto1.getRecords()) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }
@@ -207,7 +207,7 @@ public class StampLogicTest {
 
         for (StampDTO dto : dto2.getRecords()) {
             boolean found = false;
-            for (StampEntity entity : data) {
+            for (ItemEntity entity : data) {
                 if (dto.getId().equals(entity.getId())) {
                     found = true;
                 }

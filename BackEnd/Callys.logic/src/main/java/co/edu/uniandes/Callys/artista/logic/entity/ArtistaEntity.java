@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.artista.logic.entity;
 
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.ItemEntity;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class ArtistaEntity{
     private String datosContacto;
     private Double comisionPorVenta;
     @OneToMany
-    private List<StampEntity> stamps;
+    private List<ItemEntity> stamps;
     
     public Long getId() {
         return id;
@@ -59,11 +59,11 @@ public class ArtistaEntity{
         this.comisionPorVenta = comisionPorVenta;
     }
     
-    public List<StampEntity> getStamps() {
+    public List<ItemEntity> getStamps() {
         return stamps;
     }
     
-    public void setStamps(List<StampEntity> stamps) {
+    public void setStamps(List<ItemEntity> stamps) {
         this.stamps=stamps;
     }
 }

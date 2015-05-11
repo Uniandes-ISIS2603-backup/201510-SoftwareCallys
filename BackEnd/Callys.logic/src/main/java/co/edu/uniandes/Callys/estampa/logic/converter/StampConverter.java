@@ -1,12 +1,12 @@
 package co.edu.uniandes.Callys.estampa.logic.converter;
 
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.ItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StampConverter {
- public static StampDTO entity2PersistenceDTO(StampEntity entity) {
+ public static StampDTO entity2PersistenceDTO(ItemEntity entity) {
         if (entity != null) {
             StampDTO dto = new StampDTO();
             dto.setId(entity.getId());
@@ -24,9 +24,9 @@ public class StampConverter {
         }
     }
 
-    public static StampEntity persistenceDTO2Entity(StampDTO dto) {
+    public static ItemEntity persistenceDTO2Entity(StampDTO dto) {
         if (dto != null) {
-            StampEntity entity = new StampEntity();
+            ItemEntity entity = new ItemEntity();
             entity.setId(dto.getId());
             entity.setTopic(dto.getTopic());
             entity.setName(dto.getName());
@@ -39,16 +39,16 @@ public class StampConverter {
         }
     }
 
-    public static List<StampDTO> entity2PersistenceDTOList(List<StampEntity> entities) {
+    public static List<StampDTO> entity2PersistenceDTOList(List<ItemEntity> entities) {
         List<StampDTO> dtos = new ArrayList<StampDTO>();
-        for (StampEntity entity : entities) {
+        for (ItemEntity entity : entities) {
             dtos.add(entity2PersistenceDTO(entity));
         }
         return dtos;
     }
 
-    public static List<StampEntity> persistenceDTO2EntityList(List<StampDTO> dtos) {
-        List<StampEntity> entities = new ArrayList<StampEntity>();
+    public static List<ItemEntity> persistenceDTO2EntityList(List<StampDTO> dtos) {
+        List<ItemEntity> entities = new ArrayList<ItemEntity>();
         for (StampDTO dto : dtos) {
             entities.add(persistenceDTO2Entity(dto));
         }

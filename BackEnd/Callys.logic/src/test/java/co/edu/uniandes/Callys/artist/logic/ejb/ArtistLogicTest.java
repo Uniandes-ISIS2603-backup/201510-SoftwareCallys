@@ -8,7 +8,7 @@ import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.ejb.ArtistaLogic;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
-import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.ItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -34,7 +34,7 @@ public class ArtistLogicTest {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
             .addPackage(ArtistaEntity.class.getPackage())
             .addPackage(ArtistaDTO.class.getPackage())
-            .addPackage(StampEntity.class.getPackage())
+            .addPackage(ItemEntity.class.getPackage())
             .addPackage(StampDTO.class.getPackage())
             .addPackage(ArtistaConverter.class.getPackage())
             .addPackage(ArtistaLogic.class.getPackage())
@@ -78,14 +78,14 @@ public class ArtistLogicTest {
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
-            List<StampEntity> stamps = new ArrayList<StampEntity>();
+            List<ItemEntity> stamps = new ArrayList<ItemEntity>();
             ArtistaEntity entity = new ArtistaEntity();
             entity.setClave(generateRandom(String.class));
             entity.setNumeroEstampas(generateRandom(Integer.class));
             entity.setDatosContacto(generateRandom(String.class));
             entity.setComisionPorVenta(generateRandom(Double.class));
             for(int j=0; j < 3; j++) {
-                StampEntity stamp=new StampEntity();
+                ItemEntity stamp=new ItemEntity();
                 stamp.setArtist(entity);
                 stamp.setImage(generateRandom(String.class));
                 stamp.setName(generateRandom(String.class));
