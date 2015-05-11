@@ -10,7 +10,7 @@
             if($scope.currentRecord !== null)
             {
                 $scope.currentRecord={name:"",image:"",price:"",stamps:""};
-                $scope.currentRecord = {name:pName,image:pImage,price:pPrice,stamps:""};
+                $scope.currentRecord = {name:pName,image:pImage,price:pPrice,stamps:null};
                 this.saveRecord();
             }
             else

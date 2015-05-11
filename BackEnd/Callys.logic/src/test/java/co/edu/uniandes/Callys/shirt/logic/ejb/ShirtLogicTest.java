@@ -5,7 +5,6 @@ import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
 import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
-import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
