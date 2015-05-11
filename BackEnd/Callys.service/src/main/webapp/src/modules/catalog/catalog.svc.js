@@ -5,7 +5,7 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
-        this.artist=true;
+        this.artist=false;
     }]);
 })();
 

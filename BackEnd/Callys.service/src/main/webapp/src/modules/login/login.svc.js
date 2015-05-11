@@ -1,4 +1,5 @@
-(function(){
+(function()
+{
     var loginModule = angular.module('loginModule');
      loginModule.service('loginService', ['CRUDBase','login.context', function(CRUDBase, context)
     {
