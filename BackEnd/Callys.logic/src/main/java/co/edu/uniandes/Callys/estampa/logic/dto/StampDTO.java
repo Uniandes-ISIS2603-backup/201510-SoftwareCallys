@@ -10,7 +10,6 @@ public class StampDTO {
     private Integer rating;
     private Integer price;
     private String image;
-    private Long artist;
  
     public String getImage(){
         return image;
@@ -58,13 +57,5 @@ public class StampDTO {
 
     public void setRating(Integer rating) {
         this.rating = rating;
-    }
-    
-    public Long getArtist() {
-        return artist;
-    }
-    
-    public void setArtist(Long artist) {
-        this.artist=artist;
     }
 }

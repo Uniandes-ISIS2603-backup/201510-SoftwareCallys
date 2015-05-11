@@ -22,13 +22,7 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class ClienteLogic implements IClienteLogic{
-    /*
-    @Inject
-    private IPurchaseLogic purchaseLogic;
-    
-    @Inject
-    private ICarroComprasLogic shoppingCartLogic;
-    */
+
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
@@ -88,11 +82,6 @@ public class ClienteLogic implements IClienteLogic{
     public void deleteCliente(Long id) {
         ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
         entityManager.remove(entity);
-        /*
-        shoppingCartLogic.deleteCarroCompras(entity.getCarroCompras().getId());
-        for (PurchaseEntity purchase : entity.getPurchases()) {
-            purchaseLogic.deletePurchase(purchase.getId());
-        }*/
     }
     
     private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {
@@ -115,13 +104,4 @@ public class ClienteLogic implements IClienteLogic{
             return null;
         }
     }
-    
-//    @Override
-//    public Integer loginCliente(String nombre, String password) {
-//        Query q;
-//        q = entityManager.createQuery("Select password from ClienteEntity u where u.name = '"+nombre+"';");
-//        ClienteDTO dto = ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, q.getSingleResult()));
-//        return (dto.getPassword().equals(password))?1:0;
-//    }
-    
 }

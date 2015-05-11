@@ -1,10 +1,8 @@
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
-import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class StampEntity {
@@ -16,8 +14,6 @@ public class StampEntity {
     private Integer rating;
     private String image;
     private Integer price;
-    @ManyToOne
-    private ArtistaEntity artist;
     
     public Long getId() {
         return id;
@@ -65,13 +61,5 @@ public class StampEntity {
 
     public void setRating(Integer rating) {
         this.rating = rating;
-    }
-    
-    public ArtistaEntity getArtist() {
-        return artist;
-    }
-    
-    public void setArtist(ArtistaEntity artist) {
-        this.artist=artist;
     }
 }

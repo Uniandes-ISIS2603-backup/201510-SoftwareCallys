@@ -82,7 +82,6 @@ public class StampLogicTest {
             artist.setClave(generateRandom(String.class));
             artist.setComisionPorVenta(generateRandom(Double.class));
             artist.setDatosContacto(generateRandom(String.class));
-            artist.setNumeroEstampas(generateRandom(Integer.class));
             em.persist(artist);
             
             StampEntity entity = new StampEntity();
