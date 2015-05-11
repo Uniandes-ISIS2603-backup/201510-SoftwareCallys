@@ -12,8 +12,9 @@ public class ArtistaEntity{
     @Id
     @GeneratedValue(generator = "Artista")
     private Long id;
+    private String name;
+    private String username;
     private String clave;
-    private Integer numeroEstampas;
     private String datosContacto;
     private Double comisionPorVenta;
     @OneToMany
@@ -27,20 +28,28 @@ public class ArtistaEntity{
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name=name;
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username=username;
+    }
+    
     public String getClave() {
         return clave;
     }
 
     public void setClave(String clave) {
         this.clave = clave;
-    }
-
-    public Integer getNumeroEstampas() {
-        return numeroEstampas;
-    }
-
-    public void setNumeroEstampas(Integer numeroEstampas) {
-        this.numeroEstampas = numeroEstampas;
     }
 
     public String getDatosContacto() {

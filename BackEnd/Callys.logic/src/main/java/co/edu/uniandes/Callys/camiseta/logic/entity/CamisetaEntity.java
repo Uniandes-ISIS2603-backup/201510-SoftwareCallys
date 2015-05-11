@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class CamisetaEntity {
@@ -19,10 +19,7 @@ public class CamisetaEntity {
     private String material;
     private String texto;
     
-    @ManyToMany 
-    @JoinTable(name="Camiseta_Stamp", 
-        joinColumns=@JoinColumn(name="Camiseta_ID"),
-        inverseJoinColumns=@JoinColumn(name="Stamp_ID"))  
+    @OneToMany 
     private Collection<StampEntity> stamps;
 
     public Collection<StampEntity> getStamps() {
