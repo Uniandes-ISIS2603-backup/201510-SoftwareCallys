@@ -84,7 +84,6 @@ public class ArtistLogicTest {
             entity.setName(generateRandom(String.class));
             entity.setUsername(generateRandom(String.class));
             entity.setDatosContacto(generateRandom(String.class));
-            entity.setComisionPorVenta(generateRandom(Double.class));
             for(int j=0; j < 3; j++) {
                 StampEntity stamp=new StampEntity();
                 stamp.setImage(generateRandom(String.class));
@@ -112,7 +111,6 @@ public class ArtistLogicTest {
         dto.setName(generateRandom(String.class));
         dto.setUsername(generateRandom(String.class));
         dto.setDatosContacto(generateRandom(String.class));
-        dto.setComisionPorVenta(generateRandom(Double.class));
         dto.setStamps(stamps);
         
         ArtistaDTO result = artistaLogic.createArtista(dto);
@@ -124,7 +122,6 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getClave(), entity.getClave());
         Assert.assertEquals(dto.getName(), entity.getName());
         Assert.assertEquals(dto.getUsername(), entity.getUsername());
-        Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
 
         Assert.assertEquals(dto.getStamps().size(), entity.getStamps().size());
@@ -157,7 +154,6 @@ public class ArtistLogicTest {
         Assert.assertEquals(entity.getClave(), dto.getClave());
         Assert.assertEquals(entity.getName(), dto.getName());
         Assert.assertEquals(entity.getUsername(), dto.getUsername());
-        Assert.assertEquals(entity.getComisionPorVenta(), dto.getComisionPorVenta());
         Assert.assertEquals(entity.getDatosContacto(), dto.getDatosContacto());
 
         Assert.assertEquals(entity.getStamps().size(), dto.getStamps().size());
@@ -212,27 +208,23 @@ public class ArtistLogicTest {
         ArtistaDTO dto = new ArtistaDTO();
         dto.setId(entity.getId());
         dto.setClave(generateRandom(String.class));
-        dto.setNumeroEstampas(generateRandom(Integer.class));
         dto.setDatosContacto(generateRandom(String.class));
-        dto.setComisionPorVenta(generateRandom(Double.class));
 
         artistaLogic.updateArtista(dto);
 
         ArtistaEntity resp = em.find(ArtistaEntity.class, entity.getId());
 
         Assert.assertEquals(dto.getClave(), resp.getClave());
-        Assert.assertEquals(dto.getComisionPorVenta(), resp.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), resp.getDatosContacto());
     }
-    
-    @Test
-    public void loginTest() {
-        ArtistaEntity entity = data.get(0);
-        ArtistaDTO dto = artistaLogic.login(entity.getUsername(), entity.getClave());
-        Assert.assertNotNull(dto);
-        Assert.assertEquals(dto.getClave(), entity.getClave());
-        Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
-        Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
-        
-    }
+//    
+//    @Test
+//    public void loginTest() {
+//        ArtistaEntity entity = data.get(0);
+//        ArtistaDTO dto = artistaLogic.login(entity.getUsername(), entity.getClave());
+//        Assert.assertNotNull(dto);
+//        Assert.assertEquals(dto.getClave(), entity.getClave());
+//        Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
+//        
+//    }
 }

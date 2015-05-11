@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -10,11 +9,9 @@ import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
-import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -33,8 +30,7 @@ public class ClienteLogic implements IClienteLogic{
         if (carroCompras != null) {
             entity.setCarroCompras(carroCompras);
         }
-        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
-        entity.setPurchases(purchases);
+        entity.setPurchases(new ArrayList<PurchaseEntity>());
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);
     }

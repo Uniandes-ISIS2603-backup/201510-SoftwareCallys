@@ -17,7 +17,6 @@ public class ArtistaEntity{
     private String username;
     private String clave;
     private String datosContacto;
-    private Double comisionPorVenta;
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<StampEntity> stamps;
     
@@ -59,14 +58,6 @@ public class ArtistaEntity{
 
     public void setDatosContacto(String datosContacto) {
         this.datosContacto = datosContacto;
-    }
-    
-    public Double getComisionPorVenta() {
-        return comisionPorVenta;
-    }
-
-    public void setComisionPorVenta(Double comisionPorVenta) {
-        this.comisionPorVenta = comisionPorVenta;
     }
     
     public List<StampEntity> getStamps() {

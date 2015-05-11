@@ -77,14 +77,7 @@ public class StampLogicTest {
     private List<StampEntity> data = new ArrayList<StampEntity>();
 
     private void insertData() {
-        for (int i = 0; i < 3; i++) {
-            ArtistaEntity artist=new ArtistaEntity();
-            artist.setClave(generateRandom(String.class));
-            artist.setComisionPorVenta(generateRandom(Double.class));
-            artist.setDatosContacto(generateRandom(String.class));
-//            artist.setNumeroEstampas(generateRandom(Integer.class));
-            em.persist(artist);
-            
+        for (int i = 0; i < 3; i++) {       
             StampEntity entity = new StampEntity();
             entity.setTopic(generateRandomTopic());
             entity.setRating(generateRandom(Integer.class));

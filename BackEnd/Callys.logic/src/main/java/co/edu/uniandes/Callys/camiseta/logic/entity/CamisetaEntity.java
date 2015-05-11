@@ -16,7 +16,6 @@ public class CamisetaEntity {
     private String talla;
     private String material;
     private String texto;
-    
     @OneToMany 
     private List<StampEntity> stamps;
 
