@@ -9,9 +9,7 @@ public class ArtistaDTO {
     private String name;
     private String username;
     private String clave;
-    private Integer numeroEstampas;
     private String datosContacto;
-    private Double comisionPorVenta;
     private List<Long> stamps;
     
     public Long getId() {
@@ -45,14 +43,6 @@ public class ArtistaDTO {
     public void setUsername(String username) {
         this.username=username;
     }
-    
-    public Integer getNumeroEstampas() {
-        return numeroEstampas;
-    }
-
-    public void setNumeroEstampas(Integer numeroEstampas) {
-        this.numeroEstampas = numeroEstampas;
-    }
 
     public String getDatosContacto() {
         return datosContacto;
@@ -60,14 +50,6 @@ public class ArtistaDTO {
 
     public void setDatosContacto(String datosContacto) {
         this.datosContacto = datosContacto;
-    }
-    
-    public Double getComisionPorVenta() {
-        return comisionPorVenta;
-    }
-
-    public void setComisionPorVenta(Double comisionPorVenta) {
-        this.comisionPorVenta = comisionPorVenta;
     }
     
     public List<Long> getStamps() {

@@ -63,24 +63,24 @@ public class CarroComprasService {
         carroComprasLogicService.updateCarroCompras(carroCompras);
     }
     
-    @POST
-    @Path("{id}")
-    public PurchaseDTO registrarCompra(@PathParam("id")Long id){
-        CarroComprasDTO carroCompras = carroComprasLogicService.getCarroCompras(id);
-        PurchaseDTO pur = new PurchaseDTO();
-        pur.setDate(new Date());
-        pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
-        pur.setFormaDePago(carroCompras.getFormaPago());
-        List<ItemEntity> items = (List)carroCompras.getItems();
-        List<PurchaseItemEntity> purItems = new ArrayList<PurchaseItemEntity>();
-        for(ItemEntity e: items){
-            PurchaseItemEntity p = new PurchaseItemEntity();
-            p.setIdCamiseta(e.getCamiseta().getId());
-            p.setMonto(e.getMonto());
-            purItems.add(p);
-        }
-        pur.setPurchaseItems(purItems);
-        deleteCarroCompras(carroCompras.getId());
-        return purchaseLogicService.createPurchase(pur);
-    }
+//    @POST
+//    @Path("{id}")
+//    public PurchaseDTO registrarCompra(@PathParam("id")Long id){
+//        CarroComprasDTO carroCompras = carroComprasLogicService.getCarroCompras(id);
+//        PurchaseDTO pur = new PurchaseDTO();
+//        pur.setDate(new Date());
+//        pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
+//        pur.setFormaDePago(carroCompras.getFormaPago());
+//        List<ItemEntity> items = (List)carroCompras.getItems();
+//        List<PurchaseItemEntity> purItems = new ArrayList<PurchaseItemEntity>();
+//        for(ItemEntity e: items){
+//            PurchaseItemEntity p = new PurchaseItemEntity();
+//            p.setIdCamiseta(e.getCamiseta().getId());
+//            p.setMonto(e.getMonto());
+//            purItems.add(p);
+//        }
+//        pur.setPurchaseItems(purItems);
+//        deleteCarroCompras(carroCompras.getId());
+//        return purchaseLogicService.createPurchase(pur);
+//    }
 }

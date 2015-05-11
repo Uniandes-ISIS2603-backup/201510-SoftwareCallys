@@ -18,5 +18,5 @@ public interface IArtistaLogic {
 
     public void updateArtista(ArtistaDTO detail);
     
-    public ArtistaDTO login(String username, String password);
+//    public ArtistaDTO login(String username, String password);
 }
