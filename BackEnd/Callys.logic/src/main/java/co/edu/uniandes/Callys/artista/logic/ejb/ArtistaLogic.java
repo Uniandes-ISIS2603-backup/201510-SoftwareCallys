@@ -5,6 +5,8 @@ import co.edu.uniandes.Callys.artista.logic.converter.ArtistaConverter;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.artista.logic.dto.ArtistaPageDTO;
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -22,6 +24,8 @@ public class ArtistaLogic implements IArtistaLogic{
     @Override
     public ArtistaDTO createArtista(ArtistaDTO artista) {
         ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(artista);
+        List<StampEntity> stamps=new ArrayList<StampEntity>();
+        entity.setStamps(stamps);
         entityManager.persist(entity);
         return ArtistaConverter.entity2PersistenceDTO(entity);
     }
@@ -62,6 +66,21 @@ public class ArtistaLogic implements IArtistaLogic{
     @Override
     public void updateArtista(ArtistaDTO artista) {
         ArtistaEntity entity = entityManager.merge(ArtistaConverter.persistenceDTO2Entity(artista));
+        List<StampEntity> stamps=this.getSelectedStamps(artista);
+        entity.setStamps(stamps);
         ArtistaConverter.entity2PersistenceDTO(entity);
+    }
+    
+    private List<StampEntity> getSelectedStamps(ArtistaDTO artist) {
+        if(artist != null && artist.getStamps()!= null) {
+            List<StampEntity> stamps = new ArrayList<StampEntity>();
+            for (Long stamp : artist.getStamps()) {
+                stamps.add(entityManager.find(StampEntity.class, stamp));
+            }
+            return stamps;
+        }
+        else {
+            return null;
+        }
     }
 }

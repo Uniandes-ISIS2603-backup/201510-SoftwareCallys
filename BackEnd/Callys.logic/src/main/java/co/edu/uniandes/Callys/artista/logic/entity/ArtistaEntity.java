@@ -58,4 +58,12 @@ public class ArtistaEntity{
     public void setComisionPorVenta(Double comisionPorVenta) {
         this.comisionPorVenta = comisionPorVenta;
     }
+    
+    public List<StampEntity> getStamps() {
+        return stamps;
+    }
+    
+    public void setStamps(List<StampEntity> stamps) {
+        this.stamps=stamps;
+    }
 }

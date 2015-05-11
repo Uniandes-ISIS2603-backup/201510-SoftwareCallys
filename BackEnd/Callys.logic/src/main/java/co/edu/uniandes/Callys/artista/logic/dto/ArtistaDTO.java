@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.artista.logic.dto;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -9,6 +10,7 @@ public class ArtistaDTO {
     private Integer numeroEstampas;
     private String datosContacto;
     private Double comisionPorVenta;
+    private List<Long> stamps;
     
     public Long getId() {
         return id;
@@ -48,5 +50,13 @@ public class ArtistaDTO {
 
     public void setComisionPorVenta(Double comisionPorVenta) {
         this.comisionPorVenta = comisionPorVenta;
+    }
+    
+    public List<Long> getStamps() {
+        return stamps;
+    }
+    
+    public void setStamps(List<Long> stamps) {
+        this.stamps=stamps;
     }
 }

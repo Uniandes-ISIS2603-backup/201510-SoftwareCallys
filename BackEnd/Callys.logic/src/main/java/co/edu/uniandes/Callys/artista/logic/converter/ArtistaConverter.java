@@ -15,6 +15,13 @@ public class ArtistaConverter {
             dto.setNumeroEstampas(entity.getNumeroEstampas());
             dto.setComisionPorVenta(entity.getComisionPorVenta());
             dto.setDatosContacto(entity.getDatosContacto());
+            if (entity.getStamps()!=null) {
+                List<Long> stamps=new ArrayList<Long>();
+                for(int i=0;i<entity.getStamps().size();i++) {
+                    stamps.add(entity.getStamps().get(i).getId());
+                }
+                dto.setStamps(stamps);
+            }
             return dto;
         } else {
             return null;
