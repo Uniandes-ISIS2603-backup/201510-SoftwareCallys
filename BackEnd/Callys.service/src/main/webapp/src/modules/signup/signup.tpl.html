@@ -1,48 +1,65 @@
 <div ng-controller="signupCtrl as signupCtrl">
      <!-- start main -->
-        
-         <div class="wrap">
-              <div class="copy ">
-                        <div class="price ">
-                            <div class="contact">
-                        <form>
+    <div class="wrap">
+        <div class="copy ">
+            <div class="price ">
+                <div class="contact">
+                    <div class="price ">
+                        <a ng-click="signupCtrl.clientFunction()"><h4><span>Client</span></h4></a>
+                    </div>
+                    <div ng-view="signupCtrl.client">
+                        <form name="catalogForm" class="css-form" novalidate>
                             <span> User name: </span>
                             <br/>
-                            <input type="text" value="">
+                            <input type="text" value="" ng-model="userRecord.username">
                             <br/>
                             <br/>
                             <span> Password: </span>
                             <br/>
-                            <input type="text" value="">
-                            <br/>
-                            <br/>
-                            <span> Confirm Password: </span>
-                            <br/>
-                            <input type="text" value="">
+                            <input type="text" value="" ng-model="userRecord.password">
                              <br/>
                             <br/>
                             <span> CreditCard number: </span>
                             <br/>
-                            <input type="number" value="">
-                             <br/>
+                            <input type="number" value="" >
                             <br/>
-                            <span> security code:</span>
                             <br/>
-                            <input type="number" value="">
-                             <br/>
+                            <input type="number" value="" ng-model="userRecord.email">
+                            <br/>
                             <br/>
                             <span> Email: </span>
                             <br/>
-                            <input type="text" value="">
+                            <input type="text" value="" ng-model="userRecord.email">
                             <br/>
                             <br/>
-                            <input type="submit" value="sign up">
+                            <input type="submit" value="signUp artist"ng-click="signupCtrl.saveClient()">
                         </form>
-          </div>
-                            </div>
                     </div>
-                </div>	
-       
+                    <div class="price ">
+                        <a ng-click="signupCtrl.artistFunction()"><h4><span>Artist</span></h4></a>
+                    </div>
+                    <div ng-view="signupCtrl.artist">
+                        <form name="catalogForm2" class="css-form" novalidate>
+                            <span> Name: </span>
+                            <br/>
+                            <input type="text" value="" ng-model="userRecord.name">
+                            <br/>
+                            <br/>
+                            <span> User Name: </span>
+                            <br/>
+                            <input type="text" value="" ng-model="userRecord.username">
+                            <br/>
+                            <br/>
+                            <span> Password: </span>
+                            <br/>
+                            <input type="text" value="" ng-model="userRecord.password">
+                            <input type="submit" value="signUp artist"ng-click="signupCtrl.saveRecord()">
+                        </form>
+                    </div>
+                </div>
+           </div>
+        </div>
+     </div>	    
 </div>
 
  
