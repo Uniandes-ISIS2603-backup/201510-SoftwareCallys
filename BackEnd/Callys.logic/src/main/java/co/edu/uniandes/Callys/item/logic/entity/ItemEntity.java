@@ -27,7 +27,7 @@ public class ItemEntity {
         return camiseta;
     }
 
-    public void setCarroCompras(CarroComprasEntity carroCompras)
+    public void setCarroCompras(CarroComprasEntity carroCompras0)
     {
         this.carroCompras = carroCompras;
     }
