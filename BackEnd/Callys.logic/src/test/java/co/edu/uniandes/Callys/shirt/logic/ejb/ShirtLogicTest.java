@@ -5,7 +5,12 @@ import co.edu.uniandes.Callys.camiseta.logic.api.ICamisetaLogic;
 import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaPageDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.ejb.CamisetaLogic;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +36,10 @@ public class ShirtLogicTest {
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
                 .addPackage(CamisetaEntity.class.getPackage())
+                .addPackage(StampDTO.class.getPackage())
+                .addPackage(StampEntity.class.getPackage())
+                .addPackage(ArtistaDTO.class.getPackage())
+                .addPackage(ArtistaEntity.class.getPackage())
                 .addPackage(CamisetaDTO.class.getPackage())
                 .addPackage(CamisetaConverter.class.getPackage())
                 .addPackage(CamisetaLogic.class.getPackage())
