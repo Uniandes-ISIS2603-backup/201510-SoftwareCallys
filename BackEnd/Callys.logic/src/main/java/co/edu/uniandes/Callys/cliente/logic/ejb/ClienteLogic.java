@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
