@@ -17,4 +17,6 @@ public interface IArtistaLogic {
     public void deleteArtista(Long id);
 
     public void updateArtista(ArtistaDTO detail);
+    
+//    public ArtistaDTO login(String username, String password);
 }

@@ -15,9 +15,6 @@ public class StampConverter {
             dto.setRating(entity.getRating());
             dto.setImage(entity.getImage());
             dto.setPrice(entity.getPrice());
-            if (entity.getArtist()!= null) {
-                dto.setArtist(entity.getArtist().getId());
-            }  
             return dto;
         } else {
             return null;

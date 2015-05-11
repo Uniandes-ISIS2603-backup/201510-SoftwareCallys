@@ -6,10 +6,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class ArtistaDTO {
     private Long id;
+    private String name;
+    private String username;
     private String clave;
-    private Integer numeroEstampas;
     private String datosContacto;
-    private Double comisionPorVenta;
     private List<Long> stamps;
     
     public Long getId() {
@@ -28,12 +28,20 @@ public class ArtistaDTO {
         this.clave = clave;
     }
 
-    public Integer getNumeroEstampas() {
-        return numeroEstampas;
+    public String getName() {
+        return name;
     }
-
-    public void setNumeroEstampas(Integer numeroEstampas) {
-        this.numeroEstampas = numeroEstampas;
+    
+    public void setName(String name) {
+        this.name=name;
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username=username;
     }
 
     public String getDatosContacto() {
@@ -42,14 +50,6 @@ public class ArtistaDTO {
 
     public void setDatosContacto(String datosContacto) {
         this.datosContacto = datosContacto;
-    }
-    
-    public Double getComisionPorVenta() {
-        return comisionPorVenta;
-    }
-
-    public void setComisionPorVenta(Double comisionPorVenta) {
-        this.comisionPorVenta = comisionPorVenta;
     }
     
     public List<Long> getStamps() {

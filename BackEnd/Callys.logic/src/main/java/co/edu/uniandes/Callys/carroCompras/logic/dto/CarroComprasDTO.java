@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
 @XmlRootElement
 public class CarroComprasDTO {
@@ -17,22 +18,22 @@ public class CarroComprasDTO {
     private String datosEnvio;
 
     @OneToMany
-    private Collection<ItemEntity> items;
+    private List<Long> items;
     
-    public Collection<ItemEntity> getItems()
+    public List<Long> getItems()
     {
        return items; 
     }
     
-     public void setItems(Collection<ItemEntity> items) {
+    public void setItems(List<Long> items) {
         this.items = items;
     }
-
-    public void addItem(ItemEntity item) {
-        if (!getItems().contains(item)) {
-            items.add(item);
-        }
-    }
+     
+//    public void addItem(ItemEntity item) {
+//        if (!getItems().contains(item)) {
+//            items.add(item);
+//        }
+//    }
     
     public Long getId() {
         return id;

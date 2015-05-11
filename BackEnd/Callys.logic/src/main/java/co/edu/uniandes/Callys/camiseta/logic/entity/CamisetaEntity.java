@@ -1,7 +1,7 @@
 package co.edu.uniandes.Callys.camiseta.logic.entity;
 
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,15 +16,14 @@ public class CamisetaEntity {
     private String talla;
     private String material;
     private String texto;
-    
     @OneToMany 
-    private Collection<StampEntity> stamps;
+    private List<StampEntity> stamps;
 
-    public Collection<StampEntity> getStamps() {
+    public List<StampEntity> getStamps() {
         return stamps;
     }
 
-    public void setStamps(Collection<StampEntity> stamps) {
+    public void setStamps(List<StampEntity> stamps) {
         this.stamps = stamps;
     }
 

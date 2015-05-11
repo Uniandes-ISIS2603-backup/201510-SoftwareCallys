@@ -7,6 +7,7 @@ import javax.persistence.OneToMany;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import java.util.Collection;
 import javax.persistence.CascadeType;
+import java.util.List;
 
 @Entity
 public class CarroComprasEntity {
@@ -17,9 +18,9 @@ public class CarroComprasEntity {
     private String formaPago;
     private String datosEnvio;
     @OneToMany(cascade = CascadeType.REMOVE)
-    private Collection<ItemEntity> items;
+    private List<ItemEntity> items;
     
-    public Collection<ItemEntity> getItems()
+    public List<ItemEntity> getItems()
     {
        return items; 
     }

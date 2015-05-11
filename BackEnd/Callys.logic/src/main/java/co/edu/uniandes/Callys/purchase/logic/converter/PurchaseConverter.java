@@ -2,6 +2,7 @@ package co.edu.uniandes.Callys.purchase.logic.converter;
 
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,13 @@ public class PurchaseConverter {
             dto.setDate(entity.getDate());
             dto.setDatosDeEnvio(entity.getDatosDeEnvio());
             dto.setFormaDePago(entity.getFormaDePago());
-            dto.setPurchaseItems(entity.getPurchaseItems());
+            if(entity.getPurchaseItems() != null){
+                List<Long> purchaseItems = new ArrayList<Long>();
+                for(PurchaseItemEntity e : entity.getPurchaseItems()){
+                    purchaseItems.add(e.getId());
+                }
+                dto.setPurchaseItems(purchaseItems);
+            }
             return dto;
         } else {
             return null;
@@ -28,7 +35,6 @@ public class PurchaseConverter {
             entity.setDate(dto.getDate());
             entity.setDatosDeEnvio(dto.getDatosDeEnvio());
             entity.setFormaDePago(dto.getFormaDePago());
-            entity.setPurchaseItems(dto.getPurchaseItems());
             return entity;
         } else {
             return null;

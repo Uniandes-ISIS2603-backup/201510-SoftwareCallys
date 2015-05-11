@@ -1,6 +1,5 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -10,11 +9,9 @@ import co.edu.uniandes.Callys.cliente.logic.converter.ClienteConverter;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
-import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -22,13 +19,7 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class ClienteLogic implements IClienteLogic{
-    
-//    @Inject
-//    private IPurchaseLogic purchaseLogic;
-//    
-//    @Inject
-//    private ICarroComprasLogic shoppingCartLogic;
-    
+
     @PersistenceContext(unitName ="CallysClassPU")
     protected EntityManager entityManager;
 
@@ -39,8 +30,7 @@ public class ClienteLogic implements IClienteLogic{
         if (carroCompras != null) {
             entity.setCarroCompras(carroCompras);
         }
-        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
-        entity.setPurchases(purchases);
+        entity.setPurchases(new ArrayList<PurchaseEntity>());
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);
     }
@@ -88,11 +78,6 @@ public class ClienteLogic implements IClienteLogic{
     public void deleteCliente(Long id) {
         ClienteEntity entity = entityManager.find(ClienteEntity.class, id);
         entityManager.remove(entity);
-        
-//        shoppingCartLogic.deleteCarroCompras(entity.getCarroCompras().getId());
-//        for (PurchaseEntity purchase : entity.getPurchases()) {
-//            purchaseLogic.deletePurchase(purchase.getId());
-//        }
     }
     
     private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {
@@ -115,12 +100,4 @@ public class ClienteLogic implements IClienteLogic{
             return null;
         }
     }
-    
-//    @Override
-//    public Integer loginCliente(String nombre, String password) {
-//        Query q;
-//        q = entityManager.createQuery("Select password from ClienteEntity u where u.name = '"+nombre+"';");
-//        ClienteDTO dto = ClienteConverter.entity2PersistenceDTO(entityManager.find(ClienteEntity.class, q.getSingleResult()));
-//        return (dto.getPassword().equals(password))?1:0;
-//    }
 }

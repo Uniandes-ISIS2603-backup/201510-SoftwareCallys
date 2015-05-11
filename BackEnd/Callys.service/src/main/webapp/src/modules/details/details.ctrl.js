@@ -34,6 +34,10 @@
             {
                 $scope.ShirtRecords[0].stamps=catalog;
                 $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price+catalog.price;
+                 shirtService.fetchRecords().then(function(data)
+            {
+               $scope.ShirtRecords = data;
+            }); 
                 this.stampMode=false;
             };
             this.deleteStamp = function (catalog)
