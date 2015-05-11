@@ -1,9 +1,20 @@
 (function ()
 {
     var loginModule = angular.module('loginModule');
-    loginModule.controller('loginCtrl', ['$scope', 'loginService', function ($scope, catalogService)
+    loginModule.controller('loginCtrl', ['$scope', 'loginService', 'catalogService', function ($scope, loginService,catalogService)
     {
-        catalogService.extendCtrl(this, $scope);
-        this.fetchRecords();
+        
+        this.login= function(username,password)
+        {
+            if(this.api.customGET('login',username,password)!=null)
+            {
+                this.currentRecord=this.api.customGET('login',username,password);
+                catalogService.artist=true;  
+            }
+            else
+            {
+                alert("Su usuario o contraseña no son correctos");
+            }
+        }
     }]);
 })();

@@ -1,89 +1,66 @@
 <div ng-controller="loginCtrl as loginCtrl">
-        <!-- start main -->
-        
-         <div class="wrap">
-              <div class="copy ">
-                        <div class="price ">
-                            <div class="contact">
-                        <form>
-                            <span> User name </span>
-                            <input type="text" value="">
-                            <br/>
-                            <br/>
-                            <span> Password </span>
-                            <input type="text" value="">
-                            <br/>
-                            <br/>
-                            <input type="submit" value="login">
-                        </form>
-          </div>
-                            </div>
-                    </div>
-                </div>	
-        <div ng-show="loginCtrl.artist" class =" row">
-        <div class="grids_of_3">  
-               
-                  <div class="wrap">
-                    <div class = "grid1_of_3edited">
-                    <h2 class="style top">Welcome 'nombre'</h2> 
-                    <br/>
-                    <br/>
-                    <img alt="" src="images/default-user.png" height="400" width="400" />
-                    <br/>
-                    <br/>
-                    </div>
-                    <div class = "grid1_of_3edited">
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>  
-                             <br/>
-                            <br/>
-                            <br/>
-                            <br/> 
-                           <h2 class="style top">Number of stamps:</h2> 
-                             <br/>
-                            <br/>  
-                           <h2 class="style top">Datos de contacto:</h2> 
-                             <br/>
-                            <br/>  
-                           <h2 class="style top">Total comisionado:</h2> 
-                    </div>   
-                 </div>
-             </div>
+    <div class="wrap">
+        <div class="copy ">
+            <div class="price ">
+                <div class="contact">
+                    <form>
+                        <span> User name </span>
+                        <input type="text" value="" ng-model="userRecord.username">
+                        <br/>
+                        <br/>
+                        <span> Password </span>
+                        <input type="text" value="" ng-model="userRecord.password">
+                        <br/>
+                        <br/>
+                        <input type="submit" value="login"  ng-click="signupCtrl.login()">
+                    </form>
+                </div>
             </div>
-        <div ng-show="loginCtrl.client" class =" row">
-          <div class="grids_of_3">  
-               
-                  <div class="wrap">
-                    <div class = "grid1_of_3edited">
-                    <h2 class="style top">Welcome 'nombre'</h2> 
+        </div>
+    </div>	
+    <div ng-show="loginCtrl.artist" class =" row">
+    <div class="grids_of_3">  
+         <div class="wrap">
+            <div class = "grid1_of_3edited">
+            <h2 class="style top">Welcome {{$scope.currentRecord.name}}</h2> 
+            <br/>
+            <br/>
+            <img alt="" src="images/default-user.png" height="400" width="400" />
+            <br/>
+            <br/>
+            </div>
+            <div class = "grid1_of_3edited">
                     <br/>
                     <br/>
-                    <img alt="" src="images/default-user.png" height="400" width="400" />
                     <br/>
-                    <br/>
-                    </div>
-                    <div class = "grid1_of_3edited">
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>  
-                             <br/>
-                            <br/>
-                            <br/>
-                            <br/> 
-                           <h2 class="style top">Number of purchases:</h2> 
-                             <br/>
-                            <br/>  
-                           <h2 class="style top">Credit card number:</h2> 
-                    </div>   
-                 </div>
-             </div>
-            
-         
-
-       
-</div>
+                    <br/>  
+                    <br/>  
+                   <h2 class="style top">Datos de contacto: {{$scope.currentRecord.datosDecontacto}}</h2> 
+            </div>   
+         </div>
+     </div>
+    </div>
+    <div ng-show="loginCtrl.client" class =" row">
+        <div class="grids_of_3">  
+            <div ng-hide="loginCtrl.artist" class="wrap">
+                <div class = "grid1_of_3edited">
+                <h2 class="style top">Welcome {{$scope.currentRecord.name}}</h2> 
+                <br/>
+                <br/>
+                <img alt="" src="images/default-user.png" height="400" width="400" />
+                <br/>
+                <br/>
+                </div>
+                <div class = "grid1_of_3edited">
+                <br/>
+                <br/>
+                <br/>
+                <br/>  
+                <br/> 
+                <h2 class="style top">Credit card number: {{$scope.currentRecord.name}}</h2> 
+                </div>   
+            </div>
+        </div>
+    </div>
 </div>
  
