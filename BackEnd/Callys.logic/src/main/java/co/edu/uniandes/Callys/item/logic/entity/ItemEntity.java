@@ -1,6 +1,7 @@
 package co.edu.uniandes.Callys.item.logic.entity;
 
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,11 +15,23 @@ public class ItemEntity {
     private Double monto;
     @ManyToOne
     private CamisetaEntity camiseta;
-
+    @ManyToOne 
+    private CarroComprasEntity carroCompras;
+    
+    public CarroComprasEntity getCarroCompras()
+    {
+       return carroCompras;
+    }
+    
     public CamisetaEntity getCamiseta() {
         return camiseta;
     }
 
+    public void setCarroCompras(CarroComprasEntity carroCompras0)
+    {
+        this.carroCompras = carroCompras;
+    }
+            
     public void setCamiseta(CamisetaEntity camiseta) {
         this.camiseta = camiseta;
     }

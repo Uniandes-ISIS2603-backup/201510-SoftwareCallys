@@ -126,6 +126,7 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getUsername(), entity.getUsername());
         Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
+
         Assert.assertEquals(dto.getStamps().size(), entity.getStamps().size());
         for (int i = 0; i < dto.getStamps().size(); i++) {
             Assert.assertEquals(dto.getStamps().get(i), entity.getStamps().get(i).getId());
@@ -158,6 +159,7 @@ public class ArtistLogicTest {
         Assert.assertEquals(entity.getUsername(), dto.getUsername());
         Assert.assertEquals(entity.getComisionPorVenta(), dto.getComisionPorVenta());
         Assert.assertEquals(entity.getDatosContacto(), dto.getDatosContacto());
+
         Assert.assertEquals(entity.getStamps().size(), dto.getStamps().size());
         for (int i = 0; i < entity.getStamps().size(); i++) {
             Assert.assertEquals(entity.getStamps().get(i).getId(), dto.getStamps().get(i));
@@ -231,5 +233,6 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getClave(), entity.getClave());
         Assert.assertEquals(dto.getComisionPorVenta(), entity.getComisionPorVenta());
         Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
+        
     }
 }

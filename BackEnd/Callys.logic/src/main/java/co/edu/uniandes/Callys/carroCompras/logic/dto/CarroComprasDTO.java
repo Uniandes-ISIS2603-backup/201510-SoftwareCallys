@@ -1,14 +1,39 @@
 package co.edu.uniandes.Callys.carroCompras.logic.dto;
 
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import java.util.Collection;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class CarroComprasDTO {
+    @Id
+    @GeneratedValue(generator = "CarroCompras")
     private Long id;
     private Double monto;
     private String formaPago;
     private String datosEnvio;
 
+    @OneToMany
+    private Collection<ItemEntity> items;
+    
+    public Collection<ItemEntity> getItems()
+    {
+       return items; 
+    }
+    
+     public void setItems(Collection<ItemEntity> items) {
+        this.items = items;
+    }
+
+    public void addItem(ItemEntity item) {
+        if (!getItems().contains(item)) {
+            items.add(item);
+        }
+    }
+    
     public Long getId() {
         return id;
     }

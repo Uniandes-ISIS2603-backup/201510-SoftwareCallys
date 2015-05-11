@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.client.logic.ejb;
 
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
@@ -8,6 +9,7 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.ejb.ClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.*;
@@ -28,25 +30,27 @@ import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
 public class ClientLogicTest {
-    
+
     public static final String DEPLOY = "Prueba";
-    
+
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-            .addPackage(ClienteEntity.class.getPackage())
-            .addPackage(ClienteDTO.class.getPackage())
-            .addPackage(CarroComprasEntity.class.getPackage())
-            .addPackage(CarroComprasDTO.class.getPackage())
-            .addPackage(PurchaseEntity.class.getPackage())
-            .addPackage(PurchaseDTO.class.getPackage())
-            .addPackage(ClienteConverter.class.getPackage())
-            .addPackage(ClienteLogic.class.getPackage())
-            .addPackage(IClienteLogic.class.getPackage())
-            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-            .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
+                .addPackage(ClienteEntity.class.getPackage())
+                .addPackage(ClienteDTO.class.getPackage())
+                .addPackage(IPurchaseLogic.class.getPackage())
+                .addPackage(ICarroComprasLogic.class.getPackage())
+                .addPackage(CarroComprasEntity.class.getPackage())
+                .addPackage(CarroComprasDTO.class.getPackage())
+                .addPackage(PurchaseEntity.class.getPackage())
+                .addPackage(PurchaseDTO.class.getPackage())
+                .addPackage(ClienteConverter.class.getPackage())
+                .addPackage(ClienteLogic.class.getPackage())
+                .addPackage(IClienteLogic.class.getPackage())
+                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+                .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
-    
+
     @Inject
     private IClienteLogic clienteLogic;
 
@@ -87,17 +91,17 @@ public class ClientLogicTest {
             carroCompras.setFormaPago(generateRandom(String.class));
             carroCompras.setMonto(generateRandom(Double.class));
             em.persist(carroCompras);
-            
+
             List<PurchaseEntity> purchases = new ArrayList<PurchaseEntity>();
-            for(int j=0; j < 3; j++) {
-                PurchaseEntity purchase=new PurchaseEntity();
+            for (int j = 0; j < 3; j++) {
+                PurchaseEntity purchase = new PurchaseEntity();
                 purchase.setDate(parseDate(generateRandomDate()));
                 purchase.setDatosDeEnvio(generateRandom(String.class));
                 purchase.setFormaDePago(generateRandom(String.class));
                 purchases.add(purchase);
                 em.persist(purchase);
             }
-            
+
             ClienteEntity entity = new ClienteEntity();
             entity.setNombre(generateRandom(String.class));
             entity.setNumCompras(generateRandom(Integer.class));
@@ -110,7 +114,7 @@ public class ClientLogicTest {
             data.add(entity);
         }
     }
-    
+
     @Test
     public void createClienteTest() {
         Long carroCompras = data.get(0).getCarroCompras().getId();
@@ -145,7 +149,7 @@ public class ClientLogicTest {
         Assert.assertEquals(dto.getCarroCompras(), entity.getCarroCompras().getId());
 
     }
-    
+
     @Test
     public void getClientsTest() {
         List<ClienteDTO> list = clienteLogic.getClientes();
@@ -160,13 +164,13 @@ public class ClientLogicTest {
             Assert.assertTrue(found);
         }
     }
-    
+
     @Test
     public void getClientTest() {
         ClienteEntity entity = data.get(0);
         ClienteDTO dto = clienteLogic.getCliente(entity.getId());
         Assert.assertNotNull(dto);
-        
+
         Assert.assertEquals(entity.getNombre(), dto.getNombre());
         Assert.assertEquals(entity.getNumCompras(), dto.getNumCompras());
         Assert.assertEquals(entity.getNumeroTarjeta(), dto.getNumeroTarjeta());
@@ -178,7 +182,7 @@ public class ClientLogicTest {
         Assert.assertEquals(entity.getCarroCompras().getId(), dto.getCarroCompras());
         Assert.assertEquals(entity.getCodigoSeguridad(), dto.getCodigoSeguridad());
     }
-    
+
     @Test
     public void getArtistPaginationTest() {
         //Page 1
@@ -209,7 +213,7 @@ public class ClientLogicTest {
             Assert.assertTrue(found);
         }
     }
-    
+
     @Test
     public void deleteClientTest() {
         ClienteEntity entity = data.get(0);
@@ -217,12 +221,12 @@ public class ClientLogicTest {
         ClienteEntity deleted = em.find(ClienteEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
-    
+
     @Test
     public void updateClientTest() {
         ClienteEntity entity = data.get(0);
         Long newShoppingCart = data.get(1).getCarroCompras().getId();
-        
+
         ClienteDTO dto = new ClienteDTO();
         dto.setId(entity.getId());
         dto.setNombre(generateRandom(String.class));
@@ -234,7 +238,7 @@ public class ClientLogicTest {
         clienteLogic.updateCliente(dto);
 
         ClienteEntity resp = em.find(ClienteEntity.class, entity.getId());
-        
+
         Assert.assertEquals(dto.getNombre(), resp.getNombre());
         Assert.assertEquals(dto.getNumCompras(), resp.getNumCompras());
         Assert.assertEquals(dto.getNumeroTarjeta(), resp.getNumeroTarjeta());

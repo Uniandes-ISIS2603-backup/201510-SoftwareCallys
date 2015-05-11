@@ -90,7 +90,6 @@ public class StampLogicTest {
             entity.setName(generateRandom(String.class));
             entity.setImage(generateRandom(String.class));
             entity.setPrice(generateRandom(Integer.class));
-            entity.setArtist(artist);
             em.persist(entity);
             data.add(entity);
         }
@@ -98,14 +97,12 @@ public class StampLogicTest {
 
     @Test
     public void createStampTest() {
-        Long artist = data.get(0).getArtist().getId();
         StampDTO dto = new StampDTO();
         dto.setTopic(generateRandomTopic());
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
         dto.setImage(generateRandom(String.class));
         dto.setPrice(generateRandom(Integer.class));
-        dto.setArtist(artist);
         
         StampDTO result = stampLogic.createStamp(dto);
 
@@ -115,7 +112,6 @@ public class StampLogicTest {
 
         Assert.assertEquals(dto.getName(), entity.getName());
         Assert.assertEquals(dto.getTopic(), entity.getTopic());
-        Assert.assertEquals(dto.getArtist(),entity.getArtist().getId());
         Assert.assertEquals(dto.getRating(),entity.getRating());
         Assert.assertEquals(dto.getPrice(),entity.getPrice());
         Assert.assertEquals(dto.getImage(),entity.getImage());
@@ -143,7 +139,6 @@ public class StampLogicTest {
         Assert.assertNotNull(dto);
         Assert.assertEquals(entity.getName(), dto.getName());
         Assert.assertEquals(entity.getTopic(), dto.getTopic());
-        Assert.assertEquals(entity.getArtist().getId(),dto.getArtist());
         Assert.assertEquals(entity.getRating(),dto.getRating());
         Assert.assertEquals(entity.getPrice(),dto.getPrice());
         Assert.assertEquals(entity.getImage(),dto.getImage());
@@ -160,14 +155,12 @@ public class StampLogicTest {
     @Test
     public void updateStampTest() {
         StampEntity entity = data.get(0);
-        Long newArtist = data.get(1).getArtist().getId();
         
         StampDTO dto = new StampDTO();
         dto.setTopic(generateRandomTopic());
         dto.setId(entity.getId());
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
-        dto.setArtist(newArtist);
         dto.setImage(generateRandom(String.class));
         dto.setPrice(generateRandom(Integer.class));
         
@@ -175,7 +168,6 @@ public class StampLogicTest {
         StampEntity resp = em.find(StampEntity.class, entity.getId());
         Assert.assertEquals(dto.getName(),resp.getName());
         Assert.assertEquals(dto.getTopic(),resp.getTopic());
-        Assert.assertEquals(dto.getArtist(),resp.getArtist().getId());
         Assert.assertEquals(dto.getRating(),resp.getRating());
         Assert.assertEquals(dto.getPrice(),resp.getPrice());
         Assert.assertEquals(dto.getImage(),resp.getImage());
