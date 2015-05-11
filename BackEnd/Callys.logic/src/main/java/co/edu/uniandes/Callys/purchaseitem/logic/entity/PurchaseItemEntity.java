@@ -10,9 +10,8 @@ public class PurchaseItemEntity {
     @Id
     @GeneratedValue(generator = "PurchaseItem")
     private Long id;
-    private Integer monto;
+    private Double monto;
     private Long idCamiseta;
-    private Long idPurchase;
     
     public Long getId() {
         return id;
@@ -22,11 +21,11 @@ public class PurchaseItemEntity {
         this.id = id;
     }
 
-    public Integer getMonto() {
+    public Double getMonto() {
         return monto;
     }
 
-    public void setMonto(Integer monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
     
@@ -38,11 +37,4 @@ public class PurchaseItemEntity {
         this.idCamiseta = idCamiseta;
     }
     
-    public Long getIdPurchase() {
-        return idPurchase;
-    }
-
-    public void setIdPurchase(Long idPurchase) {
-        this.idPurchase = idPurchase;
-    }
 }

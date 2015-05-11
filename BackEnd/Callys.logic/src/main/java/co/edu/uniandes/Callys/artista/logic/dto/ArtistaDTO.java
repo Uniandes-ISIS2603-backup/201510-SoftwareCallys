@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class ArtistaDTO {
     private Long id;
+    private String name;
+    private String username;
     private String clave;
     private Integer numeroEstampas;
     private String datosContacto;
@@ -28,6 +30,22 @@ public class ArtistaDTO {
         this.clave = clave;
     }
 
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name=name;
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username=username;
+    }
+    
     public Integer getNumeroEstampas() {
         return numeroEstampas;
     }

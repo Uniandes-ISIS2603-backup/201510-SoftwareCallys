@@ -12,7 +12,10 @@ public class ArtistaConverter {
             ArtistaDTO dto = new ArtistaDTO();
             dto.setId(entity.getId());
             dto.setClave(entity.getClave());
-            dto.setNumeroEstampas(entity.getNumeroEstampas());
+
+            dto.setName(entity.getName());
+            dto.setUsername(entity.getUsername());
+
             dto.setComisionPorVenta(entity.getComisionPorVenta());
             dto.setDatosContacto(entity.getDatosContacto());
             if (entity.getStamps()!=null) {
@@ -33,7 +36,10 @@ public class ArtistaConverter {
             ArtistaEntity entity = new ArtistaEntity();
             entity.setId(dto.getId());
             entity.setClave(dto.getClave());
-            entity.setNumeroEstampas(dto.getNumeroEstampas());
+
+            entity.setName(dto.getName());
+            entity.setUsername(dto.getUsername());
+
             entity.setComisionPorVenta(dto.getComisionPorVenta());
             entity.setDatosContacto(dto.getDatosContacto());
             return entity;

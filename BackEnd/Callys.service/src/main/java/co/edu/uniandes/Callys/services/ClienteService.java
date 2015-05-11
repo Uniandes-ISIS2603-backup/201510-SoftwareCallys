@@ -5,9 +5,11 @@
  */
 package co.edu.uniandes.Callys.services;
 
+import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import javax.ws.rs.DELETE;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -21,16 +23,20 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 
-
 @Path("/cliente")
 @Stateless
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ClienteService {
-    
-    
-     @Inject
+
+    @Inject
     protected IClienteLogic clienteLogicService;
+//
+//    @Inject
+//    private IPurchaseLogic purchaseLogic;
+//
+//    @Inject
+//    private ICarroComprasLogic shoppingCartLogic;
 
     @POST
     public ClienteDTO createCliente(ClienteDTO cliente) {
@@ -40,7 +46,7 @@ public class ClienteService {
     @DELETE
     @Path("{id}")
     public void deleteCliente(@PathParam("id") Long id) {
-        
+//        shoppingCartLogic.deleteCarroCompras(clienteLogicService.getCliente(id).getCarroCompras());
         clienteLogicService.deleteCliente(id);
     }
 
@@ -61,9 +67,8 @@ public class ClienteService {
         clienteLogicService.updateCliente(cliente);
     }
     
-//    @GET
-//    public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
-//        return clienteLogicService.loginCliente(name, password);
-//    }
-    
+//     @GET
+//     public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
+//     return clienteLogicService.loginCliente(name, password);
+//     }
 }

@@ -2,6 +2,7 @@ package co.edu.uniandes.Callys.artista.logic.entity;
 
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ public class ArtistaEntity{
     private String clave;
     private String datosContacto;
     private Double comisionPorVenta;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<StampEntity> stamps;
     
     public Long getId() {

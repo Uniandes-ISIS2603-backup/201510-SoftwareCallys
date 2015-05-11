@@ -75,8 +75,8 @@ public class PurchaseItemLogic {
             PurchaseItemEntity entity = new PurchaseItemEntity();
             entity.setId(generateRandom(Long.class));
             entity.setIdCamiseta(generateRandom(Long.class));
-            entity.setIdPurchase(generateRandom(Long.class));
-            entity.setMonto(generateRandom(Integer.class));
+//            entity.setIdPurchase(generateRandom(Long.class));
+//            entity.setMonto(generateRandom(Integer.class));
             em.persist(entity);
             data.add(entity);
         }
@@ -87,8 +87,8 @@ public class PurchaseItemLogic {
         PurchaseItemDTO dto = new PurchaseItemDTO();
         dto.setId(generateRandom(Long.class));
         dto.setIdCamiseta(generateRandom(Long.class));
-        dto.setIdPurchase(generateRandom(Long.class));
-        dto.setMonto(generateRandom(Integer.class));
+//        dto.setIdPurchase(generateRandom(Long.class));
+//        dto.setMonto(generateRandom(Integer.class));
         PurchaseItemDTO result = purchaseItemLogic.createPurchaseItem(dto);
 
         Assert.assertNotNull(result);
@@ -97,7 +97,7 @@ public class PurchaseItemLogic {
 
         Assert.assertEquals(dto.getId(), entity.getId());
         Assert.assertEquals(dto.getIdCamiseta(), entity.getIdCamiseta());
-        Assert.assertEquals(dto.getIdPurchase(), entity.getIdPurchase());
+//        Assert.assertEquals(dto.getIdPurchase(), entity.getIdPurchase());
         Assert.assertEquals(dto.getMonto(), entity.getMonto());
     }
 
@@ -123,7 +123,7 @@ public class PurchaseItemLogic {
         Assert.assertNotNull(dto);
         Assert.assertEquals(entity.getId(), dto.getId());
         Assert.assertEquals(entity.getIdCamiseta(), dto.getIdCamiseta());
-        Assert.assertEquals(entity.getIdPurchase(), dto.getIdPurchase());
+//        Assert.assertEquals(entity.getIdPurchase(), dto.getIdPurchase());
         Assert.assertEquals(entity.getMonto(), dto.getMonto());
     }
 
