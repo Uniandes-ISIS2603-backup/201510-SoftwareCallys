@@ -69,7 +69,7 @@ public class CarroComprasService {
         pur.setDate(new Date());
         pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
         pur.setFormaDePago(carroCompras.getFormaPago());
-        List<ItemEntity> items = carroCompras.getItems();
+        List<ItemEntity> items = (List)carroCompras.getItems();
         List<PurchaseItemEntity> purItems = new ArrayList<PurchaseItemEntity>();
         for(ItemEntity e: items){
             PurchaseItemEntity p = new PurchaseItemEntity();
