@@ -82,4 +82,13 @@ public class ItemLogic implements IItemLogic{
         }
         ItemConverter.entity2PersistenceDTO(entity);
     }
+    
+        
+//    private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {
+//        if (cliente != null && cliente.getCarroCompras() != null) {
+//            return entityManager.find(CarroComprasEntity.class, cliente.getCarroCompras());
+//        }else{
+//            return null;
+//        }
+//    }
 }

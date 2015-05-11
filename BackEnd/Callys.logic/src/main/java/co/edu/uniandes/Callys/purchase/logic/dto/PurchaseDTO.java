@@ -2,7 +2,6 @@ package co.edu.uniandes.Callys.purchase.logic.dto;
 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlRootElement;
-import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.List;
 
 @XmlRootElement
