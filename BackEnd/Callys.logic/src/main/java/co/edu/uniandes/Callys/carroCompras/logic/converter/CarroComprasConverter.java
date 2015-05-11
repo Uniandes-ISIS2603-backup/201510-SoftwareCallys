@@ -12,11 +12,17 @@ public class CarroComprasConverter {
     public static CarroComprasDTO entity2PersistenceDTO(CarroComprasEntity entity) {
         if (entity != null) {
             CarroComprasDTO dto = new CarroComprasDTO();
-            dto.setItems(entity.getItems());
             dto.setId(entity.getId());
             dto.setMonto(entity.getMonto());
             dto.setFormaPago(entity.getFormaPago());
             dto.setDatosEnvio(entity.getDatosEnvio());
+            if (entity.getItems()!=null) {
+                List<Long> items=new ArrayList<Long>();
+                for(ItemEntity e : entity.getItems()) {
+                    items.add(e.getId());
+                }
+                dto.setItems(items);
+            }
             return dto;
         } else {
             return null;
@@ -26,7 +32,6 @@ public class CarroComprasConverter {
     public static CarroComprasEntity persistenceDTO2Entity(CarroComprasDTO dto) {
         if (dto != null) {
             CarroComprasEntity entity = new CarroComprasEntity();
-            entity.setItems(dto.getItems());
             entity.setId(dto.getId());
             entity.setMonto(dto.getMonto());
             entity.setFormaPago(dto.getFormaPago());

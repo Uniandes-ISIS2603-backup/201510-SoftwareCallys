@@ -5,8 +5,9 @@ import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
-import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.api.IItemLogic;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -34,6 +35,9 @@ public class CarroComprasService {
    
     @Inject
     protected IPurchaseLogic purchaseLogicService;
+    
+    @Inject
+    protected IItemLogic itemLogicService;
 
     @POST
     public CarroComprasDTO createCarroCompras(CarroComprasDTO carroCompras) {
@@ -71,15 +75,8 @@ public class CarroComprasService {
         pur.setDate(new Date());
         pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
         pur.setFormaDePago(carroCompras.getFormaPago());
-        List<ItemEntity> items = (List)carroCompras.getItems();
-        List<PurchaseItemEntity> purItems = new ArrayList<PurchaseItemEntity>();
-        for(ItemEntity e: items){
-            PurchaseItemEntity p = new PurchaseItemEntity();
-            p.setIdCamiseta(e.getCamiseta().getId());
-            p.setMonto(e.getMonto());
-            purItems.add(p);
-        }
-        pur.setPurchaseItems(purItems);
+        List<Long> items = carroCompras.getItems();
+        pur.setPurchaseItems(items);
         deleteCarroCompras(carroCompras.getId());
         return purchaseLogicService.createPurchase(pur);
     }
