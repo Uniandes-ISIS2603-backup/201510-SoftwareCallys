@@ -11,7 +11,7 @@ public class PurchaseDTO {
     private Date fecha;
     private String datosDeEnvio;
     private String formaDePago;
-    private List<PurchaseItemEntity> purchaseItems;
+    private List<Long> purchaseItems;
     
     public Long getId() {
         return id;
@@ -45,11 +45,11 @@ public class PurchaseDTO {
         this.formaDePago = nFDP;
     }
     
-    public List<PurchaseItemEntity> getPurchaseItems() {
+    public List<Long> getPurchaseItems() {
         return purchaseItems;
     }
 
-    public void setPurchaseItems(List<PurchaseItemEntity> purchaseItems ) {
+    public void setPurchaseItems(List<Long> purchaseItems ) {
         this.purchaseItems = purchaseItems;
     }
 }
