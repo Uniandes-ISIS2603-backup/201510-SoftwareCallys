@@ -5,15 +5,15 @@ import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Dependent
 @Stateless
 @LocalBean
 public class CarroComprasLogic implements ICarroComprasLogic{
@@ -24,6 +24,7 @@ public class CarroComprasLogic implements ICarroComprasLogic{
     @Override
     public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {
         CarroComprasEntity entity = CarroComprasConverter.persistenceDTO2Entity(sport);
+        entity.setItems(new ArrayList<ItemEntity>());
         entityManager.persist(entity);
         return CarroComprasConverter.entity2PersistenceDTO(entity);
     }
@@ -64,6 +65,21 @@ public class CarroComprasLogic implements ICarroComprasLogic{
     @Override
     public void updateCarroCompras(CarroComprasDTO carroCompras) {
         CarroComprasEntity entity = entityManager.merge(CarroComprasConverter.persistenceDTO2Entity(carroCompras));
+        List<ItemEntity> items=this.getSelectedItems(carroCompras);
+        entity.setItems(items);
         CarroComprasConverter.entity2PersistenceDTO(entity);
+    }
+    
+    private List<ItemEntity> getSelectedItems(CarroComprasDTO shoppingCart) {
+        if(shoppingCart != null && shoppingCart.getItems()!= null) {
+            List<ItemEntity> items = new ArrayList<ItemEntity>();
+            for (Long item : shoppingCart.getItems()) {
+                items.add(entityManager.find(ItemEntity.class, item));
+            }
+            return items;
+        }
+        else {
+            return null;
+        }
     }
 }

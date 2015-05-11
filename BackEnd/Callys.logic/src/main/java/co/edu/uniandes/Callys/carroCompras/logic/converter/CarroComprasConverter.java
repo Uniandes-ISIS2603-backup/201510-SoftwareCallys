@@ -4,7 +4,6 @@ import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class CarroComprasConverter {

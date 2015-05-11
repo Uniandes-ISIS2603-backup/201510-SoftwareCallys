@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
-import java.util.Collection;
 import javax.persistence.CascadeType;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class CarroComprasEntity {
        return items; 
     }
     
-     public void setItems(Collection<ItemEntity> stamps) {
+     public void setItems(List<ItemEntity> items) {
         this.items = items;
     }
 

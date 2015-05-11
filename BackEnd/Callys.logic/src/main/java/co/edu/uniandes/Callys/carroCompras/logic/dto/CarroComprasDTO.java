@@ -1,7 +1,5 @@
 package co.edu.uniandes.Callys.carroCompras.logic.dto;
 
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
-import java.util.Collection;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -16,7 +14,6 @@ public class CarroComprasDTO {
     private Double monto;
     private String formaPago;
     private String datosEnvio;
-
     @OneToMany
     private List<Long> items;
     
