@@ -61,9 +61,9 @@ public class ClienteService {
         clienteLogicService.updateCliente(cliente);
     }
     
-    @GET
-    public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
-        return clienteLogicService.loginCliente(name, password);
-    }
+//    @GET
+//    public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
+//        return clienteLogicService.loginCliente(name, password);
+//    }
     
 }
