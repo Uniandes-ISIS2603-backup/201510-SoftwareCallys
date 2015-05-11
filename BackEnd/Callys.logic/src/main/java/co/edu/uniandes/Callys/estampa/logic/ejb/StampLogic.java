@@ -5,7 +5,7 @@ import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
-import co.edu.uniandes.Callys.estampa.logic.entity.ItemEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -23,7 +23,7 @@ public class StampLogic implements IStampLogic{
 
     @Override
     public StampDTO createStamp(StampDTO stamp) {
-        ItemEntity entity = StampConverter.persistenceDTO2Entity(stamp);
+        StampEntity entity = StampConverter.persistenceDTO2Entity(stamp);
         ArtistaEntity artist = this.getSelectedArtist(stamp);
         if (artist != null) {
             entity.setArtist(artist);
@@ -56,18 +56,18 @@ public class StampLogic implements IStampLogic{
 
     @Override
     public StampDTO getStamp(Long id) {
-        return StampConverter.entity2PersistenceDTO(entityManager.find(ItemEntity.class, id));
+        return StampConverter.entity2PersistenceDTO(entityManager.find(StampEntity.class, id));
     }
 
     @Override
     public void deleteStamp(Long id) {
-        ItemEntity entity = entityManager.find(ItemEntity.class, id);
+        StampEntity entity = entityManager.find(StampEntity.class, id);
         entityManager.remove(entity);
     }
 
     @Override
     public void updateStamp(StampDTO stamp) {
-        ItemEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
+        StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
         ArtistaEntity artist = this.getSelectedArtist(stamp);
         if (artist != null) {
             entity.setArtist(artist);

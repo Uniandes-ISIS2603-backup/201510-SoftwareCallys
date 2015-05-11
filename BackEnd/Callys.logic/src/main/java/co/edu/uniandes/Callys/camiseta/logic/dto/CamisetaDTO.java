@@ -1,6 +1,6 @@
 package co.edu.uniandes.Callys.camiseta.logic.dto;
 
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.Collection;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -11,10 +11,10 @@ public class CamisetaDTO {
     private String talla;
     private String material;
     private String texto; 
-    private Collection<ItemEntity> items;
+    private Collection<StampEntity> stamps;
 
-    public Collection<ItemEntity> getStamps() {
-        return items;
+    public Collection<StampEntity> getStamps() {
+        return stamps;
     }
 
     public Long getId() {

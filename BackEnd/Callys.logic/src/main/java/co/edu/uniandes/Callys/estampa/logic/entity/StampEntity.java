@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ItemEntity {
+public class StampEntity {
     @Id
     @GeneratedValue(generator = "Stamp")
     private Long id;

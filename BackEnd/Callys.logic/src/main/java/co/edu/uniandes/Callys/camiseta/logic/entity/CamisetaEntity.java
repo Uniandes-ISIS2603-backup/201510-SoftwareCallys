@@ -1,13 +1,13 @@
 package co.edu.uniandes.Callys.camiseta.logic.entity;
 
-import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class CamisetaEntity {
@@ -19,23 +19,23 @@ public class CamisetaEntity {
     private String material;
     private String texto;
     
-    @OneToMany 
-    @JoinTable(name="Camiseta_Item", 
+    @ManyToMany 
+    @JoinTable(name="Camiseta_Stamp", 
         joinColumns=@JoinColumn(name="Camiseta_ID"),
-        inverseJoinColumns=@JoinColumn(name="Item_ID"))  
-    private Collection<ItemEntity> items;
+        inverseJoinColumns=@JoinColumn(name="Stamp_ID"))  
+    private Collection<StampEntity> stamps;
 
-    public Collection<ItemEntity> getStamps() {
-        return items;
+    public Collection<StampEntity> getStamps() {
+        return stamps;
     }
 
-    public void setStamps(Collection<ItemEntity> stamps) {
-        this.items = stamps;
+    public void setStamps(Collection<StampEntity> stamps) {
+        this.stamps = stamps;
     }
 
-    public void addStamp(ItemEntity stamp) {
+    public void addStamp(StampEntity stamp) {
         if (!getStamps().contains(stamp)) {
-            items.add(stamp);
+            stamps.add(stamp);
         }
     }
 
