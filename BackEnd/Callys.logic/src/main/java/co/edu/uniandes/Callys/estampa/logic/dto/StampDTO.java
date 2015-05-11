@@ -1,7 +1,5 @@
 package co.edu.uniandes.Callys.estampa.logic.dto;
 
-import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
-import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -9,9 +7,10 @@ public class StampDTO {
     private Long id;
     private String name;
     private String topic;
-    private int rating;
+    private Integer rating;
     private Integer price;
     private String image;
+    private Long artist;
  
     public String getImage(){
         return image;
@@ -53,11 +52,19 @@ public class StampDTO {
         this.topic = topic;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
+    }
+    
+    public Long getArtist() {
+        return artist;
+    }
+    
+    public void setArtist(Long artist) {
+        this.artist=artist;
     }
 }

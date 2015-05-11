@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.estampa.logic.ejb;
 
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
@@ -8,24 +9,23 @@ import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
 @Stateless
 @LocalBean
 public class StampLogic implements IStampLogic{
-    
-    
-    
     @PersistenceContext(unitName = "CallysClassPU")
     protected EntityManager entityManager;
 
     @Override
     public StampDTO createStamp(StampDTO stamp) {
         StampEntity entity = StampConverter.persistenceDTO2Entity(stamp);
+        ArtistaEntity artist = this.getSelectedArtist(stamp);
+        if (artist != null) {
+            entity.setArtist(artist);
+        }
         entityManager.persist(entity);
         return StampConverter.entity2PersistenceDTO(entity);
     }
@@ -66,6 +66,18 @@ public class StampLogic implements IStampLogic{
     @Override
     public void updateStamp(StampDTO stamp) {
         StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
+        ArtistaEntity artist = this.getSelectedArtist(stamp);
+        if (artist != null) {
+            entity.setArtist(artist);
+        }
         StampConverter.entity2PersistenceDTO(entity);
+    }
+    
+    private ArtistaEntity getSelectedArtist(StampDTO stamp) {
+        if (stamp != null && stamp.getArtist() != null) {
+            return entityManager.find(ArtistaEntity.class, stamp.getArtist());
+        }else{
+            return null;
+        }
     }
 }

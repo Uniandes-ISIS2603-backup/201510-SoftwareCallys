@@ -94,7 +94,7 @@ public class ClienteLogic implements IClienteLogic{
         }
     }
     
-    private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente){
+    private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {
         if (cliente != null && cliente.getCarroCompras() != null) {
             return entityManager.find(CarroComprasEntity.class, cliente.getCarroCompras());
         }else{
@@ -102,7 +102,7 @@ public class ClienteLogic implements IClienteLogic{
         }
     }
     
-    private List<PurchaseEntity> getSelectedPurchases(ClienteDTO cliente){
+    private List<PurchaseEntity> getSelectedPurchases(ClienteDTO cliente) {
         if(cliente != null && cliente.getPurchases() != null) {
             List<PurchaseEntity> purchases = new ArrayList<PurchaseEntity>();
             for (Long purchase : cliente.getPurchases()) {

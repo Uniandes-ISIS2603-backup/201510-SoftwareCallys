@@ -1,26 +1,23 @@
 package co.edu.uniandes.Callys.estampa.logic.entity;
 
 import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
-import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class StampEntity {
-
     @Id
     @GeneratedValue(generator = "Stamp")
     private Long id;
     private String name;
     private String topic;
     private Integer rating;
-    private Long idArtista;
     private String image;
     private Integer price;
+    @ManyToOne
+    private ArtistaEntity artist;
     
     public Long getId() {
         return id;
@@ -30,7 +27,6 @@ public class StampEntity {
         this.id = id;
     }
     
-        
     public String getImage() {
         return image;
     }
@@ -39,7 +35,6 @@ public class StampEntity {
         this.image = image;
     }
 
-    
     public String getName() {
         return name;
     }
@@ -63,7 +58,8 @@ public class StampEntity {
     public void setPrice(Integer price) {
         this.price = price;
     }
-        public Integer getPrice() {
+    
+    public Integer getPrice() {
         return price;
     }
 
@@ -71,12 +67,11 @@ public class StampEntity {
         this.rating = rating;
     }
     
-    
-    public Long getIdArtista() {
-        return idArtista;
+    public ArtistaEntity getArtist() {
+        return artist;
     }
-
-    public void setIdArtista(Long idArtista) {
-        this.idArtista = idArtista;
+    
+    public void setArtist(ArtistaEntity artist) {
+        this.artist=artist;
     }
 }

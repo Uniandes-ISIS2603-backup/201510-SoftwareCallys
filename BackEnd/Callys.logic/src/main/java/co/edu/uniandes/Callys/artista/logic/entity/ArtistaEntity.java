@@ -1,8 +1,11 @@
 package co.edu.uniandes.Callys.artista.logic.entity;
 
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ArtistaEntity{ 
@@ -13,6 +16,8 @@ public class ArtistaEntity{
     private Integer numeroEstampas;
     private String datosContacto;
     private Double comisionPorVenta;
+    @OneToMany
+    private List<StampEntity> stamps;
     
     public Long getId() {
         return id;

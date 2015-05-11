@@ -1,5 +1,7 @@
 package co.edu.uniandes.Callys.stamp.logic.ejb;
 
+import co.edu.uniandes.Callys.artista.logic.dto.ArtistaDTO;
+import co.edu.uniandes.Callys.artista.logic.entity.ArtistaEntity;
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
@@ -32,6 +34,8 @@ public class StampLogicTest {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
             .addPackage(StampEntity.class.getPackage())
             .addPackage(StampDTO.class.getPackage())
+            .addPackage(ArtistaEntity.class.getPackage())
+            .addPackage(ArtistaDTO.class.getPackage())
             .addPackage(StampConverter.class.getPackage())
             .addPackage(IStampLogic.class.getPackage())
             .addPackage(StampLogic.class.getPackage())
@@ -74,12 +78,20 @@ public class StampLogicTest {
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
+            ArtistaEntity artist=new ArtistaEntity();
+            artist.setClave(generateRandom(String.class));
+            artist.setComisionPorVenta(generateRandom(Double.class));
+            artist.setDatosContacto(generateRandom(String.class));
+            artist.setNumeroEstampas(generateRandom(Integer.class));
+            em.persist(artist);
+            
             StampEntity entity = new StampEntity();
             entity.setTopic(generateRandomTopic());
-            entity.setId(generateRandom(Long.class));
-            entity.setIdArtista(generateRandom(Long.class));
             entity.setRating(generateRandom(Integer.class));
             entity.setName(generateRandom(String.class));
+            entity.setImage(generateRandom(String.class));
+            entity.setPrice(generateRandom(Integer.class));
+            entity.setArtist(artist);
             em.persist(entity);
             data.add(entity);
         }
@@ -87,12 +99,15 @@ public class StampLogicTest {
 
     @Test
     public void createStampTest() {
+        Long artist = data.get(0).getArtist().getId();
         StampDTO dto = new StampDTO();
         dto.setTopic(generateRandomTopic());
-        dto.setId(generateRandom(Long.class));
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
-
+        dto.setImage(generateRandom(String.class));
+        dto.setPrice(generateRandom(Integer.class));
+        dto.setArtist(artist);
+        
         StampDTO result = stampLogic.createStamp(dto);
 
         Assert.assertNotNull(result);
@@ -101,7 +116,10 @@ public class StampLogicTest {
 
         Assert.assertEquals(dto.getName(), entity.getName());
         Assert.assertEquals(dto.getTopic(), entity.getTopic());
-        Assert.assertEquals(dto.getId(), entity.getId());
+        Assert.assertEquals(dto.getArtist(),entity.getArtist().getId());
+        Assert.assertEquals(dto.getRating(),entity.getRating());
+        Assert.assertEquals(dto.getPrice(),entity.getPrice());
+        Assert.assertEquals(dto.getImage(),entity.getImage());
     }
 
     @Test
@@ -126,11 +144,14 @@ public class StampLogicTest {
         Assert.assertNotNull(dto);
         Assert.assertEquals(entity.getName(), dto.getName());
         Assert.assertEquals(entity.getTopic(), dto.getTopic());
-        Assert.assertEquals(entity.getId(), dto.getId());
+        Assert.assertEquals(entity.getArtist().getId(),dto.getArtist());
+        Assert.assertEquals(entity.getRating(),dto.getRating());
+        Assert.assertEquals(entity.getPrice(),dto.getPrice());
+        Assert.assertEquals(entity.getImage(),dto.getImage());
     }
 
     @Test
-    public void deleteSportTest() {
+    public void deleteStampTest() {
         StampEntity entity = data.get(0);
         stampLogic.deleteStamp(entity.getId());
         StampEntity deleted = em.find(StampEntity.class, entity.getId());
@@ -138,20 +159,27 @@ public class StampLogicTest {
     }
 
     @Test
-    public void updateSportTest() {
+    public void updateStampTest() {
         StampEntity entity = data.get(0);
-        StampDTO dto = new StampDTO();
+        Long newArtist = data.get(1).getArtist().getId();
         
+        StampDTO dto = new StampDTO();
         dto.setTopic(generateRandomTopic());
         dto.setId(entity.getId());
         dto.setRating(generateRandom(Integer.class));
         dto.setName(generateRandom(String.class));
+        dto.setArtist(newArtist);
+        dto.setImage(generateRandom(String.class));
+        dto.setPrice(generateRandom(Integer.class));
         
         stampLogic.updateStamp(dto);
         StampEntity resp = em.find(StampEntity.class, entity.getId());
-        Assert.assertEquals(dto.getName(), resp.getName());
-        Assert.assertEquals(dto.getTopic(), resp.getTopic());
-        Assert.assertEquals(dto.getId(), resp.getId());
+        Assert.assertEquals(dto.getName(),resp.getName());
+        Assert.assertEquals(dto.getTopic(),resp.getTopic());
+        Assert.assertEquals(dto.getArtist(),resp.getArtist().getId());
+        Assert.assertEquals(dto.getRating(),resp.getRating());
+        Assert.assertEquals(dto.getPrice(),resp.getPrice());
+        Assert.assertEquals(dto.getImage(),resp.getImage());
     }
 
     @Test

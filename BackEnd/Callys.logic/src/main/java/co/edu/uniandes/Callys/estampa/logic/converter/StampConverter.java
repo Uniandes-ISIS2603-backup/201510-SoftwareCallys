@@ -13,8 +13,11 @@ public class StampConverter {
             dto.setTopic(entity.getTopic());
             dto.setName(entity.getName());
             dto.setRating(entity.getRating());
-             dto.setImage(entity.getImage());
-              dto.setPrice(entity.getPrice());
+            dto.setImage(entity.getImage());
+            dto.setPrice(entity.getPrice());
+            if (entity.getArtist()!= null) {
+                dto.setArtist(entity.getArtist().getId());
+            }  
             return dto;
         } else {
             return null;
