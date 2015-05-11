@@ -3,6 +3,7 @@ package co.edu.uniandes.Callys.cliente.logic.entity;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,9 +21,9 @@ public class ClienteEntity
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
     private String password;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<PurchaseEntity> purchases;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     private CarroComprasEntity carroCompras;
         
     public String getPassword(){

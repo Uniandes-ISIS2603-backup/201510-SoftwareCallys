@@ -3,6 +3,7 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
+import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -24,6 +25,9 @@ public class CarroComprasService {
     
     @Inject
     protected ICarroComprasLogic carroComprasLogicService;
+   
+    @Inject
+    protected IPurchaseLogic purchaseLogicService;
 
     @POST
     public CarroComprasDTO createCarroCompras(CarroComprasDTO carroCompras) {
@@ -51,5 +55,10 @@ public class CarroComprasService {
     @Path("{id}")
     public void updateCarroCompras(CarroComprasDTO carroCompras) {
         carroComprasLogicService.updateCarroCompras(carroCompras);
+    }
+    
+    @POST
+    public PurchaseDTO registrarCompra(){
+        
     }
 }
