@@ -27,7 +27,7 @@ public class CarroComprasEntity {
         this.items = items;
     }
 
-    public void addStamp(ItemEntity item) {
+    public void addItem(ItemEntity item) {
         if (!getItems().contains(item)) {
             items.add(item);
         }
