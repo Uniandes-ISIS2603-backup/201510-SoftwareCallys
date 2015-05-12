@@ -14,8 +14,10 @@
         {
             this.artist = !this.artist;
         };
-        this.saveArtist= function ()
+        this.saveArtist= function (artistRecord)
         {
+           artistRecord.datosContacto="a";
+           this.saveRecord(artistRecord);
            
         };
     }]);

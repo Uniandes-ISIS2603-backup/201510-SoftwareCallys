@@ -11,7 +11,7 @@
                 this.currentRecord=this.api.customGET('login',username,password);
                 catalogService.artist=true; 
                 this.artist=true;
-                  alert("Su usuario tos");
+              
             }
             else
             {
