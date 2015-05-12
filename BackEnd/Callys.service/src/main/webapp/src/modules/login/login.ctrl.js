@@ -4,14 +4,14 @@
     loginModule.controller('loginCtrl', ['$scope', 'loginService', 'catalogService', function ($scope, loginService,catalogService)
     {
         
-        this.login= function(username,password)
+        this.login= function(username,password1)
         {
-            if(this.api.customGET('login',username,password)!==null)
+            if(this.customGET('login', {userName: username, password: password1})!==null)
             {
-                this.currentRecord=this.api.customGET('login',username,password);
+                this.currentRecord=this.customGET('login', {userName: username, password: password1});
                 catalogService.artist=true; 
                 this.artist=true;
-              
+                alert(" correctos");
             }
             else
             {

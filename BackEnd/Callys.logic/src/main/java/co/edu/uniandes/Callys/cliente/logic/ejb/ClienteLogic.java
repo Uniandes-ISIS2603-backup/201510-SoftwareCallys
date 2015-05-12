@@ -80,6 +80,22 @@ public class ClienteLogic implements IClienteLogic{
         entityManager.remove(entity);
     }
     
+    @Override
+    public ClienteDTO login(String userName, String password){
+        List<ClienteEntity>result = entityManager.createQuery(
+                "SELECT c FROM ClienteEntity c WHERE c.nombre LIKE :userName")
+                .setParameter("userName", userName)
+                .setMaxResults(10)
+                .getResultList();
+        if(result.isEmpty()){
+            return null;
+        }else if(result.get(0).getPassword().equals(password)){
+            return ClienteConverter.entity2PersistenceDTO(result.get(0));
+        }else{
+            return null;
+        }
+    }
+    
     private CarroComprasEntity getSelectedShoppingCart(ClienteDTO cliente) {
         if (cliente != null && cliente.getCarroCompras() != null) {
             return entityManager.find(CarroComprasEntity.class, cliente.getCarroCompras());

@@ -18,6 +18,6 @@ public interface IClienteLogic {
 
     public void updateCliente(ClienteDTO detail);
     
-//    public Integer loginCliente(String name, String password);
+    public ClienteDTO login(String userName, String password);
 
 }

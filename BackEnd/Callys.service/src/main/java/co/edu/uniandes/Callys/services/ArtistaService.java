@@ -41,9 +41,9 @@ public class ArtistaService {
     }
 
     @GET
-    @Path("{id}")
-    public ArtistaDTO getArtista(@PathParam("id") Long id) {
-        return artistaLogicService.getArtista(id);
+    @Path("login")
+    public ArtistaDTO login(@QueryParam("userName") String userName, @QueryParam("password") String password) {
+        return artistaLogicService.login(userName, password);
     }
 
     @PUT
