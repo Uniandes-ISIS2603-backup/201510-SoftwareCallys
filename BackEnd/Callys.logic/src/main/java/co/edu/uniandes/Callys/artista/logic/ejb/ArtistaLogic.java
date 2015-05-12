@@ -23,15 +23,11 @@ public class ArtistaLogic implements IArtistaLogic{
 
     @Override
     public ArtistaDTO createArtista(ArtistaDTO artista) {
-        if(!findByName(artista.getUsername())){
-            ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(artista);
-            List<StampEntity> stamps=new ArrayList<StampEntity>();
-            entity.setStamps(stamps);
-            entityManager.persist(entity);
-            return ArtistaConverter.entity2PersistenceDTO(entity);
-        }else{
-            return null;
-        }
+        ArtistaEntity entity = ArtistaConverter.persistenceDTO2Entity(artista);
+        List<StampEntity> stamps=new ArrayList<StampEntity>();
+        entity.setStamps(stamps);
+        entityManager.persist(entity);
+        return ArtistaConverter.entity2PersistenceDTO(entity);
     }
 
     @Override
@@ -86,15 +82,6 @@ public class ArtistaLogic implements IArtistaLogic{
         else {
             return null;
         }
-    }
-    
-    private boolean findByName(String userName){
-        List result = entityManager.createQuery(
-                "SELECT u FROM ArtistaEntity u WHERE c.userName LIKE :artistUName")
-                .setParameter("artistUName", userName)
-                .setMaxResults(10)
-                .getResultList();
-        return !result.isEmpty( );
     }
     
 //    @Override

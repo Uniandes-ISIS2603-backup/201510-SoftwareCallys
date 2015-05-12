@@ -25,18 +25,14 @@ public class ClienteLogic implements IClienteLogic{
 
     @Override
     public ClienteDTO createCliente(ClienteDTO cliente) {
-        if(!findByName(cliente.getNombre())){
-            ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(cliente);
-            CarroComprasEntity carroCompras = this.getSelectedShoppingCart(cliente);
-            if (carroCompras != null) {
-                entity.setCarroCompras(carroCompras);
-            }
-            entity.setPurchases(new ArrayList<PurchaseEntity>());
-            entityManager.persist(entity);
-            return ClienteConverter.entity2PersistenceDTO(entity);
-        }else{
-            return null;
+        ClienteEntity entity = ClienteConverter.persistenceDTO2Entity(cliente);
+        CarroComprasEntity carroCompras = this.getSelectedShoppingCart(cliente);
+        if (carroCompras != null) {
+            entity.setCarroCompras(carroCompras);
         }
+        entity.setPurchases(new ArrayList<PurchaseEntity>());
+        entityManager.persist(entity);
+        return ClienteConverter.entity2PersistenceDTO(entity);
     }
 
     @Override
@@ -103,17 +99,5 @@ public class ClienteLogic implements IClienteLogic{
         else {
             return null;
         }
-    }
-    
-    /*
-        Return true si el cliente existe false de lo contrario
-    */
-    private boolean findByName(String nombre){
-        List result = entityManager.createQuery(
-                "SELECT u FROM ClienteEntity u WHERE c.name LIKE :clientName")
-                .setParameter("clientName", nombre)
-                .setMaxResults(10)
-                .getResultList();
-        return !result.isEmpty( );
     }
 }

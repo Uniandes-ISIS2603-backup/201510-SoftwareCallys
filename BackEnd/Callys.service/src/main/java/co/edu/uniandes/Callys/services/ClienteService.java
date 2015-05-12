@@ -38,9 +38,6 @@ public class ClienteService {
 //    @Inject
 //    private ICarroComprasLogic shoppingCartLogic;
 
-    /*
-        Método create modificado para el signup.
-    */
     @POST
     public ClienteDTO createCliente(ClienteDTO cliente) {
         return clienteLogicService.createCliente(cliente);
