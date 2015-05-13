@@ -11,25 +11,25 @@
                         <form name="catalogForm" class="css-form" novalidate>
                             <span> User name: </span>
                             <br/>
-                            <input type="text" value="" ng-model="userRecord.username">
+                            <input id='nameClient' type="text" value="" ng-model="userRecord.username">
                             <br/>
                             <br/>
                             <span> Password: </span>
                             <br/>
-                            <input type="password" value="" ng-model="userRecord.password">
+                            <input id='passwordClient' type="password" value="" ng-model="userRecord.password">
                              <br/>
                             <br/>
                             <span> CreditCard number: </span>
                             <br/>
-                            <input type="number" value="" ng-model="userRecord.creditNumber">
+                            <input id='creditCardClient' type="number" value="" ng-model="userRecord.creditNumber">
                             <br/>
                             <br/>
                             <span> Email: </span>
                             <br/>
-                            <input type="email" value="" ng-model="userRecord.email">
+                            <input id='emailClient' type="email" value="" ng-model="userRecord.email">
                             <br/>
                             <br/>
-                            <input type="submit" value="signUp artist" ng-click="signupCtrl.saveClient()">
+                            <input id='submitClient' type="submit" value="signUp artist" ng-click="signupCtrl.saveClient()">
                         </form>
                     </div>
                     <div class="price ">
@@ -39,25 +39,25 @@
                         <form name="catalogForm2" class="css-form" novalidate>
                             <span> Name: </span>
                             <br/>
-                            <input type="text" ng-model="currentRecord.name">
+                            <input id='nameArtist' type="text" ng-model="currentRecord.name">
                             <br/>
                             <br/>
                             <span> User Name: </span>
                             <br/>
-                            <input type="text"  ng-model="currentRecord.username">
+                            <input id='userNameArtist' type="text"  ng-model="currentRecord.username">
                             <br/>
                             <br/>
                             <span> Password: </span>
                             <br/>
-                            <input type="text"  ng-model="currentRecord.clave">
+                            <input id='passwordArtist' type="text"  ng-model="currentRecord.clave">
                             <br/>
                             <br/>
-                            <input type="submit" value="signUp artist"ng-click="signupCtrl.saveArtist(currentRecord)">
+                            <input id='submitArtist' type="submit" value="signUp artist"ng-click="signupCtrl.saveArtist(currentRecord)">
                         </form>
                     </div>
                     <br/>
                     <br/>
-                    <div ng-show="signupCtrl.successfull"> Your SigUp was successfull</div>
+                    <div ng-show="signupCtrl.successfull"> Your Sign up was successful</div>
                 </div>
            </div>
         </div>

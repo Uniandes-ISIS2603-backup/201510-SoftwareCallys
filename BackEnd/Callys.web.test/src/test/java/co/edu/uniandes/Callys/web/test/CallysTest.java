@@ -183,6 +183,62 @@ public class CallysTest {
         Thread.sleep(2000);
     }
     
+     @Test
+    public void t7signUpClient() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+       
+        driver.findElement(By.id("userNameClient")).clear();
+        driver.findElement(By.id("passwordClient")).clear();
+        driver.findElement(By.id("creditCardClient")).clear();
+        driver.findElement(By.id("emailClient")).clear();
+         
+        driver.findElement(By.id("userNameClient")).sendKeys("TestUser1");
+        driver.findElement(By.id("passwordClient")).sendKeys("testPassword123");
+        driver.findElement(By.id("creditCardClient")).sendKeys("1234567890");
+        driver.findElement(By.id("emailClient")).sendKeys("testuser@callys.com");
+        
+        driver.findElement(By.id("submitClient")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
     
+    public void t8signUpArtist() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Test User");
+        driver.findElement(By.id("userNameArtist")).sendKeys("TestUser1");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
+    
+    @Test
+    public void t9LogIn() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("TestUser1");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
 }
     
