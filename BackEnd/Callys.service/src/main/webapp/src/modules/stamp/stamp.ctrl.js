@@ -4,7 +4,6 @@
     stampModule.controller('stampCtrl', ['$scope', 'stampService', 'catalogService', function ($scope, stampService,catalogService)
     {
         stampService.extendCtrl(this, $scope);
-        
         this.fetchRecords();
         catalogService.fetchRecords().then(function(data)
         {
@@ -83,14 +82,13 @@
         {
             if(catalogForm.$valid)
             {
-               
                catalogRecord.image= "image";
-                catalogRecord.rating= 0;
+               catalogRecord.rating= 0;
                catalogService.saveRecord(catalogRecord);
-                catalogService.fetchRecords().then(function(data)
-                {
-                   $scope.catalogRecords = data;
-                });
+               catalogService.fetchRecords().then(function(data)
+               {
+                  $scope.catalogRecords = data;
+               });
                this.uploadMode = false;
                 this.error=false;
                catalogForm.$setPristine();

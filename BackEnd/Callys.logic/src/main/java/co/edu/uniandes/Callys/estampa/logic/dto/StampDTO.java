@@ -5,12 +5,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class StampDTO {
     private Long id;
+    private Long idArtist;
     private String name;
     private String topic;
     private Integer rating;
     private Integer price;
     private String image;
  
+    public Long getIdArtist()
+    {
+        return idArtist;
+    }
+    
+    public void setIdArtist(Long idArtist) 
+    {
+        this.idArtist=idArtist;
+    }
+    
     public String getImage(){
         return image;
     }

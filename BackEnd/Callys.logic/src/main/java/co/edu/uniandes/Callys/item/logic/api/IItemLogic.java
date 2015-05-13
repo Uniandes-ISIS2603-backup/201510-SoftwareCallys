@@ -16,4 +16,6 @@ public interface IItemLogic {
     public void deleteItem(Long id);
 
     public void updateItem(ItemDTO detail);
+    
+    public List<ItemDTO> getItemsByShoppingCart(Long idShoppingCart);
 }

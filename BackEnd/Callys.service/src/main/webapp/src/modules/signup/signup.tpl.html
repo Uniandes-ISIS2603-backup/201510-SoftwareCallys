@@ -50,9 +50,14 @@
                             <span> Password: </span>
                             <br/>
                             <input type="text"  ng-model="currentRecord.clave">
+                            <br/>
+                            <br/>
                             <input type="submit" value="signUp artist"ng-click="signupCtrl.saveArtist(currentRecord)">
                         </form>
                     </div>
+                    <br/>
+                    <br/>
+                    <div ng-show="signupCtrl.successfull"> Your SigUp was successfull</div>
                 </div>
            </div>
         </div>

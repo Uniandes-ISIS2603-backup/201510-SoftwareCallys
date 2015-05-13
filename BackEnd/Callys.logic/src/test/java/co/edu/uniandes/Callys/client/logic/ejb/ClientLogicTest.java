@@ -1,5 +1,7 @@
 package co.edu.uniandes.Callys.client.logic.ejb;
 
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
@@ -9,9 +11,15 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.ejb.ClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +50,14 @@ public class ClientLogicTest {
                 .addPackage(ICarroComprasLogic.class.getPackage())
                 .addPackage(CarroComprasEntity.class.getPackage())
                 .addPackage(CarroComprasDTO.class.getPackage())
+                .addPackage(ItemEntity.class.getPackage())
+                .addPackage(ItemDTO.class.getPackage())
+                .addPackage(CamisetaEntity.class.getPackage())
+                .addPackage(CamisetaDTO.class.getPackage())
+                .addPackage(StampEntity.class.getPackage())
+                .addPackage(StampDTO.class.getPackage())
+                .addPackage(PurchaseItemEntity.class.getPackage())
+                .addPackage(PurchaseItemDTO.class.getPackage())
                 .addPackage(PurchaseEntity.class.getPackage())
                 .addPackage(PurchaseDTO.class.getPackage())
                 .addPackage(ClienteConverter.class.getPackage())

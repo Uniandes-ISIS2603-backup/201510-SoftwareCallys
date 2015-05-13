@@ -7,6 +7,7 @@ import java.util.List;
 @XmlRootElement
 public class PurchaseDTO {
     private Long id;
+    private Long idCliente;
     private Date fecha;
     private String datosDeEnvio;
     private String formaDePago;
@@ -18,6 +19,13 @@ public class PurchaseDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 
     public Date getDate() {

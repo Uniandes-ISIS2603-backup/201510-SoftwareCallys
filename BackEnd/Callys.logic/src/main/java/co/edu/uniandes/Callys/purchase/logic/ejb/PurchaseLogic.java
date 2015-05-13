@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+
 @Default
 @Stateless
 @LocalBean
@@ -58,6 +59,22 @@ public class PurchaseLogic implements IPurchaseLogic {
     }
     
     @Override
+    public List<PurchaseDTO> getPurchasesByClient(Long idClient)
+    {
+        List<PurchaseDTO> answer=new ArrayList<PurchaseDTO>();
+        Query q = entityManager.createQuery("select u from PurchaseEntity u");
+        List<PurchaseDTO> purchases=PurchaseConverter.entity2PersistenceDTOList(q.getResultList());
+        for(PurchaseDTO purchase:purchases)
+        {
+            if(purchase.getIdCliente().equals(idClient))
+            {
+                answer.add(purchase);
+            }
+        }
+        return answer;
+    }
+    
+    @Override
     public void deletePurchase(Long id) {
         PurchaseEntity entity = entityManager.find(PurchaseEntity.class, id);
         entityManager.remove(entity);
@@ -75,4 +92,6 @@ public class PurchaseLogic implements IPurchaseLogic {
             return null;
         }
     }
+    
+    
 }

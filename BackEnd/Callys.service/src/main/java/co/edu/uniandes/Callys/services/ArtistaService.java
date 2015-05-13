@@ -48,7 +48,7 @@ public class ArtistaService {
 
     @PUT
     @Path("{id}")
-    public void updateArtista(ArtistaDTO artista) {
+    public void updateArtista(@PathParam("id") Long id, ArtistaDTO artista) {
         artistaLogicService.updateArtista(artista);
     }
 }

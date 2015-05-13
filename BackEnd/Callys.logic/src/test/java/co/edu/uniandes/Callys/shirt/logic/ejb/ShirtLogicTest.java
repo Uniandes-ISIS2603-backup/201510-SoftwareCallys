@@ -34,17 +34,17 @@ public class ShirtLogicTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
-                .addPackage(CamisetaEntity.class.getPackage())
-                .addPackage(StampDTO.class.getPackage())
-                .addPackage(StampEntity.class.getPackage())
-                .addPackage(ArtistaDTO.class.getPackage())
-                .addPackage(ArtistaEntity.class.getPackage())
-                .addPackage(CamisetaDTO.class.getPackage())
-                .addPackage(CamisetaConverter.class.getPackage())
-                .addPackage(CamisetaLogic.class.getPackage())
-                .addPackage(ICamisetaLogic.class.getPackage())
-                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-                .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
+            .addPackage(CamisetaEntity.class.getPackage())
+            .addPackage(StampDTO.class.getPackage())
+            .addPackage(StampEntity.class.getPackage())
+            .addPackage(ArtistaDTO.class.getPackage())
+            .addPackage(ArtistaEntity.class.getPackage())
+            .addPackage(CamisetaDTO.class.getPackage())
+            .addPackage(CamisetaConverter.class.getPackage())
+            .addPackage(CamisetaLogic.class.getPackage())
+            .addPackage(ICamisetaLogic.class.getPackage())
+            .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+            .addAsWebInfResource("META-INF/beans.xml", "beans.xml");
     }
     
     @Inject

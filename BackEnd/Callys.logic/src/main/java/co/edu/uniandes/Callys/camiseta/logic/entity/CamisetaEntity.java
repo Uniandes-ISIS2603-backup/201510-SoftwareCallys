@@ -12,7 +12,10 @@ public class CamisetaEntity {
     @Id
     @GeneratedValue(generator = "Camiseta")
     private Long id;
+    private String image;
     private String color;
+    private Integer price;
+    private String name;
     private String talla;
     private String material;
     private String texto;
@@ -72,5 +75,32 @@ public class CamisetaEntity {
 
     public void setTexto(String  texto) {
         this.texto = texto;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String  name) {
+        this.name = name;
+    }
+    
+    public String getImage()
+    {
+        return image;
+    }
+
+    public void setImage(String  image) {
+        this.image = image;
+    }
+    
+    public Integer getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(Integer  price) {
+        this.price = price;
     }
 }

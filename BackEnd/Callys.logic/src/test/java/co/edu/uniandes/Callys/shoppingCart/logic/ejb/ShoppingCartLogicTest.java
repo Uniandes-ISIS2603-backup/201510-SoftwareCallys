@@ -1,5 +1,7 @@
 package co.edu.uniandes.Callys.shoppingCart.logic.ejb;
 
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
 import static co.edu.uniandes.Callys.util._TestUtil.*;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.converter.CarroComprasConverter;
@@ -7,6 +9,10 @@ import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.ejb.CarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
+import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -32,6 +38,12 @@ public class ShoppingCartLogicTest {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
                 .addPackage(CarroComprasEntity.class.getPackage())
                 .addPackage(CarroComprasDTO.class.getPackage())
+                .addPackage(ItemEntity.class.getPackage())
+                .addPackage(ItemDTO.class.getPackage())
+                .addPackage(CamisetaEntity.class.getPackage())
+                .addPackage(CamisetaDTO.class.getPackage())
+                .addPackage(StampEntity.class.getPackage())
+                .addPackage(StampDTO.class.getPackage())
                 .addPackage(CarroComprasConverter.class.getPackage())
                 .addPackage(CarroComprasLogic.class.getPackage())
                 .addPackage(ICarroComprasLogic.class.getPackage())

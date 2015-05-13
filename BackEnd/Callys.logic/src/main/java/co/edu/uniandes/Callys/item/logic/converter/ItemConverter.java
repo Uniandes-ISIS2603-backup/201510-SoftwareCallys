@@ -11,6 +11,7 @@ public class ItemConverter {
             ItemDTO dto = new ItemDTO();
             dto.setId(entity.getId());
             dto.setMonto(entity.getMonto());
+            dto.setIdShoppingCart(entity.getIdShoppingCart());
             if (entity.getCamiseta()!= null) {
                 dto.setCamiseta(entity.getCamiseta().getId());
             }
@@ -25,6 +26,7 @@ public class ItemConverter {
             ItemEntity entity = new ItemEntity();
             entity.setId(dto.getId());
             entity.setMonto(dto.getMonto());
+            entity.setIdShoppingCart(dto.getIdShoppingCart());
             return entity;
         } else {
             return null;

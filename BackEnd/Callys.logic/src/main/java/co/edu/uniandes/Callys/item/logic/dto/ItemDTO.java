@@ -5,9 +5,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class ItemDTO {
     private Long id;
+    private Long idShoppingCart;
     private Long camiseta;
     private Double monto;
 
+    public Long getIdShoppingCart() 
+    {
+        return idShoppingCart;
+    }
+    
+    public void setIdShoppingCart(Long idShoppingCart)
+    {
+        this.idShoppingCart=idShoppingCart;
+    }
+    
     public Long getId() {
         return id;
     }

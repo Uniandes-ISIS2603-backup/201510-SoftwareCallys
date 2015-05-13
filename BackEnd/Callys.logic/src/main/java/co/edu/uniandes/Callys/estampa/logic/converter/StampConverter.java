@@ -10,6 +10,7 @@ public class StampConverter {
         if (entity != null) {
             StampDTO dto = new StampDTO();
             dto.setId(entity.getId());
+            dto.setIdArtist(entity.getIdArtist());
             dto.setTopic(entity.getTopic());
             dto.setName(entity.getName());
             dto.setRating(entity.getRating());
@@ -25,6 +26,7 @@ public class StampConverter {
         if (dto != null) {
             StampEntity entity = new StampEntity();
             entity.setId(dto.getId());
+            entity.setIdArtist(dto.getIdArtist());
             entity.setTopic(dto.getTopic());
             entity.setName(dto.getName());
             entity.setRating(dto.getRating());

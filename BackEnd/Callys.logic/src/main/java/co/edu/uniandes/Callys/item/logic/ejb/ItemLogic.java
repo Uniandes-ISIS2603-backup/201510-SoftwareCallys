@@ -6,6 +6,7 @@ import co.edu.uniandes.Callys.item.logic.converter.ItemConverter;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
 import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
+import java.util.ArrayList;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
@@ -65,6 +66,22 @@ public class ItemLogic implements IItemLogic{
         }else{
             return null;
         }
+    }
+    
+    @Override
+    public List<ItemDTO> getItemsByShoppingCart(Long idShoppingCart)
+    {
+        List<ItemDTO> answer=new ArrayList<ItemDTO>();
+        Query q = entityManager.createQuery("select u from ItemEntity u");
+        List<ItemDTO> items=ItemConverter.entity2PersistenceDTOList(q.getResultList());
+        for(ItemDTO item:items)
+        {
+            if(item.getIdShoppingCart().equals(idShoppingCart))
+            {
+                answer.add(item);
+            }
+        }
+        return answer;
     }
         
     @Override

@@ -7,9 +7,5 @@
                 $httpBackend.expectGET(baseUrl + '/' + context + '/login');
                 $httpBackend.whenGET(baseUrl + '/' + context + '/login').passThrough();
             }
-            else
-            {
-               
-            }
         }]);
 })(window.angular);

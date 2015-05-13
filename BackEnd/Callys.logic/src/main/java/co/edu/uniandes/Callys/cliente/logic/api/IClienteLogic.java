@@ -2,6 +2,7 @@ package co.edu.uniandes.Callys.cliente.logic.api;
 
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
+import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 import java.util.List;
 
 public interface IClienteLogic {
@@ -19,5 +20,4 @@ public interface IClienteLogic {
     public void updateCliente(ClienteDTO detail);
     
     public ClienteDTO login(String userName, String password);
-
 }

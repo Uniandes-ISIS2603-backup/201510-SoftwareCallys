@@ -1,3 +1,4 @@
+
 package co.edu.uniandes.Callys.artista.logic.entity;
 
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;

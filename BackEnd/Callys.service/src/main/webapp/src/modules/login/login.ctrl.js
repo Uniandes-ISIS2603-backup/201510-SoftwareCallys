@@ -3,13 +3,14 @@
     var loginModule = angular.module('loginModule');
     loginModule.controller('loginCtrl', ['$scope', 'loginService', 'catalogService', function ($scope, loginService,catalogService)
     {
+        this.cliente=1;
         
         this.login= function(username,password)
         {
-             this.currentRecord=loginService.login(username,password);
+             $scope.currentRecord=loginService.login(username,password);
                 if(this.currentRecord!==null)
                 {
-                    alert(this.currentRecord.name);
+                    alert($scope.currentRecord.NAME);
                     catalogService.artist=true; 
                     this.artist=true;
                 }

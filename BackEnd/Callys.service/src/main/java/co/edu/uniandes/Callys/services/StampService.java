@@ -36,7 +36,6 @@ public class StampService {
         stampLogicService.deleteStamp(id);
     }
 
-    
     @GET
     public StampPageDTO getStamps(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
           return  stampLogicService.getStamps(page, maxRecords);

@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.Callys.services;
 
-import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
-import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
+
 import javax.ws.rs.DELETE;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -31,12 +25,6 @@ public class ClienteService {
 
     @Inject
     protected IClienteLogic clienteLogicService;
-//
-//    @Inject
-//    private IPurchaseLogic purchaseLogic;
-//
-//    @Inject
-//    private ICarroComprasLogic shoppingCartLogic;
 
     @POST
     public ClienteDTO createCliente(ClienteDTO cliente) {
@@ -46,7 +34,6 @@ public class ClienteService {
     @DELETE
     @Path("{id}")
     public void deleteCliente(@PathParam("id") Long id) {
-//        shoppingCartLogic.deleteCarroCompras(clienteLogicService.getCliente(id).getCarroCompras());
         clienteLogicService.deleteCliente(id);
     }
 
@@ -66,9 +53,4 @@ public class ClienteService {
     public void updateCliente(ClienteDTO cliente) {
         clienteLogicService.updateCliente(cliente);
     }
-    
-//     @GET
-//     public Integer loginCliente(@QueryParam("name") String name, @QueryParam("password") String password){
-//     return clienteLogicService.loginCliente(name, password);
-//     }
 }

@@ -11,9 +11,20 @@ public class ItemEntity {
     @Id
     @GeneratedValue(generator = "Item")
     private Long id;
+    private Long idShoppingCart;
     private Double monto;
     @OneToOne
     private CamisetaEntity camiseta;
+    
+    public Long getIdShoppingCart() 
+    {
+        return idShoppingCart;
+    }
+    
+    public void setIdShoppingCart(Long idShoppingCart)
+    {
+        this.idShoppingCart=idShoppingCart;
+    }
     
     public CamisetaEntity getCamiseta() {
         return camiseta;
