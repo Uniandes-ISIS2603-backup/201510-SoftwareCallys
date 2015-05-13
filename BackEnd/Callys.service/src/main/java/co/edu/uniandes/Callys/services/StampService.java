@@ -49,7 +49,7 @@ public class StampService {
     }
     
     @GET
-    @Path("{byArtist}")
+    @Path("byArtist")
     public List<StampDTO> getStampByArtist(@QueryParam("idArtist") Long artistId) {
         return stampLogicService.getStampsByArtist(artistId);
     }

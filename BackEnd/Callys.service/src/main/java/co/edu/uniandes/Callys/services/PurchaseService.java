@@ -40,14 +40,15 @@ public class PurchaseService {
     }
 
     @GET
-    @Path("{byClient}")
-    public List<PurchaseDTO> getPurchasesByClient(@QueryParam("idClient") Long idClient) {
+    @Path("byClient")
+    public List<PurchaseDTO> getPurchasesByClient(@QueryParam("id") Long idClient) {
+        System.out.println("id:"+idClient);
         return purchaseLogicService.getPurchasesByClient(idClient);
     }
     
     @GET
-    @Path("{items}")
-    public List<PurchaseItemDTO> getPurchaseItemsByPurchase(@QueryParam("idPurchase") Long idPurchase) {
+    @Path("items")
+    public List<PurchaseItemDTO> getPurchaseItemsByPurchase(@QueryParam("id") Long idPurchase) {
         return purchaseItemLogicService.getItemsByPurchase(idPurchase);
     }
     
