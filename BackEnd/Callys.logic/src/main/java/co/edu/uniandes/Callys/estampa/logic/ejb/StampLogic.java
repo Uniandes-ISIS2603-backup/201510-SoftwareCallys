@@ -55,16 +55,21 @@ public class StampLogic implements IStampLogic{
         return StampConverter.entity2PersistenceDTO(entityManager.find(StampEntity.class, id));
     }
     
-//    public List<StampDTO> getStampsByArtist(Long idArtist)
-//    {
-//        List<StampDTO> answer=new ArrayList<StampDTO>();
-//        Query q = entityManager.createQuery("select u from StampEntity u");
-//        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
-//        for(StampDTO stamp:stamps)
-//        {
-//            if(stamp.ge)
-//        }
-//    }
+    @Override
+    public List<StampDTO> getStampsByArtist(Long idArtist)
+    {
+        List<StampDTO> answer=new ArrayList<StampDTO>();
+        Query q = entityManager.createQuery("select u from StampEntity u");
+        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
+        for(StampDTO stamp:stamps)
+        {
+            if(stamp.getIdArtist().equals(idArtist))
+            {
+                answer.add(stamp);
+            }
+        }
+        return answer;
+    }
 
     @Override
     public void deleteStamp(Long id) {

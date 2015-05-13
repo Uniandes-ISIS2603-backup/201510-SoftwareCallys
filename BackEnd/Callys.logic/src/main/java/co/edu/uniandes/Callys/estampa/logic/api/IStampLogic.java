@@ -18,4 +18,6 @@ public interface IStampLogic {
     public void deleteStamp(Long id);
 
     public void updateStamp(StampDTO detail);
+    
+    public List<StampDTO> getStampsByArtist(Long idArtist);
 }

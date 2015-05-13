@@ -77,16 +77,26 @@ public class StampLogicTest {
     private List<StampEntity> data = new ArrayList<StampEntity>();
 
     private void insertData() {
-        for (int i = 0; i < 3; i++) {       
+        for (int i = 0; i < 2; i++) {       
             StampEntity entity = new StampEntity();
             entity.setTopic(generateRandomTopic());
             entity.setRating(generateRandom(Integer.class));
             entity.setName(generateRandom(String.class));
             entity.setImage(generateRandom(String.class));
             entity.setPrice(generateRandom(Integer.class));
+            entity.setIdArtist(new Long(1));
             em.persist(entity);
             data.add(entity);
         }
+        StampEntity entity = new StampEntity();
+        entity.setTopic(generateRandomTopic());
+        entity.setRating(generateRandom(Integer.class));
+        entity.setName(generateRandom(String.class));
+        entity.setImage(generateRandom(String.class));
+        entity.setPrice(generateRandom(Integer.class));
+        entity.setIdArtist(new Long(2));
+        em.persist(entity);
+        data.add(entity);
     }
 
     @Test
@@ -167,6 +177,18 @@ public class StampLogicTest {
         Assert.assertEquals(dto.getImage(),resp.getImage());
     }
 
+    @Test
+    public void getStampsByArtistTest() {
+        List<StampDTO> stamps=stampLogic.getStampsByArtist(new Long(1));
+        Assert.assertFalse(stamps.isEmpty());
+        Assert.assertEquals(2,stamps.size());
+        stamps=stampLogic.getStampsByArtist(new Long(2));
+        Assert.assertFalse(stamps.isEmpty());
+        Assert.assertEquals(1,stamps.size());
+        stamps=stampLogic.getStampsByArtist(new Long(3));
+        Assert.assertTrue(stamps.isEmpty());
+    }
+    
     @Test
     public void getStampPaginationTest() {
         //Page 1

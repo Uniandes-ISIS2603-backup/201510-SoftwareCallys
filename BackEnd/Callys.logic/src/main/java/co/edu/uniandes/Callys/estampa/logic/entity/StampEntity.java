@@ -9,6 +9,7 @@ public class StampEntity {
     @Id
     @GeneratedValue(generator = "Stamp")
     private Long id;
+    private Long idArtist;
     private String name;
     private String topic;
     private Integer rating;
@@ -21,6 +22,16 @@ public class StampEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public Long getIdArtist()
+    {
+        return idArtist;
+    }
+    
+    public void setIdArtist(Long idArtist)
+    {
+        this.idArtist=idArtist;
     }
     
     public String getImage() {
