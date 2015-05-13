@@ -5,6 +5,7 @@ import co.edu.uniandes.Callys.estampa.logic.converter.StampConverter;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
 import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -53,6 +54,17 @@ public class StampLogic implements IStampLogic{
     public StampDTO getStamp(Long id) {
         return StampConverter.entity2PersistenceDTO(entityManager.find(StampEntity.class, id));
     }
+    
+//    public List<StampDTO> getStampsByArtist(Long idArtist)
+//    {
+//        List<StampDTO> answer=new ArrayList<StampDTO>();
+//        Query q = entityManager.createQuery("select u from StampEntity u");
+//        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
+//        for(StampDTO stamp:stamps)
+//        {
+//            if(stamp.ge)
+//        }
+//    }
 
     @Override
     public void deleteStamp(Long id) {
