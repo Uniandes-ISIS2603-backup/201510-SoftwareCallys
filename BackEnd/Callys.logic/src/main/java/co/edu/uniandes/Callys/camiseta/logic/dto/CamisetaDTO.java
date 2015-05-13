@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class CamisetaDTO {
     private Long id;
     private String name;
+    private Integer price;
+    private String image;
     private String color;
     private String talla;
     private String material;
@@ -69,5 +71,23 @@ public class CamisetaDTO {
 
     public void setName(String  name) {
         this.name = name;
+    }
+    
+    public String getImage()
+    {
+        return image;
+    }
+
+    public void setImage(String  image) {
+        this.image = image;
+    }
+    
+    public Integer getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(Integer  price) {
+        this.price = price;
     }
 }
