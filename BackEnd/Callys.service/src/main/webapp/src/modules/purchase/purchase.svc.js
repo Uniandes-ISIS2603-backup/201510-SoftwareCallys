@@ -5,6 +5,10 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
+        this.viewPurchases= function(cliente)
+        {
+            return this.api.customGET(null, {idCliente: cliente});
+        };
     }]);
 })();
 

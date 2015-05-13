@@ -15,6 +15,7 @@ public class PurchaseEntity {
     @Id
     @GeneratedValue(generator = "Purchase")
     private Long id;
+    private Long idCliente;
     @Temporal(TemporalType.DATE)
     private Date fecha;
     private String datosDeEnvio;
@@ -30,6 +31,14 @@ public class PurchaseEntity {
         this.id = id;
     }
 
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+    
     public Date getDate() {
         return fecha;
     }

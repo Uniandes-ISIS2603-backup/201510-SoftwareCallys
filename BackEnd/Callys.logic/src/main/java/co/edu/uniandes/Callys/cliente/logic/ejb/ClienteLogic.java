@@ -1,5 +1,6 @@
 package co.edu.uniandes.Callys.cliente.logic.ejb;
 
+import co.edu.uniandes.Callys.camiseta.logic.converter.CamisetaConverter;
 import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -10,11 +11,14 @@ import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.cliente.logic.entity.ClienteEntity;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.ws.rs.QueryParam;
 
 @Stateless
 @LocalBean
@@ -105,7 +109,7 @@ public class ClienteLogic implements IClienteLogic{
         }
     }
     
-    private List<PurchaseEntity> getSelectedPurchases(ClienteDTO cliente) {
+    public List<PurchaseEntity> getSelectedPurchases(ClienteDTO cliente) {
         if(cliente != null && cliente.getPurchases() != null) {
             List<PurchaseEntity> purchases = new ArrayList<PurchaseEntity>();
             for (Long purchase : cliente.getPurchases()) {
@@ -117,4 +121,21 @@ public class ClienteLogic implements IClienteLogic{
             return null;
         }
     }
+    
+    
+    public List<PurchaseDTO> getSelectedPurchasesDTO(Long cliente) {
+        
+        Query q = entityManager.createQuery("select u from PurchaseEntity u where u.idCliente='"+cliente+"'");
+        if (q.getResultList().isEmpty()!=true)
+        {
+            return PurchaseConverter.entity2PersistenceDTOList(q.getResultList());
+        }
+        else
+        {
+            return null;
+        }  
+        
+    }
+    
+  
 }

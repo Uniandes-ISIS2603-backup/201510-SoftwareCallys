@@ -10,6 +10,9 @@ import co.edu.uniandes.Callys.cliente.logic.api.IClienteLogic;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
 import co.edu.uniandes.Callys.cliente.logic.dto.ClientePageDTO;
 import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
+import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
+import java.util.List;
+
 import javax.ws.rs.DELETE;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -65,6 +68,14 @@ public class ClienteService {
     @Path("{id}")
     public void updateCliente(ClienteDTO cliente) {
         clienteLogicService.updateCliente(cliente);
+    }
+    
+    
+    @GET
+    @Path("{purchases}")
+    public List<PurchaseDTO> getPurchases(@QueryParam("idCliente")Long cliente){
+        return clienteLogicService.getSelectedPurchasesDTO(cliente);
+        
     }
     
 //     @GET
