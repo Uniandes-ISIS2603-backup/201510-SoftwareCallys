@@ -87,17 +87,8 @@ public class ArtistaLogic implements IArtistaLogic{
     @Override
     public ArtistaDTO login(String userName, String password)
     {
-        Query q = entityManager.createQuery("SELECT c FROM ArtistaEntity c WHERE c.name ='"+userName+"' AND u.password='"+password+"'");
-        ArtistaEntity result= (ArtistaEntity) q.getSingleResult();
-        System.out.println(result.getName());
-        if(result==null)
-        {
-            return null;
-        }
-        else 
-        {
-            return ArtistaConverter.entity2PersistenceDTO(result);
-        }
+        Query q = entityManager.createQuery("SELECT c FROM ArtistaEntity c WHERE c.username = '"+userName+"' AND c.clave = '"+password+"'");
+        return ArtistaConverter.entity2PersistenceDTO((ArtistaEntity)q.getSingleResult());
     }
     
 //    @Override

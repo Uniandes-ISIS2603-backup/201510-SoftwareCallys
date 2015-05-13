@@ -40,10 +40,10 @@ public class ArtistaService {
         return artistaLogicService.getArtistas(page, maxRecords);
     }
 
-    @GET
+    @POST
     @Path("login")
-    public ArtistaDTO getLogin(@QueryParam("userName") String userName, @QueryParam("password") String password) {
-        return artistaLogicService.login(userName, password);
+    public ArtistaDTO getLogin(ArtistaDTO artista) {
+        return artistaLogicService.login(artista.getUsername(), artista.getClave());
     }
 
     @PUT

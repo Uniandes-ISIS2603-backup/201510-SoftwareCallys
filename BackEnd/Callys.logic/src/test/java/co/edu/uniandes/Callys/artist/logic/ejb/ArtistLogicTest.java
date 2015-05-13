@@ -217,14 +217,14 @@ public class ArtistLogicTest {
         Assert.assertEquals(dto.getClave(), resp.getClave());
         Assert.assertEquals(dto.getDatosContacto(), resp.getDatosContacto());
     }
-//    
-//    @Test
-//    public void loginTest() {
-//        ArtistaEntity entity = data.get(0);
-//        ArtistaDTO dto = artistaLogic.login(entity.getUsername(), entity.getClave());
-//        Assert.assertNotNull(dto);
-//        Assert.assertEquals(dto.getClave(), entity.getClave());
-//        Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
-//        
-//    }
+    
+    @Test
+    public void loginTest() {
+        ArtistaEntity entity = data.get(0);
+        ArtistaDTO dto = artistaLogic.login(entity.getUsername(), entity.getClave());
+        Assert.assertNotNull(dto);
+        Assert.assertEquals(dto.getClave(), entity.getClave());
+        Assert.assertEquals(dto.getDatosContacto(), entity.getDatosContacto());
+        
+    }
 }
