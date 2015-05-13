@@ -42,7 +42,7 @@ public class ArtistaService {
 
     @GET
     @Path("login")
-    public ArtistaDTO login(@QueryParam("userName") String userName, @QueryParam("password") String password) {
+    public ArtistaDTO getLogin(@QueryParam("userName") String userName, @QueryParam("password") String password) {
         return artistaLogicService.login(userName, password);
     }
 

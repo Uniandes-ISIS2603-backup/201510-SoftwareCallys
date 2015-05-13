@@ -4,19 +4,19 @@
     loginModule.controller('loginCtrl', ['$scope', 'loginService', 'catalogService', function ($scope, loginService,catalogService)
     {
         
-        this.login= function(username,password1)
+        this.login= function(username,password)
         {
-            if(this.customGET('login', {userName: username, password: password1})!==null)
-            {
-                this.currentRecord=this.customGET('login', {userName: username, password: password1});
-                catalogService.artist=true; 
-                this.artist=true;
-                alert(" correctos");
-            }
-            else
-            {
-                alert("Su usuario o contraseña no son correctos");
-            }
+             this.currentRecord=loginService.login(username,password);
+                if(this.currentRecord!==null)
+                {
+                    alert(this.currentRecord.name);
+                    catalogService.artist=true; 
+                    this.artist=true;
+                }
+                else
+                {
+                    alert("Wrong username or password");
+                }
         };
     }]);
 })();

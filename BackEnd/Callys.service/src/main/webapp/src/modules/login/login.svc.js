@@ -5,5 +5,9 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
+        this.login= function(username,password)
+        {
+            return this.api.customGET(null, {userName: username, password: password});
+        };
     }]);
 })();
