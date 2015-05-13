@@ -5,6 +5,7 @@ import co.edu.uniandes.Callys.purchaseitem.logic.converter.PurchaseItemConverter
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
 import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemPageDTO;
 import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -53,5 +54,21 @@ public class PurchaseItemLogic implements IPurchaseItemLogic{
     @Override
     public PurchaseItemDTO getPurchaseItem(Long id) {
         return PurchaseItemConverter.entity2PersistenceDTO(entityManager.find(PurchaseItemEntity.class, id));
+    }
+    
+    @Override
+    public List<PurchaseItemDTO> getItemsByPurchase(Long idPurchase)
+    {
+        List<PurchaseItemDTO> answer=new ArrayList<PurchaseItemDTO>();
+        Query q = entityManager.createQuery("select u from ItemEntity u");
+        List<PurchaseItemDTO> items=PurchaseItemConverter.entity2PersistenceDTOList(q.getResultList());
+        for(PurchaseItemDTO item:items)
+        {
+            if(item.getIdPurchase().equals(idPurchase))
+            {
+                answer.add(item);
+            }
+        }
+        return answer;
     }
 }

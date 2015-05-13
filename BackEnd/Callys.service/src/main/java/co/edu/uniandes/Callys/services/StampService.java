@@ -3,6 +3,7 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.estampa.logic.api.IStampLogic;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
 import co.edu.uniandes.Callys.estampa.logic.dto.StampPageDTO;
+import java.util.List;
 import javax.ejb.Stateless;
 
 import javax.inject.Inject;
@@ -45,6 +46,12 @@ public class StampService {
     @Path("{id}")
     public StampDTO getStamp(@PathParam("id") Long id) {
         return stampLogicService.getStamp(id);
+    }
+    
+    @GET
+    @Path("{byArtist}")
+    public List<StampDTO> getStampByArtist(@QueryParam("idArtist") Long artistId) {
+        return stampLogicService.getStampsByArtist(artistId);
     }
 
     @PUT

@@ -3,6 +3,9 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -22,6 +25,9 @@ public class PurchaseService {
     
     @Inject
     protected IPurchaseLogic purchaseLogicService;
+    
+    @Inject
+    protected IPurchaseItemLogic purchaseItemLogicService;
 
     @POST
     public PurchaseDTO createPurchase(PurchaseDTO p) {
@@ -33,6 +39,18 @@ public class PurchaseService {
         return purchaseLogicService.getPurchases(page, maxRecords);
     }
 
+    @GET
+    @Path("{byClient}")
+    public List<PurchaseDTO> getPurchasesByClient(@QueryParam("idClient") Long idClient) {
+        return purchaseLogicService.getPurchasesByClient(idClient);
+    }
+    
+    @GET
+    @Path("{items}")
+    public List<PurchaseItemDTO> getPurchaseItemsByPurchase(@QueryParam("idPurchase") Long idPurchase) {
+        return purchaseItemLogicService.getItemsByPurchase(idPurchase);
+    }
+    
     @GET
     @Path("{id}")
     public PurchaseDTO getPurchase(@PathParam("id") Long id) {

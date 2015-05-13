@@ -13,4 +13,6 @@ public interface IPurchaseItemLogic {
     public PurchaseItemPageDTO getPurchaseItems(Integer page, Integer maxRecords);
 
     public PurchaseItemDTO getPurchaseItem(Long id);
+    
+    public List<PurchaseItemDTO> getItemsByPurchase(Long idPurchase);
 }
