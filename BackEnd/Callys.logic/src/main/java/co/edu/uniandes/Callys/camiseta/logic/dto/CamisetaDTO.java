@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class CamisetaDTO {
     private Long id;
+    private String name;
     private String color;
     private String talla;
     private String material;
@@ -59,5 +60,14 @@ public class CamisetaDTO {
 
     public void setTexto(String  texto) {
         this.texto = texto;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String  name) {
+        this.name = name;
     }
 }

@@ -5,6 +5,7 @@
     {
         this.client = false;
         this.artist = false;
+        this.successfull = false;
         signupService.extendCtrl(this, $scope);
         this.clientFunction = function ()
         {
@@ -18,7 +19,7 @@
         {
            artistRecord.datosContacto="a";
            this.saveRecord(artistRecord);
-           
+           this.successfull = true;
         };
     }]);
 })();
