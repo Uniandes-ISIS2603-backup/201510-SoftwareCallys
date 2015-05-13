@@ -33,7 +33,7 @@ public class PurchaseConverter {
         if (dto != null) {
             PurchaseEntity entity = new PurchaseEntity();
             entity.setId(dto.getId());
-             entity.setIdCliente(dto.getIdCliente());
+            entity.setIdCliente(dto.getIdCliente());
             entity.setDate(dto.getDate());
             entity.setDatosDeEnvio(dto.getDatosDeEnvio());
             entity.setFormaDePago(dto.getFormaDePago());

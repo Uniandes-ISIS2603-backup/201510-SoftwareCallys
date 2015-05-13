@@ -122,9 +122,7 @@ public class ClienteLogic implements IClienteLogic{
         }
     }
     
-    
-    public List<PurchaseDTO> getSelectedPurchasesDTO(Long cliente) {
-        
+    private List<PurchaseDTO> getSelectedPurchasesDTO(Long cliente) {
         Query q = entityManager.createQuery("select u from PurchaseEntity u where u.idCliente='"+cliente+"'");
         if (q.getResultList().isEmpty()!=true)
         {
@@ -134,8 +132,5 @@ public class ClienteLogic implements IClienteLogic{
         {
             return null;
         }  
-        
     }
-    
-  
 }

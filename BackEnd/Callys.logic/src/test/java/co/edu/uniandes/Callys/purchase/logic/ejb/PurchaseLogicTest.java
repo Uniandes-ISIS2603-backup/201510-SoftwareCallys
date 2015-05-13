@@ -76,14 +76,22 @@ public class PurchaseLogicTest {
     private List<PurchaseEntity> data = new ArrayList<PurchaseEntity>();
 
     private void insertData() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             PurchaseEntity entity = new PurchaseEntity();
             entity.setDate(parseDate(generateRandomDate()));
             entity.setDatosDeEnvio(generateRandom(String.class));
             entity.setFormaDePago(generateRandom(String.class));
+            entity.setIdCliente(new Long(1));
             em.persist(entity);
             data.add(entity);
         }
+        PurchaseEntity entity = new PurchaseEntity();
+        entity.setDate(parseDate(generateRandomDate()));
+        entity.setDatosDeEnvio(generateRandom(String.class));
+        entity.setFormaDePago(generateRandom(String.class));
+        entity.setIdCliente(new Long(2));
+        em.persist(entity);
+        data.add(entity);
     }
 
     @Test
@@ -130,6 +138,18 @@ public class PurchaseLogicTest {
         Assert.assertEquals(entity.getDate(), dto.getDate());
         Assert.assertEquals(entity.getDatosDeEnvio(), dto.getDatosDeEnvio());
         Assert.assertEquals(entity.getFormaDePago(), dto.getFormaDePago());
+    }
+    
+    @Test
+    public void getPurchasesByClientTest() {
+        List<PurchaseDTO> purchases=purchaseLogic.getPurchasesByClient(new Long(1));
+        Assert.assertFalse(purchases.isEmpty());
+        Assert.assertEquals(2,purchases.size());
+        purchases=purchaseLogic.getPurchasesByClient(new Long(2));
+        Assert.assertFalse(purchases.isEmpty());
+        Assert.assertEquals(1,purchases.size());
+        purchases=purchaseLogic.getPurchasesByClient(new Long(3));
+        Assert.assertTrue(purchases.isEmpty());
     }
 
     @Test

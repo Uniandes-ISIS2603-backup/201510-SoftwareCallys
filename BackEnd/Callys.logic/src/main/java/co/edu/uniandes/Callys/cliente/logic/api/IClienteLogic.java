@@ -20,7 +20,4 @@ public interface IClienteLogic {
     public void updateCliente(ClienteDTO detail);
     
     public ClienteDTO login(String userName, String password);
-    
-    public List<PurchaseEntity> getSelectedPurchases(Long cliente);
-
 }

@@ -2,8 +2,6 @@ package co.edu.uniandes.Callys.purchase.logic.api;
 
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
-import co.edu.uniandes.Callys.cliente.logic.dto.ClienteDTO;
-import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
 
 import java.util.List;
 
@@ -19,4 +17,5 @@ public interface IPurchaseLogic {
     
     public void deletePurchase(Long id);
     
+    public List<PurchaseDTO> getPurchasesByClient(Long idClient);
 }
