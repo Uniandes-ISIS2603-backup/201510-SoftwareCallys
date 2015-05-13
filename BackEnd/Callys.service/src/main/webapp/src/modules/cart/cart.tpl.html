@@ -1,0 +1,51 @@
+<div ng-controller="shirtCtrl as shirtCtrl">
+    <div class="main_bg">
+        <div class="wrap">	
+            <div class="main" >
+            <!-- start gallery_sale  -->
+        	<ul id="filters" >
+                    <li><span class="filter active" data-filter="app card icon logo web">Pick a T-Shirt</span></li>
+		</ul>
+                <br/>
+                <br/>
+                <br/>
+                
+                <div class="grids_of_3">
+                    
+                        <form name="catalogForm" class="css-form" novalidate >
+                            <div class="grid1_of_3edited">
+                                <div  class = "price">
+                            <a id="shirt1" ng-click="shirtCtrl.selectShirt('V neck','images/vneck.jpg',25)" href="#details">
+                                    <img alt="" src="images/vneck.jpg" height="400" width="321" />
+                                </a>
+                                <h4>Name: Plain v neck</h4>
+                                <h4>Price: $15</h4>
+                            </div>                                  
+                            </div>
+                            <div class="grid1_of_3edited">
+                                <div  class = "price">
+                                <a id="shirt2" ng-click="shirtCtrl.selectShirt('relaxed fit round neck','images/hugo boss 097 aaa_LRG.jpg',20)" href="#details">
+                                    <img alt="" src="images/hugo boss 097 aaa_LRG.jpg" height="400" width="321" />
+                                </a>
+                                <h4>Name: relaxed fit round neck</h4>
+                                <h4>Price: $20</h4> 
+                                </div>
+                             </div>
+                            <div class="grid1_of_3edited">
+                                <div  class = "price">
+                                <a id="shirt3" ng-click="shirtCtrl.selectShirt('slim round neck','images/la2.jpg',20)" href="#details">
+                                    <img alt="" src="images/la2.jpg" height="400" width="321" />
+                                </a>
+                                <h4>Name: slim round neck</h4>
+                                <h4>Price: $20</h4>   
+                                 </div>
+                                </div>
+                        </form>    
+                   
+                </div>
+            <div class="clear"> </div>
+            </div>
+<!---End-gallery----->
+	</div>
+</div>
+</div>
