@@ -22,7 +22,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class PurchaseItemLogic {
+public class PurchaseItemLogicTest {
     public static final String DEPLOY = "Prueba";
     
      @Deployment

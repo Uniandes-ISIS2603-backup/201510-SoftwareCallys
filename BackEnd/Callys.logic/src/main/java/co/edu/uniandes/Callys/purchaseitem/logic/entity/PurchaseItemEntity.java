@@ -6,7 +6,6 @@ import javax.persistence.Id;
 
 @Entity
 public class PurchaseItemEntity {
-    
     @Id
     @GeneratedValue(generator = "PurchaseItem")
     private Long id;
@@ -36,5 +35,4 @@ public class PurchaseItemEntity {
     public void setIdCamiseta(Long idCamiseta) {
         this.idCamiseta = idCamiseta;
     }
-    
 }

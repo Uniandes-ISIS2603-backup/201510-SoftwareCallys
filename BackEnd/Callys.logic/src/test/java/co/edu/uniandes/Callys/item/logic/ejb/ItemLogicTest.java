@@ -6,6 +6,10 @@ import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
 import co.edu.uniandes.Callys.item.logic.entity.ItemEntity;
 import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
 import co.edu.uniandes.Callys.camiseta.logic.entity.CamisetaEntity;
+import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
+import co.edu.uniandes.Callys.carroCompras.logic.entity.CarroComprasEntity;
+import co.edu.uniandes.Callys.estampa.logic.dto.StampDTO;
+import co.edu.uniandes.Callys.estampa.logic.entity.StampEntity;
 import co.edu.uniandes.Callys.item.logic.dto.ItemPageDTO;
 import static co.edu.uniandes.Callys.util._TestUtil.generateRandom;
 import java.util.ArrayList;
@@ -35,6 +39,10 @@ public class ItemLogicTest {
             .addPackage(ItemDTO.class.getPackage())
             .addPackage(CamisetaEntity.class.getPackage())
             .addPackage(CamisetaDTO.class.getPackage())
+            .addPackage(StampEntity.class.getPackage())
+            .addPackage(StampDTO.class.getPackage())
+            .addPackage(CarroComprasEntity.class.getPackage())
+            .addPackage(CarroComprasDTO.class.getPackage())
             .addPackage(ItemConverter.class.getPackage())
             .addPackage(IItemLogic.class.getPackage())
             .addPackage(ItemLogic.class.getPackage())
@@ -151,7 +159,7 @@ public class ItemLogicTest {
         Long newShirt = data.get(1).getCamiseta().getId();
 
         ItemDTO dto = new ItemDTO();
-        
+        dto.setId(entity.getId());
         dto.setCamiseta(newShirt);
         dto.setMonto(generateRandom(Double.class));
         
@@ -159,7 +167,7 @@ public class ItemLogicTest {
         ItemEntity resp = em.find(ItemEntity.class, entity.getId());
 
         Assert.assertEquals(dto.getMonto(), resp.getMonto());
-        Assert.assertEquals(dto.getCamiseta(), entity.getCamiseta().getId());
+        Assert.assertEquals(dto.getCamiseta(), resp.getCamiseta().getId());
     }
 
     @Test

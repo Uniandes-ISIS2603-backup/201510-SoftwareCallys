@@ -30,7 +30,8 @@ public class ClienteLogic implements IClienteLogic{
         if (carroCompras != null) {
             entity.setCarroCompras(carroCompras);
         }
-        entity.setPurchases(new ArrayList<PurchaseEntity>());
+        List<PurchaseEntity> purchases = this.getSelectedPurchases(cliente);
+        entity.setPurchases(purchases);
         entityManager.persist(entity);
         return ClienteConverter.entity2PersistenceDTO(entity);
     }

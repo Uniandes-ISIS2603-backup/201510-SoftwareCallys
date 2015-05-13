@@ -6,6 +6,8 @@ import co.edu.uniandes.Callys.purchase.logic.converter.PurchaseConverter;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchasePageDTO;
 import co.edu.uniandes.Callys.purchase.logic.entity.PurchaseEntity;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.entity.PurchaseItemEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -31,6 +33,8 @@ public class PurchaseLogicTest {
         return ShrinkWrap.create(WebArchive.class, DEPLOY + ".war")
                 .addPackage(PurchaseEntity.class.getPackage())
                 .addPackage(PurchaseDTO.class.getPackage())
+                .addPackage(PurchaseItemEntity.class.getPackage())
+                .addPackage(PurchaseItemDTO.class.getPackage())
                 .addPackage(PurchaseConverter.class.getPackage())
                 .addPackage(PurchaseLogic.class.getPackage())
                 .addPackage(IPurchaseLogic.class.getPackage())
