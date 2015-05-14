@@ -50,20 +50,26 @@ public class StampService {
     
     @GET
     @Path("byArtist")
-    public List<StampDTO> getStampByArtist(@QueryParam("idArtist") Long artistId) {
+    public List<StampDTO> getStampsByArtist(@QueryParam("idArtist") Long artistId) {
         return stampLogicService.getStampsByArtist(artistId);
     }
     
     @GET
     @Path("byPrice")
-    public List<StampDTO> getStampByPrice(@QueryParam("minPrice") Integer minPrice,@QueryParam("maxPrice") Integer maxPrice) {
+    public List<StampDTO> getStampsByPrice(@QueryParam("minPrice") Integer minPrice,@QueryParam("maxPrice") Integer maxPrice) {
         return stampLogicService.getStampsByPrice(minPrice,maxPrice);
     }
     
     @GET
     @Path("byTopic")
-    public List<StampDTO> getStampByTopic(@QueryParam("topic") String topic) {
+    public List<StampDTO> getStampsByTopic(@QueryParam("topic") String topic) {
         return stampLogicService.getStampsByTopic(topic);
+    }
+    
+    @GET
+    @Path("bestRating")
+    public StampDTO getBestStampByRating() {
+        return stampLogicService.getStampWithBestRating();
     }
     
     @PUT
