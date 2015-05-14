@@ -16,4 +16,6 @@ public interface ICarroComprasLogic {
     public void deleteCarroCompras(Long id);
 
     public void updateCarroCompras(CarroComprasDTO detail);
+    
+    public void emptyShoppingCart(Long id);
 }

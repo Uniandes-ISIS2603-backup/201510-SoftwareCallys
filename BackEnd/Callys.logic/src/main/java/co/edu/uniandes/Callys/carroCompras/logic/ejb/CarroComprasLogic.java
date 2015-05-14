@@ -70,6 +70,13 @@ public class CarroComprasLogic implements ICarroComprasLogic{
         CarroComprasConverter.entity2PersistenceDTO(entity);
     }
     
+    @Override
+    public void emptyShoppingCart(Long id)
+    {
+        CarroComprasEntity entity = entityManager.find(CarroComprasEntity.class, id);
+        entity.setItems(new ArrayList<ItemEntity>());
+    }
+    
     private List<ItemEntity> getSelectedItems(CarroComprasDTO shoppingCart) {
         if(shoppingCart != null && shoppingCart.getItems()!= null) {
             List<ItemEntity> items = new ArrayList<ItemEntity>();
