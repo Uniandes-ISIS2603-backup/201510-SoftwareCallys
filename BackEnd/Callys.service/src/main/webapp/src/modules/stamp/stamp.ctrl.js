@@ -17,7 +17,6 @@
         this.maxPrice=false;
         this.minPrice=false;
         this.topic= false;
-        var image;
         this.upload = function ()
         {
             this.uploadMode = !this.uploadMode;
@@ -65,24 +64,6 @@
                     $scope.catalogRecords = data;
                  });
         };
-        document.getElementById('files').addEventListener('change', handleFileSelect, false);
-        function handleFileSelect(evt)
-        {
-            // FileList object
-            var files = evt.target.files;
-            var reader = new FileReader();
-            // Closure to capture the file information.
-            reader.onload = (function()
-            {
-              return function(e)
-              {
-                  image=e.target.result;
-              };
-            })(files[0]);
-            // Read in the image file as a data URL.
-            reader.readAsDataURL(files[0]);
-        }
-        
         this.getBestStampByRating = function () {
                return stampService.getBestStampByRating();
             };
@@ -96,7 +77,6 @@
           this.getStampsByArtist = function (artistaId) {
                 return stampService.getStampsByArtist(artistaId);
             };  
-            
         this.saveStamp = function(catalogRecord,catalogForm)
         {
             if(catalogForm.$valid)

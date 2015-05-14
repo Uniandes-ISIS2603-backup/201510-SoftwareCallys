@@ -30,7 +30,6 @@
                 $scope.currentRecord.price= $scope.ShirtRecords[0].price*$scope.currentRecord.quantity;
                 $scope.amount = $scope.amount+$scope.currentRecord.price;
                 $scope.sales.push($scope.currentRecord);
-                alert($scope.sales.length)
             };
             this.addStamp = function (catalog)
             {

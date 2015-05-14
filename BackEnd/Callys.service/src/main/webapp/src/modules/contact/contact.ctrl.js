@@ -1,7 +1,7 @@
 (function (angular)
 {
     var shirt = angular.module('contactModule');
-    shirt.controller('contactCtrl', ['$scope', 'contactService', function ($scope, contactService)
+    shirt.controller('contactCtrl', [ function ()
     {
     }]);
 })(window.angular);
