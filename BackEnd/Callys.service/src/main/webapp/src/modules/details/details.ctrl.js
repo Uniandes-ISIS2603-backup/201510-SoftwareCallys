@@ -39,7 +39,7 @@
                 shirtService.fetchRecords().then(function(data)
                 {
                     $scope.ShirtRecords = data;
-                }); 
+                });
                 this.stampMode=false;
             };
             this.deleteStamp = function (catalog)
