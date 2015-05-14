@@ -5,6 +5,7 @@
             if (skipMock)
             {
                 $httpBackend.whenPOST(baseUrl + '/' + context + '/login').passThrough();
+                $httpBackend.expectPOST(baseUrl + '/' + context + '/login');
             }
         }]);
 })(window.angular);
