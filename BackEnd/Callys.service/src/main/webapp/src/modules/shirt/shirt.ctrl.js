@@ -7,6 +7,7 @@
         this.fetchRecords();
         this.selectShirt = function (pName,pImage,pPrice)
         {
+            $scope.currentRecord={};
             $scope.currentRecord={name:pName,image:pImage,price:pPrice};
             this.saveRecord();
         };

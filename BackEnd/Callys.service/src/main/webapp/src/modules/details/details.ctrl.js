@@ -7,6 +7,7 @@
             this.fetchRecords();
             this.stampMode=true;
             $scope.amount=0;
+            $scope.cartRecords= { };
             catalogService.fetchRecords().then(function(data)
             {
                 $scope.catalogRecords = data;
@@ -28,16 +29,16 @@
             {
                 $scope.currentRecord.price= $scope.ShirtRecords[0].price*$scope.currentRecord.quantity;
                 $scope.amount = $scope.amount+$scope.currentRecord.price;
-                this.saveRecord();
+                $scope.cartRecords=$scope.currentRecord;
             };
             this.addStamp = function (catalog)
             {
                 $scope.ShirtRecords[0].stamps=catalog;
                 $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price+catalog.price;
-                 shirtService.fetchRecords().then(function(data)
-            {
-               $scope.ShirtRecords = data;
-            }); 
+                shirtService.fetchRecords().then(function(data)
+                {
+                    $scope.ShirtRecords = data;
+                }); 
                 this.stampMode=false;
             };
             this.deleteStamp = function (catalog)

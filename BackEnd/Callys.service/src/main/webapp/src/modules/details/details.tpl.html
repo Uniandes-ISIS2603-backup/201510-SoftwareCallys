@@ -116,13 +116,13 @@
                     <br/>
                     <h5><span>Amount: {{amount}} </span><br> </h5>
                     </a>
-                    <div class="grid1_of_3" ng-repeat = "record in records">
+                    <div class="grid1_of_3" ng-repeat = "shirt in $scope.cartRecords">
                         <div class="wrap">
                             <h3>Sales Element</h3> 
-                            <h3>Color: {{record.color}}</h3>
-                            <h3>Size: {{record.size}}</h3>
-                            <h3>Cuantity per unit: {{record.quantity}}</h3>
-                            <h3>Price: {{record.price}}</h3>
+                            <h3>Color: {{shirt.color}}</h3>
+                            <h3>Size: {{shirt.size}}</h3>
+                            <h3>Cuantity per unit: {{shirt.quantity}}</h3>
+                            <h3>Price: {{shirt.price}}</h3>
                              <img alt="" src="{{ShirtRecords[0].image}}" height= "200" width="200"  />
                             <br>
                             <div class="price">
