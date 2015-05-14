@@ -72,11 +72,10 @@
             };
          this.getStampsByPrice = function (minPrice,maxPrice) {
                return stampService.getStampsByPrice(minPrice,maxPrice);
-              
             };
           this.getStampsByArtist = function (artistaId) {
                 return stampService.getStampsByArtist(artistaId);
-            };  
+            };
         this.saveStamp = function(catalogRecord,catalogForm)
         {
             if(catalogForm.$valid)

@@ -4,7 +4,6 @@
     purchaseModule.controller('purchaseCtrl', ['$scope', 'purchaseService', function ($scope, purchaseService)
     {
         purchaseService.extendCtrl(this, $scope);
-        
         this.noRate=false;
         this.viewPurchases= function(cliente)
         {

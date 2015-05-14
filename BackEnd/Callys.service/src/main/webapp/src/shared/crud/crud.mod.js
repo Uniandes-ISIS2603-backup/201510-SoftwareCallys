@@ -1,6 +1,5 @@
 (function () {
     var crud = angular.module('CrudModule', ['restangular', 'ui.bootstrap']);
- 
     crud.config(['RestangularProvider', function (rp) {
             rp.setBaseUrl('rest');
             //Se añade RequestInterceptor para borrar el cuerpo de la solicitud DELETE
