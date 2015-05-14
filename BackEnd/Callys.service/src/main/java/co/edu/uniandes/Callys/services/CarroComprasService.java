@@ -76,7 +76,6 @@ public class CarroComprasService {
     @POST
     @Path("comprar")
     public PurchaseDTO registrarCompra(@QueryParam("id")Long id){
-        System.out.println("Es capaz de imprimir");
         CarroComprasDTO carroCompras = carroComprasLogicService.getCarroCompras(id);
         PurchaseDTO pur = new PurchaseDTO();
         pur.setDate(new Date());
