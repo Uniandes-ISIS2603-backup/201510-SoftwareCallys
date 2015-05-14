@@ -4,14 +4,15 @@
     purchaseModule.controller('purchaseCtrl', ['$scope', 'purchaseService', function ($scope, purchaseService)
         {
             purchaseService.extendCtrl(this, $scope);
-            this.fetchRecords();
+            system.print
+            this.getPurchasesByClient(2);
             
             
-            this.cliente=1;
+            this.cliente=2;
             
-            this.viewPurchases= function(cliente)
+            this.getPurchasesByClient= function(cliente)
         {
-             this.currentRecord=purchaseService.viewPurchases(cliente);
+             this.currentRecord=purchaseService.getPurchasesByClient(cliente);
               
         };
         }]);
