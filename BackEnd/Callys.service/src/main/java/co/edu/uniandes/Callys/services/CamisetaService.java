@@ -27,6 +27,11 @@ public class CamisetaService {
 
     @POST
     public CamisetaDTO createCamiseta(CamisetaDTO camiseta) {
+        List<CamisetaDTO> camisetas=camisetaLogicService.getCamisetas();
+        for(CamisetaDTO camiseta2:camisetas)
+        {
+            camisetaLogicService.deleteCamiseta(camiseta2.getId());
+        }
         return camisetaLogicService.createCamiseta(camiseta);
     }
 
@@ -57,5 +62,4 @@ public class CamisetaService {
     public void updateCamiseta(CamisetaDTO camiseta) {
         camisetaLogicService.updateCamiseta(camiseta);
     }
-    
 }
