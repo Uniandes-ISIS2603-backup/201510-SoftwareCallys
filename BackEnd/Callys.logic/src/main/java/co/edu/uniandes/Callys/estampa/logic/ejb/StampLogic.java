@@ -82,4 +82,55 @@ public class StampLogic implements IStampLogic{
         StampEntity entity = entityManager.merge(StampConverter.persistenceDTO2Entity(stamp));
         StampConverter.entity2PersistenceDTO(entity);
     }
+    
+    @Override
+    public StampDTO getStampWithBestRating() 
+    {
+        StampDTO answer=null;
+        int mayor=-1;
+        Query q = entityManager.createQuery("select u from StampEntity u");
+        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
+        for(StampDTO stamp:stamps)
+        {
+            if(stamp.getRating()>mayor)
+            {
+                mayor=stamp.getRating();
+                answer=stamp;
+            }
+        }
+        return answer;
+    }
+
+    @Override
+    public List<StampDTO> getStampsByPrice(Integer minPrice, Integer maxPrice)
+    {
+        List<StampDTO> answer=new ArrayList<StampDTO>();
+        Query q = entityManager.createQuery("select u from StampEntity u");
+        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
+        for(StampDTO stamp:stamps)
+        {
+            if(stamp.getPrice()>=minPrice&&stamp.getPrice()<=maxPrice)
+            {
+                answer.add(stamp);
+            }
+        }
+        return answer;
+    }
+    
+    @Override
+    public List<StampDTO> getStampsByTopic(String topic)
+    {
+        List<StampDTO> answer=new ArrayList<StampDTO>();
+        Query q = entityManager.createQuery("select u from StampEntity u");
+        List<StampDTO> stamps=StampConverter.entity2PersistenceDTOList(q.getResultList());
+        for(StampDTO stamp:stamps)
+        {
+            if(stamp.getTopic().equals(topic))
+            {
+                answer.add(stamp);
+            }
+        }
+        return answer;
+    }
+    
 }

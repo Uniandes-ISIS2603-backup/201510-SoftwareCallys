@@ -79,21 +79,21 @@ public class StampLogicTest {
     private void insertData() {
         for (int i = 0; i < 2; i++) {       
             StampEntity entity = new StampEntity();
-            entity.setTopic(generateRandomTopic());
-            entity.setRating(generateRandom(Integer.class));
+            entity.setTopic("a");
+            entity.setRating(i*10);
             entity.setName(generateRandom(String.class));
             entity.setImage(generateRandom(String.class));
-            entity.setPrice(generateRandom(Integer.class));
+            entity.setPrice(5);
             entity.setIdArtist(new Long(1));
             em.persist(entity);
             data.add(entity);
         }
         StampEntity entity = new StampEntity();
         entity.setTopic(generateRandomTopic());
-        entity.setRating(generateRandom(Integer.class));
+        entity.setRating(1);
         entity.setName(generateRandom(String.class));
         entity.setImage(generateRandom(String.class));
-        entity.setPrice(generateRandom(Integer.class));
+        entity.setPrice(10);
         entity.setIdArtist(new Long(2));
         em.persist(entity);
         data.add(entity);
@@ -223,6 +223,27 @@ public class StampLogicTest {
         }
     }
     
+    @Test
+    public void getBestStamp()
+    {
+        StampDTO stamp=stampLogic.getStampWithBestRating();
+        Assert.assertEquals(new Integer(10),stamp.getRating());
+    }
+    
+    @Test
+    public void getStampsByPrice()
+    {
+        List<StampDTO> stamps=stampLogic.getStampsByPrice(4,6);
+        Assert.assertEquals(2, stamps.size());
+    }
+    
+    @Test
+    public void getStampsByTopic()
+    {
+        List<StampDTO> stamps=stampLogic.getStampsByTopic("a");
+        Assert.assertEquals(2, stamps.size());
+    }
+
     private String generateRandomTopic(){
         int randomNum = 1 + (int)(Math.random()*3);
         switch(randomNum){

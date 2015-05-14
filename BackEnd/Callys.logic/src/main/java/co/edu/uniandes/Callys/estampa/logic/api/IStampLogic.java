@@ -20,4 +20,10 @@ public interface IStampLogic {
     public void updateStamp(StampDTO detail);
     
     public List<StampDTO> getStampsByArtist(Long idArtist);
+    
+    public StampDTO getStampWithBestRating();
+    
+    public List<StampDTO> getStampsByPrice(Integer minPrice, Integer maxPrice);
+    
+    public List<StampDTO> getStampsByTopic(String topic);
 }

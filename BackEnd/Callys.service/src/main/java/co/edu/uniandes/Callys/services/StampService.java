@@ -53,7 +53,19 @@ public class StampService {
     public List<StampDTO> getStampByArtist(@QueryParam("idArtist") Long artistId) {
         return stampLogicService.getStampsByArtist(artistId);
     }
-
+    
+    @GET
+    @Path("byPrice")
+    public List<StampDTO> getStampByPrice(@QueryParam("minPrice") Integer minPrice,@QueryParam("maxPrice") Integer maxPrice) {
+        return stampLogicService.getStampsByPrice(minPrice,maxPrice);
+    }
+    
+    @GET
+    @Path("byTopic")
+    public List<StampDTO> getStampByTopic(@QueryParam("topic") String topic) {
+        return stampLogicService.getStampsByTopic(topic);
+    }
+    
     @PUT
     @Path("{id}") 
     public void updateStamp(StampDTO stamp) {
