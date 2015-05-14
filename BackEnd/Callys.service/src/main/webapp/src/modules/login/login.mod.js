@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var loginModule = angular.module('loginModule', ['CrudModule', 'MockModule','catalogModule']);
     loginModule.constant('login.context', 'artista');
@@ -7,4 +7,4 @@
     {
          urlsProvider.registerUrl(context, skipMock);
     }]);
-})();
+})(window.angular);

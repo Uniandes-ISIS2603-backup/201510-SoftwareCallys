@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var stampModule = angular.module('stampModule');
     stampModule.controller('stampCtrl', ['$scope', 'stampService', 'catalogService', function ($scope, stampService,catalogService)
@@ -120,4 +120,4 @@
             }
         };
     }]);
-})();
+})(window.angular);

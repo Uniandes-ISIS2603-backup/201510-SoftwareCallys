@@ -17,6 +17,7 @@ public class ClienteEntity
     @GeneratedValue(generator = "Cliente")
     private Long id;
     private String name;
+    private String username;
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
@@ -56,6 +57,14 @@ public class ClienteEntity
 
     public void setNombre(String name) {
         this.name = name;
+    }
+    
+    public String getUserName() {
+        return username;
+    }
+
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public Integer getNumCompras() {

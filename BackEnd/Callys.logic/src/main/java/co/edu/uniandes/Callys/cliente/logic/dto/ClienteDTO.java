@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ClienteDTO {
     private Long id;
     private String nombre;
+    private String username;
     private Integer numCompras;
     private Integer numeroTarjeta;
     private Integer codigoSeguridad;
@@ -37,7 +38,14 @@ public class ClienteDTO {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public String getUserName() {
+        return username;
+    }
 
+    public void setUserName(String username) {
+        this.username = username;
+    }
     public Integer getNumCompras() {
         return numCompras;
     }

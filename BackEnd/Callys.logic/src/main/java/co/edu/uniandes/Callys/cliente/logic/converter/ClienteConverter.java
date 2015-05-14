@@ -12,6 +12,7 @@ public class ClienteConverter {
             ClienteDTO dto = new ClienteDTO();
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
+            dto.setUserName(entity.getUserName());
             dto.setNumCompras(entity.getNumCompras());
             dto.setNumeroTarjeta(entity.getNumeroTarjeta());
             dto.setCodigoDeSeguridad(entity.getCodigoSeguridad());
@@ -37,6 +38,7 @@ public class ClienteConverter {
             ClienteEntity entity = new ClienteEntity();
             entity.setId(dto.getId());
             entity.setNombre(dto.getNombre());
+            entity.setUserName(dto.getUserName());
             entity.setNumCompras(dto.getNumCompras());
             entity.setNumeroTarjeta(dto.getNumeroTarjeta());
             entity.setCodigoDeSeguridad(dto.getCodigoSeguridad());

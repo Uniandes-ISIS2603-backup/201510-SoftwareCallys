@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     var purchaseModule = angular.module('purchaseModule', ['CrudModule', 'MockModule']);
     purchaseModule.constant('purchase.context', 'purchase');
     purchaseModule.constant('purchase.skipMock', true);
@@ -6,4 +6,4 @@
     {
         urlsProvider.registerUrl(context, skipMock);
     }]);
-})();
+})(window.angular);

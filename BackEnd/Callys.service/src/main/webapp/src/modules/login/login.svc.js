@@ -1,4 +1,4 @@
-(function()
+(function(angular)
 {
     var loginModule = angular.module('loginModule');
      loginModule.service('loginService', ['CRUDBase','login.context', function(CRUDBase, context)
@@ -11,4 +11,4 @@
             return result;
         };
     }]);
-})();
+})(window.angular);

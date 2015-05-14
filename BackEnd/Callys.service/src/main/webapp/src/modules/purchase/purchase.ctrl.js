@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var purchaseModule = angular.module('purchaseModule');
     purchaseModule.controller('purchaseCtrl', ['$scope', 'purchaseService', function ($scope, purchaseService)
@@ -12,4 +12,4 @@
         };
         this.viewPurchases(2);
     }]);
-})();
+})(window.angular);

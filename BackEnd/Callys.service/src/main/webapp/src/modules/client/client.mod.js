@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
         var clientModule=angular.module('clientModule',['CrudModule','MockModule']);
         clientModule.constant('client.context','cliente');
@@ -7,4 +7,4 @@
         {
             urlsProvider.registerUrl(context,skipMock);
         }]);
-})();
+})(window.angular);

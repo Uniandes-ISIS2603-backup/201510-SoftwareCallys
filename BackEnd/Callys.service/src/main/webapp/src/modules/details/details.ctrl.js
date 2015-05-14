@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
         var detailsModule =angular.module('detailsModule');
         detailsModule.controller('detailsCtrl',['$scope','detailsService','shirtService','catalogService','purchaseService',function($scope,detailsService,shirtService,catalogService,purchaseService )
@@ -57,4 +57,4 @@
                 this.deleteRecord(record);
             };
         }]);
-})();
+})(window.angular);

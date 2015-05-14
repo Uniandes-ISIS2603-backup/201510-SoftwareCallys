@@ -34,15 +34,6 @@ public class ClienteService {
     @POST
     public ClienteDTO createCliente(ClienteDTO cliente) {
         return clienteLogicService.createCliente(cliente);
-//        CarroComprasDTO carro=new CarroComprasDTO();
-//        carro.setDatosEnvio("Calle inventada 123");
-//        carro.setMonto(new Double(0));
-//        carro.setFormaPago("Tarjeta de crédito");
-//        carro.se
-//            private Long id;
-//    private Double monto;
-//    private String formaPago;
-//    private String datosEnvio;
     }
 
     @DELETE

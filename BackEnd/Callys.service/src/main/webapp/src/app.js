@@ -1,7 +1,7 @@
 (function () 
 {
 
-	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','loginModule','shirtModule','signupModule','detailsModule','contactModule','purchaseModule']);
+	var mainApp = angular.module('mainApp', ['ngRoute', 'stampModule','catalogModule','loginModule','shirtModule','signupModule','detailsModule','contactModule','purchaseModule', 'clientModule']);
 
 	mainApp.config(['$routeProvider', function ($routeProvider) 
             {
@@ -37,7 +37,11 @@
                     $routeProvider.when('/purchase', 
                     {
 			templateUrl: 'src/modules/purchase/purchase.tpl.html'
-                    }).otherwise('/');                              
+                    }).otherwise('/');
+                    $routeProvider.when('/client', 
+                    {
+			templateUrl: 'src/modules/client/client.tpl.html'
+                    }).otherwise('/');
             }]);
 
 

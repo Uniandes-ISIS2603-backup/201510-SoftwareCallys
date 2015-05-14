@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var loginModule = angular.module('loginModule');
     loginModule.controller('loginCtrl', ['$scope', 'loginService', 'catalogService', function ($scope, loginService,catalogService)
@@ -21,4 +21,4 @@
                 }
         };
     }]);
-})();
+})(window.angular);

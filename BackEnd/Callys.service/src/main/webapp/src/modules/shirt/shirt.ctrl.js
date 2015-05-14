@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var shirtModule = angular.module('shirtModule');
     shirtModule.controller('shirtCtrl', ['$scope', 'shirtService', function ($scope, shirtService)
@@ -12,4 +12,4 @@
             this.saveRecord();
         };
     }]);
-})();
+})(window.angular);

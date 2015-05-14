@@ -11,25 +11,25 @@
                         <form name="catalogForm" class="css-form" novalidate>
                             <span> User name: </span>
                             <br/>
-                            <input id='nameClient' type="text" value="" ng-model="userRecord.username">
+                            <input id='nameClient' type="text" value="" ng-model="currentRecord.username">
                             <br/>
                             <br/>
                             <span> Password: </span>
                             <br/>
-                            <input id='passwordClient' type="password" value="" ng-model="userRecord.password">
+                            <input id='passwordClient' type="password" value="" ng-model="currentRecord.password">
                              <br/>
                             <br/>
                             <span> CreditCard number: </span>
                             <br/>
-                            <input id='creditCardClient' type="number" value="" ng-model="userRecord.creditNumber">
+                            <input id='creditCardClient' type="number" value="" ng-model="currentRecord.creditNumber">
                             <br/>
                             <br/>
                             <span> Email: </span>
                             <br/>
-                            <input id='emailClient' type="email" value="" ng-model="userRecord.email">
+                            <input id='emailClient' type="email" value="" ng-model="currentRecord.email">
                             <br/>
                             <br/>
-                            <input id='submitClient' type="submit" value="signUp artist" ng-click="signupCtrl.saveClient()">
+                            <input id='submitClient' type="submit" value="signUp artist" ng-click="signupCtrl.saveClient(currentRecord)">
                         </form>
                     </div>
                     <div class="price ">

@@ -1,4 +1,4 @@
-(function()
+(function(angular)
 {
     var purchaseModule = angular.module('purchaseModule');
     purchaseModule.service('purchaseService', ['CRUDBase','purchase.context', function(CRUDBase, context)
@@ -10,5 +10,5 @@
             return this.api.customGET('byClient', {id: cliente});
         };
     }]);
-})();
+})(window.angular);
 

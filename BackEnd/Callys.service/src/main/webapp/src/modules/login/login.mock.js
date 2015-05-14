@@ -6,6 +6,5 @@
             {
                 $httpBackend.whenPOST(baseUrl + '/' + context + '/login').passThrough();
             }
-           
         }]);
 })(window.angular);

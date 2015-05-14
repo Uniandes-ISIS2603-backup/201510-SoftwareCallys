@@ -1,4 +1,4 @@
-(function()
+(function(angular)
 {
     var stampModule = angular.module('stampModule');
     stampModule.service('stampService', ['CRUDBase','stamp.context', function(CRUDBase, context)
@@ -21,4 +21,4 @@
             
         
     }]);
-})();
+})(window.angular);

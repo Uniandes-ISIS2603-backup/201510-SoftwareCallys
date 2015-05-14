@@ -1,7 +1,7 @@
-(function ()
+(function (angular)
 {
     var signupModule = angular.module('signupModule');
-    signupModule.controller('signupCtrl', ['$scope', 'signupService', function ($scope, signupService)
+    signupModule.controller('signupCtrl', ['$scope', 'signupService','clientService', function ($scope, signupService, clientService)
     {
         this.client = false;
         this.artist = false;
@@ -17,9 +17,13 @@
         };
         this.saveArtist= function (artistRecord)
         {
-           artistRecord.datosContacto="a";
            this.saveRecord(artistRecord);
            this.successfull = true;
         };
+        this.saveClient= function (clientRecord)
+        {
+           clientService.saveRecord(clientRecord);
+           this.successfull = true;
+        };
     }]);
-})();
+})(window.angular);

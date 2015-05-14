@@ -1,4 +1,4 @@
-(function()
+(function(angular)
 {
     var detailsModule = angular.module('detailsModule');
     detailsModule.service('detailsService', ['CRUDBase','details.context', function(CRUDBase, context)
@@ -9,4 +9,4 @@
             camiseta.put();
         };
     }]);
-})();
+})(window.angular);

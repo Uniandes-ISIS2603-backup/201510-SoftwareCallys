@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var detailsModule = angular.module('detailsModule', ['CrudModule', 'MockModule','shirtModule','catalogModule']);
     detailsModule.constant('details.context', 'camiseta');
@@ -7,4 +7,4 @@
     {
         urlsProvider.registerUrl(context,skipMock);
     }]);
-})();
+})(window.angular);

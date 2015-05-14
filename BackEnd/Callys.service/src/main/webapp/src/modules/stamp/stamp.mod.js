@@ -1,4 +1,4 @@
-(function ()
+(function (angular)
 {
     var stampModule = angular.module('stampModule', ['CrudModule', 'MockModule','catalogModule']);
     stampModule.constant('stamp.context', 'stamp');
@@ -7,4 +7,4 @@
     {
         urlsProvider.registerUrl(context,skipMock);
     }]);
-})();
+})(window.angular);
