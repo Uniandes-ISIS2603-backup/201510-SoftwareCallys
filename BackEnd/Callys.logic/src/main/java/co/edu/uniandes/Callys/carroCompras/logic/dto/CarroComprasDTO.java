@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
+import javax.persistence.CascadeType;
 
 @XmlRootElement
 public class CarroComprasDTO {
@@ -14,7 +15,7 @@ public class CarroComprasDTO {
     private Double monto;
     private String formaPago;
     private String datosEnvio;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Long> items;
     
     public List<Long> getItems()

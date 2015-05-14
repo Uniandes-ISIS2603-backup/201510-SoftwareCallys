@@ -10,7 +10,7 @@
              $scope.currentRecord=loginService.login(username,password);
                 if(this.currentRecord!==null)
                 {
-                    alert($scope.currentRecord.NAME);
+                    alert($scope.currentRecord.name);
                     catalogService.artist=true; 
                     this.artist=true;
                 }

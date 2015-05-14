@@ -42,7 +42,7 @@ public class ArtistaService {
 
     @POST
     @Path("login")
-    public ArtistaDTO getLogin(ArtistaDTO artista) {
+    public ArtistaDTO login(ArtistaDTO artista) {
         return artistaLogicService.login(artista.getUsername(), artista.getClave());
     }
 

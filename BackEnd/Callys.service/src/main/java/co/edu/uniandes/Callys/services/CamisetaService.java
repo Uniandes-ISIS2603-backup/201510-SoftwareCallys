@@ -56,5 +56,6 @@ public class CamisetaService {
      @Path("{id}")
     public void updateCamiseta(CamisetaDTO camiseta) {
         camisetaLogicService.updateCamiseta(camiseta);
-    }  
+    }
+    
 }

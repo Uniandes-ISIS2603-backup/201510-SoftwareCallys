@@ -3,6 +3,9 @@ package co.edu.uniandes.Callys.services;
 import co.edu.uniandes.Callys.carroCompras.logic.api.ICarroComprasLogic;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasDTO;
 import co.edu.uniandes.Callys.carroCompras.logic.dto.CarroComprasPageDTO;
+import co.edu.uniandes.Callys.camiseta.logic.dto.CamisetaDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.dto.PurchaseItemDTO;
+import co.edu.uniandes.Callys.purchaseitem.logic.api.IPurchaseItemLogic;
 import co.edu.uniandes.Callys.purchase.logic.api.IPurchaseLogic;
 import co.edu.uniandes.Callys.purchase.logic.dto.PurchaseDTO;
 import co.edu.uniandes.Callys.item.logic.dto.ItemDTO;
@@ -32,9 +35,12 @@ public class CarroComprasService {
     
     @Inject
     protected ICarroComprasLogic carroComprasLogicService;
-   
+    
     @Inject
     protected IPurchaseLogic purchaseLogicService;
+    
+    @Inject
+    protected IPurchaseItemLogic purchaseItemLogicService;
     
     @Inject
     protected IItemLogic itemLogicService;
@@ -68,16 +74,24 @@ public class CarroComprasService {
     }
     
     @POST
-    @Path("{id}")
-    public PurchaseDTO registrarCompra(@PathParam("id")Long id){
+    @Path("comprar")
+    public PurchaseDTO registrarCompra(@QueryParam("id")Long id){
         CarroComprasDTO carroCompras = carroComprasLogicService.getCarroCompras(id);
         PurchaseDTO pur = new PurchaseDTO();
         pur.setDate(new Date());
         pur.setDatosDeEnvio(carroCompras.getDatosEnvio());
         pur.setFormaDePago(carroCompras.getFormaPago());
-        List<Long> items = carroCompras.getItems();
-        pur.setPurchaseItems(items);
+        PurchaseDTO pur2 = purchaseLogicService.createPurchase(pur);
+        List<ItemDTO> items = itemLogicService.getItemsByShoppingCart(carroCompras.getId());
+        for(ItemDTO i : items){
+            PurchaseItemDTO pitem= new PurchaseItemDTO();
+            pitem.setIdCamiseta(i.getCamiseta());
+            pitem.setMonto(i.getMonto());
+            pitem.setIdPurchase(pur2.getId());
+            purchaseItemLogicService.createPurchaseItem(pitem);
+            itemLogicService.deleteItem(i.getId());
+        }
         deleteCarroCompras(carroCompras.getId());
-        return purchaseLogicService.createPurchase(pur);
+        return pur2;
     }
 }

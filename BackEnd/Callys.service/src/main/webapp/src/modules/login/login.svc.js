@@ -7,7 +7,8 @@
         CRUDBase.extendService(this);
         this.login= function(username,password)
         {
-            return this.api.customGET('login', {userName: username, password: password});
+            var usuario = {"username":username, "clave":password};
+            return this.api.customPOST(usuario, 'login');
         };
     }]);
 })();

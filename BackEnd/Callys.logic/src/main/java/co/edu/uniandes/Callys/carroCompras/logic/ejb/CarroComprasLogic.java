@@ -22,8 +22,8 @@ public class CarroComprasLogic implements ICarroComprasLogic{
     protected EntityManager entityManager;
 
     @Override
-    public CarroComprasDTO createCarroCompras(CarroComprasDTO sport) {
-        CarroComprasEntity entity = CarroComprasConverter.persistenceDTO2Entity(sport);
+    public CarroComprasDTO createCarroCompras(CarroComprasDTO dto) {
+        CarroComprasEntity entity = CarroComprasConverter.persistenceDTO2Entity(dto);
         entity.setItems(new ArrayList<ItemEntity>());
         entityManager.persist(entity);
         return CarroComprasConverter.entity2PersistenceDTO(entity);
