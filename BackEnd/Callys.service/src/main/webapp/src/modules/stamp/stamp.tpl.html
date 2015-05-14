@@ -52,7 +52,8 @@
                             <button id="dislike" ng-click= "stampCtrl.dislikeStamp(catalog)"><i class="fa fa-thumbs-o-down"></i></button>
                         </div>
                         <div class="price">
-                            <a id="delete" ng-show="stampCtrl.artist" ng-click = "stampCtrl.deleteStamp(catalog)" ><h4>${{catalog.price}}<span>Delete</span></h4></a>
+                            <a ><h4>${{catalog.price}}</h4></a>
+                            <a id="delete" ng-show="stampCtrl.artist" ng-click = "stampCtrl.deleteStamp(catalog)" ><h4><span>Delete</span></h4></a>
                             <button id="edit" ng-show="stampCtrl.artist" ng-click= "stampCtrl.editStamp(catalog)"><span>Edit</span></button>
                         </div> 
                         <span class="b_btm"></span>
