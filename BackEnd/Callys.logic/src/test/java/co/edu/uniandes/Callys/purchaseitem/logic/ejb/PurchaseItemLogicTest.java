@@ -71,15 +71,20 @@ public class PurchaseItemLogicTest {
     private List<PurchaseItemEntity> data = new ArrayList<PurchaseItemEntity>();
 
     private void insertData() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             PurchaseItemEntity entity = new PurchaseItemEntity();
-            entity.setId(generateRandom(Long.class));
             entity.setIdCamiseta(generateRandom(Long.class));
-//            entity.setIdPurchase(generateRandom(Long.class));
-//            entity.setMonto(generateRandom(Integer.class));
+            entity.setIdPurchase(new Long(1));
+            entity.setMonto(generateRandom(Double.class));
             em.persist(entity);
             data.add(entity);
         }
+        PurchaseItemEntity entity = new PurchaseItemEntity();
+        entity.setIdCamiseta(generateRandom(Long.class));
+        entity.setIdPurchase(new Long(2));
+        entity.setMonto(generateRandom(Double.class));
+        em.persist(entity);
+        data.add(entity);
     }
 
     @Test
@@ -156,5 +161,17 @@ public class PurchaseItemLogicTest {
             }
             Assert.assertTrue(found);
         }
+    }
+    
+    @Test
+    public void getPurchaseItemsByPurchaseTest() {
+        List<PurchaseItemDTO> purchases=purchaseItemLogic.getItemsByPurchase(new Long(1));
+        Assert.assertFalse(purchases.isEmpty());
+        Assert.assertEquals(2,purchases.size());
+        purchases=purchaseItemLogic.getItemsByPurchase(new Long(2));
+        Assert.assertFalse(purchases.isEmpty());
+        Assert.assertEquals(1,purchases.size());
+        purchases=purchaseItemLogic.getItemsByPurchase(new Long(3));
+        Assert.assertTrue(purchases.isEmpty());
     }
 }

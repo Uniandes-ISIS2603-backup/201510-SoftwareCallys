@@ -60,7 +60,7 @@ public class PurchaseItemLogic implements IPurchaseItemLogic{
     public List<PurchaseItemDTO> getItemsByPurchase(Long idPurchase)
     {
         List<PurchaseItemDTO> answer=new ArrayList<PurchaseItemDTO>();
-        Query q = entityManager.createQuery("select u from ItemEntity u");
+        Query q = entityManager.createQuery("select u from PurchaseItemEntity u");
         List<PurchaseItemDTO> items=PurchaseItemConverter.entity2PersistenceDTOList(q.getResultList());
         for(PurchaseItemDTO item:items)
         {
