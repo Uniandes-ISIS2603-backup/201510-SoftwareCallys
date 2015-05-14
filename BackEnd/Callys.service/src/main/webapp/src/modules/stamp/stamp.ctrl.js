@@ -13,6 +13,10 @@
         this.uploadMode = false;
         this.editMode = false;
         this.error= false;
+        this.artistaId=false;
+        this.maxPrice=false;
+        this.minPrice=false;
+        this.topic= false;
         var image;
         this.upload = function ()
         {
@@ -78,6 +82,21 @@
             // Read in the image file as a data URL.
             reader.readAsDataURL(files[0]);
         }
+        
+        this.getBestStampByRating = function () {
+               return stampService.getBestStampByRating();
+            };
+         this.getStampsByTopic = function (topic) {
+                return stampService.getStampsByTopic(topic);
+            };
+         this.getStampsByPrice = function (minPrice,maxPrice) {
+               return stampService.getStampsByPrice(minPrice,maxPrice);
+              
+            };
+          this.getStampsByArtist = function (artistaId) {
+                return stampService.getStampsByArtist(artistaId);
+            };  
+            
         this.saveStamp = function(catalogRecord,catalogForm)
         {
             if(catalogForm.$valid)
