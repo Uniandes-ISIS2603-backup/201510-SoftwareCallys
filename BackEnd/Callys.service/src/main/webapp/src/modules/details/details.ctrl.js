@@ -7,7 +7,7 @@
             this.fetchRecords();
             this.stampMode=true;
             $scope.amount=0;
-            $scope.cartRecords= { };
+            $scope.cartRecords= [];
             catalogService.fetchRecords().then(function(data)
             {
                 $scope.catalogRecords = data;
@@ -29,7 +29,7 @@
             {
                 $scope.currentRecord.price= $scope.ShirtRecords[0].price*$scope.currentRecord.quantity;
                 $scope.amount = $scope.amount+$scope.currentRecord.price;
-                $scope.cartRecords=$scope.currentRecord;
+                $scope.cartRecords.push($scope.currentRecord);
             };
             this.addStamp = function (catalog)
             {

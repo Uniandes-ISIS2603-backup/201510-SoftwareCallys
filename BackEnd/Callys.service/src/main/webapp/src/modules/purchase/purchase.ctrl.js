@@ -10,7 +10,7 @@
 
         this.viewPurchases= function(cliente)
         {
-             this.currentRecord=purchaseService.viewPurchases(cliente);    
+            this.currentRecord=purchaseService.getPurchasesByClient(cliente);
         };
     }]);
 })();
