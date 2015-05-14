@@ -5,10 +5,10 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
-        this.login= function(username,password)
+        this.login= function(user)
         {
-            var usuario = {"username":username, "clave":password};
-            return this.api.customPOST(usuario, 'login');
+            var result = this.api.customPOST(user, 'login');
+            return result;
         };
     }]);
 })();

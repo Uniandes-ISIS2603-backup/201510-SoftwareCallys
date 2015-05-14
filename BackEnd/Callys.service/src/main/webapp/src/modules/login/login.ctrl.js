@@ -5,10 +5,11 @@
     {
         this.cliente=1;
         
-        this.login= function(username,password)
+        this.login= function()
         {
-             $scope.currentRecord=loginService.login(username,password);
-                if(this.currentRecord!==null)
+                var user = {username : $scope.currentRecord.username , clave : $scope.currentRecord.password}
+                var res = loginService.login(user);
+                if(this.res!==null)
                 {
                     alert($scope.currentRecord.name);
                     catalogService.artist=true; 
