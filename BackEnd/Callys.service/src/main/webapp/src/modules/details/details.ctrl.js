@@ -36,6 +36,7 @@
             {
                 $scope.ShirtRecords[0].stamps=catalog;
                 $scope.ShirtRecords[0].price=$scope.ShirtRecords[0].price+catalog.price;
+                detailsService.addStamp($scope.ShirtRecords[0]);
                 shirtService.fetchRecords().then(function(data)
                 {
                     $scope.ShirtRecords = data;

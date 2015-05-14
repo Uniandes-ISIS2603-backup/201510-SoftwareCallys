@@ -5,5 +5,8 @@
     {
         this.url = context;
         CRUDBase.extendService(this);
+        this.addStamp = function(camiseta){
+            camiseta.put();
+        };
     }]);
 })();
