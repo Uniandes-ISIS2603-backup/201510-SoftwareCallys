@@ -1,3 +1,4 @@
+package co.edu.uniandes.Callys.web.test;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -35,44 +36,113 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * @author estudiante
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(Arquillian.class)
 public class CallysTest {
     
-    public static String baseUrl;
-    public static String URLRESOURCES = "src/main/webapp";
-    public static WebDriver driver;
-    private static StringBuffer verificationErrors = new StringBuffer();
-    
-    @BeforeClass
-    public static void setUp() {
-        // Se crea un ainstancia del driver de firefox sobre el que se ejecutara la aplicacion.
-        driver = new FirefoxDriver();
-        baseUrl="http://localhost:8080";
-//        // Este timeout sirve para esperar que inicie el firefox
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-    }
-
-    @Before
-    public void setUpTest() {
-        // El browser ira a esta url. Se ejecuta al inicar cada uno de los metodos de prueba indicados con @Test
-        driver.get(baseUrl + "index.html");
-    }
-
-    @AfterClass
-    public static void tearDown() throws Exception {
-        //Se ejecuta al terminar todos los metodos de prueba indicados con @Test
-        // Cierra el browser
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
+    // Es la instancia inicial del web driver que controlará el navegador firefox
+        private static WebDriver driver;
+        // url en el cual se aloja la página web (en este caso localhost:8080)
+        private static String baseUrl;
+        // variable que indica si varios alert consecutivos (alert javascript) se tomarán
+        private static boolean acceptNextAlert = true;
+        private static StringBuffer verificationErrors = new StringBuffer();
+ 
+       /*La anotación @BeforeClass indica lo que se debe ejecutar ANTES de correr el archivo de pruebas. Este método instancia un nuevo driver firefox (causando la apertura de una ventana física de firefox).*/
+        @BeforeClass
+        public static void setUp() throws Exception {
+            driver = new FirefoxDriver();
+        // se define el url base del proyecto web
+            baseUrl = "http://localhost:8080";
+        /* Indica cuanto se espera para la respuesta de cualquier comando realizado hacia el navegador*/
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
+ 
+ 
+        // La anotación @AfterClass indica lo que se debe ejecutar DESPUES de ejecutar
+        // el archivo de pruebas. Este método cierra la ventana de firefox
+        // abierta por @BeforeClass que se utilizó para la prueba.
+        @AfterClass
+        public static void tearDown() throws Exception {
+            // Se cierra el navegador.
+            driver.quit();
+           // Se verifica que se haya cerrado efectivamente el navegador.
+            String verificationErrorString = verificationErrors.toString();
+            if (!"".equals(verificationErrorString)) {
+                fail(verificationErrorString);
+            }
+        }
+    
+    @Before
+    public void setUpUrl() {
+        driver.get(baseUrl + "/Callys.service");
     }
     
-         
-    @Test
-    public void t1createStamp() throws Exception {
+   @Test 
+    public void t1signUpArtist() throws Exception {
         boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
+    
+    @Test
+    public void t2LogIn() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+        success = true;
+        assertTrue(success);
+        Thread.sleep(2000);
+    }
+    
+    @Test
+    public void t3createStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+       
+       
+        Thread.sleep(2000);
         driver.findElement(By.id("stamp")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("upload")).click();
@@ -104,8 +174,43 @@ public class CallysTest {
     }
     
     @Test
-    public void t2deleteStamp() throws Exception {
-        boolean success = false;  
+    public void t4deleteStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();     
+       
+        Thread.sleep(2000);
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+          
         driver.findElement(By.id("stamp")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("name")).equals("Estampa");
@@ -118,8 +223,45 @@ public class CallysTest {
     }
  
     @Test
-    public void t3likeStamp() throws Exception {
-        boolean success = false;   
+    public void t5likeStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+       
+       
+        Thread.sleep(2000);
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        
         driver.findElement(By.id("stamp")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("name")).equals("Estampa");
@@ -131,9 +273,46 @@ public class CallysTest {
         
     }
     
-      @Test
-    public void t4dislikeStamp() throws Exception {
-        boolean success = false;  
+    @Test
+    public void t6dislikeStamp() throws Exception {
+        boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+       
+       
+        Thread.sleep(2000);
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        
         driver.findElement(By.id("stamp")).click();
         Thread.sleep(3000);
         driver.findElement(By.id("name")).equals("Estampa");
@@ -146,8 +325,45 @@ public class CallysTest {
     }
     
     @Test
-    public void t5editStamp() throws Exception {
+    public void t7editStamp() throws Exception {
         boolean success = false;
+        driver.findElement(By.id("signup")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("artist")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("nameArtist")).clear();
+        driver.findElement(By.id("userNameArtist")).clear();
+        driver.findElement(By.id("passwordArtist")).clear();
+        
+        driver.findElement(By.id("nameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("userNameArtist")).sendKeys("Luis");
+        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
+        driver.findElement(By.id("submitArtist")).click();
+        Thread.sleep(2000);
+        
+        driver.findElement(By.id("login")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("password")).clear();
+        
+        driver.findElement(By.id("userName")).sendKeys("Luis");
+        driver.findElement(By.id("password")).sendKeys("testPassword123");
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(2000);
+       
+       
+        Thread.sleep(2000);
+        driver.findElement(By.id("stamp")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.id("upload")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("name")).clear();
+        driver.findElement(By.id("price")).clear();
+        driver.findElement(By.id("name")).sendKeys("Estampa");
+        driver.findElement(By.id("price")).sendKeys("20");
+        driver.findElement(By.id("saveStamp")).click();
+        Thread.sleep(2000);
+        
         driver.findElement(By.id("stamp")).click();
         Thread.sleep(3000);
                
@@ -170,8 +386,8 @@ public class CallysTest {
         Thread.sleep(2000);
     }
     
-     @Test
-    public void t6addToCart() throws Exception {
+    @Test
+    public void t8addToCart() throws Exception {
         boolean success = false;
         driver.findElement(By.id("shirt")).click();
         Thread.sleep(3000);
@@ -190,8 +406,8 @@ public class CallysTest {
         Thread.sleep(2000);
     }
     
-     @Test
-    public void t7signUpClient() throws Exception {
+   @Test
+    public void t9signUpClient() throws Exception {
         boolean success = false;
         driver.findElement(By.id("signup")).click();
         Thread.sleep(1000);
@@ -213,38 +429,5 @@ public class CallysTest {
         Thread.sleep(2000);
     }
     
-    public void t8signUpArtist() throws Exception {
-        boolean success = false;
-        driver.findElement(By.id("signup")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.id("nameArtist")).clear();
-        driver.findElement(By.id("userNameArtist")).clear();
-        driver.findElement(By.id("passwordArtist")).clear();
-        
-        driver.findElement(By.id("nameArtist")).sendKeys("Test User");
-        driver.findElement(By.id("userNameArtist")).sendKeys("TestUser1");
-        driver.findElement(By.id("passwordArtist")).sendKeys("testPassword123");
-        driver.findElement(By.id("submitArtist")).click();
-        Thread.sleep(2000);
-        success = true;
-        assertTrue(success);
-        Thread.sleep(2000);
-    }
-    
-    @Test
-    public void t9LogIn() throws Exception {
-        boolean success = false;
-        driver.findElement(By.id("login")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.id("userName")).clear();
-        driver.findElement(By.id("password")).clear();
-        
-        driver.findElement(By.id("userName")).sendKeys("TestUser1");
-        driver.findElement(By.id("password")).sendKeys("testPassword123");
-        driver.findElement(By.id("submit")).click();
-        Thread.sleep(2000);
-        success = true;
-        assertTrue(success);
-        Thread.sleep(2000);
-    }
 }
+
